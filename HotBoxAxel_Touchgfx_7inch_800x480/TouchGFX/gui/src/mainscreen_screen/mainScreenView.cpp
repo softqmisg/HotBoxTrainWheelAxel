@@ -21,16 +21,14 @@ void mainScreenView::setupScreen()
     ledComm.setTitle(2);ledComm.setState(Led::State::GREEN);
 
     //////////carSelector//////////////////
-    // Initialize carSelector
-    carSelector.initialize();
-    // Set parent view to communicate back
-    carSelector.setParentView(this);
-    // Load saved value from presenter
-    if(presenter!=nullptr)
+//    carSelector.initialize();    // Initialize carSelector
+    carSelector.setParentView(this);    // Set parent view to communicate back
+    if(presenter!=nullptr)    // Load saved value from presenter
     {
     	carSelector.setCarNumber(presenter->getSavedCarNumber());
     }
-    /////////////////////////////////////
+    /////////////digitalClock////////////////////////
+//    updateClock(0, 0, 0);
 }
 
 void mainScreenView::tearDownScreen()
@@ -41,6 +39,7 @@ void mainScreenView::tearDownScreen()
     }
 	mainScreenViewBase::tearDownScreen();
 }
+///////////carSelector//////////////
 void mainScreenView::onCarNumberChanged(uint8_t newValue){
     // Forward value change to presenter (saves to model)
     if (presenter != nullptr) {
@@ -50,4 +49,13 @@ void mainScreenView::onCarNumberChanged(uint8_t newValue){
 void mainScreenView::updateCarNumber(uint8_t value)
 {
 	carSelector.setCarNumber(value);
+}
+///////////digitalClock//////////////
+void mainScreenView::updateClock(uint8_t hours, uint8_t minutes, uint8_t seconds)
+{
+	topBar.setClock(hours, minutes, seconds);
+}
+void mainScreenView::updateDate(uint8_t day, uint8_t month, uint16_t year)
+{
+	topBar.setDate(day, month, year);
 }

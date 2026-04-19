@@ -26,12 +26,15 @@ public:
     virtual void deactivate();
 
     virtual ~mainScreenPresenter() {}
+    //handle CarSelector
+    void saveCarNumber(uint8_t carNum);// Method to update counter value from view
+    int getSavedCarNumber();    // Method to get current saved counter value
 
-    // Method to update counter value from view
-    void saveCarNumber(uint8_t carNum);
+    //handle digitalClock
+    void requestTimeUpdate();
+    virtual void timeUpdated(uint8_t hours, uint8_t minutes, uint8_t seconds) override;     // Called from Model (via ModelListener)
+    virtual void dateUpdated(uint8_t day, uint8_t month, uint16_t year) override;    // Called from Model (via ModelListener)
 
-    // Method to get current saved counter value
-    int getSavedCarNumber();
 
 private:
     mainScreenView& view;

@@ -10,8 +10,8 @@ public:
     virtual ~TopBar() {}
 
     virtual void initialize();
-    void setDate(uint16_t year,uint16_t month,uint16_t day);
-    void setTime(uint8_t hour,uint8_t minute);
+    void setDate(uint8_t day, uint8_t month, uint16_t year);
+    void setClock(uint8_t hours, uint8_t minutes, uint8_t seconds);
     void setEnvTemp(int16_t temp);
 protected:
 };

@@ -96,7 +96,7 @@
                 "X": 9,
                 "Y": 65,
                 "Width": 692,
-                "Height": 234,
+                "Height": 235,
                 "Direction": "East",
                 "Components": [
                   {
@@ -503,7 +503,7 @@
             "Type": "ListLayout",
             "Name": "tempListLayout",
             "Width": 500,
-            "Height": 210,
+            "Height": 236,
             "LockPosition": true,
             "Direction": "South",
             "Components": [
@@ -511,7 +511,7 @@
                 "Type": "ListLayout",
                 "Name": "tempListLayout1",
                 "Width": 500,
-                "Height": 105,
+                "Height": 118,
                 "LockPosition": true,
                 "Direction": "East",
                 "Components": [
@@ -555,9 +555,9 @@
               {
                 "Type": "ListLayout",
                 "Name": "tempListLayout2",
-                "Y": 105,
+                "Y": 118,
                 "Width": 500,
-                "Height": 105,
+                "Height": 118,
                 "LockPosition": true,
                 "Direction": "East",
                 "Components": [
@@ -660,7 +660,7 @@
     "SubFamily": "STM32H743/753",
     "Toolchain": "STM32CubeIDE",
     "Platform": "m7",
-    "ProjectFile": "../touchgfx_7inch_ui_800x480_00.ioc",
+    "ProjectFile": "../HotBoxAxel_Touchgfx_7inch_800x480.ioc",
     "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
     "OptionalComponents": [],
     "AdditionalFeatures": []

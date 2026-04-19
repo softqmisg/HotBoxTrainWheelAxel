@@ -10,13 +10,13 @@ void TopBar::initialize()
     TopBarBase::initialize();
 }
 
-void TopBar::setDate(uint16_t year,uint16_t month,uint16_t day){
+void TopBar::setDate(uint8_t day, uint8_t month, uint16_t year){
     Unicode::snprintf(dateTextBuffer, DATETEXT_SIZE, "%04d/%02d/%02d", year,month,day);
 	dateText.invalidate();
 
 }
-void TopBar::setTime(uint8_t hour,uint8_t minute){
-    digitalClock.setTime24Hour(hour, minute, 0);
+void TopBar::setClock(uint8_t hours, uint8_t minutes, uint8_t seconds){
+    digitalClock.setTime24Hour(hours, minutes, 0);
     digitalClock.invalidate();
 };
 

@@ -50,7 +50,6 @@ mainScreenViewBase::mainScreenViewBase()
     templistLayout.setDirection(touchgfx::EAST);
     templistLayout.add(carSelector);
 
-    tempMehvarList.setXY(192, 0);
     templistLayout.add(tempMehvarList);
 
     container1.add(templistLayout);
