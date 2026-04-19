@@ -27,6 +27,7 @@ public:
 
     virtual ~mainScreenPresenter() {}
     //handle CarSelector
+    void requestTempUpdate(uint8_t carNum);
     void saveCarNumber(uint8_t carNum);// Method to update counter value from view
     int getSavedCarNumber();    // Method to get current saved counter value
 

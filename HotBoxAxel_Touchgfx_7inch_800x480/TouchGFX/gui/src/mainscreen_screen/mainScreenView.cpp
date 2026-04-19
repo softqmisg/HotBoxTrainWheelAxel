@@ -1,7 +1,4 @@
 #include <gui/mainscreen_screen/mainScreenView.hpp>
-//#include <gui/containers/TempMehvar.hpp>
-//#include <gui/containers/TempMehvarList.hpp>
-//#include <gui/containers/topBar.hpp>
 
 mainScreenView::mainScreenView()
 {
@@ -14,7 +11,7 @@ void mainScreenView::setupScreen()
     topBar.setEnvTemp(-4);
     for(int id=1;id<=8;id++)
     {
-    	tempMehvarList.updateItem(id, TempMehvar::State::NORMAL, 0.0);
+    	tempAxelList.updateItem(id, TempAxel::State::NORMAL, 0.0);
     }
     ledMain.setTitle(0);ledMain.setState(Led::State::GREEN);
     ledAlarm.setTitle(1);ledAlarm.setState(Led::State::RED);

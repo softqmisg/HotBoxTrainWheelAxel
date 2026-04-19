@@ -50,7 +50,7 @@ mainScreenViewBase::mainScreenViewBase()
     templistLayout.setDirection(touchgfx::EAST);
     templistLayout.add(carSelector);
 
-    templistLayout.add(tempMehvarList);
+    templistLayout.add(tempAxelList);
 
     container1.add(templistLayout);
 
@@ -77,5 +77,5 @@ void mainScreenViewBase::setupScreen()
     ledComm.initialize();
     warningBar.initialize();
     carSelector.initialize();
-    tempMehvarList.initialize();
+    tempAxelList.initialize();
 }

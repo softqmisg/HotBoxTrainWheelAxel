@@ -28,14 +28,14 @@
     <ClCompile Include="..\..\generated\gui_generated\src\mainscreen_screen\mainScreenViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\model\Model.cpp"/>
     <ClCompile Include="..\..\generated\simulator\src\video\SoftwareMJPEGDecoder.cpp"/>
-    <ClCompile Include="..\..\gui\src\containers\TempMehvar.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\TempMehvarBase.cpp"/>
-    <ClCompile Include="..\..\gui\src\containers\TempMehvarList.cpp"/>
-    <ClCompile Include="..\..\generated\gui_generated\src\containers\TempMehvarListBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\TopBar.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\TopBarBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\WarningBar.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\WarningBarBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\TempAxel.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\TempAxelBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\TempAxelList.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\TempAxelListBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -193,14 +193,14 @@
     <ClInclude Include="..\..\gui\include\gui\model\ModelListener.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\common\SimConstants.hpp"/>
     <ClInclude Include="..\..\generated\simulator\include\simulator\video\SoftwareMJPEGDecoder.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\TempMehvar.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\TempMehvarBase.hpp"/>
-    <ClInclude Include="..\..\gui\include\gui\containers\TempMehvarList.hpp"/>
-    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\TempMehvarListBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\TopBar.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\TopBarBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\WarningBar.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\WarningBarBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\TempAxel.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\TempAxelBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\TempAxelList.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\TempAxelListBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

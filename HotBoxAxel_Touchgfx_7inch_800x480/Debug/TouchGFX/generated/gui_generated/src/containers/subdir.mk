@@ -7,24 +7,24 @@
 CPP_SRCS += \
 ../TouchGFX/generated/gui_generated/src/containers/CarSelectorBase.cpp \
 ../TouchGFX/generated/gui_generated/src/containers/LedBase.cpp \
-../TouchGFX/generated/gui_generated/src/containers/TempMehvarBase.cpp \
-../TouchGFX/generated/gui_generated/src/containers/TempMehvarListBase.cpp \
+../TouchGFX/generated/gui_generated/src/containers/TempAxelBase.cpp \
+../TouchGFX/generated/gui_generated/src/containers/TempAxelListBase.cpp \
 ../TouchGFX/generated/gui_generated/src/containers/TopBarBase.cpp \
 ../TouchGFX/generated/gui_generated/src/containers/WarningBarBase.cpp 
 
 OBJS += \
 ./TouchGFX/generated/gui_generated/src/containers/CarSelectorBase.o \
 ./TouchGFX/generated/gui_generated/src/containers/LedBase.o \
-./TouchGFX/generated/gui_generated/src/containers/TempMehvarBase.o \
-./TouchGFX/generated/gui_generated/src/containers/TempMehvarListBase.o \
+./TouchGFX/generated/gui_generated/src/containers/TempAxelBase.o \
+./TouchGFX/generated/gui_generated/src/containers/TempAxelListBase.o \
 ./TouchGFX/generated/gui_generated/src/containers/TopBarBase.o \
 ./TouchGFX/generated/gui_generated/src/containers/WarningBarBase.o 
 
 CPP_DEPS += \
 ./TouchGFX/generated/gui_generated/src/containers/CarSelectorBase.d \
 ./TouchGFX/generated/gui_generated/src/containers/LedBase.d \
-./TouchGFX/generated/gui_generated/src/containers/TempMehvarBase.d \
-./TouchGFX/generated/gui_generated/src/containers/TempMehvarListBase.d \
+./TouchGFX/generated/gui_generated/src/containers/TempAxelBase.d \
+./TouchGFX/generated/gui_generated/src/containers/TempAxelListBase.d \
 ./TouchGFX/generated/gui_generated/src/containers/TopBarBase.d \
 ./TouchGFX/generated/gui_generated/src/containers/WarningBarBase.d 
 
@@ -36,7 +36,7 @@ TouchGFX/generated/gui_generated/src/containers/%.o TouchGFX/generated/gui_gener
 clean: clean-TouchGFX-2f-generated-2f-gui_generated-2f-src-2f-containers
 
 clean-TouchGFX-2f-generated-2f-gui_generated-2f-src-2f-containers:
-	-$(RM) ./TouchGFX/generated/gui_generated/src/containers/CarSelectorBase.cyclo ./TouchGFX/generated/gui_generated/src/containers/CarSelectorBase.d ./TouchGFX/generated/gui_generated/src/containers/CarSelectorBase.o ./TouchGFX/generated/gui_generated/src/containers/CarSelectorBase.su ./TouchGFX/generated/gui_generated/src/containers/LedBase.cyclo ./TouchGFX/generated/gui_generated/src/containers/LedBase.d ./TouchGFX/generated/gui_generated/src/containers/LedBase.o ./TouchGFX/generated/gui_generated/src/containers/LedBase.su ./TouchGFX/generated/gui_generated/src/containers/TempMehvarBase.cyclo ./TouchGFX/generated/gui_generated/src/containers/TempMehvarBase.d ./TouchGFX/generated/gui_generated/src/containers/TempMehvarBase.o ./TouchGFX/generated/gui_generated/src/containers/TempMehvarBase.su ./TouchGFX/generated/gui_generated/src/containers/TempMehvarListBase.cyclo ./TouchGFX/generated/gui_generated/src/containers/TempMehvarListBase.d ./TouchGFX/generated/gui_generated/src/containers/TempMehvarListBase.o ./TouchGFX/generated/gui_generated/src/containers/TempMehvarListBase.su ./TouchGFX/generated/gui_generated/src/containers/TopBarBase.cyclo ./TouchGFX/generated/gui_generated/src/containers/TopBarBase.d ./TouchGFX/generated/gui_generated/src/containers/TopBarBase.o ./TouchGFX/generated/gui_generated/src/containers/TopBarBase.su ./TouchGFX/generated/gui_generated/src/containers/WarningBarBase.cyclo ./TouchGFX/generated/gui_generated/src/containers/WarningBarBase.d ./TouchGFX/generated/gui_generated/src/containers/WarningBarBase.o ./TouchGFX/generated/gui_generated/src/containers/WarningBarBase.su
+	-$(RM) ./TouchGFX/generated/gui_generated/src/containers/CarSelectorBase.cyclo ./TouchGFX/generated/gui_generated/src/containers/CarSelectorBase.d ./TouchGFX/generated/gui_generated/src/containers/CarSelectorBase.o ./TouchGFX/generated/gui_generated/src/containers/CarSelectorBase.su ./TouchGFX/generated/gui_generated/src/containers/LedBase.cyclo ./TouchGFX/generated/gui_generated/src/containers/LedBase.d ./TouchGFX/generated/gui_generated/src/containers/LedBase.o ./TouchGFX/generated/gui_generated/src/containers/LedBase.su ./TouchGFX/generated/gui_generated/src/containers/TempAxelBase.cyclo ./TouchGFX/generated/gui_generated/src/containers/TempAxelBase.d ./TouchGFX/generated/gui_generated/src/containers/TempAxelBase.o ./TouchGFX/generated/gui_generated/src/containers/TempAxelBase.su ./TouchGFX/generated/gui_generated/src/containers/TempAxelListBase.cyclo ./TouchGFX/generated/gui_generated/src/containers/TempAxelListBase.d ./TouchGFX/generated/gui_generated/src/containers/TempAxelListBase.o ./TouchGFX/generated/gui_generated/src/containers/TempAxelListBase.su ./TouchGFX/generated/gui_generated/src/containers/TopBarBase.cyclo ./TouchGFX/generated/gui_generated/src/containers/TopBarBase.d ./TouchGFX/generated/gui_generated/src/containers/TopBarBase.o ./TouchGFX/generated/gui_generated/src/containers/TopBarBase.su ./TouchGFX/generated/gui_generated/src/containers/WarningBarBase.cyclo ./TouchGFX/generated/gui_generated/src/containers/WarningBarBase.d ./TouchGFX/generated/gui_generated/src/containers/WarningBarBase.o ./TouchGFX/generated/gui_generated/src/containers/WarningBarBase.su
 
 .PHONY: clean-TouchGFX-2f-generated-2f-gui_generated-2f-src-2f-containers
 

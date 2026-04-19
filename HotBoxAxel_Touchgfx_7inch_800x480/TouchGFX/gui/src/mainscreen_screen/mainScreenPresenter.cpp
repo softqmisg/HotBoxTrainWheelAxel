@@ -11,7 +11,9 @@ void mainScreenPresenter::activate()
 {
     // When screen becomes active, load saved value
 	/////// Carselector init//////////
-    view.updateCarNumber(getSavedCarNumber());
+	uint8_t saved= getSavedCarNumber();
+    view.updateCarNumber(saved);
+    requestTempUpdate(saved);
     /////// digitalClock init//////////
     model->startClockUpdates();
     requestTimeUpdate();// Get initial time immediately
@@ -33,6 +35,10 @@ int mainScreenPresenter::getSavedCarNumber() {
     return model->getCarNumber();
 	}
 	return 0;
+}
+void requestTempUpdate(uint8_t carNum)
+{
+
 }
 ///////////////digitalClock////////////////////
 void mainScreenPresenter::requestTimeUpdate()

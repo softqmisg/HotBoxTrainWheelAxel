@@ -1,22 +1,22 @@
-#include <gui/containers/TempMehvar.hpp>
-
-TempMehvar::TempMehvar()
+#include <gui/containers/TempAxel.hpp>
+#include <touchgfx/Color.hpp>
+TempAxel::TempAxel()
 {
 
 }
 
-void TempMehvar::initialize()
+void TempAxel::initialize()
 {
-    TempMehvarBase::initialize();
+    TempAxelBase::initialize();
 }
 
-void TempMehvar::setID(uint8_t id)
+void TempAxel::setID(uint8_t id)
 {
-	Unicode::snprintf(numMehvarTextBuffer, NUMMEHVARTEXT_SIZE, "%d", id);
-	numMehvarText.invalidate();
+	Unicode::snprintf(numAxelTextBuffer, NUMAXELTEXT_SIZE, "%d", id);
+	numAxelText.invalidate();
 }
 
-void TempMehvar::setState(TempMehvar::State state){
+void TempAxel::setState(TempAxel::State state){
 	if(state==State::NORMAL){
 		tempAreaBox.setColor(touchgfx::Color::getColorFromRGB(0x5C, 0xF0,0x00));
 	}
@@ -27,7 +27,7 @@ void TempMehvar::setState(TempMehvar::State state){
 	tempAreaBox.invalidate();
 }
 
-void TempMehvar::setTemperature(int16_t temperature){
+void TempAxel::setTemperature(int16_t temperature){
 	if(temperature==ERROR_TEMP)
 	{
 		Unicode::snprintf(tempTextBuffer, TEMPTEXT_SIZE, "----");
@@ -39,7 +39,7 @@ void TempMehvar::setTemperature(int16_t temperature){
 	tempText.invalidate();
 }
 
-void TempMehvar::updateData(uint8_t id,TempMehvar::State state,int16_t temperature){
+void TempAxel::updateData(uint8_t id,TempAxel::State state,int16_t temperature){
 	setID(id);
 	setState(state);
 	setTemperature(temperature);

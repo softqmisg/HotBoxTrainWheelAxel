@@ -16,7 +16,7 @@
 #include <gui/containers/Led.hpp>
 #include <gui/containers/WarningBar.hpp>
 #include <gui/containers/CarSelector.hpp>
-#include <gui/containers/TempMehvarList.hpp>
+#include <gui/containers/TempAxelList.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 
 class mainScreenViewBase : public touchgfx::View<mainScreenPresenter>
@@ -47,7 +47,7 @@ protected:
     WarningBar warningBar;
     touchgfx::ListLayout templistLayout;
     CarSelector carSelector;
-    TempMehvarList tempMehvarList;
+    TempAxelList tempAxelList;
     touchgfx::ButtonWithLabel settingButton;
 
 private:

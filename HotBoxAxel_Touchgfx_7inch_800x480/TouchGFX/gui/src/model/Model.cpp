@@ -32,14 +32,14 @@ void Model::tick()
 	        updateRTC();  // Read from hardware RTC
 	    }
 }
-
+//Manage CarNumber
 void Model::saveCarNumber(int carNum){
 	saveCarNumberValue=carNum;
 }
 int  Model::getCarNumber() const{
 	return saveCarNumberValue;
 }
-
+//Manage Time/Date
 void Model::updateRTC(){
 	readHardwareRTC();
 	if(modelListener!=nullptr)
