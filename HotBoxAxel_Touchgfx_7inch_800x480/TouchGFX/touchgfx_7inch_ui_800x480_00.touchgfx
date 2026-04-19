@@ -1,0 +1,669 @@
+{
+  "Application": {
+    "Screens": [
+      {
+        "Name": "mainScreen",
+        "CanvasBufferSize": 12000,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 800,
+            "Height": 480,
+            "LockPosition": true
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": -515,
+            "Y": 218,
+            "Width": 480,
+            "Height": 262,
+            "RelativeFilename": "keyboard_normal.png"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "topBar",
+            "Width": 800,
+            "Height": 66,
+            "LockPosition": true,
+            "CustomContainerDefinitionName": "TopBar"
+          },
+          {
+            "Type": "Container",
+            "Name": "container1",
+            "Y": 66,
+            "Width": 800,
+            "Height": 414,
+            "Components": [
+              {
+                "Type": "TiledImage",
+                "Name": "tiledImage1",
+                "Width": 800,
+                "Height": 414,
+                "LockPosition": true,
+                "FileName": "Gradient bg\\night_large.png"
+              },
+              {
+                "Type": "ListLayout",
+                "Name": "ledListLayout",
+                "X": 701,
+                "Y": 5,
+                "Width": 92,
+                "Height": 342,
+                "Direction": "South",
+                "Components": [
+                  {
+                    "Type": "CustomContainerInstance",
+                    "Name": "ledMain",
+                    "Width": 92,
+                    "Height": 114,
+                    "LockPosition": true,
+                    "CustomContainerDefinitionName": "Led"
+                  },
+                  {
+                    "Type": "CustomContainerInstance",
+                    "Name": "ledAlarm",
+                    "Y": 114,
+                    "Width": 92,
+                    "Height": 114,
+                    "LockPosition": true,
+                    "CustomContainerDefinitionName": "Led"
+                  },
+                  {
+                    "Type": "CustomContainerInstance",
+                    "Name": "ledComm",
+                    "Y": 228,
+                    "Width": 92,
+                    "Height": 114,
+                    "LockPosition": true,
+                    "CustomContainerDefinitionName": "Led"
+                  }
+                ]
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "warningBar",
+                "X": 245,
+                "Y": 354,
+                "Width": 548,
+                "Height": 50,
+                "CustomContainerDefinitionName": "WarningBar"
+              },
+              {
+                "Type": "ListLayout",
+                "Name": "templistLayout",
+                "X": 9,
+                "Y": 65,
+                "Width": 692,
+                "Height": 234,
+                "Direction": "East",
+                "Components": [
+                  {
+                    "Type": "CustomContainerInstance",
+                    "Name": "carSelector",
+                    "Width": 192,
+                    "Height": 235,
+                    "CustomContainerDefinitionName": "CarSelector"
+                  },
+                  {
+                    "Type": "CustomContainerInstance",
+                    "Name": "tempMehvarList",
+                    "X": 192,
+                    "Width": 500,
+                    "Height": 235,
+                    "CustomContainerDefinitionName": "TempMehvarList"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "settingButton",
+            "X": 18,
+            "Y": 420,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_action.png",
+            "TextId": "__SingleUse_IN1J",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_rounded_action.json"
+          }
+        ],
+        "Interactions": []
+      }
+    ],
+    "CustomContainerDefinitions": [
+      {
+        "Name": "TopBar",
+        "Width": 800,
+        "Height": 66,
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "bgGradientTile",
+            "Width": 800,
+            "Height": 66,
+            "LockPosition": true,
+            "FileName": "Gradient bg\\midday.png",
+            "Fadeable": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "envTempText",
+            "X": 651,
+            "Y": 11,
+            "Width": 119,
+            "Height": 48,
+            "LockPosition": true,
+            "TextId": "__SingleUse_J89U",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 13,
+              "Green": 255,
+              "Blue": 49
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_T6GX",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "DigitalClock",
+            "Name": "digitalClock",
+            "X": 344,
+            "Y": 5,
+            "Width": 112,
+            "Height": 52,
+            "LockPosition": true,
+            "TextColor": {
+              "Red": 255,
+              "Green": 230
+            },
+            "TextId": "__SingleUse_0TBK",
+            "DisplayLeadingZeroForHourIndicator": true,
+            "InitialHour": 10,
+            "InitialMinute": 10
+          },
+          {
+            "Type": "TextArea",
+            "Name": "dateText",
+            "X": 22,
+            "Y": 11,
+            "Width": 210,
+            "Height": 48,
+            "LockPosition": true,
+            "TextId": "__SingleUse_QHDQ",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 253,
+              "Green": 252,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_6KTI",
+              "UseBuffer": true,
+              "BufferSize": 11
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "Led",
+        "Width": 92,
+        "Height": 114,
+        "Components": [
+          {
+            "Type": "Circle",
+            "Name": "stateCircle",
+            "X": 6,
+            "Y": 34,
+            "Width": 80,
+            "Height": 80,
+            "Color": {
+              "Green": 250,
+              "Blue": 21
+            },
+            "CenterX": 40.0,
+            "CenterY": 40.0,
+            "Radius": 25.0,
+            "EndAngle": 360.0,
+            "CapPrecision": "Butt"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "titleText",
+            "X": 11,
+            "Y": 9,
+            "Width": 70,
+            "Height": 30,
+            "TextId": "__SingleUse_GQ1F",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_EAVY",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "TempMehvar",
+        "Width": 125,
+        "Height": 118,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "tempAreaBox",
+            "X": 12,
+            "Y": 59,
+            "Width": 101,
+            "Height": 41,
+            "Color": {
+              "Red": 92,
+              "Green": 240
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "tempText",
+            "X": 10,
+            "Y": 61,
+            "Width": 101,
+            "Height": 39,
+            "TextId": "ResourceId3",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 246,
+              "Green": 255
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "ResourceId2",
+              "UseBuffer": true,
+              "BufferSize": 5
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "numMehvarText",
+            "X": 38,
+            "Y": 11,
+            "Width": 45,
+            "Height": 39,
+            "TextId": "ResourceId4",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 217
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "ResourceId1",
+              "UseBuffer": true,
+              "BufferSize": 3
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "WarningBar",
+        "Width": 548,
+        "Height": 50,
+        "Components": [
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder",
+            "Width": 436,
+            "Height": 50,
+            "Color": {
+              "Red": 245,
+              "Green": 242,
+              "Blue": 206
+            },
+            "BorderColor": {
+              "Red": 187,
+              "Blue": 255
+            },
+            "BorderSize": 5
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "acceptButton",
+            "X": 448,
+            "Y": 7,
+            "Width": 100,
+            "Height": 36,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_round_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_36_tiny_round_active.png",
+            "TextId": "__SingleUse_B1RY",
+            "ReleasedColor": {
+              "Red": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_36\\tiny_round_active.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "warningText",
+            "X": 10,
+            "Y": 13,
+            "Width": 417,
+            "Height": 25,
+            "TextId": "__SingleUse_L29H",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Blue": 21
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_PEZB",
+              "UseBuffer": true,
+              "BufferSize": 50
+            }
+          }
+        ],
+        "Interactions": []
+      },
+      {
+        "Name": "CarSelector",
+        "Width": 192,
+        "Height": 235,
+        "Components": [
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder",
+            "Width": 192,
+            "Height": 235,
+            "Color": {
+              "Red": 11,
+              "Green": 43,
+              "Blue": 87
+            },
+            "BorderColor": {
+              "Red": 247,
+              "Green": 10,
+              "Blue": 10
+            },
+            "BorderSize": 5
+          },
+          {
+            "Type": "TextArea",
+            "Name": "carNumberText",
+            "X": 30,
+            "Y": 11,
+            "Width": 132,
+            "Height": 121,
+            "LockPosition": true,
+            "TextId": "__SingleUse_I6GW",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 250,
+              "Blue": 250
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_SMQ1",
+              "UseBuffer": true,
+              "BufferSize": 4
+            }
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "nextButton",
+            "X": 9,
+            "Y": 160,
+            "Width": 175,
+            "Height": 50,
+            "LockPosition": true,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_active.png",
+            "TextId": "__SingleUse_06BU",
+            "ReleasedColor": {
+              "Red": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_round_active.json"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "NextButtonCarSelectorInteraction",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "nextButton"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "nextButtonClicked"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "TempMehvarList",
+        "Width": 500,
+        "Height": 235,
+        "Components": [
+          {
+            "Type": "BoxWithBorder",
+            "Name": "boxWithBorder",
+            "Width": 500,
+            "Height": 235,
+            "LockPosition": true,
+            "Color": {
+              "Red": 11,
+              "Green": 43,
+              "Blue": 87
+            },
+            "BorderColor": {
+              "Red": 247,
+              "Green": 10,
+              "Blue": 10
+            },
+            "BorderSize": 5
+          },
+          {
+            "Type": "ListLayout",
+            "Name": "tempListLayout",
+            "Width": 500,
+            "Height": 210,
+            "LockPosition": true,
+            "Direction": "South",
+            "Components": [
+              {
+                "Type": "ListLayout",
+                "Name": "tempListLayout1",
+                "Width": 500,
+                "Height": 105,
+                "LockPosition": true,
+                "Direction": "East",
+                "Components": [
+                  {
+                    "Type": "CustomContainerInstance",
+                    "Name": "tempMehvar1",
+                    "Width": 125,
+                    "Height": 118,
+                    "LockPosition": true,
+                    "CustomContainerDefinitionName": "TempMehvar"
+                  },
+                  {
+                    "Type": "CustomContainerInstance",
+                    "Name": "tempMehvar2",
+                    "X": 125,
+                    "Width": 125,
+                    "Height": 118,
+                    "LockPosition": true,
+                    "CustomContainerDefinitionName": "TempMehvar"
+                  },
+                  {
+                    "Type": "CustomContainerInstance",
+                    "Name": "tempMehvar3",
+                    "X": 250,
+                    "Width": 125,
+                    "Height": 118,
+                    "LockPosition": true,
+                    "CustomContainerDefinitionName": "TempMehvar"
+                  },
+                  {
+                    "Type": "CustomContainerInstance",
+                    "Name": "tempMehvar4",
+                    "X": 375,
+                    "Width": 125,
+                    "Height": 118,
+                    "LockPosition": true,
+                    "CustomContainerDefinitionName": "TempMehvar"
+                  }
+                ]
+              },
+              {
+                "Type": "ListLayout",
+                "Name": "tempListLayout2",
+                "Y": 105,
+                "Width": 500,
+                "Height": 105,
+                "LockPosition": true,
+                "Direction": "East",
+                "Components": [
+                  {
+                    "Type": "CustomContainerInstance",
+                    "Name": "tempMehvar5",
+                    "Width": 125,
+                    "Height": 118,
+                    "LockPosition": true,
+                    "CustomContainerDefinitionName": "TempMehvar"
+                  },
+                  {
+                    "Type": "CustomContainerInstance",
+                    "Name": "tempMehvar6",
+                    "X": 125,
+                    "Width": 125,
+                    "Height": 118,
+                    "LockPosition": true,
+                    "CustomContainerDefinitionName": "TempMehvar"
+                  },
+                  {
+                    "Type": "CustomContainerInstance",
+                    "Name": "tempMehvar7",
+                    "X": 250,
+                    "Width": 125,
+                    "Height": 118,
+                    "LockPosition": true,
+                    "CustomContainerDefinitionName": "TempMehvar"
+                  },
+                  {
+                    "Type": "CustomContainerInstance",
+                    "Name": "tempMehvar8",
+                    "X": 375,
+                    "Width": 125,
+                    "Height": 118,
+                    "LockPosition": true,
+                    "CustomContainerDefinitionName": "TempMehvar"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "Interactions": []
+      }
+    ],
+    "Name": "MyApplication",
+    "Resolution": {
+      "Width": 800,
+      "Height": 480
+    },
+    "SelectedColorDepth": 16,
+    "StartupScreenName": "mainScreen",
+    "SelectedStartupLanguage": "GB",
+    "TouchGfxPath": "../Middlewares/ST/touchgfx",
+    "UIPath": ".",
+    "AvailableColorDepths": [
+      16
+    ],
+    "AvailableLCDs": {
+      "16": "LCD16bpp"
+    },
+    "AvailableSections": [
+      "ExtFlashSection",
+      "IntFlashSection"
+    ],
+    "AvailableResolutions": [
+      {
+        "Width": 800,
+        "Height": 480
+      }
+    ],
+    "PhysicalButtons": [
+      {
+        "Key": 1,
+        "Name": "KEY1"
+      },
+      {
+        "Key": 2,
+        "Name": "KEY2"
+      }
+    ],
+    "FrameworkFeatures": {
+      "LCD16bpp": {
+        "Id": "LCD16bpp",
+        "IsEnabled": true
+      }
+    },
+    "GenerateAssetsCommand": "make -f simulator/gcc/Makefile assets -j8",
+    "PostGenerateCommand": "touchgfx update_project --project-file=simulator/msvs/Application.vcxproj",
+    "PostGenerateTargetCommand": "touchgfx update_project",
+    "CompileSimulatorCommand": "make -f simulator/gcc/Makefile -j8",
+    "RunSimulatorCommand": "build\\bin\\simulator.exe",
+    "LandscapeSkinX": 0,
+    "LandscapeSkinY": 0,
+    "PortraitSkinX": 0,
+    "PortraitSkinY": 0,
+    "DisplayOrientation": "Landscape",
+    "Family": "STM32H7",
+    "SubFamily": "STM32H743/753",
+    "Toolchain": "STM32CubeIDE",
+    "Platform": "m7",
+    "ProjectFile": "../touchgfx_7inch_ui_800x480_00.ioc",
+    "OptionalComponentsRoot": "../Middlewares/ST/touchgfx_components",
+    "OptionalComponents": [],
+    "AdditionalFeatures": []
+  },
+  "Version": "4.25.0"
+}

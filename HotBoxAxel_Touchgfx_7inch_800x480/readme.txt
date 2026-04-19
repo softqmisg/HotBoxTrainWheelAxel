@@ -1,0 +1,1 @@
+/${ProjName}/Middlewares/ST/touchgfx/lib/core/cortex_m7/gcc
