@@ -19,6 +19,7 @@ public:
 
     virtual void timeUpdated(uint8_t hours, uint8_t minutes, uint8_t seconds) {}
 	virtual void dateUpdated(uint8_t day, uint8_t month, uint16_t year) {}
+    virtual void envTempUpdated(int16_t temp) {}
 protected:
     Model* model;
 };

@@ -14,15 +14,17 @@ public:
     virtual void tearDownScreen();
     void setPresenter(mainScreenPresenter& presenter) { this->presenter = &presenter; }
 
+    ////////////////digitalClock////////////////////////////
+    // Update methods called by Presenter
+    void updateClock(uint8_t hours, uint8_t minutes, uint8_t seconds);
+    void updateDate(uint8_t day, uint8_t month, uint16_t year);
+    //////////////////EnvTemperature//////////////////////
+    void updateEnvTemperature(int16_t temp);
     ////////////////carSelector//////////////////
     // Called by CarSelector when value changes
     void onCarNumberChanged(uint8_t newValue);
     // Called by Presenter to update UI
     void updateCarNumber(uint8_t value);
-    ////////////////digitalClock////////////////////////////
-    // Update methods called by Presenter
-       void updateClock(uint8_t hours, uint8_t minutes, uint8_t seconds);
-       void updateDate(uint8_t day, uint8_t month, uint16_t year);
 
 
 //    enum class LEDTYPE{ MAIN,ALARM,COMM};

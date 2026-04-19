@@ -10,18 +10,40 @@ mainScreenPresenter::mainScreenPresenter(mainScreenView& v)
 void mainScreenPresenter::activate()
 {
     // When screen becomes active, load saved value
-	/////// Carselector init//////////
+    // digitalClock init
+    model->startClockUpdates();
+    requestTimeUpdate();// Get initial time immediately
+    // EnvTemperature init
+    requestEnvTemperatureUpdate();
+	// Carselector init
 	uint8_t saved= getSavedCarNumber();
     view.updateCarNumber(saved);
     requestTempUpdate(saved);
-    /////// digitalClock init//////////
-    model->startClockUpdates();
-    requestTimeUpdate();// Get initial time immediately
 }
 
 void mainScreenPresenter::deactivate()
 {
     model->stopClockUpdates();
+}
+///////////////digitalClock////////////////////
+void mainScreenPresenter::requestTimeUpdate()
+{
+	model->updateRTC();
+}
+void mainScreenPresenter::timeUpdated(uint8_t hours,uint8_t minutes,uint8_t seconds){
+	view.updateClock(hours,minutes,seconds);
+}
+void mainScreenPresenter::dateUpdated(uint8_t day, uint8_t month, uint16_t year){
+	view.updateDate(day,month,year);
+}
+/////////////EnvTemperature////////////////////////
+void mainScreenPresenter::requestEnvTemperatureUpdate()
+{
+	model->updateEnvTemperature();
+}
+void mainScreenPresenter::envTempUpdated(int16_t temp)
+{
+	view.updateEnvTemperature(temp);
 }
 ///////////////CarSelector////////////////////
 void mainScreenPresenter::saveCarNumber(uint8_t carNum) {
@@ -36,18 +58,7 @@ int mainScreenPresenter::getSavedCarNumber() {
 	}
 	return 0;
 }
-void requestTempUpdate(uint8_t carNum)
+void mainScreenPresenter::requestTempUpdate(uint8_t carNum)
 {
 
-}
-///////////////digitalClock////////////////////
-void mainScreenPresenter::requestTimeUpdate()
-{
-	model->updateRTC();
-}
-void mainScreenPresenter::timeUpdated(uint8_t hours,uint8_t minutes,uint8_t seconds){
-	view.updateClock(hours,minutes,seconds);
-}
-void mainScreenPresenter::dateUpdated(uint8_t day, uint8_t month, uint16_t year){
-	view.updateDate(day,month,year);
 }

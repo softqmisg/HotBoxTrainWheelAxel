@@ -1,19 +1,20 @@
 #include <gui/model/Model.hpp>
 #include <gui/model/ModelListener.hpp>
 #include  "main.h"
-
+#include <stdlib.h>
 extern RTC_HandleTypeDef hrtc;
 Model::Model() :
 		modelListener(0),
-		saveCarNumberValue(1),
+		tickCounter(0),
+		updateRTCEnabled(false),
 		hours(0),
 		minutes(0),
 		seconds(0),
 		day(1),
 		month(1),
-		year(2024),
-		updateEnabled(false),
-		tickCounter(0)
+		year(2000),
+		envTemperature(0),
+		carNumber(1)
 {
 
 }
@@ -27,17 +28,13 @@ void Model::tick()
 	    if (tickCounter >= 60)
 	    {
 	        tickCounter = 0;
-	 	   if (!updateEnabled)
-	 	        return;
-	        updateRTC();  // Read from hardware RTC
+	 	   if (updateRTCEnabled)
+	 	   {
+	 		   updateRTC();  // Read from hardware RTC
+	 		   updateEnvTemperature();
+	 	   }
+
 	    }
-}
-//Manage CarNumber
-void Model::saveCarNumber(int carNum){
-	saveCarNumberValue=carNum;
-}
-int  Model::getCarNumber() const{
-	return saveCarNumberValue;
 }
 //Manage Time/Date
 void Model::updateRTC(){
@@ -104,4 +101,23 @@ void Model::setRTCDate(uint8_t day, uint8_t month, uint16_t year)
     	modelListener->timeUpdated(day, month, year);
     }
 
+}
+//Manage EnvTemp
+void Model::updateEnvTemperature(){
+	uint32_t seed=0;
+	seed+=SysTick->VAL;
+	srand(seed);
+	envTemperature = (rand() % 140) - 40;
+
+	if(modelListener!=nullptr)
+	{
+		modelListener->envTempUpdated(envTemperature);
+	}
+}
+//Manage CarNumber
+void Model::saveCarNumber(int carNum){
+	carNumber=carNum;
+}
+int  Model::getCarNumber() const{
+	return carNumber;
 }

@@ -16,11 +16,6 @@ public:
     }
 
     void tick();
-
-    // Manage CarNumber
-    void saveCarNumber(int carNum);
-    int  getCarNumber() const;
-
     //Manage Time/Date
     void updateRTC();  // Read from hardware RTC
     void setRTCTime(uint8_t hours, uint8_t minutes, uint8_t seconds);
@@ -32,25 +27,34 @@ public:
      uint8_t getDay() const { return day; }
      uint8_t getMonth() const { return month; }
      uint16_t getYear() const { return year; }
-     void startClockUpdates() { updateEnabled = true; }
-     void stopClockUpdates() { updateEnabled = false; }
+     void startClockUpdates() { updateRTCEnabled = true; }
+     void stopClockUpdates() { updateRTCEnabled = false; }
+     //Manage EnvTemp
+     void updateEnvTemperature();
+    // Manage CarNumber
+    void saveCarNumber(int carNum);
+    int  getCarNumber() const;
+
 
 protected:
 
 private:
     ModelListener* modelListener;
-    //CarNumber Variable
-    int saveCarNumberValue;
-
+    uint16_t tickCounter;
     // Time variables
+    bool updateRTCEnabled;
     uint8_t hours;
     uint8_t minutes;
     uint8_t seconds;
     uint8_t day;
     uint8_t month;
     uint16_t year;
-    bool updateEnabled;
-    uint16_t tickCounter;
+
+    // envTemp variable
+    int16_t envTemperature;
+    //CarNumber Variable
+    int carNumber;
+
 
     //Reading hardware
     void readHardwareRTC();
