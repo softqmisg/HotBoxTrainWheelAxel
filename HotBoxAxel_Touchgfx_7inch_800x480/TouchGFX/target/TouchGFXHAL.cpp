@@ -36,8 +36,8 @@ void TouchGFXHAL::initialize()
     // Please note, HAL::initialize() must be called to initialize the framework.
 
     TouchGFXGeneratedHAL::initialize();
-    setFrameBufferStartAddresses((void*)0xC0000000, (void*)0xC00BC800, (void*)0xC0177000);
-    lockDMAToFrontPorch(true);
+//    setFrameBufferStartAddresses((void*)0xC0000000, (void*)0xC00BC800, (void*)0xC0177000);
+//    lockDMAToFrontPorch(true);
 
     setButtonController(&bc);
 }

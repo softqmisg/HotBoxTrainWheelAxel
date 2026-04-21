@@ -207,7 +207,7 @@
             "Width": 341,
             "Height": 48,
             "LockPosition": true,
-            "TextId": "__SingleUse_QHDQ",
+            "TextId": "T_DATE_FORMAT",
             "TextRotation": "0",
             "Color": {
               "Red": 253,
