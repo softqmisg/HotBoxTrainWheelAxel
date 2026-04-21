@@ -24,7 +24,7 @@ TopBarBase::TopBarBase()
     envTempText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_J89U));
     add(envTempText);
 
-    digitalClock.setPosition(344, 5, 112, 52);
+    digitalClock.setPosition(351, 7, 112, 52);
     digitalClock.setColor(touchgfx::Color::getColorFromRGB(255, 230, 0));
     digitalClock.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0TBK));
     digitalClock.displayLeadingZeroForHourIndicator(true);
@@ -32,11 +32,13 @@ TopBarBase::TopBarBase()
     digitalClock.setTime24Hour(10, 10, 0);
     add(digitalClock);
 
-    dateText.setXY(22, 11);
+    dateText.setXY(10, 11);
     dateText.setColor(touchgfx::Color::getColorFromRGB(253, 252, 255));
     dateText.setLinespacing(0);
-    Unicode::snprintf(dateTextBuffer, DATETEXT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_6KTI).getText());
-    dateText.setWildcard(dateTextBuffer);
+    touchgfx::Unicode::snprintf(dateTextBuffer1, DATETEXTBUFFER1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_6KTI).getText());
+    dateText.setWildcard1(dateTextBuffer1);
+    touchgfx::Unicode::snprintf(dateTextBuffer2, DATETEXTBUFFER2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_2A0D).getText());
+    dateText.setWildcard2(dateTextBuffer2);
     dateText.resizeToCurrentText();
     dateText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_QHDQ));
     add(dateText);

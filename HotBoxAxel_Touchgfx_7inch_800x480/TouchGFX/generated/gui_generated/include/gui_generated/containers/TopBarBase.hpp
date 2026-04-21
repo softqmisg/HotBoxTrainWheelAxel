@@ -30,15 +30,17 @@ protected:
     touchgfx::FadeAnimator< touchgfx::TiledImage > bgGradientTile;
     touchgfx::TextAreaWithOneWildcard envTempText;
     touchgfx::DigitalClock digitalClock;
-    touchgfx::TextAreaWithOneWildcard dateText;
+    touchgfx::TextAreaWithTwoWildcards dateText;
 
     /*
      * Wildcard Buffers
      */
     static const uint16_t ENVTEMPTEXT_SIZE = 10;
     touchgfx::Unicode::UnicodeChar envTempTextBuffer[ENVTEMPTEXT_SIZE];
-    static const uint16_t DATETEXT_SIZE = 11;
-    touchgfx::Unicode::UnicodeChar dateTextBuffer[DATETEXT_SIZE];
+    static const uint16_t DATETEXTBUFFER1_SIZE = 15;
+    touchgfx::Unicode::UnicodeChar dateTextBuffer1[DATETEXTBUFFER1_SIZE];
+    static const uint16_t DATETEXTBUFFER2_SIZE = 6;
+    touchgfx::Unicode::UnicodeChar dateTextBuffer2[DATETEXTBUFFER2_SIZE];
 
 private:
 

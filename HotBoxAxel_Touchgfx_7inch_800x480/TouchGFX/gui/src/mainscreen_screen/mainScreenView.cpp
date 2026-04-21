@@ -1,5 +1,5 @@
 #include <gui/mainscreen_screen/mainScreenView.hpp>
-
+#include "Utility.h"
 mainScreenView::mainScreenView()
 {
 
@@ -8,13 +8,9 @@ mainScreenView::mainScreenView()
 void mainScreenView::setupScreen()
 {
     mainScreenViewBase::setupScreen();
-    for(int id=1;id<=8;id++)
-    {
-    	tempAxelList.updateItem(id, TempAxel::State::NORMAL, 0.0);
-    }
-    ledMain.setTitle(0);ledMain.setState(Led::State::GREEN);
-    ledAlarm.setTitle(1);ledAlarm.setState(Led::State::RED);
-    ledComm.setTitle(2);ledComm.setState(Led::State::GREEN);
+    ledMain.setTitle("Main");ledMain.setState(Led::State::GREEN);
+    ledAlarm.setTitle("Alarm");ledAlarm.setState(Led::State::RED);
+    ledComm.setTitle("Comm");ledComm.setState(Led::State::GREEN);
 
     /////////////digitalClock////////////////////////
 //    updateClock(0, 0, 0);
@@ -27,7 +23,8 @@ void mainScreenView::setupScreen()
     {
     	carSelector.setCarNumber(presenter->getSavedCarNumber());
     }
-
+    //////////////axelTemperature/////////////////////////////
+//    updateAxelTemperatures(carData)
 }
 
 void mainScreenView::tearDownScreen()
@@ -45,7 +42,18 @@ void mainScreenView::updateClock(uint8_t hours, uint8_t minutes, uint8_t seconds
 }
 void mainScreenView::updateDate(uint8_t day, uint8_t month, uint16_t year)
 {
-	topBar.setDate(day, month, year);
+	uint8_t tmpDay=day,tmpMonth=month;
+	uint16_t tmpYear=year;
+	if (presenter != nullptr) {
+		if(presenter->getCalenderType()==Model::CalenderType::JALALI)
+		{
+			Utility::gregorianToJalali(year, month, day, tmpYear, tmpMonth, tmpDay);
+		}
+		char name[5]="    ";
+
+		Utility::getDayNameShort(year, month, day,name);
+		topBar.setDate(tmpDay, tmpMonth, tmpYear,name);
+	}
 }
 ///////////envTempText//////////////
 void mainScreenView::updateEnvTemperature(int16_t temp)
@@ -62,4 +70,9 @@ void mainScreenView::onCarNumberChanged(uint8_t newValue){
 void mainScreenView::updateCarNumber(uint8_t value)
 {
 	carSelector.setCarNumber(value);
+}
+//////////tempAxelList////////////////
+void mainScreenView::updateAxelTemperatures(Car carData)
+{
+	tempAxelList.updateTempAllItems(carData);
 }

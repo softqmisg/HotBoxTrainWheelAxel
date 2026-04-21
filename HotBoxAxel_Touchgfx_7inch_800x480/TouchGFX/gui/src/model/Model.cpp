@@ -2,37 +2,62 @@
 #include <gui/model/ModelListener.hpp>
 #include  "main.h"
 #include <stdlib.h>
+#include "Utility.h"
+
 extern RTC_HandleTypeDef hrtc;
 Model::Model() :
-		modelListener(0),
-		tickCounter(0),
-		updateRTCEnabled(false),
-		hours(0),
-		minutes(0),
-		seconds(0),
-		day(1),
-		month(1),
-		year(2000),
-		envTemperature(0),
-		carNumber(1)
+modelListener(0),
+tickCounter(0),
+refreshingMainEnabled(false),
+hours(0),
+minutes(0),
+seconds(0),
+day(1),
+month(1),
+year(2000),
+calenderType(CalenderType::GEORGIAN),
+envTemperature(0),
+carNumber(0),
+ledMain(0),
+ledAlarm(1),
+ledComm(2)
 {
+	for(int i=0;i<MAX_CARNUM;i++)
+	{
+		cars[i].setCarID(i);
+		for(int axel=0;axel<MAX_AXELNUM;axel++)
+			cars[i].setAxelTemperature(axel,0,Car::TempState::NORMAL);
+	}
 
+	ledMain.setCallback([this](int ledId,LedParam::ColorState state){
+		updateLed(ledId,state);
+	});
+	ledAlarm.setCallback([this](int ledId,LedParam::ColorState state){
+		updateLed(ledId,state);
+	});
+	ledComm.setCallback([this](int ledId,LedParam::ColorState state){
+		updateLed(ledId,state);
+	});
 }
 
 void Model::tick()
 {
     // Called periodically by the framework
+		ledMain.tick();
+		ledAlarm.tick();
+		ledComm.tick();
 
 	    tickCounter++;
 	    // Update clock every second (60 ticks = 1 second at 60 FPS)
 	    if (tickCounter >= 60)
 	    {
 	        tickCounter = 0;
-	 	   if (updateRTCEnabled)
+	 	   if (refreshingMainEnabled)
 	 	   {
 	 		   updateRTC();  // Read from hardware RTC
 	 		   updateEnvTemperature();
 	 	   }
+ 		   updateAxelTemperature(carNumber);
 
 	    }
 }
@@ -95,19 +120,39 @@ void Model::setRTCTime(uint8_t hours, uint8_t minutes, uint8_t seconds)
 }
 void Model::setRTCDate(uint8_t day, uint8_t month, uint16_t year)
 {
+
+    RTC_DateTypeDef sDate;
+
+    sDate.Date = day;
+    sDate.Month = month;
+    sDate.Year = year-2000;  // RTC typically returns year 0-99
+    sDate.WeekDay=Utility::getDayOfWeek(year, month, day);
+    // Write to hardware RTC
+    if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN) != HAL_OK)
+    {
+        // Handle error
+        Error_Handler();
+    }
+
+    // Update local variables
+    this->year = year;
+    this->month = month;
+    this->day = day;
+
     // Notify listeners
     if (modelListener!=nullptr)
     {
-    	modelListener->timeUpdated(day, month, year);
+    	modelListener->dateUpdated(day, month, year);
     }
 
 }
+void Model::setCalenderType(Model::CalenderType type)
+{
+	calenderType=type;
+}
 //Manage EnvTemp
 void Model::updateEnvTemperature(){
-	uint32_t seed=0;
-	seed+=SysTick->VAL;
-	srand(seed);
-	envTemperature = (rand() % 140) - 40;
+	envTemperature = Utility::generateRandomInt(99, -40);
 
 	if(modelListener!=nullptr)
 	{
@@ -115,9 +160,34 @@ void Model::updateEnvTemperature(){
 	}
 }
 //Manage CarNumber
-void Model::saveCarNumber(int carNum){
+void Model::saveCarNumber(uint8_t carNum){
 	carNumber=carNum;
+	if(modelListener!=nullptr)
+	{
+		modelListener->carNumberUpdated(carNum);
+	}
 }
 int  Model::getCarNumber() const{
 	return carNumber;
+}
+//manage Axel Temperature
+void Model::updateAxelTemperature(uint8_t carNum)
+{
+
+	for(int i=0;i<MAX_AXELNUM;i++)
+	{
+//		int16_t temp=Utility::generateRandomInt(125, -45);
+		int16_t temp=(int16_t)carNum*10+Utility::generateRandomInt(9, 0);
+		Car::TempState state=(Utility::generateRandomBin())?Car::TempState::NORMAL:Car::TempState::ERROR;
+		cars[carNum].setAxelTemperature(i,temp, state);
+	}
+	if(modelListener!=nullptr && refreshingMainEnabled)
+	{
+		modelListener->carTempUpdated(cars[carNum]);
+	}
+}
+//manage Leds
+void Model::updateLed(int ledId, LedParam::ColorState state)
+{
+
 }

@@ -17,7 +17,6 @@ public:
     // Public method to update counter from presenter
     void setCarNumber(uint8_t value);
     uint8_t getCarNumber() const;
-    const uint8_t MAX_CARNUMBER=10;
 protected:
     mainScreenView* parentView;
     uint8_t currentCarNumber;

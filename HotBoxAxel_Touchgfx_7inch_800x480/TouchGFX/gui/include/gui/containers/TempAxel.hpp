@@ -2,6 +2,7 @@
 #define TEMPAXEL_HPP
 
 #include <gui_generated/containers/TempAxelBase.hpp>
+#define ERROR_TEMP 32767
 
 class TempAxel : public TempAxelBase
 {
@@ -10,12 +11,10 @@ public:
     virtual ~TempAxel() {}
 
     virtual void initialize();
-    enum class State{NORMAL,ERROR};
-    void setState(TempAxel::State state);
+    void setState(Car::TempState state);
     void setID(uint8_t id);
     void setTemperature(int16_t temperature);
-    void updateData(uint8_t id,TempAxel::State state,int16_t temperature);
-    const int16_t ERROR_TEMP=65535;
+    void updateData(uint8_t id,Car::TempState state,int16_t temperature);
 protected:
 };
 

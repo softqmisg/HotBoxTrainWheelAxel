@@ -2,6 +2,7 @@
 #define MODELLISTENER_HPP
 
 #include <gui/model/Model.hpp>
+#include <Car.h>
 
 class ModelListener
 {
@@ -15,11 +16,12 @@ public:
         model = m;
     }
     // Virtual methods that can be overridden by Presenter
-    virtual void onCarNumberChanged(int newValue) {}
-
     virtual void timeUpdated(uint8_t hours, uint8_t minutes, uint8_t seconds) {}
 	virtual void dateUpdated(uint8_t day, uint8_t month, uint16_t year) {}
     virtual void envTempUpdated(int16_t temp) {}
+    virtual void carNumberUpdated(uint8_t carNum) {}
+    virtual void carTempUpdated(Car car) {}
+
 protected:
     Model* model;
 };

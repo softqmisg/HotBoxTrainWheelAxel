@@ -27,16 +27,22 @@ public:
 
     virtual ~mainScreenPresenter() {}
     //handle digitalClock
-    void requestTimeUpdate();
+    void requestTimeDateUpdate();
     virtual void timeUpdated(uint8_t hours, uint8_t minutes, uint8_t seconds) override;     // Called from Model (via ModelListener)
     virtual void dateUpdated(uint8_t day, uint8_t month, uint16_t year) override;    // Called from Model (via ModelListener)
+    void setCalenderType(Model::CalenderType type);
+    Model::CalenderType getCalenderType();
     //handle EnvTemperature
     void requestEnvTemperatureUpdate();
     virtual void envTempUpdated(int16_t temp) override;
     //handle CarSelector
-    void requestTempUpdate(uint8_t carNum);
+    virtual void carNumberUpdated(uint8_t carNum);
     void saveCarNumber(uint8_t carNum);// Method to update counter value from view
     int getSavedCarNumber();    // Method to get current saved counter value
+    //handle AxelTemp
+    void requestCarTempUpdate(uint8_t carNum);
+    virtual void carTempUpdated(Car car);
+
 
 
 

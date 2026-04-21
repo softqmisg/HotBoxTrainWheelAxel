@@ -16,8 +16,8 @@ void TempAxel::setID(uint8_t id)
 	numAxelText.invalidate();
 }
 
-void TempAxel::setState(TempAxel::State state){
-	if(state==State::NORMAL){
+void TempAxel::setState(Car::TempState state){
+	if(state==Car::TempState::NORMAL){
 		tempAreaBox.setColor(touchgfx::Color::getColorFromRGB(0x5C, 0xF0,0x00));
 	}
 	else
@@ -39,7 +39,7 @@ void TempAxel::setTemperature(int16_t temperature){
 	tempText.invalidate();
 }
 
-void TempAxel::updateData(uint8_t id,TempAxel::State state,int16_t temperature){
+void TempAxel::updateData(uint8_t id,Car::TempState state,int16_t temperature){
 	setID(id);
 	setState(state);
 	setTemperature(temperature);

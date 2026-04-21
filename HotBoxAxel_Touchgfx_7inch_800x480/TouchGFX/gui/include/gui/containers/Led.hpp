@@ -11,7 +11,7 @@ public:
 
     virtual void initialize();
 //    void setTitle(const char *text);
-    void setTitle(uint8_t id);
+    void setTitle(const char* name);
 
     enum class State{GREEN,RED};
     void setState(Led::State state);

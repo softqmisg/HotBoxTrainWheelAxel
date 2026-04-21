@@ -14,19 +14,19 @@ void Led::initialize()
 //	Unicode::snprintf(titleTextBuffer, TITLETEXT_SIZE, "%s", text);
 //	titleText.invalidate();
 //}
-void Led::setTitle(uint8_t id){
-	switch(id){
-	case 0:
-		Unicode::snprintf(titleTextBuffer, TITLETEXT_SIZE, "Main");
-		break;
-	case 1:
-		Unicode::snprintf(titleTextBuffer, TITLETEXT_SIZE, "Alarm");
-		break;
-	case 2:
-		Unicode::snprintf(titleTextBuffer, TITLETEXT_SIZE, "Comm");
-		break;
-	}
-
+void Led::setTitle(const char *name){
+//	switch(id){
+//	case 0:
+//		Unicode::snprintf(titleTextBuffer, TITLETEXT_SIZE, "Main");
+//		break;
+//	case 1:
+//		Unicode::snprintf(titleTextBuffer, TITLETEXT_SIZE, "Alarm");
+//		break;
+//	case 2:
+//		Unicode::snprintf(titleTextBuffer, TITLETEXT_SIZE, "Comm");
+//		break;
+//	}
+    Unicode::fromUTF8((const uint8_t *)name, titleTextBuffer, TITLETEXT_SIZE);
 	titleText.invalidate();
 }
 

@@ -21,21 +21,15 @@ public:
     //////////////////EnvTemperature//////////////////////
     void updateEnvTemperature(int16_t temp);
     ////////////////carSelector//////////////////
-    // Called by CarSelector when value changes
-    void onCarNumberChanged(uint8_t newValue);
-    // Called by Presenter to update UI
-    void updateCarNumber(uint8_t value);
+    void onCarNumberChanged(uint8_t newValue);    // Called by CarSelector when value changes
+    void updateCarNumber(uint8_t value);    // Called by Presenter to update UI
+    /////////////////AxelTemperature///////////////////////
+    void updateAxelTemperatures(Car carData);
 
 
 //    enum class LEDTYPE{ MAIN,ALARM,COMM};
-//    void updateDate();
-//    void updateTime();
-//    void updateEnvTemp();
-//    void updateCarNumber();
-//    void updateMehvar(uint8_t id,TempMehvar::State state,int16_t temperatur);
 //    void updateLedState(mainScreenView::LEDTYPE ledtype,Led::State state);
-protected:
-    mainScreenPresenter* presenter;
+
 };
 
 #endif // MAINSCREENVIEW_HPP

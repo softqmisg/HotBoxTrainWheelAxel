@@ -185,8 +185,8 @@
           {
             "Type": "DigitalClock",
             "Name": "digitalClock",
-            "X": 344,
-            "Y": 5,
+            "X": 351,
+            "Y": 7,
             "Width": 112,
             "Height": 52,
             "LockPosition": true,
@@ -202,9 +202,9 @@
           {
             "Type": "TextArea",
             "Name": "dateText",
-            "X": 22,
+            "X": 10,
             "Y": 11,
-            "Width": 210,
+            "Width": 341,
             "Height": 48,
             "LockPosition": true,
             "TextId": "__SingleUse_QHDQ",
@@ -218,7 +218,12 @@
             "Wildcard1": {
               "TextId": "__SingleUse_6KTI",
               "UseBuffer": true,
-              "BufferSize": 11
+              "BufferSize": 15
+            },
+            "Wildcard2": {
+              "TextId": "__SingleUse_2A0D",
+              "UseBuffer": true,
+              "BufferSize": 6
             }
           }
         ],
