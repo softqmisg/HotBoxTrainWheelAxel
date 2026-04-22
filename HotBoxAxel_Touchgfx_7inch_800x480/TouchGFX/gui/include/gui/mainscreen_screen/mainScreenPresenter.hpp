@@ -32,18 +32,20 @@ public:
     virtual void dateUpdated(uint8_t day, uint8_t month, uint16_t year) override;    // Called from Model (via ModelListener)
     void setCalenderType(Model::CalenderType type);
     Model::CalenderType getCalenderType();
-    //handle EnvTemperature
-    void requestEnvTemperatureUpdate();
-    virtual void envTempUpdated(int16_t temp) override;
+
     //handle CarSelector
     virtual void carNumberUpdated(uint8_t carNum);
     void saveCarNumber(uint8_t carNum);// Method to update counter value from view
     int getSavedCarNumber();    // Method to get current saved counter value
-    //handle AxelTemp
+    //handle AxelTemp & envTemp
     void requestCarTempUpdate(uint8_t carNum);
-    virtual void carTempUpdated(Car car);
-
-
+    virtual void carTempUpdated(Car car) override;
+//    //handle EnvTemperature
+//    void requestEnvTemperatureUpdate();
+//    virtual void envTempUpdated(int16_t temp) override;
+    //handle Leds
+    void requestLedColorUpdate();
+    virtual void ledColorUpdate(uint8_t ledId, LedParam::ColorState colorState);
 
 
 private:

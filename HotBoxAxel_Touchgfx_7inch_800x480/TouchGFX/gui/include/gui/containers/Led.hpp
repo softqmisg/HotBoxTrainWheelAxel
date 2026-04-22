@@ -13,8 +13,8 @@ public:
 //    void setTitle(const char *text);
     void setTitle(const char* name);
 
-    enum class State{GREEN,RED};
-    void setState(Led::State state);
+    enum class Color{GREY,GREEN,RED};
+    void setState(Led::Color state);
 protected:
 };
 

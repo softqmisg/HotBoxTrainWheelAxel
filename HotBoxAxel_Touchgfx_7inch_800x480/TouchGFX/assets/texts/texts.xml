@@ -62,6 +62,30 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_RNT7" Alignment="Center" TypographyId="HeaderFont">
+        <Translation Language="GB">Exit</Translation>
+        <Translation Language="FA">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_Y238" Alignment="Center" TypographyId="HeaderFont">
+        <Translation Language="GB">Cancel</Translation>
+        <Translation Language="FA">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_PZFN" Alignment="Left" TypographyId="HeaderFont">
+        <Translation Language="GB">New Text</Translation>
+        <Translation Language="FA">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_X23Z" Alignment="Left" TypographyId="HeaderFont">
+        <Translation Language="GB">Username</Translation>
+        <Translation Language="FA">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_L8CB" Alignment="Center" TypographyId="HeaderFont">
+        <Translation Language="GB">OK</Translation>
+        <Translation Language="FA">New Text</Translation>
+      </Text>
+      <Text Id="__SingleUse_D8HE" Alignment="Left" TypographyId="HeaderFont">
+        <Translation Language="GB">Password</Translation>
+        <Translation Language="FA">New Text</Translation>
+      </Text>
       <Text Id="__SingleUse_2A0D" Alignment="Left" TypographyId="HeaderFont">
         <Translation Language="GB">Wed</Translation>
         <Translation Language="FA"></Translation>
@@ -120,8 +144,8 @@
     <Typography Id="Large" Font="Saira-Bold.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z" />
     <Typography Id="Farsi" Font="Nazaninb.ttf" Size="23" Bpp="4" IsVector="no" Direction="RTL" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z" />
     <Typography Id="HeaderFont" Font="Saira-Medium.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WidgetWildcardCharacters="0123456789 :APM" WildcardCharacterRanges="0-9,A-Z,a-z">
-      <LanguageSetting Language="GB" Font="Saira-Medium.ttf" Size="40" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z" />
-      <LanguageSetting Language="FA" Font="Nazaninb.ttf" Size="40" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" />
+      <LanguageSetting Language="GB" Font="Saira-Medium.ttf" Size="35" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z" />
+      <LanguageSetting Language="FA" Font="Nazaninb.ttf" Size="35" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" />
     </Typography>
     <Typography Id="LedFont" Font="Saira-Medium.ttf" Size="25" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z" />
     <Typography Id="WarningFont" Font="SairaSemiCondensed-SemiBold.ttf" Size="21" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z" />

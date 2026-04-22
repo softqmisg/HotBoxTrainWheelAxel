@@ -11,9 +11,19 @@ void TopBar::initialize()
     TopBarBase::initialize();
 }
 
+void TopBar::exitButtonClicked()
+{
+	if (exitButtonClickCallback) exitButtonClickCallback->execute(*this);
+}
+void TopBar::setExitButtonClickedCallback(GenericCallback<const TopBar&>& callback) {
+	exitButtonClickCallback = &callback;
+}
 
 void TopBar::setEnvTemperature(int16_t temp){
-    Unicode::snprintf(envTempTextBuffer, ENVTEMPTEXT_SIZE, "%+3i", temp);
+	if(temp==ERROR_TEMP)
+		Unicode::snprintf(envTempTextBuffer, ENVTEMPTEXT_SIZE, "---");
+	else
+		Unicode::snprintf(envTempTextBuffer, ENVTEMPTEXT_SIZE, "%+3i", temp);
 	envTempText.invalidate();
 }
 void TopBar::setDate(uint8_t day, uint8_t month, uint16_t year, char *name){
@@ -26,3 +36,4 @@ void TopBar::setClock(uint8_t hours, uint8_t minutes, uint8_t seconds){
     digitalClock.setTime24Hour(hours, minutes, 0);
     digitalClock.invalidate();
 };
+

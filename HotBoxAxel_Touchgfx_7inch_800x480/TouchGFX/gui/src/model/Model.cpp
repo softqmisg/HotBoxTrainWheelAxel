@@ -16,7 +16,6 @@ day(1),
 month(1),
 year(2000),
 calenderType(CalenderType::GEORGIAN),
-envTemperature(0),
 carNumber(0),
 ledMain(0),
 ledAlarm(1),
@@ -26,17 +25,17 @@ ledComm(2)
 	{
 		cars[i].setCarID(i);
 		for(int axel=0;axel<MAX_AXELNUM;axel++)
-			cars[i].setAxelTemperature(axel,0,Car::TempState::NORMAL);
+			cars[i].setTemperature(axel,0,Car::TempState::NORMAL);
 	}
 
-	ledMain.setCallback([this](int ledId,LedParam::ColorState state){
-		updateLed(ledId,state);
+	ledMain.setCallback([this](uint8_t ledId,LedParam::ColorState colorState){
+		this->colorLedChanged(ledId,colorState);
 	});
-	ledAlarm.setCallback([this](int ledId,LedParam::ColorState state){
-		updateLed(ledId,state);
+	ledAlarm.setCallback([this](uint8_t ledId,LedParam::ColorState colorState){
+		this->colorLedChanged(ledId,colorState);
 	});
-	ledComm.setCallback([this](int ledId,LedParam::ColorState state){
-		updateLed(ledId,state);
+	ledComm.setCallback([this](uint8_t ledId,LedParam::ColorState colorState){
+		this->colorLedChanged(ledId,colorState);
 	});
 }
 
@@ -52,12 +51,14 @@ void Model::tick()
 	    if (tickCounter >= 60)
 	    {
 	        tickCounter = 0;
+ 		   updateRTC();  // Read from hardware RTC
 	 	   if (refreshingMainEnabled)
 	 	   {
-	 		   updateRTC();  // Read from hardware RTC
-	 		   updateEnvTemperature();
+	 		   updateLedMain();
+	 		   updateLedAlarm();
+	 		   updateLedComm();
 	 	   }
- 		   updateAxelTemperature(carNumber);
+ 		   updateCarTemperatures(carNumber);
 
 	    }
 }
@@ -150,15 +151,6 @@ void Model::setCalenderType(Model::CalenderType type)
 {
 	calenderType=type;
 }
-//Manage EnvTemp
-void Model::updateEnvTemperature(){
-	envTemperature = Utility::generateRandomInt(99, -40);
-
-	if(modelListener!=nullptr)
-	{
-		modelListener->envTempUpdated(envTemperature);
-	}
-}
 //Manage CarNumber
 void Model::saveCarNumber(uint8_t carNum){
 	carNumber=carNum;
@@ -170,8 +162,9 @@ void Model::saveCarNumber(uint8_t carNum){
 int  Model::getCarNumber() const{
 	return carNumber;
 }
-//manage Axel Temperature
-void Model::updateAxelTemperature(uint8_t carNum)
+//manage Axel Temperature & //Manage EnvTemp
+
+void Model::updateCarTemperatures(uint8_t carNum)
 {
 
 	for(int i=0;i<MAX_AXELNUM;i++)
@@ -179,15 +172,42 @@ void Model::updateAxelTemperature(uint8_t carNum)
 //		int16_t temp=Utility::generateRandomInt(125, -45);
 		int16_t temp=(int16_t)carNum*10+Utility::generateRandomInt(9, 0);
 		Car::TempState state=(Utility::generateRandomBin())?Car::TempState::NORMAL:Car::TempState::ERROR;
-		cars[carNum].setAxelTemperature(i,temp, state);
+		cars[carNum].setTemperature(i,temp, state);
 	}
+	int16_t temp = Utility::generateRandomInt(99, -40);
+	Car::TempState state=(Utility::generateRandomBin())?Car::TempState::NORMAL:Car::TempState::ERROR;
+	cars[carNum].setTemperature(MAX_AXELNUM,temp, state);
 	if(modelListener!=nullptr && refreshingMainEnabled)
 	{
 		modelListener->carTempUpdated(cars[carNum]);
 	}
 }
-//manage Leds
-void Model::updateLed(int ledId, LedParam::ColorState state)
-{
 
+//manage Leds
+void Model::updateLedMain()
+{
+	if(!ledMain.getBlinking()){
+		ledMain.setPeriodMS(1000,9000);
+		ledMain.startBlinking();
+	}
+
+}
+void Model::updateLedAlarm()
+{
+	if(!ledAlarm.getBlinking()){
+
+		ledAlarm.setPeriodMS(4000,4000);
+		ledAlarm.startBlinking();
+	}
+}
+void Model::updateLedComm()
+{
+	ledComm.setFixed();
+}
+void Model::colorLedChanged(uint8_t ledId, LedParam::ColorState colorState)
+{
+	if(modelListener!=nullptr && refreshingMainEnabled)
+	{
+		modelListener->ledColorUpdate(ledId, colorState);
+	}
 }

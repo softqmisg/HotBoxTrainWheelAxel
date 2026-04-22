@@ -46,16 +46,11 @@ Core/Src \
 Core/Startup \
 Drivers/STM32H7xx_HAL_Driver/Src \
 TouchGFX/App \
-TouchGFX/build/MINGW32_NT-6.2/generated/fonts/src \
-TouchGFX/build/MINGW32_NT-6.2/generated/gui_generated/src/containers \
-TouchGFX/build/MINGW32_NT-6.2/generated/simulator/src/video \
-TouchGFX/build/MINGW32_NT-6.2/gui/src/common \
-TouchGFX/build/MINGW32_NT-6.2/gui/src/containers \
-TouchGFX/build/MINGW32_NT-6.2/gui/src/model \
 TouchGFX/generated/fonts/src \
 TouchGFX/generated/gui_generated/src/common \
 TouchGFX/generated/gui_generated/src/containers \
 TouchGFX/generated/gui_generated/src/mainscreen_screen \
+TouchGFX/generated/gui_generated/src/settingscreen_screen \
 TouchGFX/generated/images/src \
 TouchGFX/generated/images/src/Gradient_bg \
 TouchGFX/generated/images/src/__generated \
@@ -64,6 +59,7 @@ TouchGFX/gui/src/common \
 TouchGFX/gui/src/containers \
 TouchGFX/gui/src/mainscreen_screen \
 TouchGFX/gui/src/model \
+TouchGFX/gui/src/settingscreen_screen \
 TouchGFX/target \
 TouchGFX/target/generated \
 

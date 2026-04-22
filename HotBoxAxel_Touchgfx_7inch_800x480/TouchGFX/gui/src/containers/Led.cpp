@@ -15,28 +15,21 @@ void Led::initialize()
 //	titleText.invalidate();
 //}
 void Led::setTitle(const char *name){
-//	switch(id){
-//	case 0:
-//		Unicode::snprintf(titleTextBuffer, TITLETEXT_SIZE, "Main");
-//		break;
-//	case 1:
-//		Unicode::snprintf(titleTextBuffer, TITLETEXT_SIZE, "Alarm");
-//		break;
-//	case 2:
-//		Unicode::snprintf(titleTextBuffer, TITLETEXT_SIZE, "Comm");
-//		break;
-//	}
     Unicode::fromUTF8((const uint8_t *)name, titleTextBuffer, TITLETEXT_SIZE);
 	titleText.invalidate();
 }
 
-void Led::setState(Led::State state){
-	if(state==State::GREEN){
+void Led::setState(Led::Color state){
+	if(state==Color::GREEN){
 		stateCirclePainter.setColor(touchgfx::Color::getColorFromRGB(0x00, 0xFA,0x15));
 	}
-	else{
+	else if(state==Color::RED){
 		stateCirclePainter.setColor(touchgfx::Color::getColorFromRGB(0xE6, 0x0E,0x0E));
 	}
+	else  if(state==Color::GREY){
+		stateCirclePainter.setColor(touchgfx::Color::getColorFromRGB(0x80, 0x80,0x80));
+	}
+
 	stateCircle.invalidate();
 
 }

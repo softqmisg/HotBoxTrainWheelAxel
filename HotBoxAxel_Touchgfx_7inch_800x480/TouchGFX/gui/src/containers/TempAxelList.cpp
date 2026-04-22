@@ -1,6 +1,7 @@
 #include <gui/containers/TempAxelList.hpp>
 #include "gui/containers/TempAxel.hpp"
 #include "Car.h"
+#include "Utility.h"
 TempAxelList::TempAxelList()
 {
 
@@ -89,7 +90,7 @@ void TempAxelList::updateTempAllItems(Car carData)
 {
 	for(uint8_t axelID=0;axelID<MAX_AXELNUM;axelID++)
 	{
-		Car::TempAxel_t tempAxel=carData.getAxelTemperature(axelID);
+		Car::Temp_t tempAxel=carData.getTemperature(axelID);
 		updateItem(axelID,tempAxel.state,tempAxel.temperature);
 	}
 }

@@ -11,20 +11,20 @@ public:
     virtual ~CarSelector() {}
 
     virtual void initialize();
+    // Callback for button click (if using Callback)
+    virtual void nextButtonClicked();
+    void setNextButtonClickedCallback(GenericCallback<const CarSelector&>& callback);
     // Set the parent view to communicate with presenter
-     void setParentView(mainScreenView* view) { parentView = view; }
-
     // Public method to update counter from presenter
     void setCarNumber(uint8_t value);
     uint8_t getCarNumber() const;
 protected:
-    mainScreenView* parentView;
-    uint8_t currentCarNumber;
-    // Callback for button click (if using Callback)
-    void nextButtonClicked();
-    // Update the textarea display
-    void updateCarNumberTextArea();
 private:
+    GenericCallback<const CarSelector&>* nextButtonClickCallback{nullptr};
+    uint8_t currentCarNumber;
+
+    void updateCarNumberTextArea();
+
 
 };
 

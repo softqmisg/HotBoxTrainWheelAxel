@@ -14,7 +14,7 @@ uint16_t touchgfx::Font::getStringWidth(const touchgfx::Unicode::UnicodeChar* te
 {
     va_list pArg;
     va_start(pArg, text);
-    uint16_t width = getStringWidthLTR(TEXT_DIRECTION_LTR, text, pArg);
+    uint16_t width = getStringWidthRTL(TEXT_DIRECTION_LTR, text, pArg);
     va_end(pArg);
     return width;
 }
@@ -23,13 +23,14 @@ uint16_t touchgfx::Font::getStringWidth(touchgfx::TextDirection textDirection, c
 {
     va_list pArg;
     va_start(pArg, text);
-    uint16_t width = getStringWidthLTR(textDirection, text, pArg);
+    uint16_t width = getStringWidthRTL(textDirection, text, pArg);
     va_end(pArg);
     return width;
 }
 
 touchgfx::Unicode::UnicodeChar touchgfx::TextProvider::getNextLigature(TextDirection direction)
 {
+    nextCharacters.replaceAt0(unicodeConverter(direction));
     if (fontGsubTable && nextCharacters.peekChar())
     {
         substituteGlyphs();
@@ -45,13 +46,14 @@ touchgfx::Unicode::UnicodeChar touchgfx::TextProvider::getNextLigature(TextDirec
 void touchgfx::TextProvider::initializeInternal()
 {
     fillInputBuffer();
+    unicodeConverterInit();
 }
 
 void touchgfx::LCD::drawString(touchgfx::Rect widgetArea, const touchgfx::Rect& invalidatedArea, const touchgfx::LCD::StringVisuals& stringVisuals, const touchgfx::Unicode::UnicodeChar* format, ...)
 {
     va_list pArg;
     va_start(pArg, format);
-    drawStringLTR(widgetArea, invalidatedArea, stringVisuals, format, pArg);
+    drawStringRTL(widgetArea, invalidatedArea, stringVisuals, format, pArg);
     va_end(pArg);
 }
 
@@ -66,18 +68,31 @@ KEEP extern const touchgfx::Unicode::UnicodeChar texts_all_languages[] TEXT_LOCA
     0x2, 0x20, 0xba, 0x43, 0x0, // @62 "<> ?C"
     0x2, 0xba, 0x43, 0x0, // @67 "<>?C"
     0x23, 0x2, 0x0, // @71 "#<>"
-    0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x0, // @74 "Setting"
-    0x41, 0x63, 0x63, 0x65, 0x70, 0x74, 0x0, // @82 "Accept"
-    0x41, 0x6c, 0x61, 0x72, 0x6d, 0x0, // @89 "Alarm"
-    0x2b, 0x31, 0x32, 0x35, 0x0, // @95 "+125"
-    0x4e, 0x65, 0x78, 0x74, 0x0, // @100 "Next"
-    0x2b, 0x32, 0x37, 0x0, // @105 "+27"
-    0x57, 0x65, 0x64, 0x0, // @109 "Wed"
-    0x30, 0x30, 0x0 // @113 "00"
+    0x4e, 0x65, 0x77, 0x20, 0x54, 0x65, 0x78, 0x74, 0x0, // @74 "New Text"
+    0x50, 0x61, 0x73, 0x73, 0x77, 0x6f, 0x72, 0x64, 0x0, // @83 "Password"
+    0x55, 0x73, 0x65, 0x72, 0x6e, 0x61, 0x6d, 0x65, 0x0, // @92 "Username"
+    0x53, 0x65, 0x74, 0x74, 0x69, 0x6e, 0x67, 0x0, // @101 "Setting"
+    0x41, 0x63, 0x63, 0x65, 0x70, 0x74, 0x0, // @109 "Accept"
+    0x43, 0x61, 0x6e, 0x63, 0x65, 0x6c, 0x0, // @116 "Cancel"
+    0x62f, 0x648, 0x634, 0x646, 0x628, 0x647, 0x0, // @123 "??????"
+    0x6cc, 0x6a9, 0x634, 0x646, 0x628, 0x647, 0x0, // @130 "??????"
+    0x41, 0x6c, 0x61, 0x72, 0x6d, 0x0, // @137 "Alarm"
+    0x2b, 0x31, 0x32, 0x35, 0x0, // @143 "+125"
+    0x45, 0x78, 0x69, 0x74, 0x0, // @148 "Exit"
+    0x4e, 0x65, 0x78, 0x74, 0x0, // @153 "Next"
+    0x2b, 0x32, 0x37, 0x0, // @158 "+27"
+    0x4d, 0x6f, 0x6e, 0x0, // @162 "Mon"
+    0x53, 0x75, 0x6e, 0x0, // @166 "Sun"
+    0x57, 0x65, 0x64, 0x0, // @170 "Wed"
+    0x30, 0x30, 0x0, // @174 "00"
+    0x4f, 0x4b, 0x0 // @177 "OK"
 };
 
 TEXT_LOCATION_FLASH_PRAGMA
 KEEP extern const uint32_t indicesGb[] TEXT_LOCATION_FLASH_ATTRIBUTE;
+
+TEXT_LOCATION_FLASH_PRAGMA
+KEEP extern const uint32_t indicesFa[] TEXT_LOCATION_FLASH_ATTRIBUTE;
 
 // Array holding dynamically installed languages
 struct TranslationHeader
@@ -86,11 +101,12 @@ struct TranslationHeader
     uint32_t offset_to_indices;
     uint32_t offset_to_typedtext;
 };
-static const TranslationHeader* languagesArray[1] = { 0 };
+static const TranslationHeader* languagesArray[2] = { 0 };
 
 // Compiled and linked in languages
 static const uint32_t* const staticLanguageIndices[] = {
-    indicesGb
+    indicesGb,
+    indicesFa
 };
 
 touchgfx::LanguageId touchgfx::Texts::currentLanguage = static_cast<touchgfx::LanguageId>(0);
@@ -100,7 +116,7 @@ static const uint32_t* currentLanguageIndices = 0;
 void touchgfx::Texts::setLanguage(touchgfx::LanguageId id)
 {
     const touchgfx::TypedText::TypedTextData* currentLanguageTypedText = 0;
-    if (id < 1)
+    if (id < 2)
     {
         if (languagesArray[id] != 0)
         {

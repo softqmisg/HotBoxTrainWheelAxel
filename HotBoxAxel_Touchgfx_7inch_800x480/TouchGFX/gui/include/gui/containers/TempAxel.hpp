@@ -2,7 +2,6 @@
 #define TEMPAXEL_HPP
 
 #include <gui_generated/containers/TempAxelBase.hpp>
-#define ERROR_TEMP 32767
 
 class TempAxel : public TempAxelBase
 {

@@ -196,6 +196,18 @@
     <Filter Include="Header Files\generated\simulator\include\simulator\video">
       <UniqueIdentifier>ED67E71A-D454-58B8-10ED-A243E0FBCF60</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\gui\settingscreen_screen">
+      <UniqueIdentifier>CCA96177-EEAB-89AC-798E-96BB1B5BC753</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gui\settingscreen_screen">
+      <UniqueIdentifier>FA01CBF6-A4BF-84EF-9C0B-64F94716117F</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\generated\gui_generated\settingscreen_screen">
+      <UniqueIdentifier>BA1B7B40-1027-8562-E873-27910433DD8D</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\generated\gui_generated\settingscreen_screen">
+      <UniqueIdentifier>52EFB2DC-FF24-9A62-08CA-CFA55B8293B8</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(TouchGFXReleasePath)\framework\source\platform\driver\touch\SDL2TouchController.cpp">
@@ -272,6 +284,21 @@
     </ClCompile>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\TempAxelListBase.cpp">
       <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\containers\passwordPopup.cpp">
+      <Filter>Source Files\gui\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\PasswordPopupBase.cpp">
+      <Filter>Source Files\generated\gui_generated\containers</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\settingscreen_screen\settingScreenPresenter.cpp">
+      <Filter>Source Files\gui\settingscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\gui\src\settingscreen_screen\settingScreenView.cpp">
+      <Filter>Source Files\gui\settingscreen_screen</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\generated\gui_generated\src\settingscreen_screen\settingScreenViewBase.cpp">
+      <Filter>Source Files\generated\gui_generated\settingscreen_screen</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -759,6 +786,21 @@
     </ClInclude>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\TempAxelListBase.hpp">
       <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\containers\passwordPopup.hpp">
+      <Filter>Header Files\gui\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\PasswordPopupBase.hpp">
+      <Filter>Header Files\generated\gui_generated\containers</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\settingscreen_screen\settingScreenPresenter.hpp">
+      <Filter>Header Files\gui\settingscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\gui\include\gui\settingscreen_screen\settingScreenView.hpp">
+      <Filter>Header Files\gui\settingscreen_screen</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\settingscreen_screen\settingScreenViewBase.hpp">
+      <Filter>Header Files\generated\gui_generated\settingscreen_screen</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

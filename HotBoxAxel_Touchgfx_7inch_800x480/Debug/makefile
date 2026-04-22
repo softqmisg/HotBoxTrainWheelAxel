@@ -11,6 +11,7 @@ RM := rm -rf
 -include sources.mk
 -include TouchGFX/target/generated/subdir.mk
 -include TouchGFX/target/subdir.mk
+-include TouchGFX/gui/src/settingscreen_screen/subdir.mk
 -include TouchGFX/gui/src/model/subdir.mk
 -include TouchGFX/gui/src/mainscreen_screen/subdir.mk
 -include TouchGFX/gui/src/containers/subdir.mk
@@ -19,16 +20,11 @@ RM := rm -rf
 -include TouchGFX/generated/images/src/__generated/subdir.mk
 -include TouchGFX/generated/images/src/Gradient_bg/subdir.mk
 -include TouchGFX/generated/images/src/subdir.mk
+-include TouchGFX/generated/gui_generated/src/settingscreen_screen/subdir.mk
 -include TouchGFX/generated/gui_generated/src/mainscreen_screen/subdir.mk
 -include TouchGFX/generated/gui_generated/src/containers/subdir.mk
 -include TouchGFX/generated/gui_generated/src/common/subdir.mk
 -include TouchGFX/generated/fonts/src/subdir.mk
--include TouchGFX/build/MINGW32_NT-6.2/gui/src/model/subdir.mk
--include TouchGFX/build/MINGW32_NT-6.2/gui/src/containers/subdir.mk
--include TouchGFX/build/MINGW32_NT-6.2/gui/src/common/subdir.mk
--include TouchGFX/build/MINGW32_NT-6.2/generated/simulator/src/video/subdir.mk
--include TouchGFX/build/MINGW32_NT-6.2/generated/gui_generated/src/containers/subdir.mk
--include TouchGFX/build/MINGW32_NT-6.2/generated/fonts/src/subdir.mk
 -include TouchGFX/App/subdir.mk
 -include Drivers/STM32H7xx_HAL_Driver/Src/subdir.mk
 -include Core/Startup/subdir.mk

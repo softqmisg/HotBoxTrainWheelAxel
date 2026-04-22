@@ -13,15 +13,6 @@
             "LockPosition": true
           },
           {
-            "Type": "Image",
-            "Name": "image1",
-            "X": -515,
-            "Y": 218,
-            "Width": 480,
-            "Height": 262,
-            "RelativeFilename": "keyboard_normal.png"
-          },
-          {
             "Type": "CustomContainerInstance",
             "Name": "topBar",
             "Width": 800,
@@ -140,6 +131,116 @@
             },
             "TextRotation": "0",
             "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_rounded_action.json"
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "passwordPopup",
+            "Width": 800,
+            "Height": 480,
+            "Visible": false,
+            "CustomContainerDefinitionName": "PasswordPopup"
+          },
+          {
+            "Type": "Image",
+            "Name": "image1",
+            "X": -493,
+            "Y": 218,
+            "Width": 480,
+            "Height": 262,
+            "RelativeFilename": "keyboard_normal.png"
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "settingButton"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "settingButtonClicked"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "settingScreen",
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 800,
+            "Height": 480
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "topBar",
+            "Width": 800,
+            "Height": 66,
+            "CustomContainerDefinitionName": "TopBar"
+          },
+          {
+            "Type": "Container",
+            "Name": "container1",
+            "Y": 66,
+            "Width": 800,
+            "Height": 414,
+            "Components": [
+              {
+                "Type": "TiledImage",
+                "Name": "tiledImage1",
+                "Width": 800,
+                "Height": 414,
+                "LockPosition": true,
+                "FileName": "Gradient bg\\night_large.png"
+              },
+              {
+                "Type": "SwipeContainer",
+                "Name": "swipeContainer",
+                "Width": 800,
+                "Height": 414,
+                "SwipeCutoff": 50,
+                "ShowPageIndicator": true,
+                "PageIndicatorX": 360,
+                "CenteredX": true,
+                "IndicatorImageNormal": "__generated\\alternate_theme_images_widgets_swipecontainer_medium_off_normal.png",
+                "IndicatorImageHighlight": "__generated\\alternate_theme_images_widgets_swipecontainer_medium_on_active.png",
+                "EndSwipeElasticWidth": 50,
+                "SelectedPage": "swipeContainer1Page4",
+                "Preset": "alternate_theme\\presets\\swipecontainer\\medium_active.json",
+                "Components": [
+                  {
+                    "Type": "Container",
+                    "Name": "swipeContainer1Page1",
+                    "Width": 800,
+                    "Height": 414,
+                    "Components": []
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "swipeContainer1Page2",
+                    "Width": 800,
+                    "Height": 414,
+                    "Components": []
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "swipeContainer1Page3",
+                    "Width": 800,
+                    "Height": 414,
+                    "Components": []
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "swipeContainer1Page4",
+                    "Width": 800,
+                    "Height": 414,
+                    "Components": []
+                  }
+                ]
+              }
+            ]
           }
         ],
         "Interactions": []
@@ -162,50 +263,11 @@
           },
           {
             "Type": "TextArea",
-            "Name": "envTempText",
-            "X": 651,
-            "Y": 11,
-            "Width": 119,
-            "Height": 48,
-            "LockPosition": true,
-            "TextId": "__SingleUse_J89U",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 13,
-              "Green": 255,
-              "Blue": 49
-            },
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "__SingleUse_T6GX",
-              "UseBuffer": true,
-              "BufferSize": 10
-            }
-          },
-          {
-            "Type": "DigitalClock",
-            "Name": "digitalClock",
-            "X": 351,
-            "Y": 7,
-            "Width": 112,
-            "Height": 52,
-            "LockPosition": true,
-            "TextColor": {
-              "Red": 255,
-              "Green": 230
-            },
-            "TextId": "__SingleUse_0TBK",
-            "DisplayLeadingZeroForHourIndicator": true,
-            "InitialHour": 10,
-            "InitialMinute": 10
-          },
-          {
-            "Type": "TextArea",
             "Name": "dateText",
-            "X": 10,
-            "Y": 11,
-            "Width": 341,
-            "Height": 48,
+            "X": 12,
+            "Y": 12,
+            "Width": 293,
+            "Height": 42,
             "LockPosition": true,
             "TextId": "T_DATE_FORMAT",
             "TextRotation": "0",
@@ -225,9 +287,86 @@
               "UseBuffer": true,
               "BufferSize": 6
             }
+          },
+          {
+            "Type": "DigitalClock",
+            "Name": "digitalClock",
+            "X": 352,
+            "Y": 7,
+            "Width": 112,
+            "Height": 52,
+            "LockPosition": true,
+            "TextColor": {
+              "Red": 255,
+              "Green": 230
+            },
+            "TextId": "__SingleUse_0TBK",
+            "DisplayLeadingZeroForHourIndicator": true,
+            "InitialHour": 10,
+            "InitialMinute": 10
+          },
+          {
+            "Type": "TextArea",
+            "Name": "envTempText",
+            "X": 652,
+            "Y": 12,
+            "Width": 103,
+            "Height": 42,
+            "Visible": false,
+            "LockPosition": true,
+            "TextId": "__SingleUse_J89U",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 13,
+              "Green": 255,
+              "Blue": 49
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_T6GX",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "buttonWithLabel",
+            "X": 609,
+            "Y": 8,
+            "Width": 175,
+            "Height": 50,
+            "Visible": false,
+            "LockPosition": true,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_active.png",
+            "TextId": "__SingleUse_RNT7",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_round_active.json"
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "buttonWithLabel"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "exitButtonClicked"
+            }
+          }
+        ]
       },
       {
         "Name": "Led",
@@ -607,6 +746,165 @@
           }
         ],
         "Interactions": []
+      },
+      {
+        "Name": "PasswordPopup",
+        "Width": 800,
+        "Height": 480,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box2",
+            "Width": 800,
+            "Height": 480,
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "Alpha": 0,
+            "Clickable": true
+          },
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "X": 79,
+            "Y": 93,
+            "Width": 601,
+            "Height": 256,
+            "Alpha": 210
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "okButton",
+            "X": 147,
+            "Y": 279,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_normal.png",
+            "TextId": "__SingleUse_L8CB",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_round_normal.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "exitButton",
+            "X": 433,
+            "Y": 279,
+            "Width": 175,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
+            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_normal.png",
+            "TextId": "__SingleUse_Y238",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_round_normal.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea1",
+            "X": 101,
+            "Y": 183,
+            "Width": 160,
+            "Height": 42,
+            "TextId": "__SingleUse_D8HE",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 245,
+              "Green": 235,
+              "Blue": 235
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "TextArea",
+            "Name": "textArea2",
+            "X": 96,
+            "Y": 114,
+            "Width": 167,
+            "Height": 42,
+            "TextId": "__SingleUse_X23Z",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 252,
+              "Blue": 252
+            },
+            "AutoSize": true
+          },
+          {
+            "Type": "ToggleButton",
+            "Name": "userToggleButton",
+            "X": 345,
+            "Y": 114,
+            "Width": 110,
+            "Height": 50,
+            "Pressed": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_on_normal.png",
+            "Released": "__generated\\alternate_theme_images_widgets_togglebutton_medium_rounded_off_light.png",
+            "Preset": "alternate_theme\\presets\\togglebutton\\medium\\rounded.json"
+          },
+          {
+            "Type": "TextArea",
+            "Name": "passwordTextArea",
+            "X": 345,
+            "Y": 183,
+            "Width": 154,
+            "Height": 42,
+            "TextId": "__SingleUse_PZFN",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "AutoSize": true
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "Interaction1",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "okButton"
+            },
+            "Action": {
+              "Type": "ActionGotoScreen",
+              "ScreenTransitionType": "ScreenTransitionNone",
+              "ActionComponent": "settingScreen"
+            }
+          },
+          {
+            "InteractionName": "Interaction2",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "exitButton"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "exitButtonClicked"
+            }
+          }
+        ]
       }
     ],
     "Name": "MyApplication",

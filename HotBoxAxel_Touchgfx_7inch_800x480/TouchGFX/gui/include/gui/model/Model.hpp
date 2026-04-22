@@ -1,9 +1,13 @@
 #ifndef MODEL_HPP
 #define MODEL_HPP
 #include <touchgfx/hal/Types.hpp>
+#ifndef SIMULATOR
 #include <rtc.h>
 #include "Car.h"
 #include "LedParam.h"
+#endif
+
+
 class ModelListener;
 
 class Model
@@ -34,15 +38,16 @@ public:
 
      void setCalenderType(Model::CalenderType type);
      Model::CalenderType getCalenderType() const {return calenderType;}
-     //Manage EnvTemp
-     void updateEnvTemperature();
     // Manage CarNumber
     void saveCarNumber(uint8_t carNum);
     int  getCarNumber() const;
-    // Manage AxelTemperature
-    void updateAxelTemperature(uint8_t carNum);
+    // Manage AxelTemperature &EnvTemp
+    void updateCarTemperatures(uint8_t carNum);
     //Manage Leds
-    void updateLed(int ledId, LedParam::ColorState state);
+    void updateLedMain();
+    void updateLedAlarm();
+    void updateLedComm();
+    void colorLedChanged(uint8_t ledId, LedParam::ColorState colorState);
 protected:
 
 private:
@@ -58,8 +63,6 @@ private:
     uint8_t month;
     uint16_t year;
     Model::CalenderType  calenderType;
-    // envTemp variable
-    int16_t envTemperature;
     //CarNumber Variable
     uint8_t carNumber;
     Car cars[MAX_CARNUM];

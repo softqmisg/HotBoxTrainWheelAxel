@@ -6,7 +6,8 @@
 #include <texts/TextKeysAndLanguages.hpp>
 #include <touchgfx/Color.hpp>
 
-TopBarBase::TopBarBase()
+TopBarBase::TopBarBase() :
+    buttonCallback(this, &TopBarBase::buttonCallbackHandler)
 {
     setWidth(800);
     setHeight(66);
@@ -15,24 +16,7 @@ TopBarBase::TopBarBase()
     bgGradientTile.setOffset(0, 0);
     add(bgGradientTile);
 
-    envTempText.setXY(651, 11);
-    envTempText.setColor(touchgfx::Color::getColorFromRGB(13, 255, 49));
-    envTempText.setLinespacing(0);
-    Unicode::snprintf(envTempTextBuffer, ENVTEMPTEXT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_T6GX).getText());
-    envTempText.setWildcard(envTempTextBuffer);
-    envTempText.resizeToCurrentText();
-    envTempText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_J89U));
-    add(envTempText);
-
-    digitalClock.setPosition(351, 7, 112, 52);
-    digitalClock.setColor(touchgfx::Color::getColorFromRGB(255, 230, 0));
-    digitalClock.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0TBK));
-    digitalClock.displayLeadingZeroForHourIndicator(true);
-    digitalClock.setDisplayMode(touchgfx::DigitalClock::DISPLAY_24_HOUR_NO_SECONDS);
-    digitalClock.setTime24Hour(10, 10, 0);
-    add(digitalClock);
-
-    dateText.setXY(10, 11);
+    dateText.setXY(12, 12);
     dateText.setColor(touchgfx::Color::getColorFromRGB(253, 252, 255));
     dateText.setLinespacing(0);
     touchgfx::Unicode::snprintf(dateTextBuffer1, DATETEXTBUFFER1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_6KTI).getText());
@@ -40,8 +24,35 @@ TopBarBase::TopBarBase()
     touchgfx::Unicode::snprintf(dateTextBuffer2, DATETEXTBUFFER2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_2A0D).getText());
     dateText.setWildcard2(dateTextBuffer2);
     dateText.resizeToCurrentText();
-    dateText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_QHDQ));
+    dateText.setTypedText(touchgfx::TypedText(T_T_DATE_FORMAT));
     add(dateText);
+
+    digitalClock.setPosition(352, 7, 112, 52);
+    digitalClock.setColor(touchgfx::Color::getColorFromRGB(255, 230, 0));
+    digitalClock.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0TBK));
+    digitalClock.displayLeadingZeroForHourIndicator(true);
+    digitalClock.setDisplayMode(touchgfx::DigitalClock::DISPLAY_24_HOUR_NO_SECONDS);
+    digitalClock.setTime24Hour(10, 10, 0);
+    add(digitalClock);
+
+    envTempText.setXY(652, 12);
+    envTempText.setColor(touchgfx::Color::getColorFromRGB(13, 255, 49));
+    envTempText.setLinespacing(0);
+    Unicode::snprintf(envTempTextBuffer, ENVTEMPTEXT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_T6GX).getText());
+    envTempText.setWildcard(envTempTextBuffer);
+    envTempText.resizeToCurrentText();
+    envTempText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_J89U));
+    envTempText.setVisible(false);
+    add(envTempText);
+
+    buttonWithLabel.setXY(609, 8);
+    buttonWithLabel.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_ACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID));
+    buttonWithLabel.setLabelText(touchgfx::TypedText(T___SINGLEUSE_RNT7));
+    buttonWithLabel.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    buttonWithLabel.setVisible(false);
+    buttonWithLabel.setAction(buttonCallback);
+    add(buttonWithLabel);
 }
 
 TopBarBase::~TopBarBase()
@@ -52,4 +63,15 @@ TopBarBase::~TopBarBase()
 void TopBarBase::initialize()
 {
 
+}
+
+void TopBarBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &buttonWithLabel)
+    {
+        //Interaction1
+        //When buttonWithLabel clicked call virtual function
+        //Call exitButtonClicked
+        exitButtonClicked();
+    }
 }

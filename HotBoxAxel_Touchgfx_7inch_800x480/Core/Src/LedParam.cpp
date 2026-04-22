@@ -9,16 +9,18 @@
 
 LedParam::LedParam(uint8_t id):
 id(id),
-colorON(ColorState::OFF),
-colorOFF(ColorState::OFF),
-currentColor(ColorState::OFF),
+//colorON(ColorState::OFF),
+//colorOFF(ColorState::OFF),
+currentColor(ColorState::COLORFIXED),
 isBlinking(false),
-period(60),
+periodOn(60),
+periodOff(60),
+currentMode(0),
 timerCounter(0),
 callback(nullptr)
 {
 	// TODO Auto-generated constructor stub
-
+	updateOutput();
 }
 
 LedParam::~LedParam() {
@@ -33,59 +35,80 @@ void LedParam::updateOutput()
 		callback(id,currentColor);
 }
 
-void LedParam::setPeriod(uint16_t pd)
+void LedParam::setPeriod(uint16_t pdon,uint16_t pdoff)
 {
-	period=pd;
-	if(timerCounter>=pd)
-		timerCounter=0;
+	periodOn=pdon;
+	periodOff=pdoff;
+	if(currentMode)
+	{
+		if(timerCounter>=pdon)
+		{
+			timerCounter=0;
+		}
+	}
+	else
+	{
+		if(timerCounter>=pdoff)
+			timerCounter=0;
+	}
 }
 
-void LedParam::setPeriodMS(uint16_t ms)
+void LedParam::setPeriodMS(uint16_t pdmson,uint16_t pdmsoff)
 {
     // Assuming 60fps = 16.67ms per frame
-    int ticks = (ms * 60) / 1000;
-    if (ticks < 1) ticks = 1;
-    setPeriod(ticks);
+    int ticksOn = (pdmson * 60) / 1000;
+    if (ticksOn < 1) ticksOn = 1;
+
+    int ticksOff = (pdmsoff * 60) / 1000;
+    if (ticksOff < 1) ticksOff= 1;
+
+
+    setPeriod(ticksOn,ticksOff);
 }
-void LedParam::setBlinking(ColorState stateon,ColorState stateoff)
+void LedParam::setFixed()
 {
-	colorON=stateon;
-	colorOFF=stateoff;
-	if(isBlinking)
-		currentColor=colorOFF;
-	updateOutput();
-}
-void LedParam::setFixed(ColorState colorfixed)
-{
-	colorFixed=colorfixed;
 	if(!isBlinking)
-		currentColor=colorFixed;
+		currentColor=ColorState::COLORFIXED;
 	updateOutput();
 }
 void LedParam::startBlinking()
 {
 	isBlinking=true;
 	timerCounter=0;
-	currentColor=colorOFF;
+	currentMode=1;
+	currentColor=ColorState::COLORBLINKOFF;
 	updateOutput();
 }
 void LedParam::stopBlinking()
 {
 	isBlinking=false;
-	currentColor=colorFixed;
+	currentColor=ColorState::COLORFIXED;
 	updateOutput();
 }
 void LedParam::tick(){
 	if(isBlinking)
 	{
 		timerCounter++;
-		if(timerCounter>period)
+		if(currentMode) //if(OnMode)
 		{
-			timerCounter=0;
-			if(currentColor==colorOFF)
-				currentColor=colorON;
-			else
-				currentColor=colorOFF;
+			if(timerCounter>(int)periodOn)
+			{
+				timerCounter=0;
+				currentColor=ColorState::COLORBLINKOFF;
+				currentMode=0;
+				updateOutput();
+			}
+		}
+		else //if(OffMode)
+		{
+			if(timerCounter>(int)periodOff)
+			{
+				timerCounter=0;
+				currentColor=ColorState::COLORBLINKON;
+				currentMode=1;
+				updateOutput();
+			}
+
 		}
 	}
 }

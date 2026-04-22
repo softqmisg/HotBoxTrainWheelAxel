@@ -14,11 +14,13 @@ void mainScreenPresenter::activate()
     model->startRefreshingMain();
     requestTimeDateUpdate();// Get initial time immediately
     // EnvTemperature init
-    requestEnvTemperatureUpdate();
+//    requestEnvTemperatureUpdate();
 	// Carselector init
 	uint8_t saved= getSavedCarNumber();
     view.updateCarNumber(saved);
     requestCarTempUpdate(saved);
+
+    requestLedColorUpdate();
 }
 
 void mainScreenPresenter::deactivate()
@@ -49,15 +51,7 @@ Model::CalenderType mainScreenPresenter:: getCalenderType() {
 	}
 	return Model::CalenderType::GEORGIAN;
 }
-/////////////EnvTemperature////////////////////////
-void mainScreenPresenter::requestEnvTemperatureUpdate()
-{
-	model->updateEnvTemperature();
-}
-void mainScreenPresenter::envTempUpdated(int16_t temp)
-{
-	view.updateEnvTemperature(temp);
-}
+
 ///////////////CarSelector////////////////////
 void mainScreenPresenter::saveCarNumber(uint8_t carNum) {
    if (model != nullptr) {
@@ -78,10 +72,40 @@ void mainScreenPresenter::carNumberUpdated(uint8_t carNum)
 ///////////////AxelTemp //////////////////////////////////
 void mainScreenPresenter::requestCarTempUpdate(uint8_t carNum)
 {
-	model->updateAxelTemperature(carNum);
+	model->updateCarTemperatures(carNum);
+
 }
 void mainScreenPresenter::carTempUpdated(Car car)
 {
-	view.updateAxelTemperatures(car);
+	view.updateCarTemperatures(car);
 }
-
+///////////////EnvTemperature////////////////////////
+//void mainScreenPresenter::requestEnvTemperatureUpdate()
+//{
+//	model->updateEnvTemperature();
+//}
+//void mainScreenPresenter::envTempUpdated(int16_t temp)
+//{
+//	view.updateEnvTemperature(temp);
+//}
+void mainScreenPresenter::requestLedColorUpdate()
+{
+	model->updateLedMain();
+	model->updateLedAlarm();
+	model->updateLedComm();
+}
+void mainScreenPresenter::ledColorUpdate(uint8_t ledId, LedParam::ColorState colorState)
+{
+	switch(ledId)
+	{
+	case 0: //Main
+		view.updateLedMainColor(colorState);
+		break;
+	case 1: //Alarm
+		view.updateLedAlarmColor(colorState);
+		break;
+	case 2: //Comm
+		view.updateLedCommColor(colorState);
+		break;
+	}
+}

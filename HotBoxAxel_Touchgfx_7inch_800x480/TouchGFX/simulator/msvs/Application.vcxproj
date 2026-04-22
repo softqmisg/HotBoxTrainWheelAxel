@@ -36,6 +36,11 @@
     <ClCompile Include="..\..\generated\gui_generated\src\containers\TempAxelBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\TempAxelList.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\TempAxelListBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\passwordPopup.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\PasswordPopupBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\settingscreen_screen\settingScreenPresenter.cpp"/>
+    <ClCompile Include="..\..\gui\src\settingscreen_screen\settingScreenView.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\settingscreen_screen\settingScreenViewBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -201,6 +206,11 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\TempAxelBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\TempAxelList.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\TempAxelListBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\passwordPopup.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\PasswordPopupBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\settingscreen_screen\settingScreenPresenter.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\settingscreen_screen\settingScreenView.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\settingscreen_screen\settingScreenViewBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

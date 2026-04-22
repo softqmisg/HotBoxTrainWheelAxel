@@ -12,24 +12,30 @@ public:
     virtual ~mainScreenView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
-    void setPresenter(mainScreenPresenter& presenter) { this->presenter = &presenter; }
+//    void setPresenter(mainScreenPresenter& presenter) { this->presenter = &presenter; }
 
     ////////////////digitalClock////////////////////////////
     // Update methods called by Presenter
     void updateClock(uint8_t hours, uint8_t minutes, uint8_t seconds);
     void updateDate(uint8_t day, uint8_t month, uint16_t year);
-    //////////////////EnvTemperature//////////////////////
-    void updateEnvTemperature(int16_t temp);
     ////////////////carSelector//////////////////
-    void onCarNumberChanged(uint8_t newValue);    // Called by CarSelector when value changes
+    void onCarNumberChanged(const CarSelector& selector);    // Called by CarSelector when value changes
     void updateCarNumber(uint8_t value);    // Called by Presenter to update UI
     /////////////////AxelTemperature///////////////////////
-    void updateAxelTemperatures(Car carData);
-
+    void updateCarTemperatures(Car carData);
+//    //////////////////EnvTemperature//////////////////////
+//    void updateEnvTemperature(int16_t temp);
 
 //    enum class LEDTYPE{ MAIN,ALARM,COMM};
 //    void updateLedState(mainScreenView::LEDTYPE ledtype,Led::State state);
-
+    /////////////////////led /////////////////////////
+    void updateLedMainColor(LedParam::ColorState colorState);
+    void updateLedAlarmColor(LedParam::ColorState colorState);
+    void updateLedCommColor(LedParam::ColorState colorState);
+    /////////Setting Button////////////
+    virtual void settingButtonClicked();
+private:
+    Callback<mainScreenView, const CarSelector&> carNumberChangedCallback;
 };
 
 #endif // MAINSCREENVIEW_HPP

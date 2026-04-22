@@ -11,6 +11,7 @@
 #include <touchgfx/mixins/FadeAnimator.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/containers/clock/DigitalClock.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
 
 class TopBarBase : public touchgfx::Container
 {
@@ -18,6 +19,14 @@ public:
     TopBarBase();
     virtual ~TopBarBase();
     virtual void initialize();
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void exitButtonClicked()
+    {
+        // Override and implement this function in TopBar
+    }
 
 protected:
     FrontendApplication& application() {
@@ -28,21 +37,32 @@ protected:
      * Member Declarations
      */
     touchgfx::FadeAnimator< touchgfx::TiledImage > bgGradientTile;
-    touchgfx::TextAreaWithOneWildcard envTempText;
-    touchgfx::DigitalClock digitalClock;
     touchgfx::TextAreaWithTwoWildcards dateText;
+    touchgfx::DigitalClock digitalClock;
+    touchgfx::TextAreaWithOneWildcard envTempText;
+    touchgfx::ButtonWithLabel buttonWithLabel;
 
     /*
      * Wildcard Buffers
      */
-    static const uint16_t ENVTEMPTEXT_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar envTempTextBuffer[ENVTEMPTEXT_SIZE];
     static const uint16_t DATETEXTBUFFER1_SIZE = 15;
     touchgfx::Unicode::UnicodeChar dateTextBuffer1[DATETEXTBUFFER1_SIZE];
     static const uint16_t DATETEXTBUFFER2_SIZE = 6;
     touchgfx::Unicode::UnicodeChar dateTextBuffer2[DATETEXTBUFFER2_SIZE];
+    static const uint16_t ENVTEMPTEXT_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar envTempTextBuffer[ENVTEMPTEXT_SIZE];
 
 private:
+
+    /*
+     * Callback Declarations
+     */
+    touchgfx::Callback<TopBarBase, const touchgfx::AbstractButton&> buttonCallback;
+
+    /*
+     * Callback Handler Declarations
+     */
+    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
 };
 

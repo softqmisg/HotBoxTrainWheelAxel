@@ -8,7 +8,6 @@
 #include <mvp/View.hpp>
 #include <gui/mainscreen_screen/mainScreenPresenter.hpp>
 #include <touchgfx/widgets/Box.hpp>
-#include <touchgfx/widgets/Image.hpp>
 #include <gui/containers/TopBar.hpp>
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/TiledImage.hpp>
@@ -18,6 +17,8 @@
 #include <gui/containers/CarSelector.hpp>
 #include <gui/containers/TempAxelList.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <gui/containers/PasswordPopup.hpp>
+#include <touchgfx/widgets/Image.hpp>
 
 class mainScreenViewBase : public touchgfx::View<mainScreenPresenter>
 {
@@ -25,6 +26,14 @@ public:
     mainScreenViewBase();
     virtual ~mainScreenViewBase();
     virtual void setupScreen();
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void settingButtonClicked()
+    {
+        // Override and implement this function in mainScreen
+    }
 
 protected:
     FrontendApplication& application() {
@@ -36,7 +45,6 @@ protected:
      */
     touchgfx::Box __background;
     touchgfx::Box box1;
-    touchgfx::Image image1;
     TopBar topBar;
     touchgfx::Container container1;
     touchgfx::TiledImage tiledImage1;
@@ -49,6 +57,8 @@ protected:
     CarSelector carSelector;
     TempAxelList tempAxelList;
     touchgfx::ButtonWithLabel settingButton;
+    PasswordPopup passwordPopup;
+    touchgfx::Image image1;
 
 private:
 
@@ -57,6 +67,16 @@ private:
      */
     static const uint32_t CANVAS_BUFFER_SIZE = 12000;
     uint8_t canvasBuffer[CANVAS_BUFFER_SIZE];
+
+    /*
+     * Callback Declarations
+     */
+    touchgfx::Callback<mainScreenViewBase, const touchgfx::AbstractButton&> buttonCallback;
+
+    /*
+     * Callback Handler Declarations
+     */
+    void buttonCallbackHandler(const touchgfx::AbstractButton& src);
 
 };
 

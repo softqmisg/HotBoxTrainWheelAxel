@@ -1,6 +1,7 @@
 #include <gui/mainscreen_screen/mainScreenView.hpp>
+
 #include "Utility.h"
-mainScreenView::mainScreenView()
+mainScreenView::mainScreenView(): carNumberChangedCallback(this, &mainScreenView::onCarNumberChanged)
 {
 
 }
@@ -8,17 +9,18 @@ mainScreenView::mainScreenView()
 void mainScreenView::setupScreen()
 {
     mainScreenViewBase::setupScreen();
-    ledMain.setTitle("Main");ledMain.setState(Led::State::GREEN);
-    ledAlarm.setTitle("Alarm");ledAlarm.setState(Led::State::RED);
-    ledComm.setTitle("Comm");ledComm.setState(Led::State::GREEN);
-
+    ledMain.setTitle("Main");//ledMain.setState(Led::State::GREEN);
+    ledAlarm.setTitle("Alarm");//ledAlarm.setState(Led::State::RED);
+    ledComm.setTitle("Comm");//ledComm.setState(Led::State::GREEN);
+    topBar.setExitButtonVisible(false);
+    topBar.setEnvTemperatureVisible(true);
     /////////////digitalClock////////////////////////
 //    updateClock(0, 0, 0);
     //////////envTemperature//////////////////
 //    	updateEnvTemperature(0);
     //////////carSelector//////////////////
 //    carSelector.initialize();    // Initialize carSelector
-    carSelector.setParentView(this);    // Set parent view to communicate back
+    carSelector.setNextButtonClickedCallback(carNumberChangedCallback);    // Set parent view to communicate back
     if(presenter!=nullptr)    // Load saved value from presenter
     {
     	carSelector.setCarNumber(presenter->getSavedCarNumber());
@@ -55,16 +57,16 @@ void mainScreenView::updateDate(uint8_t day, uint8_t month, uint16_t year)
 		topBar.setDate(tmpDay, tmpMonth, tmpYear,name);
 	}
 }
-///////////envTempText//////////////
-void mainScreenView::updateEnvTemperature(int16_t temp)
-{
-	topBar.setEnvTemperature(temp);
-}
+/////////////envTempText//////////////
+//void mainScreenView::updateEnvTemperature(int16_t temp)
+//{
+//	topBar.setEnvTemperature(temp);
+//}
 ///////////carSelector//////////////
-void mainScreenView::onCarNumberChanged(uint8_t newValue){
+void mainScreenView::onCarNumberChanged(const CarSelector& selector){
     // Forward value change to presenter (saves to model)
     if (presenter != nullptr) {
-        presenter->saveCarNumber(newValue);
+        presenter->saveCarNumber(selector.getCarNumber());
     }
 }
 void mainScreenView::updateCarNumber(uint8_t value)
@@ -72,7 +74,73 @@ void mainScreenView::updateCarNumber(uint8_t value)
 	carSelector.setCarNumber(value);
 }
 //////////tempAxelList////////////////
-void mainScreenView::updateAxelTemperatures(Car carData)
+void mainScreenView::updateCarTemperatures(Car carData)
 {
 	tempAxelList.updateTempAllItems(carData);
+	topBar.setEnvTemperature(carData.getTemperature(MAX_AXELNUM).temperature);
+}
+//////////led////////////////////
+void mainScreenView::updateLedMainColor(LedParam::ColorState colorState)
+{
+	Led::Color color;
+	switch (colorState) {
+		case LedParam::ColorState::COLORFIXED:
+				color=Led::Color::GREY;
+			break;
+		case LedParam::ColorState::COLORBLINKOFF:
+			color=Led::Color::GREY;
+			break;
+		case LedParam::ColorState::COLORBLINKON:
+				color=Led::Color::GREEN;
+			break;
+
+		default:
+			break;
+	}
+	ledMain.setState(color);
+
+}
+void mainScreenView::updateLedAlarmColor(LedParam::ColorState colorState)
+{
+	Led::Color color;
+	switch (colorState) {
+		case LedParam::ColorState::COLORFIXED:
+				color=Led::Color::GREY;
+			break;
+		case LedParam::ColorState::COLORBLINKOFF:
+				color=Led::Color::GREEN;
+			break;
+		case LedParam::ColorState::COLORBLINKON:
+				color=Led::Color::RED;
+			break;
+
+		default:
+			break;
+	}
+	ledAlarm.setState(color);
+}
+void mainScreenView:: updateLedCommColor(LedParam::ColorState colorState)
+{
+	Led::Color color;
+	switch (colorState) {
+		case LedParam::ColorState::COLORFIXED:
+				color=Led::Color::GREY;
+			break;
+		case LedParam::ColorState::COLORBLINKOFF:
+				color=Led::Color::GREY;
+			break;
+		case LedParam::ColorState::COLORBLINKON:
+				color=Led::Color::RED;
+			break;
+
+		default:
+			break;
+	}
+	ledComm.setState(color);
+}
+/////////Setting Button////////////
+void mainScreenView::settingButtonClicked()
+{
+	passwordPopup.setVisible(true);
+	passwordPopup.invalidate();
 }

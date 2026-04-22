@@ -17,10 +17,11 @@ struct Typography
     static const touchgfx::FontId FARSI = 1;
     static const touchgfx::FontId HEADERFONT = 2;
     static const touchgfx::FontId HEADERFONT_AUTO_GENERATED_FOR_GB = 3;
-    static const touchgfx::FontId LEDFONT = 4;
-    static const touchgfx::FontId WARNINGFONT = 5;
-    static const touchgfx::FontId TEMPFONT = 6;
-    static const touchgfx::FontId CARFONT = 7;
+    static const touchgfx::FontId HEADERFONT_AUTO_GENERATED_FOR_FA = 4;
+    static const touchgfx::FontId LEDFONT = 5;
+    static const touchgfx::FontId WARNINGFONT = 6;
+    static const touchgfx::FontId TEMPFONT = 7;
+    static const touchgfx::FontId CARFONT = 8;
 };
 
 struct TypographyFontIndex
@@ -28,12 +29,13 @@ struct TypographyFontIndex
     static const touchgfx::FontId LARGE = 0;                            // Saira_Bold_40_4bpp
     static const touchgfx::FontId FARSI = 1;                            // Nazaninb_23_4bpp
     static const touchgfx::FontId HEADERFONT = 2;                       // Saira_Medium_40_4bpp
-    static const touchgfx::FontId HEADERFONT_AUTO_GENERATED_FOR_GB = 2; // Saira_Medium_40_4bpp
-    static const touchgfx::FontId LEDFONT = 3;                          // Saira_Medium_25_4bpp
-    static const touchgfx::FontId WARNINGFONT = 4;                      // SairaSemiCondensed_SemiBold_21_4bpp
-    static const touchgfx::FontId TEMPFONT = 5;                         // Saira_SemiBold_32_4bpp
-    static const touchgfx::FontId CARFONT = 6;                          // Saira_SemiBold_100_4bpp
-    static const uint16_t NUMBER_OF_FONTS = 7;
+    static const touchgfx::FontId HEADERFONT_AUTO_GENERATED_FOR_GB = 3; // Saira_Medium_35_4bpp
+    static const touchgfx::FontId HEADERFONT_AUTO_GENERATED_FOR_FA = 4; // Nazaninb_35_4bpp
+    static const touchgfx::FontId LEDFONT = 5;                          // Saira_Medium_25_4bpp
+    static const touchgfx::FontId WARNINGFONT = 6;                      // SairaSemiCondensed_SemiBold_21_4bpp
+    static const touchgfx::FontId TEMPFONT = 7;                         // Saira_SemiBold_32_4bpp
+    static const touchgfx::FontId CARFONT = 8;                          // Saira_SemiBold_100_4bpp
+    static const uint16_t NUMBER_OF_FONTS = 9;
 };
 
 class ApplicationFontProvider : public touchgfx::FontProvider

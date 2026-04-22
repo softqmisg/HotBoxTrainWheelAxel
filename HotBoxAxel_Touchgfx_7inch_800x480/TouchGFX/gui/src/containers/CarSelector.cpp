@@ -2,7 +2,6 @@
 #include <gui/mainscreen_screen/mainScreenView.hpp>
 #include "Car.h"
 CarSelector::CarSelector():
-parentView(nullptr),
 currentCarNumber(1)
 {
 
@@ -18,11 +17,13 @@ void CarSelector::nextButtonClicked(){
 	if(currentCarNumber>=MAX_CARNUM)
 		currentCarNumber=0;
 	updateCarNumberTextArea();
-    // Notify parent view (Screen1View) about value change
-    if (parentView != nullptr) {
-        parentView->onCarNumberChanged(currentCarNumber);
-    }
+    if (nextButtonClickCallback) nextButtonClickCallback->execute(*this);
 }
+
+void CarSelector::setNextButtonClickedCallback(GenericCallback<const CarSelector&>& callback) {
+	nextButtonClickCallback = &callback;
+}
+
 void CarSelector::updateCarNumberTextArea(){
 	Unicode::snprintf(carNumberTextBuffer,CARNUMBERTEXT_SIZE,"%02d",currentCarNumber+1);
 	carNumberText.invalidate();

@@ -8,6 +8,10 @@
 #ifndef INC_UTILITY_H_
 #define INC_UTILITY_H_
 #include <touchgfx/hal/Types.hpp>
+#define MAX_CARNUM	10
+#define MAX_AXELNUM	8
+#define ERROR_TEMP 32767
+
 class Utility {
 public:
     // Basic day of week calculation

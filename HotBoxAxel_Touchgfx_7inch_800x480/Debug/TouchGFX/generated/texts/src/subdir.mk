@@ -5,16 +5,19 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../TouchGFX/generated/texts/src/LanguageFa.cpp \
 ../TouchGFX/generated/texts/src/LanguageGb.cpp \
 ../TouchGFX/generated/texts/src/Texts.cpp \
 ../TouchGFX/generated/texts/src/TypedTextDatabase.cpp 
 
 OBJS += \
+./TouchGFX/generated/texts/src/LanguageFa.o \
 ./TouchGFX/generated/texts/src/LanguageGb.o \
 ./TouchGFX/generated/texts/src/Texts.o \
 ./TouchGFX/generated/texts/src/TypedTextDatabase.o 
 
 CPP_DEPS += \
+./TouchGFX/generated/texts/src/LanguageFa.d \
 ./TouchGFX/generated/texts/src/LanguageGb.d \
 ./TouchGFX/generated/texts/src/Texts.d \
 ./TouchGFX/generated/texts/src/TypedTextDatabase.d 
@@ -27,7 +30,7 @@ TouchGFX/generated/texts/src/%.o TouchGFX/generated/texts/src/%.su TouchGFX/gene
 clean: clean-TouchGFX-2f-generated-2f-texts-2f-src
 
 clean-TouchGFX-2f-generated-2f-texts-2f-src:
-	-$(RM) ./TouchGFX/generated/texts/src/LanguageGb.cyclo ./TouchGFX/generated/texts/src/LanguageGb.d ./TouchGFX/generated/texts/src/LanguageGb.o ./TouchGFX/generated/texts/src/LanguageGb.su ./TouchGFX/generated/texts/src/Texts.cyclo ./TouchGFX/generated/texts/src/Texts.d ./TouchGFX/generated/texts/src/Texts.o ./TouchGFX/generated/texts/src/Texts.su ./TouchGFX/generated/texts/src/TypedTextDatabase.cyclo ./TouchGFX/generated/texts/src/TypedTextDatabase.d ./TouchGFX/generated/texts/src/TypedTextDatabase.o ./TouchGFX/generated/texts/src/TypedTextDatabase.su
+	-$(RM) ./TouchGFX/generated/texts/src/LanguageFa.cyclo ./TouchGFX/generated/texts/src/LanguageFa.d ./TouchGFX/generated/texts/src/LanguageFa.o ./TouchGFX/generated/texts/src/LanguageFa.su ./TouchGFX/generated/texts/src/LanguageGb.cyclo ./TouchGFX/generated/texts/src/LanguageGb.d ./TouchGFX/generated/texts/src/LanguageGb.o ./TouchGFX/generated/texts/src/LanguageGb.su ./TouchGFX/generated/texts/src/Texts.cyclo ./TouchGFX/generated/texts/src/Texts.d ./TouchGFX/generated/texts/src/Texts.o ./TouchGFX/generated/texts/src/Texts.su ./TouchGFX/generated/texts/src/TypedTextDatabase.cyclo ./TouchGFX/generated/texts/src/TypedTextDatabase.d ./TouchGFX/generated/texts/src/TypedTextDatabase.o ./TouchGFX/generated/texts/src/TypedTextDatabase.su
 
 .PHONY: clean-TouchGFX-2f-generated-2f-texts-2f-src
 

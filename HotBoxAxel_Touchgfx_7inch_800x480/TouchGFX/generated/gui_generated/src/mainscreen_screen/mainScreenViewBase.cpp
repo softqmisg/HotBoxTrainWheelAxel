@@ -7,7 +7,8 @@
 #include <images/BitmapDatabase.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 
-mainScreenViewBase::mainScreenViewBase()
+mainScreenViewBase::mainScreenViewBase() :
+    buttonCallback(this, &mainScreenViewBase::buttonCallbackHandler)
 {
     touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
 
@@ -18,10 +19,6 @@ mainScreenViewBase::mainScreenViewBase()
     box1.setPosition(0, 0, 800, 480);
     box1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     add(box1);
-
-    image1.setXY(-515, 218);
-    image1.setBitmap(touchgfx::Bitmap(BITMAP_KEYBOARD_NORMAL_ID));
-    add(image1);
 
     topBar.setXY(0, 0);
     add(topBar);
@@ -61,7 +58,16 @@ mainScreenViewBase::mainScreenViewBase()
     settingButton.setLabelText(touchgfx::TypedText(T___SINGLEUSE_IN1J));
     settingButton.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     settingButton.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    settingButton.setAction(buttonCallback);
     add(settingButton);
+
+    passwordPopup.setXY(0, 0);
+    passwordPopup.setVisible(false);
+    add(passwordPopup);
+
+    image1.setXY(-493, 218);
+    image1.setBitmap(touchgfx::Bitmap(BITMAP_KEYBOARD_NORMAL_ID));
+    add(image1);
 }
 
 mainScreenViewBase::~mainScreenViewBase()
@@ -78,4 +84,16 @@ void mainScreenViewBase::setupScreen()
     warningBar.initialize();
     carSelector.initialize();
     tempAxelList.initialize();
+    passwordPopup.initialize();
+}
+
+void mainScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &settingButton)
+    {
+        //Interaction1
+        //When settingButton clicked call virtual function
+        //Call settingButtonClicked
+        settingButtonClicked();
+    }
 }
