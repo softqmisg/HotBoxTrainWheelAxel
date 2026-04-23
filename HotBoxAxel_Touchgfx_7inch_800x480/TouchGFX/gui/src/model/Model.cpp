@@ -7,7 +7,7 @@
 extern RTC_HandleTypeDef hrtc;
 Model::Model() :
 modelListener(0),
-tickCounter(0),
+tick1sCounter(0),
 refreshingMainEnabled(false),
 hours(0),
 minutes(0),
@@ -24,6 +24,7 @@ ledComm(2)
 	for(int i=0;i<MAX_CARNUM;i++)
 	{
 		cars[i].setCarID(i);
+		cars[i].setShowDurationMS(10000);
 		for(int axel=0;axel<MAX_AXELNUM;axel++)
 			cars[i].setTemperature(axel,0,Car::TempState::NORMAL);
 	}
@@ -45,12 +46,23 @@ void Model::tick()
 		ledMain.tick();
 		ledAlarm.tick();
 		ledComm.tick();
+		//////ShowCar change///////////////
+		tickCounter++;
+		if(tickCounter>=cars[carNumber].getDuration())
+		{
+			tickCounter=0;
 
-	    tickCounter++;
+			carNumber++;
+			if(carNumber>=MAX_CARNUM)
+				carNumber=0;
+			saveCarNumber(carNumber);
+		}
+		////////////////////////////////////
+	    tick1sCounter++;
 	    // Update clock every second (60 ticks = 1 second at 60 FPS)
-	    if (tickCounter >= 60)
+	    if (tick1sCounter >= 60)
 	    {
-	        tickCounter = 0;
+	        tick1sCounter = 0;
  		   updateRTC();  // Read from hardware RTC
 	 	   if (refreshingMainEnabled)
 	 	   {
@@ -153,6 +165,7 @@ void Model::setCalenderType(Model::CalenderType type)
 }
 //Manage CarNumber
 void Model::saveCarNumber(uint8_t carNum){
+	tickCounter=0;
 	carNumber=carNum;
 	if(modelListener!=nullptr)
 	{

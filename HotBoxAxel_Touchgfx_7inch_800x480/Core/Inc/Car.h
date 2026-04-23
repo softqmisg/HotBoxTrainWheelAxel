@@ -26,10 +26,15 @@ public:
 	void setTemperature(uint8_t axelID,Temp_t tempAxel);
 	Temp_t getTemperature(uint8_t axelID);
 
+	void setShowDuration(uint16_t duration);
+	void setShowDurationMS(uint16_t durationms);
+	uint16_t getDuration();
+
 private:
 	uint8_t carID;
 	Temp_t tempAxel[MAX_AXELNUM];
 	Temp_t tempEnv;
+	uint16_t showDuration;
 };
 
 #endif /* INC_CAR_H_ */

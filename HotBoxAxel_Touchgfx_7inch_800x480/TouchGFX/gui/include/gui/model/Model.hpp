@@ -52,6 +52,7 @@ protected:
 
 private:
     ModelListener* modelListener;
+    uint16_t tick1sCounter;
     uint16_t tickCounter;
     bool refreshingMainEnabled;
 

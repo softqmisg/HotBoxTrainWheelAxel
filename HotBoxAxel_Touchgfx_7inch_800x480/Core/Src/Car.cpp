@@ -54,3 +54,19 @@ Car::Temp_t Car::getTemperature(uint8_t axelID){
 	else
 		return tempEnv;
 }
+
+void Car::setShowDuration(uint16_t duration)
+{
+	showDuration=duration;
+}
+void Car::setShowDurationMS(uint16_t durationms)
+{
+    // Assuming 60fps = 16.67ms per frame
+    uint16_t ticks = (durationms * 60) / 1000;
+    if (ticks < 1) ticks = 1;
+	showDuration=ticks;
+}
+uint16_t Car::getDuration()
+{
+	return showDuration;
+}

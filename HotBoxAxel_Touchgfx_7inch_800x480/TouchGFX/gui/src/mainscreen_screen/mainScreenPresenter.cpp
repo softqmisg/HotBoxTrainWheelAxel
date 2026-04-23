@@ -67,6 +67,7 @@ int mainScreenPresenter::getSavedCarNumber() {
 }
 void mainScreenPresenter::carNumberUpdated(uint8_t carNum)
 {
+	 view.updateCarNumber(carNum);
 	requestCarTempUpdate(carNum);
 }
 ///////////////AxelTemp //////////////////////////////////
