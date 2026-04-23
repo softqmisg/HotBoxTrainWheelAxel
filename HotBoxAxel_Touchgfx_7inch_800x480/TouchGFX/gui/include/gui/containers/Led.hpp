@@ -11,7 +11,7 @@ public:
 
     virtual void initialize();
 //    void setTitle(const char *text);
-    void setTitle(const char* name);
+    void setTitle(touchgfx::TypedTextId textId);
 
     enum class Color{GREY,GREEN,RED};
     void setState(Led::Color state);

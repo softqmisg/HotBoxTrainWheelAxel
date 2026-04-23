@@ -14,28 +14,52 @@ class FlashDataReader;
 struct Typography
 {
     static const touchgfx::FontId LARGE = 0;
-    static const touchgfx::FontId FARSI = 1;
-    static const touchgfx::FontId HEADERFONT = 2;
-    static const touchgfx::FontId HEADERFONT_AUTO_GENERATED_FOR_GB = 3;
-    static const touchgfx::FontId HEADERFONT_AUTO_GENERATED_FOR_FA = 4;
-    static const touchgfx::FontId LEDFONT = 5;
-    static const touchgfx::FontId WARNINGFONT = 6;
-    static const touchgfx::FontId TEMPFONT = 7;
-    static const touchgfx::FontId CARFONT = 8;
+    static const touchgfx::FontId LARGE_AUTO_GENERATED_FOR_GB = 1;
+    static const touchgfx::FontId FARSI = 2;
+    static const touchgfx::FontId HEADERFONT = 3;
+    static const touchgfx::FontId HEADERFONT_AUTO_GENERATED_FOR_GB = 4;
+    static const touchgfx::FontId HEADERFONT_AUTO_GENERATED_FOR_FA = 5;
+    static const touchgfx::FontId LEDFONT = 6;
+    static const touchgfx::FontId LEDFONT_AUTO_GENERATED_FOR_GB = 7;
+    static const touchgfx::FontId LEDFONT_AUTO_GENERATED_FOR_FA = 8;
+    static const touchgfx::FontId WARNINGFONT = 9;
+    static const touchgfx::FontId WARNINGFONT_AUTO_GENERATED_FOR_GB = 10;
+    static const touchgfx::FontId WARNINGFONT_AUTO_GENERATED_FOR_FA = 11;
+    static const touchgfx::FontId TEMPFONT = 12;
+    static const touchgfx::FontId TEMPFONT_AUTO_GENERATED_FOR_GB = 13;
+    static const touchgfx::FontId TEMPFONT_AUTO_GENERATED_FOR_FA = 14;
+    static const touchgfx::FontId CARFONT = 15;
+    static const touchgfx::FontId CARFONT_AUTO_GENERATED_FOR_GB = 16;
+    static const touchgfx::FontId CARFONT_AUTO_GENERATED_FOR_FA = 17;
+    static const touchgfx::FontId CARFONT1 = 18;
+    static const touchgfx::FontId CARFONT1_AUTO_GENERATED_FOR_GB = 19;
+    static const touchgfx::FontId CARFONT1_AUTO_GENERATED_FOR_FA = 20;
 };
 
 struct TypographyFontIndex
 {
-    static const touchgfx::FontId LARGE = 0;                            // Saira_Bold_40_4bpp
-    static const touchgfx::FontId FARSI = 1;                            // Nazaninb_23_4bpp
-    static const touchgfx::FontId HEADERFONT = 2;                       // Saira_Medium_40_4bpp
-    static const touchgfx::FontId HEADERFONT_AUTO_GENERATED_FOR_GB = 3; // Saira_Medium_35_4bpp
-    static const touchgfx::FontId HEADERFONT_AUTO_GENERATED_FOR_FA = 4; // Nazaninb_35_4bpp
-    static const touchgfx::FontId LEDFONT = 5;                          // Saira_Medium_25_4bpp
-    static const touchgfx::FontId WARNINGFONT = 6;                      // SairaSemiCondensed_SemiBold_21_4bpp
-    static const touchgfx::FontId TEMPFONT = 7;                         // Saira_SemiBold_32_4bpp
-    static const touchgfx::FontId CARFONT = 8;                          // Saira_SemiBold_100_4bpp
-    static const uint16_t NUMBER_OF_FONTS = 9;
+    static const touchgfx::FontId LARGE = 0;                             // Saira_Bold_40_4bpp
+    static const touchgfx::FontId LARGE_AUTO_GENERATED_FOR_GB = 0;       // Saira_Bold_40_4bpp
+    static const touchgfx::FontId FARSI = 1;                             // Nazaninb_23_4bpp
+    static const touchgfx::FontId HEADERFONT = 2;                        // Saira_Medium_40_4bpp
+    static const touchgfx::FontId HEADERFONT_AUTO_GENERATED_FOR_GB = 3;  // Saira_Medium_35_4bpp
+    static const touchgfx::FontId HEADERFONT_AUTO_GENERATED_FOR_FA = 4;  // Nazanin_35_4bpp
+    static const touchgfx::FontId LEDFONT = 5;                           // Saira_Medium_25_4bpp
+    static const touchgfx::FontId LEDFONT_AUTO_GENERATED_FOR_GB = 5;     // Saira_Medium_25_4bpp
+    static const touchgfx::FontId LEDFONT_AUTO_GENERATED_FOR_FA = 6;     // Nazanin_25_4bpp
+    static const touchgfx::FontId WARNINGFONT = 7;                       // SairaSemiCondensed_SemiBold_21_4bpp
+    static const touchgfx::FontId WARNINGFONT_AUTO_GENERATED_FOR_GB = 7; // SairaSemiCondensed_SemiBold_21_4bpp
+    static const touchgfx::FontId WARNINGFONT_AUTO_GENERATED_FOR_FA = 8; // Nazanin_21_4bpp
+    static const touchgfx::FontId TEMPFONT = 9;                          // Saira_SemiBold_30_4bpp
+    static const touchgfx::FontId TEMPFONT_AUTO_GENERATED_FOR_GB = 9;    // Saira_SemiBold_30_4bpp
+    static const touchgfx::FontId TEMPFONT_AUTO_GENERATED_FOR_FA = 10;    // Nazanin_30_4bpp
+    static const touchgfx::FontId CARFONT = 11;                           // Saira_SemiBold_100_4bpp
+    static const touchgfx::FontId CARFONT_AUTO_GENERATED_FOR_GB = 11;     // Saira_SemiBold_100_4bpp
+    static const touchgfx::FontId CARFONT_AUTO_GENERATED_FOR_FA = 12;     // Nazanin_80_4bpp
+    static const touchgfx::FontId CARFONT1 = 0;                          // Saira_Bold_40_4bpp
+    static const touchgfx::FontId CARFONT1_AUTO_GENERATED_FOR_GB = 0;    // Saira_Bold_40_4bpp
+    static const touchgfx::FontId CARFONT1_AUTO_GENERATED_FOR_FA = 13;    // Nazanin_40_4bpp
+    static const uint16_t NUMBER_OF_FONTS = 14;
 };
 
 class ApplicationFontProvider : public touchgfx::FontProvider

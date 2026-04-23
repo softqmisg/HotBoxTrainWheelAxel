@@ -33,7 +33,7 @@ protected:
      */
     static const uint16_t TEMPTEXT_SIZE = 5;
     touchgfx::Unicode::UnicodeChar tempTextBuffer[TEMPTEXT_SIZE];
-    static const uint16_t NUMAXELTEXT_SIZE = 3;
+    static const uint16_t NUMAXELTEXT_SIZE = 10;
     touchgfx::Unicode::UnicodeChar numAxelTextBuffer[NUMAXELTEXT_SIZE];
 
 private:

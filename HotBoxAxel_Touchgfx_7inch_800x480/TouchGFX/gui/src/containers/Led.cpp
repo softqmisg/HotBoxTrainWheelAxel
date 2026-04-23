@@ -14,8 +14,9 @@ void Led::initialize()
 //	Unicode::snprintf(titleTextBuffer, TITLETEXT_SIZE, "%s", text);
 //	titleText.invalidate();
 //}
-void Led::setTitle(const char *name){
-    Unicode::fromUTF8((const uint8_t *)name, titleTextBuffer, TITLETEXT_SIZE);
+void Led::setTitle(touchgfx::TypedTextId textId){
+//    Unicode::fromUTF8((const uint8_t *)name, titleTextBuffer, TITLETEXT_SIZE);
+    titleText.setTypedText(touchgfx::TypedText(textId));
 	titleText.invalidate();
 }
 

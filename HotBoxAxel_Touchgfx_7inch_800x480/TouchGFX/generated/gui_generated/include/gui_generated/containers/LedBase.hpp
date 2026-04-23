@@ -8,7 +8,7 @@
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/canvas/Circle.hpp>
 #include <touchgfx/widgets/canvas/PainterRGB565.hpp>
-#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class LedBase : public touchgfx::Container
 {
@@ -27,13 +27,7 @@ protected:
      */
     touchgfx::Circle stateCircle;
     touchgfx::PainterRGB565 stateCirclePainter;
-    touchgfx::TextAreaWithOneWildcard titleText;
-
-    /*
-     * Wildcard Buffers
-     */
-    static const uint16_t TITLETEXT_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar titleTextBuffer[TITLETEXT_SIZE];
+    touchgfx::TextArea titleText;
 
 private:
 

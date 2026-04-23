@@ -55,7 +55,7 @@ mainScreenViewBase::mainScreenViewBase() :
 
     settingButton.setXY(18, 420);
     settingButton.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUNDED_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUNDED_PRESSED_ID));
-    settingButton.setLabelText(touchgfx::TypedText(T___SINGLEUSE_IN1J));
+    settingButton.setLabelText(touchgfx::TypedText(T_BUTTON_SETTING));
     settingButton.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     settingButton.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     settingButton.setAction(buttonCallback);

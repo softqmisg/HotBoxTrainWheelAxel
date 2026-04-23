@@ -6,7 +6,8 @@
 #include <images/BitmapDatabase.hpp>
 #include <texts/TextKeysAndLanguages.hpp>
 
-WarningBarBase::WarningBarBase()
+WarningBarBase::WarningBarBase() :
+    buttonCallback(this, &WarningBarBase::buttonCallbackHandler)
 {
     setWidth(548);
     setHeight(50);
@@ -18,9 +19,10 @@ WarningBarBase::WarningBarBase()
 
     acceptButton.setXY(448, 7);
     acceptButton.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUND_ACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUND_PRESSED_ID));
-    acceptButton.setLabelText(touchgfx::TypedText(T___SINGLEUSE_B1RY));
+    acceptButton.setLabelText(touchgfx::TypedText(T_BUTTON_ACCEPT));
     acceptButton.setLabelColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
     acceptButton.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    acceptButton.setAction(buttonCallback);
     add(acceptButton);
 
     warningText.setXY(10, 13);
@@ -41,4 +43,16 @@ WarningBarBase::~WarningBarBase()
 void WarningBarBase::initialize()
 {
 
+}
+
+void WarningBarBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
+{
+    if (&src == &acceptButton)
+    {
+        //Interaction1
+        //When acceptButton clicked set language FA
+        //Change language to FA
+        Texts::setLanguage(FA);
+        invalidate();
+    }
 }

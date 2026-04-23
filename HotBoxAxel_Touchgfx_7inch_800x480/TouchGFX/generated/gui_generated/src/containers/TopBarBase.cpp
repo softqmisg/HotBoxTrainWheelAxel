@@ -47,7 +47,7 @@ TopBarBase::TopBarBase() :
 
     buttonWithLabel.setXY(609, 8);
     buttonWithLabel.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_ACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID));
-    buttonWithLabel.setLabelText(touchgfx::TypedText(T___SINGLEUSE_RNT7));
+    buttonWithLabel.setLabelText(touchgfx::TypedText(T_BUTTON_EXIT));
     buttonWithLabel.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     buttonWithLabel.setVisible(false);

@@ -9,6 +9,7 @@
 #include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 
 class CarSelectorBase : public touchgfx::Container
 {
@@ -36,6 +37,7 @@ protected:
     touchgfx::BoxWithBorder boxWithBorder;
     touchgfx::TextAreaWithOneWildcard carNumberText;
     touchgfx::ButtonWithLabel nextButton;
+    touchgfx::TextArea textArea1;
 
     /*
      * Wildcard Buffers

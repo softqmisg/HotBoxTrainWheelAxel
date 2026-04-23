@@ -23,7 +23,7 @@ PasswordPopupBase::PasswordPopupBase() :
 
     okButton.setXY(147, 279);
     okButton.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID));
-    okButton.setLabelText(touchgfx::TypedText(T___SINGLEUSE_L8CB));
+    okButton.setLabelText(touchgfx::TypedText(T_BUTTON_OK));
     okButton.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     okButton.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     okButton.setAction(buttonCallback);
@@ -31,22 +31,22 @@ PasswordPopupBase::PasswordPopupBase() :
 
     exitButton.setXY(433, 279);
     exitButton.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID));
-    exitButton.setLabelText(touchgfx::TypedText(T___SINGLEUSE_Y238));
+    exitButton.setLabelText(touchgfx::TypedText(T_BUTTON_CANCEL));
     exitButton.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     exitButton.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     exitButton.setAction(buttonCallback);
     add(exitButton);
 
-    textArea1.setXY(101, 183);
+    textArea1.setXY(99, 183);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(245, 235, 235));
     textArea1.setLinespacing(0);
-    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_D8HE));
+    textArea1.setTypedText(touchgfx::TypedText(T_TEXT_PASS));
     add(textArea1);
 
     textArea2.setXY(96, 114);
     textArea2.setColor(touchgfx::Color::getColorFromRGB(255, 252, 252));
     textArea2.setLinespacing(0);
-    textArea2.setTypedText(touchgfx::TypedText(T___SINGLEUSE_X23Z));
+    textArea2.setTypedText(touchgfx::TypedText(T_TEXT_USERNAME));
     add(textArea2);
 
     userToggleButton.setXY(345, 114);

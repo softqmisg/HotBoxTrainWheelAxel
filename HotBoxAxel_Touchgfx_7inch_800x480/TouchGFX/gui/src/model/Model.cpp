@@ -183,7 +183,7 @@ void Model::updateCarTemperatures(uint8_t carNum)
 	for(int i=0;i<MAX_AXELNUM;i++)
 	{
 //		int16_t temp=Utility::generateRandomInt(125, -45);
-		int16_t temp=(int16_t)carNum*10+Utility::generateRandomInt(9, 0);
+		int16_t temp=(int16_t)(carNum+1)*10+Utility::generateRandomInt(9, 0);
 		Car::TempState state=(Utility::generateRandomBin())?Car::TempState::NORMAL:Car::TempState::ERROR;
 		cars[carNum].setTemperature(i,temp, state);
 	}

@@ -18,13 +18,10 @@ LedBase::LedBase()
     stateCircle.setPainter(stateCirclePainter);
     add(stateCircle);
 
-    titleText.setXY(11, 9);
+    titleText.setXY(14, 0);
     titleText.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     titleText.setLinespacing(0);
-    Unicode::snprintf(titleTextBuffer, TITLETEXT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_EAVY).getText());
-    titleText.setWildcard(titleTextBuffer);
-    titleText.resizeToCurrentText();
-    titleText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_GQ1F));
+    titleText.setTypedText(touchgfx::TypedText(T_TEXT_COMM));
     add(titleText);
 }
 

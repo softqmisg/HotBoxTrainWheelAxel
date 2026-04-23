@@ -6,6 +6,6 @@
 
 static unsigned short SIM_WIDTH = 800;
 static unsigned short SIM_HEIGHT = 480;
-#define SIM_TITLE "MyApplication"
+#define SIM_TITLE "HotBoxAxel_Touchgfx_7inch_800x480"
 
 #endif // SIMCONSTANTS_HPP

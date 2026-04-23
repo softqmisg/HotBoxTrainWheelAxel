@@ -17,7 +17,7 @@ CarSelectorBase::CarSelectorBase() :
     boxWithBorder.setBorderSize(5);
     add(boxWithBorder);
 
-    carNumberText.setXY(30, 11);
+    carNumberText.setXY(30, 42);
     carNumberText.setColor(touchgfx::Color::getColorFromRGB(255, 250, 250));
     carNumberText.setLinespacing(0);
     Unicode::snprintf(carNumberTextBuffer, CARNUMBERTEXT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_SMQ1).getText());
@@ -26,13 +26,19 @@ CarSelectorBase::CarSelectorBase() :
     carNumberText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_I6GW));
     add(carNumberText);
 
-    nextButton.setXY(9, 160);
+    nextButton.setXY(9, 163);
     nextButton.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_ACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID));
-    nextButton.setLabelText(touchgfx::TypedText(T___SINGLEUSE_06BU));
+    nextButton.setLabelText(touchgfx::TypedText(T_BUTTON_NEXT));
     nextButton.setLabelColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
     nextButton.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     nextButton.setAction(buttonCallback);
     add(nextButton);
+
+    textArea1.setXY(65, 6);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea1.setLinespacing(0);
+    textArea1.setTypedText(touchgfx::TypedText(T_TEXT_CAR));
+    add(textArea1);
 }
 
 CarSelectorBase::~CarSelectorBase()

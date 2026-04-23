@@ -1,5 +1,5 @@
 #include <gui/mainscreen_screen/mainScreenView.hpp>
-
+#include<texts/TextKeysAndLanguages.hpp>
 #include "Utility.h"
 mainScreenView::mainScreenView(): carNumberChangedCallback(this, &mainScreenView::onCarNumberChanged)
 {
@@ -9,9 +9,9 @@ mainScreenView::mainScreenView(): carNumberChangedCallback(this, &mainScreenView
 void mainScreenView::setupScreen()
 {
     mainScreenViewBase::setupScreen();
-    ledMain.setTitle("Main");//ledMain.setState(Led::State::GREEN);
-    ledAlarm.setTitle("Alarm");//ledAlarm.setState(Led::State::RED);
-    ledComm.setTitle("Comm");//ledComm.setState(Led::State::GREEN);
+    ledMain.setTitle(T_TEXT_MAIN);//ledMain.setState(Led::State::GREEN);
+    ledAlarm.setTitle(T_TEXT_ALARM);//ledAlarm.setState(Led::State::RED);
+    ledComm.setTitle(T_TEXT_COMM);//ledComm.setState(Led::State::GREEN);
     topBar.setExitButtonVisible(false);
     topBar.setEnvTemperatureVisible(true);
     /////////////digitalClock////////////////////////
