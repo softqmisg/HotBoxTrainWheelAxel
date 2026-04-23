@@ -173,7 +173,7 @@ SECTIONS
 
   .ARM.attributes 0 : { *(.ARM.attributes) }
   /*(NOLOAD)*/
-  ExtFlashSection (NOLOAD):
+  ExtFlashSection :
   {
   	*(ExtFlashSection ExtFlashSection.*)
   	*(.gnu.linkonce.r.*) 
@@ -181,7 +181,7 @@ SECTIONS
   } >QUADSPI
   
   
-  FontFlashSection (NOLOAD):
+  FontFlashSection :
   {
   	*(FontFlashSection FontFlashSection.*)
   	*(.gnu.linkonce.r.*)

@@ -9,15 +9,15 @@
 WarningBarBase::WarningBarBase() :
     buttonCallback(this, &WarningBarBase::buttonCallbackHandler)
 {
-    setWidth(548);
+    setWidth(576);
     setHeight(50);
-    boxWithBorder.setPosition(0, 0, 436, 50);
+    boxWithBorder.setPosition(0, 0, 454, 50);
     boxWithBorder.setColor(touchgfx::Color::getColorFromRGB(245, 242, 206));
     boxWithBorder.setBorderColor(touchgfx::Color::getColorFromRGB(187, 0, 255));
     boxWithBorder.setBorderSize(5);
     add(boxWithBorder);
 
-    acceptButton.setXY(448, 7);
+    acceptButton.setXY(466, 7);
     acceptButton.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUND_ACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUND_PRESSED_ID));
     acceptButton.setLabelText(touchgfx::TypedText(T_BUTTON_ACCEPT));
     acceptButton.setLabelColor(touchgfx::Color::getColorFromRGB(255, 0, 0));

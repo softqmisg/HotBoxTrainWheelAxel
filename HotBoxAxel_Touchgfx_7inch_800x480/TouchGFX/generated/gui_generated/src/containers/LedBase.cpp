@@ -8,8 +8,8 @@
 LedBase::LedBase()
 {
     setWidth(92);
-    setHeight(114);
-    stateCircle.setPosition(6, 34, 80, 80);
+    setHeight(102);
+    stateCircle.setPosition(6, 28, 80, 80);
     stateCircle.setCenter(40, 40);
     stateCircle.setRadius(25);
     stateCircle.setLineWidth(0);
@@ -18,7 +18,7 @@ LedBase::LedBase()
     stateCircle.setPainter(stateCirclePainter);
     add(stateCircle);
 
-    titleText.setXY(14, 0);
+    titleText.setXY(10, 6);
     titleText.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     titleText.setLinespacing(0);
     titleText.setTypedText(touchgfx::TypedText(T_TEXT_COMM));

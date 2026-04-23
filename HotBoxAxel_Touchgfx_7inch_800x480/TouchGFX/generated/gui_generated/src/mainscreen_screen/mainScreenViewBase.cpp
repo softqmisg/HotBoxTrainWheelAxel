@@ -29,7 +29,14 @@ mainScreenViewBase::mainScreenViewBase() :
     tiledImage1.setOffset(0, 0);
     container1.add(tiledImage1);
 
-    ledListLayout.setXY(701, 5);
+    container2.setPosition(701, 21, 92, 306);
+    boxWithBorder1.setPosition(0, 0, 92, 306);
+    boxWithBorder1.setColor(touchgfx::Color::getColorFromRGB(11, 43, 87));
+    boxWithBorder1.setBorderColor(touchgfx::Color::getColorFromRGB(136, 136, 136));
+    boxWithBorder1.setBorderSize(3);
+    container2.add(boxWithBorder1);
+
+    ledListLayout.setXY(0, 0);
     ledListLayout.setDirection(touchgfx::SOUTH);
 
     ledListLayout.add(ledMain);
@@ -38,12 +45,11 @@ mainScreenViewBase::mainScreenViewBase() :
 
     ledListLayout.add(ledComm);
 
-    container1.add(ledListLayout);
+    container2.add(ledListLayout);
 
-    warningBar.setXY(245, 354);
-    container1.add(warningBar);
+    container1.add(container2);
 
-    templistLayout.setXY(9, 65);
+    templistLayout.setXY(9, 42);
     templistLayout.setDirection(touchgfx::EAST);
     templistLayout.add(carSelector);
 
@@ -51,15 +57,18 @@ mainScreenViewBase::mainScreenViewBase() :
 
     container1.add(templistLayout);
 
-    add(container1);
+    warningBar.setXY(217, 336);
+    container1.add(warningBar);
 
-    settingButton.setXY(18, 420);
+    settingButton.setXY(18, 336);
     settingButton.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUNDED_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUNDED_PRESSED_ID));
     settingButton.setLabelText(touchgfx::TypedText(T_BUTTON_SETTING));
     settingButton.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     settingButton.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     settingButton.setAction(buttonCallback);
-    add(settingButton);
+    container1.add(settingButton);
+
+    add(container1);
 
     passwordPopup.setXY(0, 0);
     passwordPopup.setVisible(false);
@@ -81,9 +90,9 @@ void mainScreenViewBase::setupScreen()
     ledMain.initialize();
     ledAlarm.initialize();
     ledComm.initialize();
-    warningBar.initialize();
     carSelector.initialize();
     tempAxelList.initialize();
+    warningBar.initialize();
     passwordPopup.initialize();
 }
 

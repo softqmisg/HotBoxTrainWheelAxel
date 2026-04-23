@@ -7,11 +7,11 @@
 TempAxelListBase::TempAxelListBase()
 {
     setWidth(500);
-    setHeight(235);
-    boxWithBorder.setPosition(0, 0, 500, 235);
+    setHeight(264);
+    boxWithBorder.setPosition(0, 0, 500, 264);
     boxWithBorder.setColor(touchgfx::Color::getColorFromRGB(11, 43, 87));
-    boxWithBorder.setBorderColor(touchgfx::Color::getColorFromRGB(247, 10, 10));
-    boxWithBorder.setBorderSize(5);
+    boxWithBorder.setBorderColor(touchgfx::Color::getColorFromRGB(136, 136, 136));
+    boxWithBorder.setBorderSize(3);
     add(boxWithBorder);
 
     tempListLayout.setXY(0, 0);

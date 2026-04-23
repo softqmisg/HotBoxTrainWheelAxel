@@ -10,14 +10,14 @@ CarSelectorBase::CarSelectorBase() :
     buttonCallback(this, &CarSelectorBase::buttonCallbackHandler)
 {
     setWidth(192);
-    setHeight(235);
-    boxWithBorder.setPosition(0, 0, 192, 235);
+    setHeight(264);
+    boxWithBorder.setPosition(0, 0, 192, 264);
     boxWithBorder.setColor(touchgfx::Color::getColorFromRGB(11, 43, 87));
-    boxWithBorder.setBorderColor(touchgfx::Color::getColorFromRGB(247, 10, 10));
-    boxWithBorder.setBorderSize(5);
+    boxWithBorder.setBorderColor(touchgfx::Color::getColorFromRGB(136, 136, 136));
+    boxWithBorder.setBorderSize(3);
     add(boxWithBorder);
 
-    carNumberText.setXY(30, 42);
+    carNumberText.setXY(30, 62);
     carNumberText.setColor(touchgfx::Color::getColorFromRGB(255, 250, 250));
     carNumberText.setLinespacing(0);
     Unicode::snprintf(carNumberTextBuffer, CARNUMBERTEXT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_SMQ1).getText());
@@ -26,7 +26,7 @@ CarSelectorBase::CarSelectorBase() :
     carNumberText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_I6GW));
     add(carNumberText);
 
-    nextButton.setXY(9, 163);
+    nextButton.setXY(9, 190);
     nextButton.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_ACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID));
     nextButton.setLabelText(touchgfx::TypedText(T_BUTTON_NEXT));
     nextButton.setLabelColor(touchgfx::Color::getColorFromRGB(255, 0, 0));

@@ -5,21 +5,38 @@
 FONT_TABLE_LOCATION_FLASH_PRAGMA
 KEEP extern const touchgfx::GlyphNode glyphs_Nazanin_30_4bpp[] FONT_TABLE_LOCATION_FLASH_ATTRIBUTE = {
     {     0, 0x0020,   0,   0,   0,   0,   7,   0,   0, 0x00 }, // space
-    {     0, 0x002B,  11,  11,  11,   0,  11,   0,   0, 0x00 }, // plus
-    {    66, 0x002D,  11,   2,   7,   0,  11,   0,   0, 0x00 }, // hyphen
-    {    78, 0x0030,   6,   6,  10,   4,  14,   0,   0, 0x00 }, // zero
-    {    96, 0x0031,   6,  18,  18,   4,  14,   0,   0, 0x00 }, // one
-    {   150, 0x0032,  11,  17,  17,   1,  14,   0,   0, 0x00 }, // two
-    {   252, 0x0034,  12,  17,  17,   1,  14,   0,   0, 0x00 }, // four
-    {   354, 0x0035,  12,  17,  17,   1,  14,   0,   0, 0x00 }, // five
-    {   456, 0x0036,  11,  17,  17,   1,  13,   0,   0, 0x00 }, // six
-    {   558, 0x0037,  12,  18,  18,   1,  14,   0,   0, 0x00 }, // seven
-    {   666, 0x0038,  12,  18,  17,   1,  14,   0,   0, 0x00 }, // eight
-    {   774, 0x0039,  10,  18,  17,   2,  14,   0,   0, 0x00 }, // nine
-    {   864, 0x062D,  15,  17,   9,   2,  16,   0,   0, 0x00 }, // u062D
-    {  1000, 0x0631,   9,  12,   5,   1,   9,   0,   0, 0x00 }, // u0631
-    {  1060, 0x0645,  10,  17,   9,   2,  12,   0,   0, 0x00 }, // u0645
-    {  1145, 0x0648,   9,  15,   7,   1,  10,   0,   0, 0x00 }, // u0648
+    {     0, 0x0021,   3,  17,  17,   2,   5,   0,   0, 0x00 }, // exclam
+    {    34, 0x0025,  11,  20,  18,   1,  13,   0,   0, 0x00 }, // percent
+    {   154, 0x0028,   7,  20,  16,   2,   8,   0,   0, 0x00 }, // parenleft
+    {   234, 0x0029,   7,  20,  16,   2,   8,   0,   0, 0x00 }, // parenright
+    {   314, 0x002A,  14,  14,  13,   2,  15,   0,   0, 0x00 }, // asterisk
+    {   412, 0x002B,  11,  11,  11,   0,  11,   0,   0, 0x00 }, // plus
+    {   478, 0x002C,   5,   6,   3,   2,   6,   0,   0, 0x00 }, // comma
+    {   496, 0x002D,  11,   2,   7,   0,  11,   0,   0, 0x00 }, // hyphen
+    {   508, 0x002E,   3,   3,   3,   2,   5,   0,   0, 0x00 }, // period
+    {   514, 0x002F,   6,  19,  17,   0,   6,   0,   0, 0x00 }, // slash
+    {   571, 0x0030,   6,   6,  10,   4,  14,   0,   0, 0x00 }, // zero
+    {   589, 0x0031,   6,  18,  18,   4,  14,   0,   0, 0x00 }, // one
+    {   643, 0x0032,  11,  17,  17,   1,  14,   0,   0, 0x00 }, // two
+    {   745, 0x0034,  12,  17,  17,   1,  14,   0,   0, 0x00 }, // four
+    {   847, 0x0035,  12,  17,  17,   1,  14,   0,   0, 0x00 }, // five
+    {   949, 0x0036,  11,  17,  17,   1,  13,   0,   0, 0x00 }, // six
+    {  1051, 0x0037,  12,  18,  18,   1,  14,   0,   0, 0x00 }, // seven
+    {  1159, 0x0038,  12,  18,  17,   1,  14,   0,   0, 0x00 }, // eight
+    {  1267, 0x0039,  10,  18,  17,   2,  14,   0,   0, 0x00 }, // nine
+    {  1357, 0x003A,   3,   9,   9,   2,   5,   0,   0, 0x00 }, // colon
+    {  1375, 0x003D,  11,   5,   8,   0,  11,   0,   0, 0x00 }, // equal
+    {  1405, 0x005B,   5,  25,  23,   3,   9,   0,   0, 0x00 }, // bracketleft
+    {  1480, 0x005D,   5,  25,  23,   2,   9,   0,   0, 0x00 }, // bracketright
+    {  1555, 0x007B,   9,  28,  23,   4,  14,   0,   0, 0x00 }, // braceleft
+    {  1695, 0x007D,   9,  28,  23,   2,  14,   0,   0, 0x00 }, // braceright
+    {  1835, 0x00D7,  10,  10,  10,   1,  11,   0,   0, 0x00 }, // multiply
+    {  1885, 0x00F7,  12,  12,  13,   1,  14,   0,   0, 0x00 }, // divide
+    {  1957, 0x062D,  15,  17,   9,   2,  16,   0,   0, 0x00 }, // u062D
+    {  2093, 0x0631,   9,  12,   5,   1,   9,   0,   0, 0x00 }, // u0631
+    {  2153, 0x0645,  10,  17,   9,   2,  12,   0,   0, 0x00 }, // u0645
+    {  2238, 0x0648,   9,  15,   7,   1,  10,   0,   0, 0x00 }, // u0648
+    {     0, 0x201D,   8,   8,  19,   1,  10,   0,   0, 0x00 }, // quotedblright
     {     0, 0xFEA1,  15,  17,   9,   2,  16,   0,   0, 0x00 }, // u062D
     {   136, 0xFEA2,  16,  17,   9,   2,  17,   0,   0, 0x00 }, // uFEA2
     {   272, 0xFEA3,  17,   9,   9,  -1,  15,   0,   0, 0x00 }, // uFEA3
@@ -40,6 +57,8 @@ KEEP extern const touchgfx::GlyphNode glyphs_Nazanin_30_4bpp[] FONT_TABLE_LOCATI
 FONT_GLYPH_LOCATION_FLASH_PRAGMA
 KEEP extern const uint8_t unicodes_Nazanin_30_4bpp_0[] FONT_GLYPH_LOCATION_FLASH_ATTRIBUTE;
 FONT_GLYPH_LOCATION_FLASH_PRAGMA
+KEEP extern const uint8_t unicodes_Nazanin_30_4bpp_4[] FONT_GLYPH_LOCATION_FLASH_ATTRIBUTE;
+FONT_GLYPH_LOCATION_FLASH_PRAGMA
 KEEP extern const uint8_t unicodes_Nazanin_30_4bpp_31[] FONT_GLYPH_LOCATION_FLASH_ATTRIBUTE;
 FONT_SEARCHTABLE_LOCATION_FLASH_PRAGMA
 KEEP extern const uint8_t* const unicodes_Nazanin_30_4bpp[] FONT_SEARCHTABLE_LOCATION_FLASH_ATTRIBUTE = {
@@ -47,7 +66,7 @@ KEEP extern const uint8_t* const unicodes_Nazanin_30_4bpp[] FONT_SEARCHTABLE_LOC
     0,
     0,
     0,
-    0,
+    unicodes_Nazanin_30_4bpp_4,
     0,
     0,
     0,
@@ -83,6 +102,6 @@ touchgfx::GeneratedFont& getFont_Nazanin_30_4bpp();
 
 touchgfx::GeneratedFont& getFont_Nazanin_30_4bpp()
 {
-    static touchgfx::GeneratedFont Nazanin_30_4bpp(glyphs_Nazanin_30_4bpp, 28, 39, 30, 0, 0, 4, 1, 1, 1, unicodes_Nazanin_30_4bpp, kerning_Nazanin_30_4bpp, 63, 0, 0, &Nazanin_contextualFormsTable);
+    static touchgfx::GeneratedFont Nazanin_30_4bpp(glyphs_Nazanin_30_4bpp, 45, 39, 30, 0, 0, 4, 1, 1, 1, unicodes_Nazanin_30_4bpp, kerning_Nazanin_30_4bpp, 63, 0, 0, &Nazanin_contextualFormsTable);
     return Nazanin_30_4bpp;
 }

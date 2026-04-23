@@ -13,7 +13,7 @@ extern touchgfx::GeneratedFont& getFont_Nazanin_35_4bpp();
 extern touchgfx::GeneratedFont& getFont_Saira_Medium_25_4bpp();
 extern touchgfx::GeneratedFont& getFont_Nazanin_25_4bpp();
 extern touchgfx::GeneratedFont& getFont_SairaSemiCondensed_SemiBold_21_4bpp();
-extern touchgfx::GeneratedFont& getFont_Nazanin_21_4bpp();
+extern touchgfx::GeneratedFont& getFont_SairaSemiCondensed_SemiBold_25_4bpp();
 extern touchgfx::GeneratedFont& getFont_Saira_SemiBold_30_4bpp();
 extern touchgfx::GeneratedFont& getFont_Nazanin_30_4bpp();
 extern touchgfx::GeneratedFont& getFont_Saira_SemiBold_100_4bpp();
@@ -29,7 +29,7 @@ const touchgfx::Font* touchgfx_fonts[] = {
     &(getFont_Saira_Medium_25_4bpp()),
     &(getFont_Nazanin_25_4bpp()),
     &(getFont_SairaSemiCondensed_SemiBold_21_4bpp()),
-    &(getFont_Nazanin_21_4bpp()),
+    &(getFont_SairaSemiCondensed_SemiBold_25_4bpp()),
     &(getFont_Saira_SemiBold_30_4bpp()),
     &(getFont_Nazanin_30_4bpp()),
     &(getFont_Saira_SemiBold_100_4bpp()),
@@ -42,6 +42,8 @@ extern const touchgfx::TypedText::TypedTextData* const typedTextDatabaseArray[];
 
 TEXT_LOCATION_FLASH_PRAGMA
 const touchgfx::TypedText::TypedTextData typedText_database_GB[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
+    { 8, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
+    { 8, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
     { 3, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 3, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
     { 3, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
@@ -53,12 +55,12 @@ const touchgfx::TypedText::TypedTextData typedText_database_GB[] TEXT_LOCATION_F
     { 3, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 3, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 0, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
-    { 0, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
-    { 9, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 0, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
+    { 9, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
+    { 9, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
+    { 9, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
     { 9, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
     { 9, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
-    { 9, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
-    { 9, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 5, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 5, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 3, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
@@ -70,9 +72,7 @@ const touchgfx::TypedText::TypedTextData typedText_database_GB[] TEXT_LOCATION_F
     { 3, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
     { 11, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 11, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
-    { 7, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
-    { 7, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
-    { 7, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 8, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 5, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 3, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 3, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
@@ -80,6 +80,8 @@ const touchgfx::TypedText::TypedTextData typedText_database_GB[] TEXT_LOCATION_F
 };
 TEXT_LOCATION_FLASH_PRAGMA
 const touchgfx::TypedText::TypedTextData typedText_database_FA[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
+    { 6, touchgfx::RIGHT, touchgfx::TEXT_DIRECTION_RTL },
+    { 6, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_RTL },
     { 4, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_RTL },
     { 4, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_RTL },
     { 4, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_RTL },
@@ -91,11 +93,11 @@ const touchgfx::TypedText::TypedTextData typedText_database_FA[] TEXT_LOCATION_F
     { 4, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_RTL },
     { 4, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_RTL },
     { 13, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_RTL },
-    { 13, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_RTL },
+    { 13, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_RTL },
     { 10, touchgfx::RIGHT, touchgfx::TEXT_DIRECTION_LTR },
     { 10, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
-    { 10, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
-    { 10, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 10, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
+    { 10, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
     { 10, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 6, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_RTL },
     { 6, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_RTL },
@@ -108,9 +110,7 @@ const touchgfx::TypedText::TypedTextData typedText_database_FA[] TEXT_LOCATION_F
     { 4, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_RTL },
     { 12, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_RTL },
     { 12, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_RTL },
-    { 8, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_RTL },
-    { 8, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_RTL },
-    { 8, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_RTL },
+    { 6, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_RTL },
     { 6, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_RTL },
     { 4, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_RTL },
     { 4, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_RTL },
@@ -118,6 +118,8 @@ const touchgfx::TypedText::TypedTextData typedText_database_FA[] TEXT_LOCATION_F
 };
 TEXT_LOCATION_FLASH_PRAGMA
 const touchgfx::TypedText::TypedTextData typedText_database_DEFAULT[] TEXT_LOCATION_FLASH_ATTRIBUTE = {
+    { 7, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
+    { 7, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
     { 2, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 2, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
     { 2, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
@@ -129,12 +131,12 @@ const touchgfx::TypedText::TypedTextData typedText_database_DEFAULT[] TEXT_LOCAT
     { 2, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 2, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 0, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
-    { 0, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
-    { 9, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
+    { 0, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
+    { 9, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
+    { 9, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
+    { 9, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
     { 9, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
     { 9, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
-    { 9, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
-    { 9, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 5, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 5, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 2, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
@@ -146,8 +148,6 @@ const touchgfx::TypedText::TypedTextData typedText_database_DEFAULT[] TEXT_LOCAT
     { 2, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
     { 11, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 11, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
-    { 7, touchgfx::CENTER, touchgfx::TEXT_DIRECTION_LTR },
-    { 7, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 7, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 5, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
     { 2, touchgfx::LEFT, touchgfx::TEXT_DIRECTION_LTR },
@@ -214,7 +214,7 @@ void resetFont(touchgfx::FontId fontId)
         touchgfx_fonts[7] = &(getFont_SairaSemiCondensed_SemiBold_21_4bpp());
         break;
     case 8:
-        touchgfx_fonts[8] = &(getFont_Nazanin_21_4bpp());
+        touchgfx_fonts[8] = &(getFont_SairaSemiCondensed_SemiBold_25_4bpp());
         break;
     case 9:
         touchgfx_fonts[9] = &(getFont_Saira_SemiBold_30_4bpp());

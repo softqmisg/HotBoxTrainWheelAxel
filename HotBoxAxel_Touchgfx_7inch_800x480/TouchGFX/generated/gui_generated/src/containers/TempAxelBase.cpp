@@ -8,7 +8,7 @@
 TempAxelBase::TempAxelBase()
 {
     setWidth(125);
-    setHeight(118);
+    setHeight(132);
     tempAreaBox.setPosition(12, 59, 101, 41);
     tempAreaBox.setColor(touchgfx::Color::getColorFromRGB(92, 240, 0));
     add(tempAreaBox);

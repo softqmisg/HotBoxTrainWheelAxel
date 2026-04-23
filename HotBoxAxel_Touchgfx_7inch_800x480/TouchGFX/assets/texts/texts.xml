@@ -5,6 +5,16 @@
     <Language Id="FA" />
   </Languages>
   <Texts>
+    <TextGroup Id="Warning">
+      <Text Id="__SingleUse_PEZB" Alignment="Center" TypographyId="WarningFont">
+        <Translation Language="GB">Error in Car 5 Axel 6 @ 13:42 1404/05/07  </Translation>
+        <Translation Language="FA" Alignment="Right">خطا در واگن 5 محور 6 در 13:42 1404/05/07 </Translation>
+      </Text>
+      <Text Id="BUTTON_ACCEPT" Alignment="Center" TypographyId="WarningFont">
+        <Translation Language="GB">Accept</Translation>
+        <Translation Language="FA">پیمایش</Translation>
+      </Text>
+    </TextGroup>
     <TextGroup Id="DayName">
       <Text Id="__SingleUse_2A0D" Alignment="Left" TypographyId="HeaderFont">
         <Translation Language="GB">Wed</Translation>
@@ -52,11 +62,11 @@
         <Translation Language="GB">Next</Translation>
         <Translation Language="FA">بعدی</Translation>
       </Text>
-      <Text Id="TEXT_CAR" Alignment="Left" TypographyId="CarFont1">
+      <Text Id="TEXT_CAR" Alignment="Center" TypographyId="CarFont1">
         <Translation Language="GB">Car</Translation>
         <Translation Language="FA">واگن</Translation>
       </Text>
-      <Text Id="TEXT_AXEL" Alignment="Left" TypographyId="TempFont">
+      <Text Id="TEXT_AXEL" Alignment="Center" TypographyId="TempFont">
         <Translation Language="GB">Axel &lt;value&gt;</Translation>
         <Translation Language="FA" Alignment="Right">&lt;value&gt;محور</Translation>
       </Text>
@@ -64,11 +74,11 @@
         <Translation Language="GB">&lt;value&gt;ºC</Translation>
         <Translation Language="FA">&lt;value&gt;ºC</Translation>
       </Text>
-      <Text Id="ResourceId2" Alignment="Left" TypographyId="TempFont">
+      <Text Id="ResourceId2" Alignment="Center" TypographyId="TempFont">
         <Translation Language="GB">+125</Translation>
         <Translation Language="FA">+125</Translation>
       </Text>
-      <Text Id="ResourceId1" Alignment="Left" TypographyId="TempFont">
+      <Text Id="ResourceId1" Alignment="Center" TypographyId="TempFont">
         <Translation Language="GB">0</Translation>
         <Translation Language="FA">0</Translation>
       </Text>
@@ -122,14 +132,6 @@
         <Translation Language="GB">&lt;value&gt;</Translation>
         <Translation Language="FA">&lt;value&gt;</Translation>
       </Text>
-      <Text Id="BUTTON_ACCEPT" Alignment="Center" TypographyId="WarningFont">
-        <Translation Language="GB">Accept</Translation>
-        <Translation Language="FA">پیمایش</Translation>
-      </Text>
-      <Text Id="__SingleUse_PEZB" Alignment="Left" TypographyId="WarningFont">
-        <Translation Language="GB">Error in Vagon 5 Mehvar 6 @ 13:42 1404/05/07  </Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
       <Text Id="__SingleUse_L29H" Alignment="Left" TypographyId="WarningFont">
         <Translation Language="GB">&lt;value&gt;</Translation>
         <Translation Language="FA">&lt;value&gt;</Translation>
@@ -166,12 +168,12 @@
       <LanguageSetting Language="FA" Font="Nazanin.ttf" Size="25" Bpp="4" IsVector="no" IsCompressed="no" Direction="RTL" FallbackCharacter="?" WildcardCharacters="0600-06FF FB50-FDFF FE70-FEFF 200C-200D" />
     </Typography>
     <Typography Id="WarningFont" Font="SairaSemiCondensed-SemiBold.ttf" Size="21" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z">
-      <LanguageSetting Language="GB" Font="SairaSemiCondensed-SemiBold.ttf" Size="21" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" />
-      <LanguageSetting Language="FA" Font="Nazanin.ttf" Size="21" Bpp="4" IsVector="no" IsCompressed="no" Direction="RTL" FallbackCharacter="?" WildcardCharacters="0600-06FF FB50-FDFF FE70-FEFF 200C-200D" />
+      <LanguageSetting Language="GB" Font="SairaSemiCondensed-SemiBold.ttf" Size="25" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" />
+      <LanguageSetting Language="FA" Font="Nazanin.ttf" Size="25" Bpp="4" IsVector="no" IsCompressed="no" Direction="RTL" FallbackCharacter="?" WildcardCharacters="060C 061F 0621-064A 0660-0669 067E-06CC 06F0-06F9 FB56-FBFF FE81-FEFC" />
     </Typography>
     <Typography Id="TempFont" Font="Saira-SemiBold.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z">
-      <LanguageSetting Language="GB" Font="Saira-SemiBold.ttf" Size="30" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" />
-      <LanguageSetting Language="FA" Font="Nazanin.ttf" Size="30" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="060C 061F 0621-064A 0660-0669 067E-06CC 06F0-06F9 FB56-FBFF FE81-FEFC" />
+      <LanguageSetting Language="GB" Font="Saira-SemiBold.ttf" Size="30" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" />
+      <LanguageSetting Language="FA" Font="Nazanin.ttf" Size="30" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt; 060C 061F 0621-064A 0660-0669 067E-06CC 06F0-06F9 FB56-FBFF FE81-FEFC" WildcardCharacterRanges="A-Z" />
     </Typography>
     <Typography Id="CarFont" Font="Saira-SemiBold.ttf" Size="100" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z">
       <LanguageSetting Language="GB" Font="Saira-SemiBold.ttf" Size="100" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" />

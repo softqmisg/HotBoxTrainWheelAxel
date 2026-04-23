@@ -55,7 +55,6 @@ bool STM32TouchController::sampleTouch(int32_t& x, int32_t& y)
 	if(touchInfo.flag == 1)		// Èç¹û¼ì²âµ½´¥Ãþ
 	{
 
-		HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
 
 		x = touchInfo.x[0];		// ¸³Óè×ø±êÖµ
 		y = touchInfo.y[0];

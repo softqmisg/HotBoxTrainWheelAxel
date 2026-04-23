@@ -48,8 +48,8 @@ struct TypographyFontIndex
     static const touchgfx::FontId LEDFONT_AUTO_GENERATED_FOR_GB = 5;     // Saira_Medium_25_4bpp
     static const touchgfx::FontId LEDFONT_AUTO_GENERATED_FOR_FA = 6;     // Nazanin_25_4bpp
     static const touchgfx::FontId WARNINGFONT = 7;                       // SairaSemiCondensed_SemiBold_21_4bpp
-    static const touchgfx::FontId WARNINGFONT_AUTO_GENERATED_FOR_GB = 7; // SairaSemiCondensed_SemiBold_21_4bpp
-    static const touchgfx::FontId WARNINGFONT_AUTO_GENERATED_FOR_FA = 8; // Nazanin_21_4bpp
+    static const touchgfx::FontId WARNINGFONT_AUTO_GENERATED_FOR_GB = 8; // SairaSemiCondensed_SemiBold_25_4bpp
+    static const touchgfx::FontId WARNINGFONT_AUTO_GENERATED_FOR_FA = 6; // Nazanin_25_4bpp
     static const touchgfx::FontId TEMPFONT = 9;                          // Saira_SemiBold_30_4bpp
     static const touchgfx::FontId TEMPFONT_AUTO_GENERATED_FOR_GB = 9;    // Saira_SemiBold_30_4bpp
     static const touchgfx::FontId TEMPFONT_AUTO_GENERATED_FOR_FA = 10;    // Nazanin_30_4bpp

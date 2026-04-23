@@ -161,28 +161,28 @@ uint8_t W25QXXX_QSPI_Write(QSPI_HandleTypeDef *QSPIHandle,uint8_t* pData, uint32
     /* Enable write operations */
     if (W25QXXX_QSPI_WriteEnable(QSPIHandle) != QSPI_OK)
     {
-    	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
+//    	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
       return QSPI_ERROR;
     }
 
     /* Configure the command */
     if (HAL_QSPI_Command(QSPIHandle, &s_command, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
     {
-    	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
+//    	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
       return QSPI_ERROR;
     }
 
     /* Transmission of the data */
     if (HAL_QSPI_Transmit(QSPIHandle, pData, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK)
     {
-    	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
+//    	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
       return QSPI_ERROR;
     }
 
     /* Configure automatic polling mode to wait for end of program */
     if (W25QXXX_QSPI_AutoPollingMemReady(QSPIHandle, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != QSPI_OK)
     {
-    	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
+//    	HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
       return QSPI_ERROR;
     }
 
@@ -190,10 +190,10 @@ uint8_t W25QXXX_QSPI_Write(QSPI_HandleTypeDef *QSPIHandle,uint8_t* pData, uint32
     current_addr += current_size;
     pData += current_size;
     current_size = ((current_addr + W25QXXX_PAGE_SIZE) > end_addr) ? (end_addr - current_addr) : W25QXXX_PAGE_SIZE;
-    HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
+//    HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
   } while (current_addr < end_addr);
 
-  HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_RESET);
+//  HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_RESET);
   return QSPI_OK;
 }
 

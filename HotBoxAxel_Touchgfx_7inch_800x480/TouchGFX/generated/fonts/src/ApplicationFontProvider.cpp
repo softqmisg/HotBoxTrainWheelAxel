@@ -40,11 +40,11 @@ touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId typography)
         // SairaSemiCondensed_SemiBold_21_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[7]);
     case Typography::WARNINGFONT_AUTO_GENERATED_FOR_GB:
-        // SairaSemiCondensed_SemiBold_21_4bpp
-        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[7]);
-    case Typography::WARNINGFONT_AUTO_GENERATED_FOR_FA:
-        // Nazanin_21_4bpp
+        // SairaSemiCondensed_SemiBold_25_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[8]);
+    case Typography::WARNINGFONT_AUTO_GENERATED_FOR_FA:
+        // Nazanin_25_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[6]);
     case Typography::TEMPFONT:
         // Saira_SemiBold_30_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[9]);

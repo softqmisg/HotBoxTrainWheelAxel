@@ -270,7 +270,6 @@ uint8_t Touch_Init(void)
 			// In the hardware version before RGB070M1-800*480 V1.1, the resolution of the touch screen is 1024*600. For the compatibility of the program, the judgment process is performed here
 // This variable flag is mainly used to determine whether the software needs to modify the collected touch coordinates
 			Modify_Flag	= 1;
-			HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, GPIO_PIN_SET);
 
 		}
 		else if( ( (GT9XX_Info[7]<<8) + GT9XX_Info[6] ) == 800 )	// The X-axis resolution of the touch screen is 800

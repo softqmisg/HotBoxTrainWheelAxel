@@ -11,11 +11,12 @@
 #include <gui/containers/TopBar.hpp>
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/TiledImage.hpp>
+#include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/containers/ListLayout.hpp>
 #include <gui/containers/Led.hpp>
-#include <gui/containers/WarningBar.hpp>
 #include <gui/containers/CarSelector.hpp>
 #include <gui/containers/TempAxelList.hpp>
+#include <gui/containers/WarningBar.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <gui/containers/PasswordPopup.hpp>
 #include <touchgfx/widgets/Image.hpp>
@@ -48,14 +49,16 @@ protected:
     TopBar topBar;
     touchgfx::Container container1;
     touchgfx::TiledImage tiledImage1;
+    touchgfx::Container container2;
+    touchgfx::BoxWithBorder boxWithBorder1;
     touchgfx::ListLayout ledListLayout;
     Led ledMain;
     Led ledAlarm;
     Led ledComm;
-    WarningBar warningBar;
     touchgfx::ListLayout templistLayout;
     CarSelector carSelector;
     TempAxelList tempAxelList;
+    WarningBar warningBar;
     touchgfx::ButtonWithLabel settingButton;
     PasswordPopup passwordPopup;
     touchgfx::Image image1;

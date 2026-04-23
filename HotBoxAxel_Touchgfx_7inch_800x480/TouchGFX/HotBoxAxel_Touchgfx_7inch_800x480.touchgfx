@@ -36,65 +36,83 @@
                 "FileName": "Gradient bg\\night_large.png"
               },
               {
-                "Type": "ListLayout",
-                "Name": "ledListLayout",
+                "Type": "Container",
+                "Name": "container2",
                 "X": 701,
-                "Y": 5,
+                "Y": 21,
                 "Width": 92,
-                "Height": 342,
-                "Direction": "South",
+                "Height": 306,
                 "Components": [
                   {
-                    "Type": "CustomContainerInstance",
-                    "Name": "ledMain",
+                    "Type": "BoxWithBorder",
+                    "Name": "boxWithBorder1",
                     "Width": 92,
-                    "Height": 114,
+                    "Height": 306,
                     "LockPosition": true,
-                    "CustomContainerDefinitionName": "Led"
+                    "Color": {
+                      "Red": 11,
+                      "Green": 43,
+                      "Blue": 87
+                    },
+                    "BorderColor": {
+                      "Red": 136,
+                      "Green": 136,
+                      "Blue": 136
+                    },
+                    "BorderSize": 3
                   },
                   {
-                    "Type": "CustomContainerInstance",
-                    "Name": "ledAlarm",
-                    "Y": 114,
+                    "Type": "ListLayout",
+                    "Name": "ledListLayout",
                     "Width": 92,
-                    "Height": 114,
+                    "Height": 306,
                     "LockPosition": true,
-                    "CustomContainerDefinitionName": "Led"
-                  },
-                  {
-                    "Type": "CustomContainerInstance",
-                    "Name": "ledComm",
-                    "Y": 228,
-                    "Width": 92,
-                    "Height": 114,
-                    "LockPosition": true,
-                    "CustomContainerDefinitionName": "Led"
+                    "Direction": "South",
+                    "Components": [
+                      {
+                        "Type": "CustomContainerInstance",
+                        "Name": "ledMain",
+                        "Width": 92,
+                        "Height": 102,
+                        "LockPosition": true,
+                        "CustomContainerDefinitionName": "Led"
+                      },
+                      {
+                        "Type": "CustomContainerInstance",
+                        "Name": "ledAlarm",
+                        "Y": 102,
+                        "Width": 92,
+                        "Height": 102,
+                        "LockPosition": true,
+                        "CustomContainerDefinitionName": "Led"
+                      },
+                      {
+                        "Type": "CustomContainerInstance",
+                        "Name": "ledComm",
+                        "Y": 204,
+                        "Width": 92,
+                        "Height": 102,
+                        "LockPosition": true,
+                        "CustomContainerDefinitionName": "Led"
+                      }
+                    ]
                   }
                 ]
-              },
-              {
-                "Type": "CustomContainerInstance",
-                "Name": "warningBar",
-                "X": 245,
-                "Y": 354,
-                "Width": 548,
-                "Height": 50,
-                "CustomContainerDefinitionName": "WarningBar"
               },
               {
                 "Type": "ListLayout",
                 "Name": "templistLayout",
                 "X": 9,
-                "Y": 65,
+                "Y": 42,
                 "Width": 692,
-                "Height": 235,
+                "Height": 264,
                 "Direction": "East",
                 "Components": [
                   {
                     "Type": "CustomContainerInstance",
                     "Name": "carSelector",
                     "Width": 192,
-                    "Height": 235,
+                    "Height": 264,
                     "CustomContainerDefinitionName": "CarSelector"
                   },
                   {
@@ -102,35 +120,44 @@
                     "Name": "tempAxelList",
                     "X": 192,
                     "Width": 500,
-                    "Height": 235,
+                    "Height": 264,
                     "CustomContainerDefinitionName": "TempAxelList"
                   }
                 ]
+              },
+              {
+                "Type": "CustomContainerInstance",
+                "Name": "warningBar",
+                "X": 217,
+                "Y": 336,
+                "Width": 576,
+                "Height": 50,
+                "CustomContainerDefinitionName": "WarningBar"
+              },
+              {
+                "Type": "ButtonWithLabel",
+                "Name": "settingButton",
+                "X": 18,
+                "Y": 336,
+                "Width": 175,
+                "Height": 50,
+                "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_pressed.png",
+                "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_action.png",
+                "TextId": "BUTTON_SETTING",
+                "ReleasedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "PressedColor": {
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
+                },
+                "TextRotation": "0",
+                "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_rounded_action.json"
               }
             ]
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "settingButton",
-            "X": 18,
-            "Y": 420,
-            "Width": 175,
-            "Height": 50,
-            "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_pressed.png",
-            "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_action.png",
-            "TextId": "BUTTON_SETTING",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_rounded_action.json"
           },
           {
             "Type": "CustomContainerInstance",
@@ -371,13 +398,13 @@
       {
         "Name": "Led",
         "Width": 92,
-        "Height": 114,
+        "Height": 102,
         "Components": [
           {
             "Type": "Circle",
             "Name": "stateCircle",
             "X": 6,
-            "Y": 34,
+            "Y": 28,
             "Width": 80,
             "Height": 80,
             "Color": {
@@ -393,7 +420,8 @@
           {
             "Type": "TextArea",
             "Name": "titleText",
-            "X": 14,
+            "X": 10,
+            "Y": 6,
             "Width": 72,
             "Height": 30,
             "TextId": "TEXT_COMM",
@@ -411,7 +439,7 @@
       {
         "Name": "TempAxel",
         "Width": 125,
-        "Height": 118,
+        "Height": 132,
         "Components": [
           {
             "Type": "Box",
@@ -471,13 +499,13 @@
       },
       {
         "Name": "WarningBar",
-        "Width": 548,
+        "Width": 576,
         "Height": 50,
         "Components": [
           {
             "Type": "BoxWithBorder",
             "Name": "boxWithBorder",
-            "Width": 436,
+            "Width": 454,
             "Height": 50,
             "Color": {
               "Red": 245,
@@ -493,7 +521,7 @@
           {
             "Type": "ButtonWithLabel",
             "Name": "acceptButton",
-            "X": 448,
+            "X": 466,
             "Y": 7,
             "Width": 100,
             "Height": 36,
@@ -516,8 +544,8 @@
             "Name": "warningText",
             "X": 10,
             "Y": 13,
-            "Width": 417,
-            "Height": 25,
+            "Width": 425,
+            "Height": 30,
             "TextId": "__SingleUse_L29H",
             "TextRotation": "0",
             "Color": {
@@ -549,30 +577,30 @@
       {
         "Name": "CarSelector",
         "Width": 192,
-        "Height": 235,
+        "Height": 264,
         "Components": [
           {
             "Type": "BoxWithBorder",
             "Name": "boxWithBorder",
             "Width": 192,
-            "Height": 235,
+            "Height": 264,
             "Color": {
               "Red": 11,
               "Green": 43,
               "Blue": 87
             },
             "BorderColor": {
-              "Red": 247,
-              "Green": 10,
-              "Blue": 10
+              "Red": 136,
+              "Green": 136,
+              "Blue": 136
             },
-            "BorderSize": 5
+            "BorderSize": 3
           },
           {
             "Type": "TextArea",
             "Name": "carNumberText",
             "X": 30,
-            "Y": 42,
+            "Y": 62,
             "Width": 132,
             "Height": 121,
             "TextId": "__SingleUse_I6GW",
@@ -593,7 +621,7 @@
             "Type": "ButtonWithLabel",
             "Name": "nextButton",
             "X": 9,
-            "Y": 163,
+            "Y": 190,
             "Width": 175,
             "Height": 50,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
@@ -644,13 +672,13 @@
       {
         "Name": "TempAxelList",
         "Width": 500,
-        "Height": 235,
+        "Height": 264,
         "Components": [
           {
             "Type": "BoxWithBorder",
             "Name": "boxWithBorder",
             "Width": 500,
-            "Height": 235,
+            "Height": 264,
             "LockPosition": true,
             "Color": {
               "Red": 11,
@@ -658,25 +686,24 @@
               "Blue": 87
             },
             "BorderColor": {
-              "Red": 247,
-              "Green": 10,
-              "Blue": 10
+              "Red": 136,
+              "Green": 136,
+              "Blue": 136
             },
-            "BorderSize": 5
+            "BorderSize": 3
           },
           {
             "Type": "ListLayout",
             "Name": "tempListLayout",
             "Width": 500,
-            "Height": 236,
-            "LockPosition": true,
+            "Height": 264,
             "Direction": "South",
             "Components": [
               {
                 "Type": "ListLayout",
                 "Name": "tempListLayout1",
                 "Width": 500,
-                "Height": 118,
+                "Height": 132,
                 "LockPosition": true,
                 "Direction": "East",
                 "Components": [
@@ -684,7 +711,7 @@
                     "Type": "CustomContainerInstance",
                     "Name": "tempAxel1",
                     "Width": 125,
-                    "Height": 118,
+                    "Height": 132,
                     "LockPosition": true,
                     "CustomContainerDefinitionName": "TempAxel"
                   },
@@ -693,7 +720,7 @@
                     "Name": "tempAxel2",
                     "X": 125,
                     "Width": 125,
-                    "Height": 118,
+                    "Height": 132,
                     "LockPosition": true,
                     "CustomContainerDefinitionName": "TempAxel"
                   },
@@ -702,7 +729,7 @@
                     "Name": "tempAxel3",
                     "X": 250,
                     "Width": 125,
-                    "Height": 118,
+                    "Height": 132,
                     "LockPosition": true,
                     "CustomContainerDefinitionName": "TempAxel"
                   },
@@ -711,7 +738,7 @@
                     "Name": "tempAxel4",
                     "X": 375,
                     "Width": 125,
-                    "Height": 118,
+                    "Height": 132,
                     "LockPosition": true,
                     "CustomContainerDefinitionName": "TempAxel"
                   }
@@ -720,9 +747,9 @@
               {
                 "Type": "ListLayout",
                 "Name": "tempListLayout2",
-                "Y": 118,
+                "Y": 132,
                 "Width": 500,
-                "Height": 118,
+                "Height": 132,
                 "LockPosition": true,
                 "Direction": "East",
                 "Components": [
@@ -730,7 +757,7 @@
                     "Type": "CustomContainerInstance",
                     "Name": "tempAxel5",
                     "Width": 125,
-                    "Height": 118,
+                    "Height": 132,
                     "LockPosition": true,
                     "CustomContainerDefinitionName": "TempAxel"
                   },
@@ -739,7 +766,7 @@
                     "Name": "tempAxel6",
                     "X": 125,
                     "Width": 125,
-                    "Height": 118,
+                    "Height": 132,
                     "LockPosition": true,
                     "CustomContainerDefinitionName": "TempAxel"
                   },
@@ -748,7 +775,7 @@
                     "Name": "tempAxel7",
                     "X": 250,
                     "Width": 125,
-                    "Height": 118,
+                    "Height": 132,
                     "LockPosition": true,
                     "CustomContainerDefinitionName": "TempAxel"
                   },
@@ -757,7 +784,7 @@
                     "Name": "tempAxel8",
                     "X": 375,
                     "Width": 125,
-                    "Height": 118,
+                    "Height": 132,
                     "LockPosition": true,
                     "CustomContainerDefinitionName": "TempAxel"
                   }
