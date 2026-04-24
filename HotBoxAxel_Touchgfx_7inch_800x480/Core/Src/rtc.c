@@ -38,7 +38,8 @@ void MX_RTC_Init(void)
   RTC_DateTypeDef sDate = {0};
 
   /* USER CODE BEGIN RTC_Init 1 */
-
+  // Disable backup domain write protection
+  HAL_PWR_EnableBkUpAccess();
   /* USER CODE END RTC_Init 1 */
 
   /** Initialize RTC Only
@@ -57,7 +58,8 @@ void MX_RTC_Init(void)
   }
 
   /* USER CODE BEGIN Check_RTC_BKUP */
-
+  if(HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR1)!=0xA5A55A5A)
+  {
   /* USER CODE END Check_RTC_BKUP */
 
   /** Initialize RTC and set the Time and Date
@@ -81,7 +83,8 @@ void MX_RTC_Init(void)
     Error_Handler();
   }
   /* USER CODE BEGIN RTC_Init 2 */
-
+  HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR1,0xA5A55A5A);
+  }
   /* USER CODE END RTC_Init 2 */
 
 }
