@@ -8,12 +8,12 @@
 TempAxelBase::TempAxelBase()
 {
     setWidth(125);
-    setHeight(132);
-    tempAreaBox.setPosition(12, 59, 101, 41);
+    setHeight(153);
+    tempAreaBox.setPosition(12, 76, 101, 41);
     tempAreaBox.setColor(touchgfx::Color::getColorFromRGB(92, 240, 0));
     add(tempAreaBox);
 
-    tempText.setXY(15, 59);
+    tempText.setXY(15, 78);
     tempText.setColor(touchgfx::Color::getColorFromRGB(34, 34, 34));
     tempText.setLinespacing(0);
     Unicode::snprintf(tempTextBuffer, TEMPTEXT_SIZE, "%s", touchgfx::TypedText(T_RESOURCEID2).getText());
@@ -22,8 +22,8 @@ TempAxelBase::TempAxelBase()
     tempText.setTypedText(touchgfx::TypedText(T_RESOURCEID3));
     add(tempText);
 
-    numAxelText.setXY(17, 11);
-    numAxelText.setColor(touchgfx::Color::getColorFromRGB(255, 217, 0));
+    numAxelText.setXY(17, 25);
+    numAxelText.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     numAxelText.setLinespacing(0);
     Unicode::snprintf(numAxelTextBuffer, NUMAXELTEXT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_T46G).getText());
     numAxelText.setWildcard(numAxelTextBuffer);

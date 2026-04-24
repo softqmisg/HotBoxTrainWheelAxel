@@ -12,40 +12,50 @@ TopBarBase::TopBarBase() :
     setWidth(800);
     setHeight(66);
     bgGradientTile.setBitmap(touchgfx::Bitmap(BITMAP_MIDDAY_ID));
-    bgGradientTile.setPosition(0, 0, 800, 66);
+    bgGradientTile.setWidth(800);
+    bgGradientTile.setHeight(66);
     bgGradientTile.setOffset(0, 0);
     add(bgGradientTile);
 
-    dateText.setXY(12, 12);
+    dateText.setXY(7, 16);
     dateText.setColor(touchgfx::Color::getColorFromRGB(253, 252, 255));
     dateText.setLinespacing(0);
-    touchgfx::Unicode::snprintf(dateTextBuffer1, DATETEXTBUFFER1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_6KTI).getText());
-    dateText.setWildcard1(dateTextBuffer1);
-    touchgfx::Unicode::snprintf(dateTextBuffer2, DATETEXTBUFFER2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_2A0D).getText());
-    dateText.setWildcard2(dateTextBuffer2);
+    Unicode::snprintf(dateTextBuffer, DATETEXT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_6KTI).getText());
+    dateText.setWildcard(dateTextBuffer);
     dateText.resizeToCurrentText();
-    dateText.setTypedText(touchgfx::TypedText(T_T_DATE_FORMAT));
+    dateText.setTypedText(touchgfx::TypedText(T_DATE_FORMAT));
     add(dateText);
 
-    digitalClock.setPosition(352, 7, 112, 52);
+    dayText.setXY(192, 16);
+    dayText.setColor(touchgfx::Color::getColorFromRGB(253, 252, 255));
+    dayText.setLinespacing(0);
+    dayText.setTypedText(touchgfx::TypedText(T_DAY_WEDNESDAY));
+    add(dayText);
+
+    digitalClock.setPosition(344, 9, 112, 48);
     digitalClock.setColor(touchgfx::Color::getColorFromRGB(255, 230, 0));
     digitalClock.setTypedText(touchgfx::TypedText(T___SINGLEUSE_0TBK));
     digitalClock.displayLeadingZeroForHourIndicator(true);
     digitalClock.setDisplayMode(touchgfx::DigitalClock::DISPLAY_24_HOUR_NO_SECONDS);
-    digitalClock.setTime24Hour(10, 10, 0);
+    digitalClock.setTime24Hour(23, 56, 59);
     add(digitalClock);
 
-    envTempText.setXY(652, 12);
+    envTempText.setXY(641, 12);
     envTempText.setColor(touchgfx::Color::getColorFromRGB(13, 255, 49));
     envTempText.setLinespacing(0);
     Unicode::snprintf(envTempTextBuffer, ENVTEMPTEXT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_T6GX).getText());
     envTempText.setWildcard(envTempTextBuffer);
     envTempText.resizeToCurrentText();
     envTempText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_J89U));
-    envTempText.setVisible(false);
     add(envTempText);
 
-    buttonWithLabel.setXY(609, 8);
+    centigradText.setXY(701, 9);
+    centigradText.setColor(touchgfx::Color::getColorFromRGB(13, 255, 49));
+    centigradText.setLinespacing(0);
+    centigradText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_M1V6));
+    add(centigradText);
+
+    buttonWithLabel.setXY(605, 8);
     buttonWithLabel.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_ACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID));
     buttonWithLabel.setLabelText(touchgfx::TypedText(T_BUTTON_EXIT));
     buttonWithLabel.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));

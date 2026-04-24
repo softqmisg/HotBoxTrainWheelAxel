@@ -56,7 +56,10 @@ PasswordPopupBase::PasswordPopupBase() :
     passwordTextArea.setXY(345, 183);
     passwordTextArea.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     passwordTextArea.setLinespacing(0);
-    passwordTextArea.setTypedText(touchgfx::TypedText(T___SINGLEUSE_PZFN));
+    Unicode::snprintf(passwordTextAreaBuffer, PASSWORDTEXTAREA_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_EOXJ).getText());
+    passwordTextArea.setWildcard(passwordTextAreaBuffer);
+    passwordTextArea.resizeToCurrentText();
+    passwordTextArea.setTypedText(touchgfx::TypedText(T___SINGLEUSE_MCGU));
     add(passwordTextArea);
 }
 

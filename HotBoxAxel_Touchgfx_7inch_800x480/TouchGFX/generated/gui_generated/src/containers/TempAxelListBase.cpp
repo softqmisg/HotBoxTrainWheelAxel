@@ -7,8 +7,8 @@
 TempAxelListBase::TempAxelListBase()
 {
     setWidth(500);
-    setHeight(264);
-    boxWithBorder.setPosition(0, 0, 500, 264);
+    setHeight(306);
+    boxWithBorder.setPosition(0, 0, 500, 306);
     boxWithBorder.setColor(touchgfx::Color::getColorFromRGB(11, 43, 87));
     boxWithBorder.setBorderColor(touchgfx::Color::getColorFromRGB(136, 136, 136));
     boxWithBorder.setBorderSize(3);

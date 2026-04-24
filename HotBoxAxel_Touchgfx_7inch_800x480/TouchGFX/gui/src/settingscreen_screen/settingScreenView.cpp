@@ -40,9 +40,10 @@ void settingScreenView::updateDate(uint8_t day, uint8_t month, uint16_t year)
 		{
 			Utility::gregorianToJalali(year, month, day, tmpYear, tmpMonth, tmpDay);
 		}
-		char name[5]="    ";
 
-		Utility::getDayNameShort(year, month, day,name);
-		topBar.setDate(tmpDay, tmpMonth, tmpYear,name);
+//		Utility::getDayNameShort(year, month, day,name);
+//		topBar.setDate(tmpDay, tmpMonth, tmpYear,name);
+		topBar.setDate(tmpDay, tmpMonth, tmpYear,(uint8_t)Utility::getDayOfWeek(year, month, day));
+
 	}
 }

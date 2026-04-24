@@ -25,44 +25,56 @@ touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId typography)
         // Saira_Medium_35_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[3]);
     case Typography::HEADERFONT_AUTO_GENERATED_FOR_FA:
-        // Nazanin_35_4bpp
+        // BTrafcBd_35_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[4]);
+    case Typography::HEADERFONT1:
+        // Saira_Medium_28_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[5]);
+    case Typography::HEADERFONT1_AUTO_GENERATED_FOR_GB:
+        // Saira_Medium_28_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[5]);
+    case Typography::HEADERFONT1_AUTO_GENERATED_FOR_FA:
+        // BTitrBd_30_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[6]);
+    case Typography::FIXEDTEXT:
+        // Saira_Medium_35_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[3]);
     case Typography::LEDFONT:
         // Saira_Medium_25_4bpp
-        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[5]);
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[7]);
     case Typography::LEDFONT_AUTO_GENERATED_FOR_GB:
         // Saira_Medium_25_4bpp
-        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[5]);
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[7]);
     case Typography::LEDFONT_AUTO_GENERATED_FOR_FA:
         // Nazanin_25_4bpp
-        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[6]);
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[8]);
     case Typography::WARNINGFONT:
         // SairaSemiCondensed_SemiBold_21_4bpp
-        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[7]);
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[9]);
     case Typography::WARNINGFONT_AUTO_GENERATED_FOR_GB:
         // SairaSemiCondensed_SemiBold_25_4bpp
-        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[8]);
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[10]);
     case Typography::WARNINGFONT_AUTO_GENERATED_FOR_FA:
-        // Nazanin_25_4bpp
-        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[6]);
+        // Nazanin_26_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[11]);
     case Typography::TEMPFONT:
         // Saira_SemiBold_30_4bpp
-        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[9]);
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[12]);
     case Typography::TEMPFONT_AUTO_GENERATED_FOR_GB:
         // Saira_SemiBold_30_4bpp
-        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[9]);
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[12]);
     case Typography::TEMPFONT_AUTO_GENERATED_FOR_FA:
         // Nazanin_30_4bpp
-        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[10]);
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[13]);
     case Typography::CARFONT:
         // Saira_SemiBold_100_4bpp
-        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[11]);
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[14]);
     case Typography::CARFONT_AUTO_GENERATED_FOR_GB:
         // Saira_SemiBold_100_4bpp
-        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[11]);
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[14]);
     case Typography::CARFONT_AUTO_GENERATED_FOR_FA:
         // Nazanin_80_4bpp
-        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[12]);
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[15]);
     case Typography::CARFONT1:
         // Saira_Bold_40_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[0]);
@@ -71,7 +83,10 @@ touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId typography)
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[0]);
     case Typography::CARFONT1_AUTO_GENERATED_FOR_FA:
         // Nazanin_40_4bpp
-        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[13]);
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[16]);
+    case Typography::PASSWORD:
+        // Saira_Medium_40_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[2]);
     default:
         return 0;
     }

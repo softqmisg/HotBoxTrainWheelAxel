@@ -37,11 +37,7 @@ void mainScreenView::tearDownScreen()
     }
 	mainScreenViewBase::tearDownScreen();
 }
-///////////digitalClock//////////////
-void mainScreenView::updateClock(uint8_t hours, uint8_t minutes, uint8_t seconds)
-{
-	topBar.setClock(hours, minutes, seconds);
-}
+///////////Date and Day/////////////////
 void mainScreenView::updateDate(uint8_t day, uint8_t month, uint16_t year)
 {
 	uint8_t tmpDay=day,tmpMonth=month;
@@ -51,11 +47,16 @@ void mainScreenView::updateDate(uint8_t day, uint8_t month, uint16_t year)
 		{
 			Utility::gregorianToJalali(year, month, day, tmpYear, tmpMonth, tmpDay);
 		}
-		char name[5]="    ";
-
-		Utility::getDayNameShort(year, month, day,name);
-		topBar.setDate(tmpDay, tmpMonth, tmpYear,name);
+//		char name[5]="    ";
+//		Utility::getDayNameShort(year, month, day,name);
+		topBar.setDate(tmpDay, tmpMonth, tmpYear,(uint8_t)Utility::getDayOfWeek(year, month, day));
 	}
+}
+
+///////////digitalClock//////////////
+void mainScreenView::updateClock(uint8_t hours, uint8_t minutes, uint8_t seconds)
+{
+	topBar.setClock(hours, minutes, seconds);
 }
 /////////////envTempText//////////////
 //void mainScreenView::updateEnvTemperature(int16_t temp)

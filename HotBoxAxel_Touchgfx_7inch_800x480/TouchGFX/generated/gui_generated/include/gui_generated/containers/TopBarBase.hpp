@@ -10,6 +10,7 @@
 #include <touchgfx/EasingEquations.hpp>
 #include <touchgfx/mixins/FadeAnimator.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/containers/clock/DigitalClock.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 
@@ -37,18 +38,18 @@ protected:
      * Member Declarations
      */
     touchgfx::FadeAnimator< touchgfx::TiledImage > bgGradientTile;
-    touchgfx::TextAreaWithTwoWildcards dateText;
+    touchgfx::TextAreaWithOneWildcard dateText;
+    touchgfx::TextArea dayText;
     touchgfx::DigitalClock digitalClock;
     touchgfx::TextAreaWithOneWildcard envTempText;
+    touchgfx::TextArea centigradText;
     touchgfx::ButtonWithLabel buttonWithLabel;
 
     /*
      * Wildcard Buffers
      */
-    static const uint16_t DATETEXTBUFFER1_SIZE = 15;
-    touchgfx::Unicode::UnicodeChar dateTextBuffer1[DATETEXTBUFFER1_SIZE];
-    static const uint16_t DATETEXTBUFFER2_SIZE = 6;
-    touchgfx::Unicode::UnicodeChar dateTextBuffer2[DATETEXTBUFFER2_SIZE];
+    static const uint16_t DATETEXT_SIZE = 15;
+    touchgfx::Unicode::UnicodeChar dateTextBuffer[DATETEXT_SIZE];
     static const uint16_t ENVTEMPTEXT_SIZE = 10;
     touchgfx::Unicode::UnicodeChar envTempTextBuffer[ENVTEMPTEXT_SIZE];
 

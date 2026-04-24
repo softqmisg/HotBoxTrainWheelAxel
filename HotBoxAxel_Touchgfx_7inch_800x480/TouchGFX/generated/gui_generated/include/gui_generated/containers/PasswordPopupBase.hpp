@@ -11,6 +11,7 @@
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/ToggleButton.hpp>
+#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class PasswordPopupBase : public touchgfx::Container
 {
@@ -42,7 +43,13 @@ protected:
     touchgfx::TextArea textArea1;
     touchgfx::TextArea textArea2;
     touchgfx::ToggleButton userToggleButton;
-    touchgfx::TextArea passwordTextArea;
+    touchgfx::TextAreaWithOneWildcard passwordTextArea;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t PASSWORDTEXTAREA_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar passwordTextAreaBuffer[PASSWORDTEXTAREA_SIZE];
 
 private:
 

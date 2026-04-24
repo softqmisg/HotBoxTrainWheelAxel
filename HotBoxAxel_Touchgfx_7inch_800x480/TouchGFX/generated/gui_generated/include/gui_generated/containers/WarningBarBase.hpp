@@ -27,13 +27,18 @@ protected:
      */
     touchgfx::BoxWithBorder boxWithBorder;
     touchgfx::ButtonWithLabel acceptButton;
-    touchgfx::TextAreaWithOneWildcard warningText;
+    touchgfx::TextAreaWithTwoWildcards warningTextCar;
+    touchgfx::TextAreaWithTwoWildcards warningTextTime;
 
     /*
      * Wildcard Buffers
      */
-    static const uint16_t WARNINGTEXT_SIZE = 50;
-    touchgfx::Unicode::UnicodeChar warningTextBuffer[WARNINGTEXT_SIZE];
+    static const uint16_t WARNINGTEXTCARBUFFER1_SIZE = 4;
+    touchgfx::Unicode::UnicodeChar warningTextCarBuffer1[WARNINGTEXTCARBUFFER1_SIZE];
+    static const uint16_t WARNINGTEXTCARBUFFER2_SIZE = 4;
+    touchgfx::Unicode::UnicodeChar warningTextCarBuffer2[WARNINGTEXTCARBUFFER2_SIZE];
+    static const uint16_t WARNINGTEXTTIMEBUFFER1_SIZE = 15;
+    touchgfx::Unicode::UnicodeChar warningTextTimeBuffer1[WARNINGTEXTTIMEBUFFER1_SIZE];
 
 private:
 

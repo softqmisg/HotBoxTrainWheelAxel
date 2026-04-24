@@ -17,7 +17,6 @@
             "Name": "topBar",
             "Width": 800,
             "Height": 66,
-            "LockPosition": true,
             "CustomContainerDefinitionName": "TopBar"
           },
           {
@@ -103,16 +102,16 @@
                 "Type": "ListLayout",
                 "Name": "templistLayout",
                 "X": 9,
-                "Y": 42,
+                "Y": 21,
                 "Width": 692,
-                "Height": 264,
+                "Height": 306,
                 "Direction": "East",
                 "Components": [
                   {
                     "Type": "CustomContainerInstance",
                     "Name": "carSelector",
                     "Width": 192,
-                    "Height": 264,
+                    "Height": 306,
                     "CustomContainerDefinitionName": "CarSelector"
                   },
                   {
@@ -120,7 +119,7 @@
                     "Name": "tempAxelList",
                     "X": 192,
                     "Width": 500,
-                    "Height": 264,
+                    "Height": 306,
                     "CustomContainerDefinitionName": "TempAxelList"
                   }
                 ]
@@ -141,8 +140,8 @@
                 "Y": 336,
                 "Width": 175,
                 "Height": 50,
-                "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_pressed.png",
-                "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_rounded_action.png",
+                "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
+                "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_action.png",
                 "TextId": "BUTTON_SETTING",
                 "ReleasedColor": {
                   "Red": 255,
@@ -155,7 +154,7 @@
                   "Blue": 255
                 },
                 "TextRotation": "0",
-                "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_rounded_action.json"
+                "Preset": "alternate_theme\\presets\\button\\regular\\height_50\\small_round_action.json"
               }
             ]
           },
@@ -284,19 +283,17 @@
             "Name": "bgGradientTile",
             "Width": 800,
             "Height": 66,
-            "LockPosition": true,
             "FileName": "Gradient bg\\midday.png",
             "Fadeable": true
           },
           {
             "Type": "TextArea",
             "Name": "dateText",
-            "X": 12,
-            "Y": 12,
-            "Width": 293,
-            "Height": 42,
-            "LockPosition": true,
-            "TextId": "T_DATE_FORMAT",
+            "X": 7,
+            "Y": 16,
+            "Width": 174,
+            "Height": 34,
+            "TextId": "DATE_FORMAT",
             "TextRotation": "0",
             "Color": {
               "Red": 253,
@@ -308,39 +305,48 @@
               "TextId": "__SingleUse_6KTI",
               "UseBuffer": true,
               "BufferSize": 15
-            },
-            "Wildcard2": {
-              "TextId": "__SingleUse_2A0D",
-              "UseBuffer": true,
-              "BufferSize": 6
             }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "dayText",
+            "X": 192,
+            "Y": 16,
+            "Width": 59,
+            "Height": 34,
+            "TextId": "DAY_WEDNESDAY",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 253,
+              "Green": 252,
+              "Blue": 255
+            },
+            "AutoSize": true
           },
           {
             "Type": "DigitalClock",
             "Name": "digitalClock",
-            "X": 352,
-            "Y": 7,
+            "X": 344,
+            "Y": 9,
             "Width": 112,
-            "Height": 52,
-            "LockPosition": true,
+            "Height": 48,
             "TextColor": {
               "Red": 255,
               "Green": 230
             },
             "TextId": "__SingleUse_0TBK",
             "DisplayLeadingZeroForHourIndicator": true,
-            "InitialHour": 10,
-            "InitialMinute": 10
+            "InitialHour": 23,
+            "InitialMinute": 56,
+            "InitialSecond": 59
           },
           {
             "Type": "TextArea",
             "Name": "envTempText",
-            "X": 652,
+            "X": 641,
             "Y": 12,
-            "Width": 103,
+            "Width": 60,
             "Height": 42,
-            "Visible": false,
-            "LockPosition": true,
             "TextId": "__SingleUse_J89U",
             "TextRotation": "0",
             "Color": {
@@ -356,14 +362,29 @@
             }
           },
           {
+            "Type": "TextArea",
+            "Name": "centigradText",
+            "X": 701,
+            "Y": 9,
+            "Width": 43,
+            "Height": 42,
+            "TextId": "__SingleUse_M1V6",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 13,
+              "Green": 255,
+              "Blue": 49
+            },
+            "AutoSize": true
+          },
+          {
             "Type": "ButtonWithLabel",
             "Name": "buttonWithLabel",
-            "X": 609,
+            "X": 605,
             "Y": 8,
             "Width": 175,
             "Height": 50,
             "Visible": false,
-            "LockPosition": true,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
             "Released": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_active.png",
             "TextId": "BUTTON_EXIT",
@@ -439,15 +460,16 @@
       {
         "Name": "TempAxel",
         "Width": 125,
-        "Height": 132,
+        "Height": 153,
         "Components": [
           {
             "Type": "Box",
             "Name": "tempAreaBox",
             "X": 12,
-            "Y": 59,
+            "Y": 76,
             "Width": 101,
             "Height": 41,
+            "LockPosition": true,
             "Color": {
               "Red": 92,
               "Green": 240
@@ -457,9 +479,10 @@
             "Type": "TextArea",
             "Name": "tempText",
             "X": 15,
-            "Y": 59,
+            "Y": 78,
             "Width": 95,
             "Height": 36,
+            "LockPosition": true,
             "TextId": "ResourceId3",
             "TextRotation": "0",
             "Color": {
@@ -478,14 +501,15 @@
             "Type": "TextArea",
             "Name": "numAxelText",
             "X": 17,
-            "Y": 11,
+            "Y": 25,
             "Width": 90,
             "Height": 36,
             "TextId": "TEXT_AXEL",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
-              "Green": 217
+              "Green": 255,
+              "Blue": 255
             },
             "AutoSize": true,
             "Wildcard1": {
@@ -508,15 +532,16 @@
             "Width": 454,
             "Height": 50,
             "Color": {
-              "Red": 245,
-              "Green": 242,
-              "Blue": 206
-            },
-            "BorderColor": {
-              "Red": 187,
+              "Red": 255,
+              "Green": 255,
               "Blue": 255
             },
-            "BorderSize": 5
+            "BorderColor": {
+              "Red": 136,
+              "Green": 136,
+              "Blue": 136
+            },
+            "BorderSize": 3
           },
           {
             "Type": "ButtonWithLabel",
@@ -541,11 +566,11 @@
           },
           {
             "Type": "TextArea",
-            "Name": "warningText",
-            "X": 10,
-            "Y": 13,
-            "Width": 425,
-            "Height": 30,
+            "Name": "warningTextCar",
+            "X": 5,
+            "Y": 10,
+            "Width": 177,
+            "Height": 66,
             "TextId": "__SingleUse_L29H",
             "TextRotation": "0",
             "Color": {
@@ -554,9 +579,37 @@
             },
             "AutoSize": true,
             "Wildcard1": {
-              "TextId": "__SingleUse_PEZB",
+              "TextId": "__SingleUse_QHCI",
               "UseBuffer": true,
-              "BufferSize": 50
+              "BufferSize": 4
+            },
+            "Wildcard2": {
+              "TextId": "__SingleUse_9AAZ",
+              "UseBuffer": true,
+              "BufferSize": 4
+            }
+          },
+          {
+            "Type": "TextArea",
+            "Name": "warningTextTime",
+            "X": 211,
+            "Y": 10,
+            "Width": 181,
+            "Height": 33,
+            "TextId": "__SingleUse_A9U8",
+            "TextRotation": "0",
+            "Color": {
+              "Red": 255,
+              "Blue": 21
+            },
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_GQCE",
+              "UseBuffer": true,
+              "BufferSize": 15
+            },
+            "Wildcard2": {
+              "TextId": "__SingleUse_QCX0"
             }
           }
         ],
@@ -568,8 +621,8 @@
               "TriggerComponent": "acceptButton"
             },
             "Action": {
-              "Type": "ActionSetLanguage",
-              "Language": "FA"
+              "Type": "ActionExecuteCode",
+              "Code": "if(Texts::getLanguage()==0)\r\n\tTexts::setLanguage(1);\r\nelse\r\n\tTexts::setLanguage(0);"
             }
           }
         ]
@@ -577,13 +630,13 @@
       {
         "Name": "CarSelector",
         "Width": 192,
-        "Height": 264,
+        "Height": 306,
         "Components": [
           {
             "Type": "BoxWithBorder",
             "Name": "boxWithBorder",
             "Width": 192,
-            "Height": 264,
+            "Height": 306,
             "Color": {
               "Red": 11,
               "Green": 43,
@@ -600,7 +653,7 @@
             "Type": "TextArea",
             "Name": "carNumberText",
             "X": 30,
-            "Y": 62,
+            "Y": 76,
             "Width": 132,
             "Height": 121,
             "TextId": "__SingleUse_I6GW",
@@ -621,7 +674,7 @@
             "Type": "ButtonWithLabel",
             "Name": "nextButton",
             "X": 9,
-            "Y": 190,
+            "Y": 227,
             "Width": 175,
             "Height": 50,
             "Pressed": "__generated\\alternate_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
@@ -642,7 +695,7 @@
             "Type": "TextArea",
             "Name": "textArea1",
             "X": 65,
-            "Y": 6,
+            "Y": 20,
             "Width": 62,
             "Height": 48,
             "TextId": "TEXT_CAR",
@@ -672,14 +725,13 @@
       {
         "Name": "TempAxelList",
         "Width": 500,
-        "Height": 264,
+        "Height": 306,
         "Components": [
           {
             "Type": "BoxWithBorder",
             "Name": "boxWithBorder",
             "Width": 500,
-            "Height": 264,
-            "LockPosition": true,
+            "Height": 306,
             "Color": {
               "Red": 11,
               "Green": 43,
@@ -696,22 +748,21 @@
             "Type": "ListLayout",
             "Name": "tempListLayout",
             "Width": 500,
-            "Height": 264,
+            "Height": 306,
             "Direction": "South",
             "Components": [
               {
                 "Type": "ListLayout",
                 "Name": "tempListLayout1",
                 "Width": 500,
-                "Height": 132,
-                "LockPosition": true,
+                "Height": 153,
                 "Direction": "East",
                 "Components": [
                   {
                     "Type": "CustomContainerInstance",
                     "Name": "tempAxel1",
                     "Width": 125,
-                    "Height": 132,
+                    "Height": 153,
                     "LockPosition": true,
                     "CustomContainerDefinitionName": "TempAxel"
                   },
@@ -720,7 +771,7 @@
                     "Name": "tempAxel2",
                     "X": 125,
                     "Width": 125,
-                    "Height": 132,
+                    "Height": 153,
                     "LockPosition": true,
                     "CustomContainerDefinitionName": "TempAxel"
                   },
@@ -729,7 +780,7 @@
                     "Name": "tempAxel3",
                     "X": 250,
                     "Width": 125,
-                    "Height": 132,
+                    "Height": 153,
                     "LockPosition": true,
                     "CustomContainerDefinitionName": "TempAxel"
                   },
@@ -738,7 +789,7 @@
                     "Name": "tempAxel4",
                     "X": 375,
                     "Width": 125,
-                    "Height": 132,
+                    "Height": 153,
                     "LockPosition": true,
                     "CustomContainerDefinitionName": "TempAxel"
                   }
@@ -747,17 +798,16 @@
               {
                 "Type": "ListLayout",
                 "Name": "tempListLayout2",
-                "Y": 132,
+                "Y": 153,
                 "Width": 500,
-                "Height": 132,
-                "LockPosition": true,
+                "Height": 153,
                 "Direction": "East",
                 "Components": [
                   {
                     "Type": "CustomContainerInstance",
                     "Name": "tempAxel5",
                     "Width": 125,
-                    "Height": 132,
+                    "Height": 153,
                     "LockPosition": true,
                     "CustomContainerDefinitionName": "TempAxel"
                   },
@@ -766,7 +816,7 @@
                     "Name": "tempAxel6",
                     "X": 125,
                     "Width": 125,
-                    "Height": 132,
+                    "Height": 153,
                     "LockPosition": true,
                     "CustomContainerDefinitionName": "TempAxel"
                   },
@@ -775,7 +825,7 @@
                     "Name": "tempAxel7",
                     "X": 250,
                     "Width": 125,
-                    "Height": 132,
+                    "Height": 153,
                     "LockPosition": true,
                     "CustomContainerDefinitionName": "TempAxel"
                   },
@@ -784,7 +834,7 @@
                     "Name": "tempAxel8",
                     "X": 375,
                     "Width": 125,
-                    "Height": 132,
+                    "Height": 153,
                     "LockPosition": true,
                     "CustomContainerDefinitionName": "TempAxel"
                   }
@@ -916,16 +966,21 @@
             "Name": "passwordTextArea",
             "X": 345,
             "Y": 183,
-            "Width": 154,
-            "Height": 42,
-            "TextId": "__SingleUse_PZFN",
+            "Width": 72,
+            "Height": 48,
+            "TextId": "__SingleUse_MCGU",
             "TextRotation": "0",
             "Color": {
               "Red": 255,
               "Green": 255,
               "Blue": 255
             },
-            "AutoSize": true
+            "AutoSize": true,
+            "Wildcard1": {
+              "TextId": "__SingleUse_EOXJ",
+              "UseBuffer": true,
+              "BufferSize": 10
+            }
           }
         ],
         "Interactions": [

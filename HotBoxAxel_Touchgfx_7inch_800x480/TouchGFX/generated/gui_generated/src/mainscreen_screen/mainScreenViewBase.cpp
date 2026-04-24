@@ -49,7 +49,7 @@ mainScreenViewBase::mainScreenViewBase() :
 
     container1.add(container2);
 
-    templistLayout.setXY(9, 42);
+    templistLayout.setXY(9, 21);
     templistLayout.setDirection(touchgfx::EAST);
     templistLayout.add(carSelector);
 
@@ -61,7 +61,7 @@ mainScreenViewBase::mainScreenViewBase() :
     container1.add(warningBar);
 
     settingButton.setXY(18, 336);
-    settingButton.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUNDED_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUNDED_PRESSED_ID));
+    settingButton.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID));
     settingButton.setLabelText(touchgfx::TypedText(T_BUTTON_SETTING));
     settingButton.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     settingButton.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));

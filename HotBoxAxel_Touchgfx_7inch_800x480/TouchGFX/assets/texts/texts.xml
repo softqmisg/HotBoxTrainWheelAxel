@@ -5,59 +5,147 @@
     <Language Id="FA" />
   </Languages>
   <Texts>
+    <TextGroup Id="Header">
+      <Text Id="__SingleUse_M1V6" Alignment="Center" TypographyId="FixedText">
+        <Translation Language="GB"> ºC</Translation>
+        <Translation Language="FA"> ºC</Translation>
+      </Text>
+      <Text Id="DATE_FORMAT" Alignment="Center" TypographyId="HeaderFont1">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="FA">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="DAY_SATURDAY" Alignment="Center" TypographyId="HeaderFont1">
+        <Translation Language="GB">Sat</Translation>
+        <Translation Language="FA">شنبه</Translation>
+      </Text>
+      <Text Id="DAY_SUNDAY" Alignment="Center" TypographyId="HeaderFont1">
+        <Translation Language="GB">Sun</Translation>
+        <Translation Language="FA">یکشنبه</Translation>
+      </Text>
+      <Text Id="DAY_MONDAY" Alignment="Center" TypographyId="HeaderFont1">
+        <Translation Language="GB">Mon</Translation>
+        <Translation Language="FA">دوشنبه</Translation>
+      </Text>
+      <Text Id="DAY_TUESDAY" Alignment="Center" TypographyId="HeaderFont1">
+        <Translation Language="GB">Tue</Translation>
+        <Translation Language="FA">سه شنبه</Translation>
+      </Text>
+      <Text Id="DAY_WEDNESDAY" Alignment="Center" TypographyId="HeaderFont1">
+        <Translation Language="GB">Wed</Translation>
+        <Translation Language="FA">چهارشنبه</Translation>
+      </Text>
+      <Text Id="DAY_THURSDAY" Alignment="Center" TypographyId="HeaderFont1">
+        <Translation Language="GB">Thu</Translation>
+        <Translation Language="FA">پنجشنبه</Translation>
+      </Text>
+      <Text Id="DAY_FRIDAY" Alignment="Center" TypographyId="HeaderFont1">
+        <Translation Language="GB">Fri</Translation>
+        <Translation Language="FA">جمعه</Translation>
+      </Text>
+      <Text Id="__SingleUse_6KTI" Alignment="Center" TypographyId="HeaderFont1">
+        <Translation Language="GB">8888/88/88</Translation>
+        <Translation Language="FA">8888/88/88</Translation>
+      </Text>
+      <Text Id="__SingleUse_T6GX" Alignment="Center" TypographyId="HeaderFont">
+        <Translation Language="GB">+27</Translation>
+        <Translation Language="FA">+27</Translation>
+      </Text>
+      <Text Id="__SingleUse_0TBK" Alignment="Center" TypographyId="HeaderFont">
+        <Translation Language="GB" Alignment="Center">&lt;&gt;</Translation>
+        <Translation Language="FA" Alignment="Center">&lt;&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_J89U" Alignment="Center" TypographyId="HeaderFont">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="FA">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="BUTTON_EXIT" Alignment="Center" TypographyId="HeaderFont">
+        <Translation Language="GB">Exit</Translation>
+        <Translation Language="FA">خروج</Translation>
+      </Text>
+      <Text Id="BUTTON_SETTING" Alignment="Center" TypographyId="HeaderFont">
+        <Translation Language="GB">Setting</Translation>
+        <Translation Language="FA">تنظیمات</Translation>
+      </Text>
+    </TextGroup>
+    <TextGroup Id="PasswordPage">
+      <Text Id="__SingleUse_EOXJ" Alignment="Left" TypographyId="Password">
+        <Translation Language="GB">****</Translation>
+        <Translation Language="FA">*</Translation>
+      </Text>
+      <Text Id="__SingleUse_MCGU" Alignment="Left" TypographyId="Password">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="FA">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="TEXT_PASS" Alignment="Left" TypographyId="HeaderFont">
+        <Translation Language="GB">Password</Translation>
+        <Translation Language="FA">رمزعبور</Translation>
+      </Text>
+      <Text Id="TEXT_USERNAME" Alignment="Left" TypographyId="HeaderFont">
+        <Translation Language="GB">Username</Translation>
+        <Translation Language="FA">نام کاربری</Translation>
+      </Text>
+      <Text Id="BUTTON_OK" Alignment="Center" TypographyId="HeaderFont">
+        <Translation Language="GB">OK</Translation>
+        <Translation Language="FA">قبول</Translation>
+      </Text>
+      <Text Id="BUTTON_CANCEL" Alignment="Center" TypographyId="HeaderFont">
+        <Translation Language="GB">Cancel</Translation>
+        <Translation Language="FA">انصراف</Translation>
+      </Text>
+    </TextGroup>
+    <TextGroup Id="Leds">
+      <Text Id="TEXT_ALARM" Alignment="Center" TypographyId="LedFont">
+        <Translation Language="GB">Alarm</Translation>
+        <Translation Language="FA">آلارم</Translation>
+      </Text>
+      <Text Id="TEXT_MAIN" Alignment="Center" TypographyId="LedFont">
+        <Translation Language="GB">Main</Translation>
+        <Translation Language="FA">اصلی</Translation>
+      </Text>
+      <Text Id="TEXT_COMM" Alignment="Center" TypographyId="LedFont">
+        <Translation Language="GB">Comm</Translation>
+        <Translation Language="FA">ارتباط</Translation>
+      </Text>
+    </TextGroup>
     <TextGroup Id="Warning">
-      <Text Id="__SingleUse_PEZB" Alignment="Center" TypographyId="WarningFont">
-        <Translation Language="GB">Error in Car 5 Axel 6 @ 13:42 1404/05/07  </Translation>
-        <Translation Language="FA" Alignment="Right">خطا در واگن 5 محور 6 در 13:42 1404/05/07 </Translation>
+      <Text Id="__SingleUse_9AAZ" Alignment="Left" TypographyId="WarningFont">
+        <Translation Language="GB">5</Translation>
+        <Translation Language="FA">5&#10;</Translation>
+      </Text>
+      <Text Id="__SingleUse_GQCE" Alignment="Center" TypographyId="WarningFont">
+        <Translation Language="GB">88:88</Translation>
+        <Translation Language="FA">88:88</Translation>
+      </Text>
+      <Text Id="__SingleUse_QCX0" Alignment="Left" TypographyId="WarningFont">
+        <Translation Language="GB">8888/88/88</Translation>
+        <Translation Language="FA">8888/88/88</Translation>
+      </Text>
+      <Text Id="__SingleUse_QHCI" Alignment="Left" TypographyId="WarningFont">
+        <Translation Language="GB">6</Translation>
+        <Translation Language="FA">6</Translation>
+      </Text>
+      <Text Id="__SingleUse_L29H" Alignment="Left" TypographyId="WarningFont">
+        <Translation Language="GB">Error in Car &lt;value&gt; Axel &lt;value&gt;</Translation>
+        <Translation Language="FA" Alignment="Center">خطا در واگن&lt;value&gt; محور &lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_A9U8" Alignment="Left" TypographyId="WarningFont">
+        <Translation Language="GB">@&lt;value&gt;-&lt;value&gt;</Translation>
+        <Translation Language="FA">@&lt;value&gt;-&lt;value&gt;</Translation>
       </Text>
       <Text Id="BUTTON_ACCEPT" Alignment="Center" TypographyId="WarningFont">
         <Translation Language="GB">Accept</Translation>
         <Translation Language="FA">پیمایش</Translation>
       </Text>
     </TextGroup>
-    <TextGroup Id="DayName">
-      <Text Id="__SingleUse_2A0D" Alignment="Left" TypographyId="HeaderFont">
-        <Translation Language="GB">Wed</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="T_DATE_FORMAT" Alignment="Center" TypographyId="HeaderFont">
-        <Translation Language="GB">&lt;value&gt; &lt;value&gt;</Translation>
-        <Translation Language="FA">&lt;value&gt; &lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_6KTI" Alignment="Left" TypographyId="HeaderFont">
-        <Translation Language="GB">9999/99/99</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="T_DAY_SATURDAY" Alignment="Left" TypographyId="HeaderFont">
-        <Translation Language="GB">Sat</Translation>
-        <Translation Language="FA">شنبه</Translation>
-      </Text>
-      <Text Id="T_DAY_FRIDAY" Alignment="Left" TypographyId="HeaderFont">
-        <Translation Language="GB">Fri</Translation>
-        <Translation Language="FA">جمعه</Translation>
-      </Text>
-      <Text Id="T_DAY_THURSDAY" Alignment="Left" TypographyId="HeaderFont">
-        <Translation Language="GB">Thu</Translation>
-        <Translation Language="FA">پنجشنبه</Translation>
-      </Text>
-      <Text Id="T_DAY_WEDNESDAY" Alignment="Left" TypographyId="HeaderFont">
-        <Translation Language="GB">Wed</Translation>
-        <Translation Language="FA">چهارشنبه</Translation>
-      </Text>
-      <Text Id="T_DAY_TUESDAY" Alignment="Left" TypographyId="HeaderFont">
-        <Translation Language="GB">Tue</Translation>
-        <Translation Language="FA">سه شنبه</Translation>
-      </Text>
-      <Text Id="T_DAY_SUNDAY" Alignment="Left" TypographyId="HeaderFont">
-        <Translation Language="GB">Sun</Translation>
-        <Translation Language="FA">یکشنبه</Translation>
-      </Text>
-      <Text Id="T_DAY_MONDAY" Alignment="Left" TypographyId="HeaderFont">
-        <Translation Language="GB">Mon</Translation>
-        <Translation Language="FA">دوشنبه</Translation>
-      </Text>
-    </TextGroup>
     <TextGroup Id="TempCarSelector">
+      <Text Id="__SingleUse_SMQ1" Alignment="Left" TypographyId="CarFont">
+        <Translation Language="GB">00</Translation>
+        <Translation Language="FA">00&#10;</Translation>
+      </Text>
+      <Text Id="__SingleUse_I6GW" Alignment="Left" TypographyId="CarFont">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="FA">&lt;value&gt;</Translation>
+      </Text>
       <Text Id="BUTTON_NEXT" Alignment="Center" TypographyId="CarFont1">
         <Translation Language="GB">Next</Translation>
         <Translation Language="FA">بعدی</Translation>
@@ -68,7 +156,11 @@
       </Text>
       <Text Id="TEXT_AXEL" Alignment="Center" TypographyId="TempFont">
         <Translation Language="GB">Axel &lt;value&gt;</Translation>
-        <Translation Language="FA" Alignment="Right">&lt;value&gt;محور</Translation>
+        <Translation Language="FA" Alignment="Center">&lt;value&gt; محور</Translation>
+      </Text>
+      <Text Id="__SingleUse_T46G" Alignment="Left" TypographyId="TempFont">
+        <Translation Language="GB">8</Translation>
+        <Translation Language="FA">8</Translation>
       </Text>
       <Text Id="ResourceId3" Alignment="Center" TypographyId="TempFont">
         <Translation Language="GB">&lt;value&gt;ºC</Translation>
@@ -83,76 +175,7 @@
         <Translation Language="FA">0</Translation>
       </Text>
     </TextGroup>
-    <TextGroup Id="Unsorted">
-      <Text Id="__SingleUse_T46G" Alignment="Left" TypographyId="TempFont">
-        <Translation Language="GB">8</Translation>
-        <Translation Language="FA">New Text</Translation>
-      </Text>
-      <Text Id="TEXT_COMM" Alignment="Left" TypographyId="LedFont">
-        <Translation Language="GB">Comm</Translation>
-        <Translation Language="FA">ارتباط</Translation>
-      </Text>
-      <Text Id="TEXT_MAIN" Alignment="Left" TypographyId="LedFont">
-        <Translation Language="GB">Main</Translation>
-        <Translation Language="FA">اصلی</Translation>
-      </Text>
-      <Text Id="BUTTON_EXIT" Alignment="Center" TypographyId="HeaderFont">
-        <Translation Language="GB">Exit</Translation>
-        <Translation Language="FA">خروج</Translation>
-      </Text>
-      <Text Id="BUTTON_CANCEL" Alignment="Center" TypographyId="HeaderFont">
-        <Translation Language="GB">Cancel</Translation>
-        <Translation Language="FA">انصراف</Translation>
-      </Text>
-      <Text Id="__SingleUse_PZFN" Alignment="Left" TypographyId="HeaderFont">
-        <Translation Language="GB">New Text</Translation>
-        <Translation Language="FA">New Text</Translation>
-      </Text>
-      <Text Id="TEXT_USERNAME" Alignment="Left" TypographyId="HeaderFont">
-        <Translation Language="GB">Username</Translation>
-        <Translation Language="FA">نام کاربری</Translation>
-      </Text>
-      <Text Id="BUTTON_OK" Alignment="Center" TypographyId="HeaderFont">
-        <Translation Language="GB">OK</Translation>
-        <Translation Language="FA">قبول</Translation>
-      </Text>
-      <Text Id="TEXT_PASS" Alignment="Left" TypographyId="HeaderFont">
-        <Translation Language="GB">Password</Translation>
-        <Translation Language="FA">رمزعبور</Translation>
-      </Text>
-      <Text Id="BUTTON_SETTING" Alignment="Center" TypographyId="HeaderFont">
-        <Translation Language="GB">Setting</Translation>
-        <Translation Language="FA">تنظیمات</Translation>
-      </Text>
-      <Text Id="__SingleUse_SMQ1" Alignment="Left" TypographyId="CarFont">
-        <Translation Language="GB">00</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="__SingleUse_I6GW" Alignment="Left" TypographyId="CarFont">
-        <Translation Language="GB">&lt;value&gt;</Translation>
-        <Translation Language="FA">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_L29H" Alignment="Left" TypographyId="WarningFont">
-        <Translation Language="GB">&lt;value&gt;</Translation>
-        <Translation Language="FA">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="TEXT_ALARM" Alignment="Left" TypographyId="LedFont">
-        <Translation Language="GB">Alarm</Translation>
-        <Translation Language="FA">آلارم</Translation>
-      </Text>
-      <Text Id="__SingleUse_T6GX" Alignment="Left" TypographyId="HeaderFont">
-        <Translation Language="GB">+27</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="__SingleUse_0TBK" Alignment="Center" TypographyId="HeaderFont">
-        <Translation Language="GB">&lt;&gt;</Translation>
-        <Translation Language="FA">&lt;&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_J89U" Alignment="Center" TypographyId="HeaderFont">
-        <Translation Language="GB">&lt;value&gt; ºC</Translation>
-        <Translation Language="FA">&lt;value&gt; ºC</Translation>
-      </Text>
-    </TextGroup>
+    <TextGroup Id="Unsorted" />
   </Texts>
   <Typographies>
     <Typography Id="Large" Font="Saira-Bold.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z">
@@ -161,17 +184,22 @@
     <Typography Id="Farsi" Font="Nazaninb.ttf" Size="23" Bpp="4" IsVector="no" Direction="RTL" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z" />
     <Typography Id="HeaderFont" Font="Saira-Medium.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WidgetWildcardCharacters="0123456789 :APM" WildcardCharacterRanges="0-9,A-Z,a-z">
       <LanguageSetting Language="GB" Font="Saira-Medium.ttf" Size="35" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z" />
-      <LanguageSetting Language="FA" Font="Nazanin.ttf" Size="35" Bpp="4" IsVector="no" IsCompressed="no" Direction="RTL" FallbackCharacter="?" WildcardCharacters="C!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt; 060C 061F 0621-064A 0660-0669 067E-06CC 06F0-06F9 FB56-FBFF FE81-FEFC" />
+      <LanguageSetting Language="FA" Font="BTrafcBd.ttf" Size="35" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="C!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt; 060C 061B 061F 0621-064A 0660-066D 0670-06ED 06F0-06F9 FB51-FBB1 FBD3-FBFF FE81-FEFC" WildcardCharacterRanges="a-z,A-Z" />
     </Typography>
+    <Typography Id="HeaderFont1" Font="Saira-Medium.ttf" Size="28" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z">
+      <LanguageSetting Language="GB" Font="Saira-Medium.ttf" Size="28" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z" />
+      <LanguageSetting Language="FA" Font="BTitrBd.ttf" Size="30" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="C!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt; 060C 061B 061F 0621-064A 0660-066D 0670-06ED 06F0-06F9 FB51-FBB1 FBD3-FBFF FE81-FEFC" />
+    </Typography>
+    <Typography Id="FixedText" Font="Saira-Medium.ttf" Size="35" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
     <Typography Id="LedFont" Font="Saira-Medium.ttf" Size="25" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z">
       <LanguageSetting Language="GB" Font="Saira-Medium.ttf" Size="25" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" />
       <LanguageSetting Language="FA" Font="Nazanin.ttf" Size="25" Bpp="4" IsVector="no" IsCompressed="no" Direction="RTL" FallbackCharacter="?" WildcardCharacters="0600-06FF FB50-FDFF FE70-FEFF 200C-200D" />
     </Typography>
     <Typography Id="WarningFont" Font="SairaSemiCondensed-SemiBold.ttf" Size="21" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z">
       <LanguageSetting Language="GB" Font="SairaSemiCondensed-SemiBold.ttf" Size="25" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" />
-      <LanguageSetting Language="FA" Font="Nazanin.ttf" Size="25" Bpp="4" IsVector="no" IsCompressed="no" Direction="RTL" FallbackCharacter="?" WildcardCharacters="060C 061F 0621-064A 0660-0669 067E-06CC 06F0-06F9 FB56-FBFF FE81-FEFC" />
+      <LanguageSetting Language="FA" Font="Nazanin.ttf" Size="26" Bpp="4" IsVector="no" IsCompressed="no" Direction="RTL" FallbackCharacter="?" WildcardCharacters="060C 061F 0621-064A 0660-0669 067E-06CC 06F0-06F9 FB56-FBFF FE81-FEFC" />
     </Typography>
-    <Typography Id="TempFont" Font="Saira-SemiBold.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z">
+    <Typography Id="TempFont" Font="Saira-SemiBold.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="C!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt; 060C 061B 061F 0621-064A 0660-066D 0670-06ED 06F0-06F9 FB51-FBB1 FBD3-FBFF FE81-FEFC" WildcardCharacterRanges="0-9,A-Z,a-z">
       <LanguageSetting Language="GB" Font="Saira-SemiBold.ttf" Size="30" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" />
       <LanguageSetting Language="FA" Font="Nazanin.ttf" Size="30" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt; 060C 061F 0621-064A 0660-0669 067E-06CC 06F0-06F9 FB56-FBFF FE81-FEFC" WildcardCharacterRanges="A-Z" />
     </Typography>
@@ -183,5 +211,6 @@
       <LanguageSetting Language="GB" Font="Saira-Bold.ttf" Size="40" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z" />
       <LanguageSetting Language="FA" Font="Nazanin.ttf" Size="40" Bpp="4" IsVector="no" IsCompressed="no" Direction="RTL" FallbackCharacter="?" WildcardCharacters="0600-06FF FB50-FDFF FE70-FEFF 200C-200D" />
     </Typography>
+    <Typography Id="Password" Font="Saira-Medium.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
   </Typographies>
 </TextDatabase>
