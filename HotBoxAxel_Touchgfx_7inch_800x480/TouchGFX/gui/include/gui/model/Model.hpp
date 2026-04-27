@@ -1,12 +1,12 @@
 #ifndef MODEL_HPP
 #define MODEL_HPP
 #include <touchgfx/hal/Types.hpp>
-#ifndef SIMULATOR
-#include <rtc.h>
+#include "rtc.h"
+#include "Utility.h"
 #include "Car.h"
 #include "LedParam.h"
-#endif
-
+#include "Logger.h"
+#include "EventLogger.h"
 
 class ModelListener;
 
@@ -55,7 +55,8 @@ private:
     uint16_t tick1sCounter;
     uint16_t tickCounter;
     bool refreshingMainEnabled;
-
+    Logger sensorLogger;
+    EventLogger eventLogger;
     // Time variables
     uint8_t hours;
     uint8_t minutes;

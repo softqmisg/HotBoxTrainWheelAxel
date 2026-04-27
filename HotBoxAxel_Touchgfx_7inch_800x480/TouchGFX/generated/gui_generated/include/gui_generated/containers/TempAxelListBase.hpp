@@ -7,6 +7,7 @@
 #include <gui/common/FrontendApplication.hpp>
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
+#include <touchgfx/widgets/TiledImage.hpp>
 #include <touchgfx/containers/ListLayout.hpp>
 #include <gui/containers/TempAxel.hpp>
 
@@ -26,6 +27,7 @@ protected:
      * Member Declarations
      */
     touchgfx::BoxWithBorder boxWithBorder;
+    touchgfx::TiledImage tiledImage1;
     touchgfx::ListLayout tempListLayout;
     touchgfx::ListLayout tempListLayout1;
     TempAxel tempAxel1;

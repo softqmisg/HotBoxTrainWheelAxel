@@ -7,9 +7,12 @@
 
 #ifndef INC_UTILITY_H_
 #define INC_UTILITY_H_
+//#include <stddef.h>
 #include <touchgfx/hal/Types.hpp>
+
+#define MAX_LOG_SIZE (size_t)1000
 #define MAX_CARNUM	10
-#define MAX_AXELNUM	8
+#define MAX_SENSORNUM	9 //8+1
 #define ERROR_TEMP 32767
 
 class Utility {

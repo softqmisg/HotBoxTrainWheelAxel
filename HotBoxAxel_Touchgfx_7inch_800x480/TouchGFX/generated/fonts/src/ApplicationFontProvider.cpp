@@ -87,6 +87,9 @@ touchgfx::Font* ApplicationFontProvider::getFont(touchgfx::FontId typography)
     case Typography::PASSWORD:
         // Saira_Medium_40_4bpp
         return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[2]);
+    case Typography::KEYBOARD:
+        // DejaVuSansMono_40_4bpp
+        return const_cast<touchgfx::Font*>(TypedTextDatabase::getFonts()[17]);
     default:
         return 0;
     }

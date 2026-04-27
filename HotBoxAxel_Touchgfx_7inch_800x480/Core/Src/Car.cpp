@@ -9,13 +9,13 @@
 
 Car::Car():carID(0) {
 	// TODO Auto-generated constructor stub
-	for(int i=0;i<MAX_AXELNUM;i++)
+	for(int i=0;i<MAX_SENSORNUM;i++)
 	{
-		tempAxel[i].temperature=0;
-		tempAxel[i].state=Car::TempState::NORMAL;
+		sensor[i].temperature=0;
+		sensor[i].state=Car::TempState::NORMAL;
+		sensor[i].priority=1;
 	}
-	tempEnv.temperature=0;
-	tempEnv.state=Car::TempState::NORMAL;
+
 }
 
 Car::~Car() {
@@ -29,30 +29,29 @@ uint8_t Car::getCarID()
 {
 	return carID;
 }
-void Car::setTemperature(uint8_t axelID,uint16_t temp,Car::TempState state)
+void Car::setTemperature(uint8_t sensorID,uint16_t temp,Car::TempState state)
 {
-	if(axelID<MAX_AXELNUM)
+	if(sensorID<MAX_SENSORNUM)
 	{
-		tempAxel[axelID].state=state;
-		tempAxel[axelID].temperature=temp;
+		sensor[sensorID].state=state;
+		sensor[sensorID].temperature=temp;
 	}
-	else if(axelID==MAX_AXELNUM)
-	{
-		tempEnv.state=state;
-		tempEnv.temperature=temp;
-	}
-
-
 }
-void Car::setTemperature(uint8_t axelID,Temp_t tempAxel)
+void Car::setTemperature(uint8_t sensorID,Sensor_t temperature)
 {
-	this->setTemperature(axelID,tempAxel.temperature,tempAxel.state);
+	this->setTemperature(sensorID,temperature.temperature,temperature.state);
 }
-Car::Temp_t Car::getTemperature(uint8_t axelID){
-	if(axelID<MAX_AXELNUM)
-		return tempAxel[axelID];
-	else
-		return tempEnv;
+Car::Sensor_t Car::getTemperature(uint8_t sensorID){
+	if(sensorID<MAX_SENSORNUM)
+		return sensor[sensorID];
+}
+void Car::setPriority(uint8_t sensorID,uint8_t prio)
+{
+	sensor[sensorID].priority=prio;
+}
+uint8_t Car::getPriority(uint8_t sensorID)
+{
+	return sensor[sensorID].priority;
 }
 
 void Car::setShowDuration(uint16_t duration)

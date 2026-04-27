@@ -8,6 +8,7 @@
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/containers/ListLayout.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 
 class WarningBarBase : public touchgfx::Container
@@ -16,6 +17,14 @@ public:
     WarningBarBase();
     virtual ~WarningBarBase();
     virtual void initialize();
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void acceptButtonClicked()
+    {
+        // Override and implement this function in WarningBar
+    }
 
 protected:
     FrontendApplication& application() {
@@ -27,6 +36,7 @@ protected:
      */
     touchgfx::BoxWithBorder boxWithBorder;
     touchgfx::ButtonWithLabel acceptButton;
+    touchgfx::ListLayout listLayout1;
     touchgfx::TextAreaWithTwoWildcards warningTextCar;
     touchgfx::TextAreaWithTwoWildcards warningTextTime;
 
@@ -37,8 +47,10 @@ protected:
     touchgfx::Unicode::UnicodeChar warningTextCarBuffer1[WARNINGTEXTCARBUFFER1_SIZE];
     static const uint16_t WARNINGTEXTCARBUFFER2_SIZE = 4;
     touchgfx::Unicode::UnicodeChar warningTextCarBuffer2[WARNINGTEXTCARBUFFER2_SIZE];
-    static const uint16_t WARNINGTEXTTIMEBUFFER1_SIZE = 15;
+    static const uint16_t WARNINGTEXTTIMEBUFFER1_SIZE = 10;
     touchgfx::Unicode::UnicodeChar warningTextTimeBuffer1[WARNINGTEXTTIMEBUFFER1_SIZE];
+    static const uint16_t WARNINGTEXTTIMEBUFFER2_SIZE = 15;
+    touchgfx::Unicode::UnicodeChar warningTextTimeBuffer2[WARNINGTEXTTIMEBUFFER2_SIZE];
 
 private:
 

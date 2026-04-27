@@ -11,7 +11,7 @@
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/ToggleButton.hpp>
-#include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/containers/buttons/Buttons.hpp>
 
 class PasswordPopupBase : public touchgfx::Container
 {
@@ -23,7 +23,19 @@ public:
     /*
      * Virtual Action Handlers
      */
+    virtual void okButtonClicked()
+    {
+        // Override and implement this function in PasswordPopup
+    }
     virtual void exitButtonClicked()
+    {
+        // Override and implement this function in PasswordPopup
+    }
+    virtual void paswordEditClicked()
+    {
+        // Override and implement this function in PasswordPopup
+    }
+    virtual void userToggleClicked()
     {
         // Override and implement this function in PasswordPopup
     }
@@ -40,16 +52,16 @@ protected:
     touchgfx::Box box1;
     touchgfx::ButtonWithLabel okButton;
     touchgfx::ButtonWithLabel exitButton;
-    touchgfx::TextArea textArea1;
-    touchgfx::TextArea textArea2;
+    touchgfx::TextArea label1;
+    touchgfx::TextArea label2;
     touchgfx::ToggleButton userToggleButton;
-    touchgfx::TextAreaWithOneWildcard passwordTextArea;
+    touchgfx::WildcardTextButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  >  passwordText;
 
     /*
      * Wildcard Buffers
      */
-    static const uint16_t PASSWORDTEXTAREA_SIZE = 10;
-    touchgfx::Unicode::UnicodeChar passwordTextAreaBuffer[PASSWORDTEXTAREA_SIZE];
+    static const uint16_t PASSWORDTEXT_SIZE = 10;
+    touchgfx::Unicode::UnicodeChar passwordTextBuffer[PASSWORDTEXT_SIZE];
 
 private:
 
@@ -57,11 +69,13 @@ private:
      * Callback Declarations
      */
     touchgfx::Callback<PasswordPopupBase, const touchgfx::AbstractButton&> buttonCallback;
+    touchgfx::Callback<PasswordPopupBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
 
     /*
      * Callback Handler Declarations
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
+    void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
 
 };
 

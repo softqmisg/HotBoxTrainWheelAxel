@@ -11,12 +11,19 @@ public:
     virtual ~PasswordPopup() {}
 
     virtual void initialize();
-    void setParentView(mainScreenView* view) { parentView = view; }
+//    void setParentView(mainScreenView* view) { parentView = view; }
+    void setPasswordEditCallback(	GenericCallback< const PasswordPopup&>&callback);
 
 protected:
-    mainScreenView* parentView;
-    void okButtonClicked();
-    void exitButtonClicked();
+
+    virtual void exitButtonClicked() ;
+    virtual void okButtonClicked() ;
+    virtual void userToggleClicked();
+    virtual void paswordEditClicked();
+private:
+//    mainScreenView* parentView;
+    GenericCallback< const PasswordPopup&> *passwordEditCallback{nullptr};
+
 };
 
 #endif // PASSWORDPOPUP_HPP

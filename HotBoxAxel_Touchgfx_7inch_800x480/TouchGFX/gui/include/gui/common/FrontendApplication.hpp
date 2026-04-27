@@ -18,6 +18,10 @@ public:
         model.tick();
         FrontendApplicationBase::handleTickEvent();
     }
+    void gotosettingScreenScreenNoTransition();
+protected:
+    touchgfx::Callback<FrontendApplication> transitionCallback;
+    void gotosettingScreenScreenNoTransitionImpl();
 private:
 };
 

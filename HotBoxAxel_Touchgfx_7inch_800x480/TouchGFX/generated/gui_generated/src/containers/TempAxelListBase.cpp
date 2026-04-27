@@ -3,6 +3,7 @@
 /*********************************************************************************/
 #include <gui_generated/containers/TempAxelListBase.hpp>
 #include <touchgfx/Color.hpp>
+#include <images/BitmapDatabase.hpp>
 
 TempAxelListBase::TempAxelListBase()
 {
@@ -13,6 +14,11 @@ TempAxelListBase::TempAxelListBase()
     boxWithBorder.setBorderColor(touchgfx::Color::getColorFromRGB(136, 136, 136));
     boxWithBorder.setBorderSize(3);
     add(boxWithBorder);
+
+    tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_NIGHT_LARGE_ID));
+    tiledImage1.setPosition(3, 3, 494, 300);
+    tiledImage1.setOffset(0, 0);
+    add(tiledImage1);
 
     tempListLayout.setXY(0, 0);
     tempListLayout.setDirection(touchgfx::SOUTH);

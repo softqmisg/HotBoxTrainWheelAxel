@@ -12,16 +12,16 @@ void CarSelector::initialize()
     CarSelectorBase::initialize();
     updateCarNumberTextArea();
 }
+void CarSelector::setNextButtonClickedCallback(GenericCallback<const CarSelector&>& callback) {
+	nextButtonClickedCallback = &callback;
+}
 void CarSelector::nextButtonClicked(){
 	currentCarNumber++;
 	if(currentCarNumber>=MAX_CARNUM)
 		currentCarNumber=0;
 	updateCarNumberTextArea();
-    if (nextButtonClickCallback) nextButtonClickCallback->execute(*this);
-}
-
-void CarSelector::setNextButtonClickedCallback(GenericCallback<const CarSelector&>& callback) {
-	nextButtonClickCallback = &callback;
+    if (nextButtonClickedCallback)
+    	nextButtonClickedCallback->execute(*this);
 }
 
 void CarSelector::updateCarNumberTextArea(){
@@ -32,7 +32,6 @@ void CarSelector::setCarNumber(uint8_t value) {
     currentCarNumber = value;
     updateCarNumberTextArea();
 }
-
 uint8_t CarSelector::getCarNumber() const {
     return currentCarNumber;
 }

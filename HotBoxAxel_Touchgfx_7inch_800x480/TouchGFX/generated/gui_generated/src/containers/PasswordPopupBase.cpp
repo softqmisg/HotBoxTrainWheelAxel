@@ -7,7 +7,8 @@
 #include <texts/TextKeysAndLanguages.hpp>
 
 PasswordPopupBase::PasswordPopupBase() :
-    buttonCallback(this, &PasswordPopupBase::buttonCallbackHandler)
+    buttonCallback(this, &PasswordPopupBase::buttonCallbackHandler),
+    flexButtonCallback(this, &PasswordPopupBase::flexButtonCallbackHandler)
 {
     setWidth(800);
     setHeight(480);
@@ -18,11 +19,11 @@ PasswordPopupBase::PasswordPopupBase() :
 
     box1.setPosition(79, 93, 601, 256);
     box1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box1.setAlpha(210);
+    box1.setAlpha(230);
     add(box1);
 
     okButton.setXY(147, 279);
-    okButton.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID));
+    okButton.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID));
     okButton.setLabelText(touchgfx::TypedText(T_BUTTON_OK));
     okButton.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     okButton.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -30,37 +31,41 @@ PasswordPopupBase::PasswordPopupBase() :
     add(okButton);
 
     exitButton.setXY(433, 279);
-    exitButton.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID));
+    exitButton.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID));
     exitButton.setLabelText(touchgfx::TypedText(T_BUTTON_CANCEL));
     exitButton.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     exitButton.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     exitButton.setAction(buttonCallback);
     add(exitButton);
 
-    textArea1.setXY(99, 183);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(245, 235, 235));
-    textArea1.setLinespacing(0);
-    textArea1.setTypedText(touchgfx::TypedText(T_TEXT_PASS));
-    add(textArea1);
+    label1.setXY(99, 183);
+    label1.setColor(touchgfx::Color::getColorFromRGB(245, 235, 235));
+    label1.setLinespacing(0);
+    label1.setTypedText(touchgfx::TypedText(T_TEXT_PASS));
+    add(label1);
 
-    textArea2.setXY(96, 114);
-    textArea2.setColor(touchgfx::Color::getColorFromRGB(255, 252, 252));
-    textArea2.setLinespacing(0);
-    textArea2.setTypedText(touchgfx::TypedText(T_TEXT_USERNAME));
-    add(textArea2);
+    label2.setXY(96, 114);
+    label2.setColor(touchgfx::Color::getColorFromRGB(255, 252, 252));
+    label2.setLinespacing(0);
+    label2.setTypedText(touchgfx::TypedText(T_TEXT_USERNAME));
+    add(label2);
 
-    userToggleButton.setXY(345, 114);
-    userToggleButton.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_OFF_LIGHT_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUNDED_ON_NORMAL_ID));
+    userToggleButton.setXY(348, 105);
+    userToggleButton.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_LARGE_ROUND_TEXT_OFF_NORMAL_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_LARGE_ROUND_TEXT_ON_DARK_ID));
+    userToggleButton.setAction(buttonCallback);
     add(userToggleButton);
 
-    passwordTextArea.setXY(345, 183);
-    passwordTextArea.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    passwordTextArea.setLinespacing(0);
-    Unicode::snprintf(passwordTextAreaBuffer, PASSWORDTEXTAREA_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_EOXJ).getText());
-    passwordTextArea.setWildcard(passwordTextAreaBuffer);
-    passwordTextArea.resizeToCurrentText();
-    passwordTextArea.setTypedText(touchgfx::TypedText(T___SINGLEUSE_MCGU));
-    add(passwordTextArea);
+    passwordText.setBoxWithBorderPosition(0, 0, 174, 50);
+    passwordText.setBorderSize(2);
+    passwordText.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(250, 250, 250), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(51, 102, 153), touchgfx::Color::getColorFromRGB(51, 102, 153));
+    passwordText.setWildcardText(TypedText(T___SINGLEUSE_B9LY));
+    Unicode::snprintf(passwordTextBuffer, PASSWORDTEXT_SIZE, "%s", TypedText(T___SINGLEUSE_80BA).getText());
+    passwordText.setWildcardTextBuffer(passwordTextBuffer);
+    passwordText.setWildcardTextPosition(0, 0, 174, 50);
+    passwordText.setWildcardTextColors(touchgfx::Color::getColorFromRGB(10, 10, 10), touchgfx::Color::getColorFromRGB(35, 152, 219));
+    passwordText.setAction(flexButtonCallback);
+    passwordText.setPosition(341, 179, 174, 50);
+    add(passwordText);
 }
 
 PasswordPopupBase::~PasswordPopupBase()
@@ -77,16 +82,34 @@ void PasswordPopupBase::buttonCallbackHandler(const touchgfx::AbstractButton& sr
 {
     if (&src == &okButton)
     {
-        //Interaction1
-        //When okButton clicked change screen to settingScreen
-        //Go to settingScreen with no screen transition
-        application().gotosettingScreenScreenNoTransition();
+        //OKButonClick
+        //When okButton clicked call virtual function
+        //Call okButtonClicked
+        okButtonClicked();
     }
     if (&src == &exitButton)
     {
-        //Interaction2
+        //ExitButtonClick
         //When exitButton clicked call virtual function
         //Call exitButtonClicked
         exitButtonClicked();
+    }
+    if (&src == &userToggleButton)
+    {
+        //UserButtonClick
+        //When userToggleButton clicked call virtual function
+        //Call userToggleClicked
+        userToggleClicked();
+    }
+}
+
+void PasswordPopupBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)
+{
+    if (&src == &passwordText)
+    {
+        //PasswordEditClick
+        //When passwordText clicked call virtual function
+        //Call paswordEditClicked
+        paswordEditClicked();
     }
 }

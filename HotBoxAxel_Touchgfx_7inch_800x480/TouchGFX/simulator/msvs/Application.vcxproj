@@ -41,6 +41,8 @@
     <ClCompile Include="..\..\gui\src\settingscreen_screen\settingScreenPresenter.cpp"/>
     <ClCompile Include="..\..\gui\src\settingscreen_screen\settingScreenView.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\settingscreen_screen\settingScreenViewBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\Keyboard.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\KeyboardBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -211,6 +213,12 @@
     <ClInclude Include="..\..\gui\include\gui\settingscreen_screen\settingScreenPresenter.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\settingscreen_screen\settingScreenView.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\settingscreen_screen\settingScreenViewBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\common\Editable.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\Keyboard.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\KeyboardBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\common\KeyboardColors.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\common\KeyboardKey.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\common\KeyboardLayout.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

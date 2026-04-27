@@ -3,8 +3,8 @@
 /*********************************************************************************/
 #include <gui_generated/containers/CarSelectorBase.hpp>
 #include <touchgfx/Color.hpp>
-#include <texts/TextKeysAndLanguages.hpp>
 #include <images/BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 
 CarSelectorBase::CarSelectorBase() :
     buttonCallback(this, &CarSelectorBase::buttonCallbackHandler)
@@ -17,6 +17,11 @@ CarSelectorBase::CarSelectorBase() :
     boxWithBorder.setBorderSize(3);
     add(boxWithBorder);
 
+    tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_NIGHT_LARGE_ID));
+    tiledImage1.setPosition(3, 3, 186, 300);
+    tiledImage1.setOffset(0, 0);
+    add(tiledImage1);
+
     carNumberText.setXY(30, 76);
     carNumberText.setColor(touchgfx::Color::getColorFromRGB(255, 250, 250));
     carNumberText.setLinespacing(0);
@@ -27,9 +32,9 @@ CarSelectorBase::CarSelectorBase() :
     add(carNumberText);
 
     nextButton.setXY(9, 227);
-    nextButton.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_ACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID));
+    nextButton.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_ACTIVE_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID));
     nextButton.setLabelText(touchgfx::TypedText(T_BUTTON_NEXT));
-    nextButton.setLabelColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+    nextButton.setLabelColor(touchgfx::Color::getColorFromRGB(255, 250, 250));
     nextButton.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     nextButton.setAction(buttonCallback);
     add(nextButton);

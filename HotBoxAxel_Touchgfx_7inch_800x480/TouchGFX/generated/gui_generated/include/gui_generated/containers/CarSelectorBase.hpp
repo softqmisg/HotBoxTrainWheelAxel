@@ -7,6 +7,7 @@
 #include <gui/common/FrontendApplication.hpp>
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
+#include <touchgfx/widgets/TiledImage.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
@@ -35,6 +36,7 @@ protected:
      * Member Declarations
      */
     touchgfx::BoxWithBorder boxWithBorder;
+    touchgfx::TiledImage tiledImage1;
     touchgfx::TextAreaWithOneWildcard carNumberText;
     touchgfx::ButtonWithLabel nextButton;
     touchgfx::TextArea textArea1;

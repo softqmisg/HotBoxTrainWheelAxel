@@ -9,23 +9,26 @@
 WarningBarBase::WarningBarBase() :
     buttonCallback(this, &WarningBarBase::buttonCallbackHandler)
 {
-    setWidth(576);
+    setWidth(580);
     setHeight(50);
-    boxWithBorder.setPosition(0, 0, 454, 50);
+    boxWithBorder.setPosition(0, 0, 460, 50);
     boxWithBorder.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     boxWithBorder.setBorderColor(touchgfx::Color::getColorFromRGB(136, 136, 136));
     boxWithBorder.setBorderSize(3);
     add(boxWithBorder);
 
-    acceptButton.setXY(466, 7);
-    acceptButton.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUND_ACTIVE_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUND_PRESSED_ID));
+    acceptButton.setXY(469, 7);
+    acceptButton.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUND_NORMAL_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUND_PRESSED_ID));
     acceptButton.setLabelText(touchgfx::TypedText(T_BUTTON_ACCEPT));
-    acceptButton.setLabelColor(touchgfx::Color::getColorFromRGB(255, 0, 0));
+    acceptButton.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     acceptButton.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     acceptButton.setAction(buttonCallback);
     add(acceptButton);
 
-    warningTextCar.setXY(5, 10);
+    listLayout1.setXY(10, 10);
+    listLayout1.setDirection(touchgfx::EAST);
+    warningTextCar.setWidth(213);
+    warningTextCar.setHeight(30);
     warningTextCar.setColor(touchgfx::Color::getColorFromRGB(255, 0, 21));
     warningTextCar.setLinespacing(0);
     touchgfx::Unicode::snprintf(warningTextCarBuffer1, WARNINGTEXTCARBUFFER1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_QHCI).getText());
@@ -34,17 +37,21 @@ WarningBarBase::WarningBarBase() :
     warningTextCar.setWildcard2(warningTextCarBuffer2);
     warningTextCar.resizeToCurrentText();
     warningTextCar.setTypedText(touchgfx::TypedText(T___SINGLEUSE_L29H));
-    add(warningTextCar);
+    listLayout1.add(warningTextCar);
 
-    warningTextTime.setXY(211, 10);
+    warningTextTime.setWidth(233);
+    warningTextTime.setHeight(30);
     warningTextTime.setColor(touchgfx::Color::getColorFromRGB(255, 0, 21));
     warningTextTime.setLinespacing(0);
     touchgfx::Unicode::snprintf(warningTextTimeBuffer1, WARNINGTEXTTIMEBUFFER1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_GQCE).getText());
     warningTextTime.setWildcard1(warningTextTimeBuffer1);
-    warningTextTime.setWildcard2(touchgfx::TypedText(T___SINGLEUSE_QCX0).getText());
+    touchgfx::Unicode::snprintf(warningTextTimeBuffer2, WARNINGTEXTTIMEBUFFER2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_QCX0).getText());
+    warningTextTime.setWildcard2(warningTextTimeBuffer2);
     warningTextTime.resizeToCurrentText();
     warningTextTime.setTypedText(touchgfx::TypedText(T___SINGLEUSE_A9U8));
-    add(warningTextTime);
+    listLayout1.add(warningTextTime);
+
+    add(listLayout1);
 }
 
 WarningBarBase::~WarningBarBase()
@@ -62,11 +69,8 @@ void WarningBarBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
     if (&src == &acceptButton)
     {
         //Interaction1
-        //When acceptButton clicked execute C++ code
-        //Execute C++ code
-        if(Texts::getLanguage()==0)
-        	Texts::setLanguage(1);
-        else
-        	Texts::setLanguage(0);
+        //When acceptButton clicked call virtual function
+        //Call acceptButtonClicked
+        acceptButtonClicked();
     }
 }

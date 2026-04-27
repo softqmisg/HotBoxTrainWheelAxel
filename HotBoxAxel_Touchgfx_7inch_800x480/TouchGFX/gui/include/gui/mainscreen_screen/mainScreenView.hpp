@@ -19,8 +19,8 @@ public:
     void updateClock(uint8_t hours, uint8_t minutes, uint8_t seconds);
     void updateDate(uint8_t day, uint8_t month, uint16_t year);
     ////////////////carSelector//////////////////
-    void onCarNumberChanged(const CarSelector& selector);    // Called by CarSelector when value changes
     void updateCarNumber(uint8_t value);    // Called by Presenter to update UI
+    void onCarNumberChanged(const CarSelector& selector);    // Called by CarSelector when value changes
     /////////////////AxelTemperature///////////////////////
     void updateCarTemperatures(Car carData);
 //    //////////////////EnvTemperature//////////////////////
@@ -32,10 +32,16 @@ public:
     void updateLedMainColor(LedParam::ColorState colorState);
     void updateLedAlarmColor(LedParam::ColorState colorState);
     void updateLedCommColor(LedParam::ColorState colorState);
+    //////////////////Warning///////////////////
+    void updateWarning();
+    void onWarningAcceptButtonClicked(const WarningBar& warning);
     /////////Setting Button////////////
     virtual void settingButtonClicked();
 private:
     Callback<mainScreenView, const CarSelector&> carNumberChangedCallback;
+    Callback<mainScreenView, const WarningBar&> warningAcceptClickedCallback;
+
+    uint8_t test_car=0,test_axel=0;
 };
 
 #endif // MAINSCREENVIEW_HPP

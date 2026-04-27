@@ -13,18 +13,22 @@
 class Car {
 public:
     enum class TempState{NORMAL,ERROR};
-    struct Temp_t{
+    struct Sensor_t{
     	int16_t temperature;
     	TempState state;
+    	uint8_t priority; //1=low,2=med,3=high
     };
 
 	Car();
 	virtual ~Car();
 	void setCarID(uint8_t carID);
 	uint8_t getCarID();
-	void setTemperature(uint8_t axelID,uint16_t temp,Car::TempState state);
-	void setTemperature(uint8_t axelID,Temp_t tempAxel);
-	Temp_t getTemperature(uint8_t axelID);
+	void setTemperature(uint8_t sensorID,uint16_t temp,Car::TempState state);
+	void setTemperature(uint8_t sensorID,Sensor_t temperature);
+	Sensor_t getTemperature(uint8_t sensorID);
+
+	void setPriority(uint8_t sensorID,uint8_t prio);
+	uint8_t getPriority(uint8_t sensorID);
 
 	void setShowDuration(uint16_t duration);
 	void setShowDurationMS(uint16_t durationms);
@@ -32,8 +36,7 @@ public:
 
 private:
 	uint8_t carID;
-	Temp_t tempAxel[MAX_AXELNUM];
-	Temp_t tempEnv;
+	Sensor_t sensor[MAX_SENSORNUM];
 	uint16_t showDuration;
 };
 

@@ -8,7 +8,9 @@
 #include <texts/TextKeysAndLanguages.hpp>
 
 mainScreenViewBase::mainScreenViewBase() :
-    buttonCallback(this, &mainScreenViewBase::buttonCallbackHandler)
+    buttonCallback(this, &mainScreenViewBase::buttonCallbackHandler),
+    keyboardAppliedCallback(this, &mainScreenViewBase::keyboardAppliedCallbackHandler),
+    keyboardCharacterTypedCallback(this, &mainScreenViewBase::keyboardCharacterTypedCallbackHandler)
 {
     touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
 
@@ -24,10 +26,10 @@ mainScreenViewBase::mainScreenViewBase() :
     add(topBar);
 
     container1.setPosition(0, 66, 800, 414);
-    tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_NIGHT_LARGE_ID));
-    tiledImage1.setPosition(0, 0, 800, 414);
-    tiledImage1.setOffset(0, 0);
-    container1.add(tiledImage1);
+    tiledImageMain.setBitmap(touchgfx::Bitmap(BITMAP_NIGHT_LARGE_ID));
+    tiledImageMain.setPosition(0, 0, 800, 414);
+    tiledImageMain.setOffset(0, 0);
+    container1.add(tiledImageMain);
 
     container2.setPosition(701, 21, 92, 306);
     boxWithBorder1.setPosition(0, 0, 92, 306);
@@ -35,6 +37,11 @@ mainScreenViewBase::mainScreenViewBase() :
     boxWithBorder1.setBorderColor(touchgfx::Color::getColorFromRGB(136, 136, 136));
     boxWithBorder1.setBorderSize(3);
     container2.add(boxWithBorder1);
+
+    tiledImageLeds.setBitmap(touchgfx::Bitmap(BITMAP_NIGHT_LARGE_ID));
+    tiledImageLeds.setPosition(3, 3, 86, 300);
+    tiledImageLeds.setOffset(0, 0);
+    container2.add(tiledImageLeds);
 
     ledListLayout.setXY(0, 0);
     ledListLayout.setDirection(touchgfx::SOUTH);
@@ -57,11 +64,11 @@ mainScreenViewBase::mainScreenViewBase() :
 
     container1.add(templistLayout);
 
-    warningBar.setXY(217, 336);
+    warningBar.setXY(210, 336);
     container1.add(warningBar);
 
     settingButton.setXY(18, 336);
-    settingButton.setBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_ACTION_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID));
+    settingButton.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_ACTION_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID));
     settingButton.setLabelText(touchgfx::TypedText(T_BUTTON_SETTING));
     settingButton.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     settingButton.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -74,9 +81,10 @@ mainScreenViewBase::mainScreenViewBase() :
     passwordPopup.setVisible(false);
     add(passwordPopup);
 
-    image1.setXY(-493, 218);
-    image1.setBitmap(touchgfx::Bitmap(BITMAP_KEYBOARD_NORMAL_ID));
-    add(image1);
+    keyboard.setXY(815, 280);
+    keyboard.setAppliedCallback(keyboardAppliedCallback);
+    keyboard.setCharacterTypedCallback(keyboardCharacterTypedCallback);
+    add(keyboard);
 }
 
 mainScreenViewBase::~mainScreenViewBase()
@@ -94,15 +102,32 @@ void mainScreenViewBase::setupScreen()
     tempAxelList.initialize();
     warningBar.initialize();
     passwordPopup.initialize();
+    keyboard.initialize();
 }
 
 void mainScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
     if (&src == &settingButton)
     {
-        //Interaction1
+        //SettingButtonClicked
         //When settingButton clicked call virtual function
         //Call settingButtonClicked
         settingButtonClicked();
     }
+}
+
+void mainScreenViewBase::keyboardAppliedCallbackHandler()
+{
+    //KeyboardApply
+    //When keyboard applied call virtual function
+    //Call keyboardApply
+    keyboardApply();
+}
+
+void mainScreenViewBase::keyboardCharacterTypedCallbackHandler(Unicode::UnicodeChar value)
+{
+    //KeyboardCharTyped
+    //When keyboard characterTyped call virtual function
+    //Call keyboardCharTyped
+    keyboardCharTyped(value);
 }

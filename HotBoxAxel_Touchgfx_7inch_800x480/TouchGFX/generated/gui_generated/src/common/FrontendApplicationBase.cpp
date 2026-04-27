@@ -45,16 +45,3 @@ void FrontendApplicationBase::gotomainScreenScreenNoTransitionImpl()
 {
     touchgfx::makeTransition<mainScreenView, mainScreenPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
 }
-
-// settingScreen
-
-void FrontendApplicationBase::gotosettingScreenScreenNoTransition()
-{
-    transitionCallback = touchgfx::Callback<FrontendApplicationBase>(this, &FrontendApplicationBase::gotosettingScreenScreenNoTransitionImpl);
-    pendingScreenTransitionCallback = &transitionCallback;
-}
-
-void FrontendApplicationBase::gotosettingScreenScreenNoTransitionImpl()
-{
-    touchgfx::makeTransition<settingScreenView, settingScreenPresenter, touchgfx::NoTransition, Model >(&currentScreen, &currentPresenter, frontendHeap, &currentTransition, &model);
-}

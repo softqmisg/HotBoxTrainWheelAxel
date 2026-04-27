@@ -20,7 +20,7 @@ public:
     uint8_t getCarNumber() const;
 protected:
 private:
-    GenericCallback<const CarSelector&>* nextButtonClickCallback{nullptr};
+    GenericCallback<const CarSelector&>* nextButtonClickedCallback{nullptr};
     uint8_t currentCarNumber;
 
     void updateCarNumberTextArea();

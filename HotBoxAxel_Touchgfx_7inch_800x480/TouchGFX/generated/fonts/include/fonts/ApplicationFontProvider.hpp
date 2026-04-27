@@ -39,6 +39,7 @@ struct Typography
     static const touchgfx::FontId CARFONT1_AUTO_GENERATED_FOR_GB = 23;
     static const touchgfx::FontId CARFONT1_AUTO_GENERATED_FOR_FA = 24;
     static const touchgfx::FontId PASSWORD = 25;
+    static const touchgfx::FontId KEYBOARD = 26;
 };
 
 struct TypographyFontIndex
@@ -69,7 +70,8 @@ struct TypographyFontIndex
     static const touchgfx::FontId CARFONT1_AUTO_GENERATED_FOR_GB = 0;    // Saira_Bold_40_4bpp
     static const touchgfx::FontId CARFONT1_AUTO_GENERATED_FOR_FA = 16;    // Nazanin_40_4bpp
     static const touchgfx::FontId PASSWORD = 2;                          // Saira_Medium_40_4bpp
-    static const uint16_t NUMBER_OF_FONTS = 17;
+    static const touchgfx::FontId KEYBOARD = 17;                          // DejaVuSansMono_40_4bpp
+    static const uint16_t NUMBER_OF_FONTS = 18;
 };
 
 class ApplicationFontProvider : public touchgfx::FontProvider

@@ -9,6 +9,8 @@ Model::Model() :
 modelListener(0),
 tick1sCounter(0),
 refreshingMainEnabled(false),
+sensorLogger(MAX_LOG_SIZE),
+eventLogger(MAX_LOG_SIZE),
 hours(0),
 minutes(0),
 seconds(0),
@@ -25,7 +27,7 @@ ledComm(2)
 	{
 		cars[i].setCarID(i);
 		cars[i].setShowDurationMS(10000);
-		for(int axel=0;axel<MAX_AXELNUM;axel++)
+		for(int axel=0;axel<MAX_SENSORNUM;axel++)
 			cars[i].setTemperature(axel,0,Car::TempState::NORMAL);
 	}
 
@@ -180,16 +182,37 @@ int  Model::getCarNumber() const{
 void Model::updateCarTemperatures(uint8_t carNum)
 {
 
-	for(int i=0;i<MAX_AXELNUM;i++)
+
+	for(int i=0;i<MAX_SENSORNUM;i++)
 	{
-//		int16_t temp=Utility::generateRandomInt(125, -45);
-		int16_t temp=(int16_t)(carNum+1)*10+Utility::generateRandomInt(9, 0);
+
+
+		int16_t temp;
+		if(i==MAX_SENSORNUM)
+			temp = Utility::generateRandomInt(99, -40);
+		else
+			temp=(int16_t)(carNum+1)*10+Utility::generateRandomInt(9, 0);
+
 		Car::TempState state=(Utility::generateRandomBin())?Car::TempState::NORMAL:Car::TempState::ERROR;
 		cars[carNum].setTemperature(i,temp, state);
+		if(state==Car::TempState::NORMAL)
+		{
+			LogData sensor;
+			sensor.carNum=carNum;
+			sensor.sensorId=i;
+			sensor.value=temp;
+			sensorLogger.addSensorEvent(sensor);
+		}
+		else
+		{
+			SensorData alarm;
+			alarm.carNum=carNum;
+			alarm.sensorId=i;
+			alarm.priority=(AlarmPriority)cars[carNum].getPriority(i);
+			eventLogger.addSensorEvent(SensorSubtype::SENSOR_TEMPNOTRECEIVED,alarm);
+		}
+
 	}
-	int16_t temp = Utility::generateRandomInt(99, -40);
-	Car::TempState state=(Utility::generateRandomBin())?Car::TempState::NORMAL:Car::TempState::ERROR;
-	cars[carNum].setTemperature(MAX_AXELNUM,temp, state);
 	if(modelListener!=nullptr && refreshingMainEnabled)
 	{
 		modelListener->carTempUpdated(cars[carNum]);
