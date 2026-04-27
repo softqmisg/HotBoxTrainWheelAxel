@@ -32,6 +32,7 @@ void mainScreenView::setupScreen()
     //////////////warning///////////////////////
     warningBar.setAcceptButtonClickedCallback(warningAcceptClickedCallback);
     updateWarning();
+    /////////////password popup//////////////
 }
 
 void mainScreenView::tearDownScreen()
@@ -148,6 +149,7 @@ void mainScreenView:: updateLedCommColor(LedParam::ColorState colorState)
 /////////Setting Button////////////
 void mainScreenView::settingButtonClicked()
 {
+	passwordPopup.cleanPassword();
 	passwordPopup.setVisible(true);
 	passwordPopup.invalidate();
 }
@@ -168,3 +170,4 @@ void mainScreenView::onWarningAcceptButtonClicked(const WarningBar& warning)
 	test_axel++;if(test_axel>MAX_SENSORNUM) test_axel=1;
 //	warningBar.setWarning(test_car,test_axel, 13, 42, 25, 4, 2026);
 }
+

@@ -327,7 +327,7 @@ uint8_t Keyboard::getKeyCode(const Drawable& key)
 
 void Keyboard::typeCharacter(Unicode::UnicodeChar character)
 {
-    if (m_caretX > m_input.size() - 1 || !character) return;
+    if (m_caretX >= m_input.size() - 1 || !character) return;
     textBuffer[m_caretX] = character;
     if (m_caretX < m_input.size() - 1) textBuffer[m_caretX + 1] = 0;
     emitCharacterTypedCallback(character);

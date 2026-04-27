@@ -8,7 +8,10 @@
 
 PasswordPopupBase::PasswordPopupBase() :
     buttonCallback(this, &PasswordPopupBase::buttonCallbackHandler),
-    flexButtonCallback(this, &PasswordPopupBase::flexButtonCallbackHandler)
+    flexButtonCallback(this, &PasswordPopupBase::flexButtonCallbackHandler),
+    keyboardAppliedCallback(this, &PasswordPopupBase::keyboardAppliedCallbackHandler),
+    keyboardCharacterTypedCallback(this, &PasswordPopupBase::keyboardCharacterTypedCallbackHandler),
+    keyboardCanceledCallback(this, &PasswordPopupBase::keyboardCanceledCallbackHandler)
 {
     setWidth(800);
     setHeight(480);
@@ -19,7 +22,7 @@ PasswordPopupBase::PasswordPopupBase() :
 
     box1.setPosition(79, 93, 601, 256);
     box1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
-    box1.setAlpha(230);
+    box1.setAlpha(240);
     add(box1);
 
     okButton.setXY(147, 279);
@@ -57,15 +60,21 @@ PasswordPopupBase::PasswordPopupBase() :
 
     passwordText.setBoxWithBorderPosition(0, 0, 174, 50);
     passwordText.setBorderSize(2);
-    passwordText.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(250, 250, 250), touchgfx::Color::getColorFromRGB(0, 153, 204), touchgfx::Color::getColorFromRGB(51, 102, 153), touchgfx::Color::getColorFromRGB(51, 102, 153));
+    passwordText.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(250, 250, 250), touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(51, 102, 153), touchgfx::Color::getColorFromRGB(51, 102, 153));
     passwordText.setWildcardText(TypedText(T___SINGLEUSE_B9LY));
     Unicode::snprintf(passwordTextBuffer, PASSWORDTEXT_SIZE, "%s", TypedText(T___SINGLEUSE_80BA).getText());
     passwordText.setWildcardTextBuffer(passwordTextBuffer);
     passwordText.setWildcardTextPosition(0, 0, 174, 50);
-    passwordText.setWildcardTextColors(touchgfx::Color::getColorFromRGB(10, 10, 10), touchgfx::Color::getColorFromRGB(35, 152, 219));
+    passwordText.setWildcardTextColors(touchgfx::Color::getColorFromRGB(10, 10, 10), touchgfx::Color::getColorFromRGB(0, 168, 65));
     passwordText.setAction(flexButtonCallback);
     passwordText.setPosition(341, 179, 174, 50);
     add(passwordText);
+
+    keyboard.setXY(-320, 280);
+    keyboard.setAppliedCallback(keyboardAppliedCallback);
+    keyboard.setCharacterTypedCallback(keyboardCharacterTypedCallback);
+    keyboard.setCanceledCallback(keyboardCanceledCallback);
+    add(keyboard);
 }
 
 PasswordPopupBase::~PasswordPopupBase()
@@ -75,7 +84,7 @@ PasswordPopupBase::~PasswordPopupBase()
 
 void PasswordPopupBase::initialize()
 {
-
+    keyboard.initialize();
 }
 
 void PasswordPopupBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
@@ -112,4 +121,28 @@ void PasswordPopupBase::flexButtonCallbackHandler(const touchgfx::AbstractButton
         //Call paswordEditClicked
         paswordEditClicked();
     }
+}
+
+void PasswordPopupBase::keyboardAppliedCallbackHandler()
+{
+    //KeyboardApplyClicked
+    //When keyboard applied call virtual function
+    //Call keyboardAppliedClicked
+    keyboardAppliedClicked();
+}
+
+void PasswordPopupBase::keyboardCharacterTypedCallbackHandler(Unicode::UnicodeChar value)
+{
+    //KeyboardCharTyped
+    //When keyboard characterTyped call virtual function
+    //Call keyboardCharTyped
+    keyboardCharTyped(value);
+}
+
+void PasswordPopupBase::keyboardCanceledCallbackHandler()
+{
+    //KeyboardCancelClicked
+    //When keyboard canceled call virtual function
+    //Call keyboardCancelClicked
+    keyboardCancelClicked();
 }

@@ -68,6 +68,10 @@
       </Text>
     </TextGroup>
     <TextGroup Id="PasswordPage">
+      <Text Id="__SingleUse_B9LY" Alignment="Center" TypographyId="Keyboard">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="FA">&lt;value&gt;</Translation>
+      </Text>
       <Text Id="TEXT_PASS" Alignment="Left" TypographyId="HeaderFont">
         <Translation Language="GB">Password</Translation>
         <Translation Language="FA">رمزعبور</Translation>
@@ -175,10 +179,6 @@
       <Text Id="__SingleUse_80BA" Alignment="Left" TypographyId="Large">
         <Translation Language="GB"></Translation>
         <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="__SingleUse_B9LY" Alignment="Center" TypographyId="Password">
-        <Translation Language="GB">&lt;value&gt;</Translation>
-        <Translation Language="FA">New Text&lt;value&gt;</Translation>
       </Text>
     </TextGroup>
     <TextGroup Id="Keyboard">
@@ -422,7 +422,7 @@
       <LanguageSetting Language="GB" Font="Saira-Bold.ttf" Size="40" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z" />
       <LanguageSetting Language="FA" Font="Nazanin.ttf" Size="40" Bpp="4" IsVector="no" IsCompressed="no" Direction="RTL" FallbackCharacter="?" WildcardCharacters="0600-06FF FB50-FDFF FE70-FEFF 200C-200D" />
     </Typography>
-    <Typography Id="Password" Font="Saira-Medium.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" />
+    <Typography Id="Password" Font="Saira-Medium.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters=" @#%-+()[],.;:/&quot;" WildcardCharacterRanges="0-9,A-Z,a-z" />
     <Typography Id="Keyboard" Font="DejaVuSansMono.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters=" @#%-+()[],.;:/&quot;" WildcardCharacterRanges="0-9,A-Z,a-z" />
   </Typographies>
 </TextDatabase>

@@ -1,6 +1,8 @@
 #include <gui/containers/passwordPopup.hpp>
-
-PasswordPopup::PasswordPopup()
+#include  <gui/containers/Keyboard.hpp>
+PasswordPopup::PasswordPopup():
+passwordEditable(Editable(passwordText,passwordTextBuffer)),
+keyboardText()
 {
 
 }
@@ -8,23 +10,44 @@ PasswordPopup::PasswordPopup()
 void PasswordPopup::initialize()
 {
     PasswordPopupBase::initialize();
+
 }
-void PasswordPopup::setPasswordEditCallback(GenericCallback< const PasswordPopup&>&callback
+void PasswordPopup::cleanPassword()
+{
+	Unicode::snprintf(passwordTextBuffer,PASSWORDTEXT_SIZE,"");
+	passwordText.invalidate();
+}
+void PasswordPopup::setPasswordEditCallback(
+		GenericCallback< const PasswordPopup&>&callback
 		)
 {
 	passwordEditCallback=&callback;
-}
-void PasswordPopup::okButtonClicked(){
-	 application().gotosettingScreenScreenNoTransition();
-
 }
 void PasswordPopup::exitButtonClicked(){
 	this->setVisible(false);
 	this->invalidate();
 }
+void PasswordPopup::okButtonClicked(){
+	 application().gotosettingScreenScreenNoTransition();
+
+}
 void PasswordPopup::userToggleClicked(){
 
 }
 void PasswordPopup::paswordEditClicked(){
-	if(passwordEditCallback) passwordEditCallback->execute(*this);
+	keyboard.edit(passwordEditable);
+//	if(passwordEditCallback) passwordEditCallback->execute(*this);
+}
+void PasswordPopup::keyboardAppliedClicked()
+{
+	if(keyboard.targets(passwordEditable))
+		passwordEditable.toUTF8(keyboardText);
+}
+void PasswordPopup::keyboardCancelClicked()
+{
+
+}
+void PasswordPopup::keyboardCharTyped(Unicode::UnicodeChar value)
+{
+
 }

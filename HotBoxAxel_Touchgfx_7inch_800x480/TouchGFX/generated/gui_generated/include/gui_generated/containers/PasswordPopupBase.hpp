@@ -12,6 +12,7 @@
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/ToggleButton.hpp>
 #include <touchgfx/containers/buttons/Buttons.hpp>
+#include <gui/containers/Keyboard.hpp>
 
 class PasswordPopupBase : public touchgfx::Container
 {
@@ -39,6 +40,18 @@ public:
     {
         // Override and implement this function in PasswordPopup
     }
+    virtual void keyboardAppliedClicked()
+    {
+        // Override and implement this function in PasswordPopup
+    }
+    virtual void keyboardCharTyped(Unicode::UnicodeChar value)
+    {
+        // Override and implement this function in PasswordPopup
+    }
+    virtual void keyboardCancelClicked()
+    {
+        // Override and implement this function in PasswordPopup
+    }
 
 protected:
     FrontendApplication& application() {
@@ -56,11 +69,12 @@ protected:
     touchgfx::TextArea label2;
     touchgfx::ToggleButton userToggleButton;
     touchgfx::WildcardTextButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  >  passwordText;
+    Keyboard keyboard;
 
     /*
      * Wildcard Buffers
      */
-    static const uint16_t PASSWORDTEXT_SIZE = 10;
+    static const uint16_t PASSWORDTEXT_SIZE = 6;
     touchgfx::Unicode::UnicodeChar passwordTextBuffer[PASSWORDTEXT_SIZE];
 
 private:
@@ -70,12 +84,18 @@ private:
      */
     touchgfx::Callback<PasswordPopupBase, const touchgfx::AbstractButton&> buttonCallback;
     touchgfx::Callback<PasswordPopupBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
+    touchgfx::Callback<PasswordPopupBase> keyboardAppliedCallback;
+    touchgfx::Callback<PasswordPopupBase, Unicode::UnicodeChar> keyboardCharacterTypedCallback;
+    touchgfx::Callback<PasswordPopupBase> keyboardCanceledCallback;
 
     /*
      * Callback Handler Declarations
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
     void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
+    void keyboardAppliedCallbackHandler();
+    void keyboardCharacterTypedCallbackHandler(Unicode::UnicodeChar value);
+    void keyboardCanceledCallbackHandler();
 
 };
 

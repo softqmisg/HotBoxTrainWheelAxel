@@ -37,11 +37,16 @@ public:
     void onWarningAcceptButtonClicked(const WarningBar& warning);
     /////////Setting Button////////////
     virtual void settingButtonClicked();
+    ////////////password popup////////////////
+
 private:
     Callback<mainScreenView, const CarSelector&> carNumberChangedCallback;
     Callback<mainScreenView, const WarningBar&> warningAcceptClickedCallback;
 
+//    char keyboardPasswordText[PASSWORDTEXT_SIZE];
+
     uint8_t test_car=0,test_axel=0;
+
 };
 
 #endif // MAINSCREENVIEW_HPP

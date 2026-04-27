@@ -8,9 +8,7 @@
 #include <texts/TextKeysAndLanguages.hpp>
 
 mainScreenViewBase::mainScreenViewBase() :
-    buttonCallback(this, &mainScreenViewBase::buttonCallbackHandler),
-    keyboardAppliedCallback(this, &mainScreenViewBase::keyboardAppliedCallbackHandler),
-    keyboardCharacterTypedCallback(this, &mainScreenViewBase::keyboardCharacterTypedCallbackHandler)
+    buttonCallback(this, &mainScreenViewBase::buttonCallbackHandler)
 {
     touchgfx::CanvasWidgetRenderer::setupBuffer(canvasBuffer, CANVAS_BUFFER_SIZE);
 
@@ -80,11 +78,6 @@ mainScreenViewBase::mainScreenViewBase() :
     passwordPopup.setXY(0, 0);
     passwordPopup.setVisible(false);
     add(passwordPopup);
-
-    keyboard.setXY(815, 280);
-    keyboard.setAppliedCallback(keyboardAppliedCallback);
-    keyboard.setCharacterTypedCallback(keyboardCharacterTypedCallback);
-    add(keyboard);
 }
 
 mainScreenViewBase::~mainScreenViewBase()
@@ -102,7 +95,6 @@ void mainScreenViewBase::setupScreen()
     tempAxelList.initialize();
     warningBar.initialize();
     passwordPopup.initialize();
-    keyboard.initialize();
 }
 
 void mainScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
@@ -114,20 +106,4 @@ void mainScreenViewBase::buttonCallbackHandler(const touchgfx::AbstractButton& s
         //Call settingButtonClicked
         settingButtonClicked();
     }
-}
-
-void mainScreenViewBase::keyboardAppliedCallbackHandler()
-{
-    //KeyboardApply
-    //When keyboard applied call virtual function
-    //Call keyboardApply
-    keyboardApply();
-}
-
-void mainScreenViewBase::keyboardCharacterTypedCallbackHandler(Unicode::UnicodeChar value)
-{
-    //KeyboardCharTyped
-    //When keyboard characterTyped call virtual function
-    //Call keyboardCharTyped
-    keyboardCharTyped(value);
 }

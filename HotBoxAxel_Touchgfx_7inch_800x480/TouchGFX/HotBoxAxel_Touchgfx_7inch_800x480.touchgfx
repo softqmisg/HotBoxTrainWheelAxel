@@ -174,15 +174,6 @@
             "Height": 480,
             "Visible": false,
             "CustomContainerDefinitionName": "PasswordPopup"
-          },
-          {
-            "Type": "CustomContainerInstance",
-            "Name": "keyboard",
-            "X": 815,
-            "Y": 280,
-            "Width": 320,
-            "Height": 200,
-            "CustomContainerDefinitionName": "Keyboard"
           }
         ],
         "Interactions": [
@@ -195,30 +186,6 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "settingButtonClicked"
-            }
-          },
-          {
-            "InteractionName": "KeyboardApply",
-            "Trigger": {
-              "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "Keyboard applied happens",
-              "TriggerComponent": "keyboard"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "keyboardApply"
-            }
-          },
-          {
-            "InteractionName": "KeyboardCharTyped",
-            "Trigger": {
-              "Type": "TriggerCustom",
-              "TriggerCustomTypeName": "Keyboard characterTyped happens",
-              "TriggerComponent": "keyboard"
-            },
-            "Action": {
-              "Type": "ActionCustom",
-              "FunctionName": "keyboardCharTyped"
             }
           }
         ]
@@ -936,7 +903,7 @@
             "Y": 93,
             "Width": 601,
             "Height": 256,
-            "Alpha": 230
+            "Alpha": 240
           },
           {
             "Type": "ButtonWithLabel",
@@ -1045,7 +1012,7 @@
                 "Wildcard1": {
                   "TextId": "__SingleUse_80BA",
                   "UseBuffer": true,
-                  "BufferSize": 10
+                  "BufferSize": 6
                 },
                 "ColorReleased": {
                   "Red": 10,
@@ -1053,9 +1020,8 @@
                   "Blue": 10
                 },
                 "ColorPressed": {
-                  "Red": 35,
-                  "Green": 152,
-                  "Blue": 219
+                  "Green": 168,
+                  "Blue": 65
                 }
               },
               {
@@ -1070,8 +1036,9 @@
                   "Blue": 250
                 },
                 "ColorPressed": {
-                  "Green": 153,
-                  "Blue": 204
+                  "Red": 255,
+                  "Green": 255,
+                  "Blue": 255
                 },
                 "ColorBorderReleased": {
                   "Red": 51,
@@ -1085,6 +1052,15 @@
                 }
               }
             ]
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "keyboard",
+            "X": -320,
+            "Y": 280,
+            "Width": 320,
+            "Height": 200,
+            "CustomContainerDefinitionName": "Keyboard"
           }
         ],
         "Interactions": [
@@ -1130,6 +1106,42 @@
             "Action": {
               "Type": "ActionCustom",
               "FunctionName": "userToggleClicked"
+            }
+          },
+          {
+            "InteractionName": "KeyboardApplyClicked",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "Keyboard applied happens",
+              "TriggerComponent": "keyboard"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "keyboardAppliedClicked"
+            }
+          },
+          {
+            "InteractionName": "KeyboardCharTyped",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "Keyboard characterTyped happens",
+              "TriggerComponent": "keyboard"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "keyboardCharTyped"
+            }
+          },
+          {
+            "InteractionName": "KeyboardCancelClicked",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "Keyboard canceled happens",
+              "TriggerComponent": "keyboard"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "keyboardCancelClicked"
             }
           }
         ]

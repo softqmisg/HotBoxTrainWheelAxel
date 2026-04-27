@@ -19,7 +19,6 @@
 #include <gui/containers/WarningBar.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <gui/containers/PasswordPopup.hpp>
-#include <gui/containers/Keyboard.hpp>
 
 class mainScreenViewBase : public touchgfx::View<mainScreenPresenter>
 {
@@ -32,14 +31,6 @@ public:
      * Virtual Action Handlers
      */
     virtual void settingButtonClicked()
-    {
-        // Override and implement this function in mainScreen
-    }
-    virtual void keyboardApply()
-    {
-        // Override and implement this function in mainScreen
-    }
-    virtual void keyboardCharTyped(Unicode::UnicodeChar value)
     {
         // Override and implement this function in mainScreen
     }
@@ -70,7 +61,6 @@ protected:
     WarningBar warningBar;
     touchgfx::ButtonWithLabel settingButton;
     PasswordPopup passwordPopup;
-    Keyboard keyboard;
 
 private:
 
@@ -84,15 +74,11 @@ private:
      * Callback Declarations
      */
     touchgfx::Callback<mainScreenViewBase, const touchgfx::AbstractButton&> buttonCallback;
-    touchgfx::Callback<mainScreenViewBase> keyboardAppliedCallback;
-    touchgfx::Callback<mainScreenViewBase, Unicode::UnicodeChar> keyboardCharacterTypedCallback;
 
     /*
      * Callback Handler Declarations
      */
     void buttonCallbackHandler(const touchgfx::AbstractButton& src);
-    void keyboardAppliedCallbackHandler();
-    void keyboardCharacterTypedCallbackHandler(Unicode::UnicodeChar value);
 
 };
 
