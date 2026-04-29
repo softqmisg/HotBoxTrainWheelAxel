@@ -1,2 +1,2 @@
 # HotBoxTrainWheelAxel
-HMI for meausring temperatur of  wheel axel of train
+HMI for meausring and logging temperature of wheel axel of train
