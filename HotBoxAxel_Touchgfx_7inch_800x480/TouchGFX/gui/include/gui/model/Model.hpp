@@ -48,6 +48,10 @@ public:
     void updateLedAlarm();
     void updateLedComm();
     void colorLedChanged(uint8_t ledId, LedParam::ColorState colorState);
+    ///warning update/request
+    void updateWarning(EventEntry *entry);
+    void getWarning();
+    void navigateWarning();
 protected:
 
 private:

@@ -14,7 +14,7 @@ void mainScreenPresenter::activate()
     model->startRefreshingMain();
     requestTimeDateUpdate();// Get initial time immediately
     // EnvTemperature init
-//    requestEnvTemperatureUpdate();
+
 	// Carselector init
 	uint8_t saved= getSavedCarNumber();
     view.updateCarNumber(saved);
@@ -80,22 +80,14 @@ void mainScreenPresenter::carTempUpdated(Car car)
 {
 	view.updateCarTemperatures(car);
 }
-///////////////EnvTemperature////////////////////////
-//void mainScreenPresenter::requestEnvTemperatureUpdate()
-//{
-//	model->updateEnvTemperature();
-//}
-//void mainScreenPresenter::envTempUpdated(int16_t temp)
-//{
-//	view.updateEnvTemperature(temp);
-//}
+/////////////////Led/////////////////////
 void mainScreenPresenter::requestLedColorUpdate()
 {
 	model->updateLedMain();
 	model->updateLedAlarm();
 	model->updateLedComm();
 }
-void mainScreenPresenter::ledColorUpdate(uint8_t ledId, LedParam::ColorState colorState)
+void mainScreenPresenter::ledColorUpdated(uint8_t ledId, LedParam::ColorState colorState)
 {
 	switch(ledId)
 	{
@@ -109,4 +101,37 @@ void mainScreenPresenter::ledColorUpdate(uint8_t ledId, LedParam::ColorState col
 		view.updateLedCommColor(colorState);
 		break;
 	}
+}
+////Warning Handle/////////////////////
+void mainScreenPresenter::requestWarningUpdate(){
+	model->getWarning();
+}
+void mainScreenPresenter::warnigTextUpdated(EventEntry *event){
+	if(event!=nullptr)
+	{
+		if(event->type==EventType::SYSTEM){
+			view.updateSystemWarning(event->data.system.errorCode,
+						event->getSystemSubtype(),
+						event->hour,event->minute,
+						event->year,event->month,event->day
+							);
+		}
+		else if(event->type==EventType::SENSOR)
+		{
+			view.updateSensorWarning(event->data.sensor.carNum,
+						event->data.sensor.sensorId,
+						event->getSensorSubtype(),
+						event->hour,event->minute,
+						event->year,event->month,event->day
+							);
+		}
+	}
+	else
+	{
+			view.setVisibleWarning(false);
+	}
+}
+void mainScreenPresenter::navigateWarningUpdated()
+{
+	model->navigateWarning();
 }

@@ -10,8 +10,8 @@
 #include <touchgfx/mixins/ClickListener.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
-#include <touchgfx/widgets/ToggleButton.hpp>
 #include <touchgfx/containers/buttons/Buttons.hpp>
+#include <touchgfx/widgets/ToggleButton.hpp>
 #include <gui/containers/Keyboard.hpp>
 
 class PasswordPopupBase : public touchgfx::Container
@@ -62,13 +62,14 @@ protected:
      * Member Declarations
      */
     touchgfx::ClickListener< touchgfx::Box > box2;
+    touchgfx::Container container;
     touchgfx::Box box1;
     touchgfx::ButtonWithLabel okButton;
     touchgfx::ButtonWithLabel exitButton;
     touchgfx::TextArea label1;
     touchgfx::TextArea label2;
-    touchgfx::ToggleButton userToggleButton;
     touchgfx::WildcardTextButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  >  passwordText;
+    touchgfx::ToggleButton userToggleButton;
     Keyboard keyboard;
 
     /*

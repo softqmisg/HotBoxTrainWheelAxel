@@ -10,6 +10,7 @@
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/containers/ListLayout.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
+#include <touchgfx/widgets/Box.hpp>
 
 class WarningBarBase : public touchgfx::Container
 {
@@ -37,16 +38,15 @@ protected:
     touchgfx::BoxWithBorder boxWithBorder;
     touchgfx::ButtonWithLabel acceptButton;
     touchgfx::ListLayout listLayout1;
-    touchgfx::TextAreaWithTwoWildcards warningTextCar;
+    touchgfx::TextAreaWithOneWildcard warningText;
+    touchgfx::Box box1;
     touchgfx::TextAreaWithTwoWildcards warningTextTime;
 
     /*
      * Wildcard Buffers
      */
-    static const uint16_t WARNINGTEXTCARBUFFER1_SIZE = 4;
-    touchgfx::Unicode::UnicodeChar warningTextCarBuffer1[WARNINGTEXTCARBUFFER1_SIZE];
-    static const uint16_t WARNINGTEXTCARBUFFER2_SIZE = 4;
-    touchgfx::Unicode::UnicodeChar warningTextCarBuffer2[WARNINGTEXTCARBUFFER2_SIZE];
+    static const uint16_t WARNINGTEXT_SIZE = 20;
+    touchgfx::Unicode::UnicodeChar warningTextBuffer[WARNINGTEXT_SIZE];
     static const uint16_t WARNINGTEXTTIMEBUFFER1_SIZE = 10;
     touchgfx::Unicode::UnicodeChar warningTextTimeBuffer1[WARNINGTEXTTIMEBUFFER1_SIZE];
     static const uint16_t WARNINGTEXTTIMEBUFFER2_SIZE = 15;

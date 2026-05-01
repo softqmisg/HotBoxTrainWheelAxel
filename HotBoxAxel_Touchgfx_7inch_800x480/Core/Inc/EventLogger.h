@@ -37,16 +37,15 @@ enum class SensorSubtype {
 };
 
 enum class AlarmPriority{
-	PRIORITY_LOW,
+	PRIORITY_LOW=0,
 	PRIORITY_MED,
 	PRIORITY_HIGH,
 };
 // Event-specific data structures
 struct SystemData {
-    uint32_t errorCode;
-    AlarmPriority priority; // 1-3 (1=low, 3=critical)
+    uint16_t errorCode;
 
-    SystemData() : errorCode(0), priority(AlarmPriority::PRIORITY_LOW) {}
+    SystemData() : errorCode(0) {}
     SystemData(uint32_t err)
         : errorCode(err) {}
 };
@@ -54,9 +53,8 @@ struct SystemData {
 struct SensorData {
 	uint8_t carNum;
     uint8_t sensorId;
-    AlarmPriority priority; // 1-3 (1=low, 3=critical)
 
-    SensorData() : carNum(0), sensorId(0), priority(AlarmPriority::PRIORITY_LOW){}
+    SensorData() : carNum(0), sensorId(0){}
     SensorData(uint8_t num,uint8_t id)
         : carNum(num), sensorId(id) {}
 };
@@ -75,6 +73,7 @@ union EventData {
 struct EventEntry {
     EventType type;
     uint16_t subtype; // Store as uint16_t for flexibility
+    AlarmPriority priority; // 1-3 (1=low, 3=critical)
     EventData data;
     uint32_t timestamp; // Unix timestamp or RTC count
     uint8_t day;
@@ -83,8 +82,11 @@ struct EventEntry {
     uint8_t hour;
     uint8_t minute;
     uint8_t second;
-    EventEntry() : type(EventType::SYSTEM), subtype(0), timestamp(0),
-        day(0), month(0), year(0), hour(0), minute(0), second(0) {}
+    bool navigate;
+
+    EventEntry() : type(EventType::SYSTEM), subtype(0),priority(AlarmPriority::PRIORITY_LOW),
+    	timestamp(0), day(0), month(0), year(0), hour(0), minute(0), second(0),
+		navigate(false) {}
 
     // Helper to get subtype as enum
     SystemSubtype getSystemSubtype() const {
@@ -101,6 +103,7 @@ struct EventEntry {
 class EventLogger {
 private:
     std::vector<EventEntry> logs;
+    std::vector<size_t> sortedIndices;
     size_t maxSize;
     // Get current timestamp (implement based on your RTC)
    bool readHardwareRTC( RTC_TimeTypeDef *sTime,  RTC_DateTypeDef *sDate)
@@ -165,7 +168,29 @@ private:
         year = sDate.Year + 2000;  // RTC typically returns year 0-99
     }
 
+    // Get sorted indices (references to original positions)
+    std::vector<size_t> getSortedIndices() const {
+        std::vector<size_t> indices;
+        for (size_t i = 0; i < logs.size(); ++i) {
+            if (!logs[i].navigate) {
+                indices.push_back(i);
+            }
+        }
+
+        std::sort(indices.begin(), indices.end(),
+                  [this](size_t a, size_t b) {
+                      if ((int)logs[a].priority != (int)logs[b].priority)
+                          return (int)logs[a].priority > (int)logs[b].priority;
+                      return logs[a].timestamp > logs[b].timestamp;
+                  });
+
+        return indices;
+    }
+
+
+
     void saveToFlash();
+
 
 public:
     EventLogger(size_t maxLogSize );
@@ -176,7 +201,7 @@ public:
     }
 
     // Add System Event
-    bool addSystemEvent(SystemSubtype subtype, const SystemData& data) {
+    bool addSystemEvent(SystemSubtype subtype,AlarmPriority prio, const SystemData& data) {
         if (logs.size() >= maxSize) {
             removeOldestLog();
         }
@@ -186,15 +211,16 @@ public:
                            entry.hour, entry.minute, entry.second);
         entry.type = EventType::SYSTEM;
         entry.subtype = static_cast<uint16_t>(subtype);
+        entry.priority=prio;
         entry.data.system = data;
         entry.timestamp = makeTimestamp(entry);
-
+        entry.navigate=false;
         logs.push_back(entry);
         return true;
     }
 
     // Add Sensor Event
-    bool addSensorEvent(SensorSubtype subtype, const SensorData& data) {
+    bool addSensorEvent(SensorSubtype subtype,AlarmPriority prio, const SensorData& data) {
         if (logs.size() >= maxSize) {
             removeOldestLog();
         }
@@ -204,9 +230,10 @@ public:
                            entry.hour, entry.minute, entry.second);
         entry.type = EventType::SENSOR;
         entry.subtype = static_cast<uint16_t>(subtype);
+        entry.priority=prio;
         entry.data.sensor = data;
         entry.timestamp = makeTimestamp(entry);
-
+        entry.navigate=false;
         logs.push_back(entry);
         return true;
     }
@@ -301,6 +328,32 @@ public:
             }
         }
         return result;
+    }
+
+    // Access entry by index (for modification)
+    EventEntry& getEntry(size_t index) {
+        return logs[index];
+    }
+
+    const EventEntry& getEntry(size_t index) const {
+        return logs[index];
+    }
+
+    void setNavigateHighestPriority(bool stat){
+        if(sortedIndices.size()>0)
+        {
+			 size_t firstIndex = sortedIndices[0];
+			 getEntry(firstIndex).navigate = stat;
+        }
+
+    }
+    EventEntry* getHighestPriority() {
+        sortedIndices = getSortedIndices();
+        if (sortedIndices.size() > 0) {
+            size_t firstIndex = sortedIndices[0];
+            return &getEntry(firstIndex);
+        }
+        return nullptr;  // Safe: return null pointer
     }
 };
 

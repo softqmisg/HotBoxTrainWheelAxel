@@ -53,7 +53,6 @@ void Model::tick()
 		if(tickCounter>=cars[carNumber].getDuration())
 		{
 			tickCounter=0;
-
 			carNumber++;
 			if(carNumber>=MAX_CARNUM)
 				carNumber=0;
@@ -178,22 +177,23 @@ int  Model::getCarNumber() const{
 	return carNumber;
 }
 //manage Axel Temperature & //Manage EnvTemp
-
 void Model::updateCarTemperatures(uint8_t carNum)
 {
 
 
 	for(int i=0;i<MAX_SENSORNUM;i++)
 	{
-
-
 		int16_t temp;
-		if(i==MAX_SENSORNUM)
+		if(i==(MAX_SENSORNUM-1))
 			temp = Utility::generateRandomInt(99, -40);
 		else
 			temp=(int16_t)(carNum+1)*10+Utility::generateRandomInt(9, 0);
+		Car::TempState state;
+		if(minutes%2==0 && seconds==0)
+			state=Car::TempState::ERROR;
+		else
+			state=Car::TempState::NORMAL;
 
-		Car::TempState state=(Utility::generateRandomBin())?Car::TempState::NORMAL:Car::TempState::ERROR;
 		cars[carNum].setTemperature(i,temp, state);
 		if(state==Car::TempState::NORMAL)
 		{
@@ -201,24 +201,34 @@ void Model::updateCarTemperatures(uint8_t carNum)
 			sensor.carNum=carNum;
 			sensor.sensorId=i;
 			sensor.value=temp;
-			sensorLogger.addSensorEvent(sensor);
+			sensorLogger.addSensorLog(sensor);
+			if(sensor.value>125 || sensor.value<-45)
+			{
+				SensorData alarm;
+				alarm.carNum=carNum;
+				alarm.sensorId=i;
+
+				eventLogger.addSensorEvent(SensorSubtype::SENSOR_TEMPOUTRANGE,
+											AlarmPriority::PRIORITY_HIGH,
+											alarm);
+			}
 		}
 		else
 		{
 			SensorData alarm;
 			alarm.carNum=carNum;
 			alarm.sensorId=i;
-			alarm.priority=(AlarmPriority)cars[carNum].getPriority(i);
-			eventLogger.addSensorEvent(SensorSubtype::SENSOR_TEMPNOTRECEIVED,alarm);
+			eventLogger.addSensorEvent(SensorSubtype::SENSOR_TEMPNOTRECEIVED,
+									(AlarmPriority)cars[carNum].getPriority(i),
+									alarm);
 		}
-
 	}
 	if(modelListener!=nullptr && refreshingMainEnabled)
 	{
 		modelListener->carTempUpdated(cars[carNum]);
+		getWarning();
 	}
 }
-
 //manage Leds
 void Model::updateLedMain()
 {
@@ -244,6 +254,19 @@ void Model::colorLedChanged(uint8_t ledId, LedParam::ColorState colorState)
 {
 	if(modelListener!=nullptr && refreshingMainEnabled)
 	{
-		modelListener->ledColorUpdate(ledId, colorState);
+		modelListener->ledColorUpdated(ledId, colorState);
 	}
+}
+//manage warning
+void Model::getWarning(){
+	updateWarning(eventLogger.getHighestPriority());
+}
+void Model::updateWarning(EventEntry *entry){
+	if(modelListener!=nullptr){
+		modelListener->warnigTextUpdated(entry);
+	}
+}
+void Model::navigateWarning(){
+	eventLogger.setNavigateHighestPriority(true);
+	getWarning();
 }

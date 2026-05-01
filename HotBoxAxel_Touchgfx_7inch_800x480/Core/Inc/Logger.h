@@ -121,7 +121,7 @@ public:
     }
 
     // Add Sensor Event
-    bool addSensorEvent( const LogData& data) {
+    bool addSensorLog( const LogData& data) {
         if (logs.size() >= maxSize) {
             removeOldestLog();
         }

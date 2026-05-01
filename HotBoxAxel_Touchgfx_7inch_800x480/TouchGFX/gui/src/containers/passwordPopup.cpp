@@ -10,6 +10,14 @@ keyboardText()
 void PasswordPopup::initialize()
 {
     PasswordPopupBase::initialize();
+    const uint16_t h = HAL::DISPLAY_HEIGHT*3/5;     // Screen height.
+    const uint16_t w = HAL::DISPLAY_WIDTH*3/4;      // Screen width.
+    const uint16_t offsetX=(HAL::DISPLAY_WIDTH-w)/2;
+    const uint16_t offsetY=HAL::DISPLAY_HEIGHT-h;
+    keyboard.initialize(w,h);
+    keyboard.setXY(offsetX, offsetY);
+    keyboard.setTimout(5000);
+
 
 }
 void PasswordPopup::cleanPassword()

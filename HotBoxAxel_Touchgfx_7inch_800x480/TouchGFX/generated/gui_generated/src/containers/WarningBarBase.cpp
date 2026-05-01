@@ -17,7 +17,7 @@ WarningBarBase::WarningBarBase() :
     boxWithBorder.setBorderSize(3);
     add(boxWithBorder);
 
-    acceptButton.setXY(469, 7);
+    acceptButton.setXY(471, 7);
     acceptButton.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUND_NORMAL_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_36_TINY_ROUND_PRESSED_ID));
     acceptButton.setLabelText(touchgfx::TypedText(T_BUTTON_ACCEPT));
     acceptButton.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -25,22 +25,24 @@ WarningBarBase::WarningBarBase() :
     acceptButton.setAction(buttonCallback);
     add(acceptButton);
 
-    listLayout1.setXY(10, 10);
+    listLayout1.setXY(10, 8);
     listLayout1.setDirection(touchgfx::EAST);
-    warningTextCar.setWidth(213);
-    warningTextCar.setHeight(30);
-    warningTextCar.setColor(touchgfx::Color::getColorFromRGB(255, 0, 21));
-    warningTextCar.setLinespacing(0);
-    touchgfx::Unicode::snprintf(warningTextCarBuffer1, WARNINGTEXTCARBUFFER1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_QHCI).getText());
-    warningTextCar.setWildcard1(warningTextCarBuffer1);
-    touchgfx::Unicode::snprintf(warningTextCarBuffer2, WARNINGTEXTCARBUFFER2_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_9AAZ).getText());
-    warningTextCar.setWildcard2(warningTextCarBuffer2);
-    warningTextCar.resizeToCurrentText();
-    warningTextCar.setTypedText(touchgfx::TypedText(T___SINGLEUSE_L29H));
-    listLayout1.add(warningTextCar);
+    warningText.setWidth(241);
+    warningText.setHeight(30);
+    warningText.setColor(touchgfx::Color::getColorFromRGB(255, 0, 21));
+    warningText.setLinespacing(0);
+    Unicode::snprintf(warningTextBuffer, WARNINGTEXT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_BCC0).getText());
+    warningText.setWildcard(warningTextBuffer);
+    warningText.resizeToCurrentText();
+    warningText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_092W));
+    listLayout1.add(warningText);
 
-    warningTextTime.setWidth(233);
-    warningTextTime.setHeight(30);
+    box1.setPosition(241, 0, 19, 35);
+    box1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    listLayout1.add(box1);
+
+    warningTextTime.setWidth(184);
+    warningTextTime.setHeight(27);
     warningTextTime.setColor(touchgfx::Color::getColorFromRGB(255, 0, 21));
     warningTextTime.setLinespacing(0);
     touchgfx::Unicode::snprintf(warningTextTimeBuffer1, WARNINGTEXTTIMEBUFFER1_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_GQCE).getText());

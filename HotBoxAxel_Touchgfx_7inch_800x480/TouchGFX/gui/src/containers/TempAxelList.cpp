@@ -88,7 +88,7 @@ void TempAxelList::updateTempItem(uint8_t id,int16_t temperature){
 }
 void TempAxelList::updateTempAllItems(Car carData)
 {
-	for(uint8_t axelID=0;axelID<MAX_SENSORNUM;axelID++)
+	for(uint8_t axelID=0;axelID<(MAX_SENSORNUM-1);axelID++)
 	{
 		Car::Sensor_t tempAxel=carData.getTemperature(axelID);
 		updateItem(axelID,tempAxel.state,tempAxel.temperature);

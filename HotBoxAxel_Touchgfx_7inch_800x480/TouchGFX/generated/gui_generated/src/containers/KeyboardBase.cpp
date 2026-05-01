@@ -13,7 +13,7 @@ KeyboardBase::KeyboardBase() :
 {
     setWidth(320);
     setHeight(200);
-    outerContainer.setPosition(0, 0, 320, 200);
+    outerContainer.setPosition(1, 0, 320, 200);
     background.setPosition(0, 0, 320, 200);
     background.setColor(touchgfx::Color::getColorFromRGB(231, 231, 231));
     outerContainer.add(background);

@@ -34,11 +34,12 @@ public:
 
     /// @brief Constructs the keyboard element and scales the layout.
     Keyboard();
+    Keyboard(uint16_t w,uint16_t h);
 
     /// @brief Places the element on the screen properly after the container is placed anywhere.
     /// @param size Buffer size (default 40).
     void initialize() override;
-
+    void initialize(uint16_t width,uint16_t height);
     /// @brief Shows the keyboard for the specified editable target and copies its text into the control.
     /// @param target Editable element reference.
     void edit(Editable& target);
@@ -54,6 +55,9 @@ public:
 
     /// @returns True if the keyboard currently targets the `Editable`.
     inline bool targets(Editable& target) { return m_target == &target; }
+
+    void setTimout(uint32_t timeout);
+    uint32_t getTimeout(){return keypressTimout;}
 
 private:
 
@@ -142,5 +146,11 @@ private:
     bool m_isCapsLock;      // True if the keyboard is switched to caps lock mode.
     Editable m_input;       // Internal text line control.
     Editable* m_target;     // Target element to update when the editing is done.
+    uint16_t keyboard_width;
+    uint16_t keyboard_height;
 
+    uint32_t keypressTimout;
+    uint32_t counterTimout;
+    bool startTimer;
+    void resetCounter();
 };

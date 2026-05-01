@@ -29,17 +29,18 @@ struct Typography
     static const touchgfx::FontId WARNINGFONT = 13;
     static const touchgfx::FontId WARNINGFONT_AUTO_GENERATED_FOR_GB = 14;
     static const touchgfx::FontId WARNINGFONT_AUTO_GENERATED_FOR_FA = 15;
-    static const touchgfx::FontId TEMPFONT = 16;
-    static const touchgfx::FontId TEMPFONT_AUTO_GENERATED_FOR_GB = 17;
-    static const touchgfx::FontId TEMPFONT_AUTO_GENERATED_FOR_FA = 18;
-    static const touchgfx::FontId CARFONT = 19;
-    static const touchgfx::FontId CARFONT_AUTO_GENERATED_FOR_GB = 20;
-    static const touchgfx::FontId CARFONT_AUTO_GENERATED_FOR_FA = 21;
-    static const touchgfx::FontId CARFONT1 = 22;
-    static const touchgfx::FontId CARFONT1_AUTO_GENERATED_FOR_GB = 23;
-    static const touchgfx::FontId CARFONT1_AUTO_GENERATED_FOR_FA = 24;
-    static const touchgfx::FontId PASSWORD = 25;
-    static const touchgfx::FontId KEYBOARD = 26;
+    static const touchgfx::FontId WARNINGFONT1 = 16;
+    static const touchgfx::FontId TEMPFONT = 17;
+    static const touchgfx::FontId TEMPFONT_AUTO_GENERATED_FOR_GB = 18;
+    static const touchgfx::FontId TEMPFONT_AUTO_GENERATED_FOR_FA = 19;
+    static const touchgfx::FontId CARFONT = 20;
+    static const touchgfx::FontId CARFONT_AUTO_GENERATED_FOR_GB = 21;
+    static const touchgfx::FontId CARFONT_AUTO_GENERATED_FOR_FA = 22;
+    static const touchgfx::FontId CARFONT1 = 23;
+    static const touchgfx::FontId CARFONT1_AUTO_GENERATED_FOR_GB = 24;
+    static const touchgfx::FontId CARFONT1_AUTO_GENERATED_FOR_FA = 25;
+    static const touchgfx::FontId PASSWORD = 26;
+    static const touchgfx::FontId KEYBOARD = 27;
 };
 
 struct TypographyFontIndex
@@ -58,20 +59,21 @@ struct TypographyFontIndex
     static const touchgfx::FontId LEDFONT_AUTO_GENERATED_FOR_GB = 7;     // Saira_Medium_25_4bpp
     static const touchgfx::FontId LEDFONT_AUTO_GENERATED_FOR_FA = 8;     // Nazanin_25_4bpp
     static const touchgfx::FontId WARNINGFONT = 9;                       // SairaSemiCondensed_SemiBold_21_4bpp
-    static const touchgfx::FontId WARNINGFONT_AUTO_GENERATED_FOR_GB = 10; // SairaSemiCondensed_SemiBold_25_4bpp
+    static const touchgfx::FontId WARNINGFONT_AUTO_GENERATED_FOR_GB = 10; // SairaSemiCondensed_SemiBold_22_4bpp
     static const touchgfx::FontId WARNINGFONT_AUTO_GENERATED_FOR_FA = 11; // Nazanin_26_4bpp
-    static const touchgfx::FontId TEMPFONT = 12;                          // Saira_SemiBold_30_4bpp
-    static const touchgfx::FontId TEMPFONT_AUTO_GENERATED_FOR_GB = 12;    // Saira_SemiBold_30_4bpp
-    static const touchgfx::FontId TEMPFONT_AUTO_GENERATED_FOR_FA = 13;    // Nazanin_30_4bpp
-    static const touchgfx::FontId CARFONT = 14;                           // Saira_SemiBold_100_4bpp
-    static const touchgfx::FontId CARFONT_AUTO_GENERATED_FOR_GB = 14;     // Saira_SemiBold_100_4bpp
-    static const touchgfx::FontId CARFONT_AUTO_GENERATED_FOR_FA = 15;     // Nazanin_80_4bpp
+    static const touchgfx::FontId WARNINGFONT1 = 12;                      // SairaSemiCondensed_SemiBold_25_4bpp
+    static const touchgfx::FontId TEMPFONT = 13;                          // Saira_SemiBold_30_4bpp
+    static const touchgfx::FontId TEMPFONT_AUTO_GENERATED_FOR_GB = 13;    // Saira_SemiBold_30_4bpp
+    static const touchgfx::FontId TEMPFONT_AUTO_GENERATED_FOR_FA = 14;    // Nazanin_30_4bpp
+    static const touchgfx::FontId CARFONT = 15;                           // Saira_SemiBold_100_4bpp
+    static const touchgfx::FontId CARFONT_AUTO_GENERATED_FOR_GB = 15;     // Saira_SemiBold_100_4bpp
+    static const touchgfx::FontId CARFONT_AUTO_GENERATED_FOR_FA = 16;     // Nazanin_80_4bpp
     static const touchgfx::FontId CARFONT1 = 0;                          // Saira_Bold_40_4bpp
     static const touchgfx::FontId CARFONT1_AUTO_GENERATED_FOR_GB = 0;    // Saira_Bold_40_4bpp
-    static const touchgfx::FontId CARFONT1_AUTO_GENERATED_FOR_FA = 16;    // Nazanin_40_4bpp
+    static const touchgfx::FontId CARFONT1_AUTO_GENERATED_FOR_FA = 17;    // Nazanin_40_4bpp
     static const touchgfx::FontId PASSWORD = 2;                          // Saira_Medium_40_4bpp
-    static const touchgfx::FontId KEYBOARD = 17;                          // DejaVuSansMono_40_4bpp
-    static const uint16_t NUMBER_OF_FONTS = 18;
+    static const touchgfx::FontId KEYBOARD = 18;                          // DejaVuSansMono_40_4bpp
+    static const uint16_t NUMBER_OF_FONTS = 19;
 };
 
 class ApplicationFontProvider : public touchgfx::FontProvider

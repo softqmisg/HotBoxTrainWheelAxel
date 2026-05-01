@@ -25,6 +25,7 @@ void TopBar::setEnvTemperature(int16_t temp){
 		Unicode::snprintf(envTempTextBuffer, ENVTEMPTEXT_SIZE, "---");
 	else
 		Unicode::snprintf(envTempTextBuffer, ENVTEMPTEXT_SIZE, "%+3i", temp);
+//	envTempText.resizeToCurrentText();
 	envTempText.invalidate();
 }
 void TopBar::setDate(uint8_t day, uint8_t month, uint16_t year,uint8_t dayofweek){

@@ -4,7 +4,7 @@
 #include <gui_generated/mainscreen_screen/mainScreenViewBase.hpp>
 #include <gui/mainscreen_screen/mainScreenPresenter.hpp>
 #include <gui/containers/CarSelector.hpp>
-
+#include "EventLogger.h"
 class mainScreenView : public mainScreenViewBase
 {
 public:
@@ -33,7 +33,13 @@ public:
     void updateLedAlarmColor(LedParam::ColorState colorState);
     void updateLedCommColor(LedParam::ColorState colorState);
     //////////////////Warning///////////////////
-    void updateWarning();
+    void updateSensorWarning(uint8_t carNum,uint8_t senID,SensorSubtype subtype,
+    								   uint8_t hours, uint8_t minutes,
+    								   uint16_t year,uint8_t month,uint8_t day);
+    void updateSystemWarning(uint16_t errorcode,SystemSubtype subtype,
+    								   uint8_t hours, uint8_t minutes,
+    								   uint16_t year,uint8_t month,uint8_t day);
+    void setVisibleWarning(bool state);
     void onWarningAcceptButtonClicked(const WarningBar& warning);
     /////////Setting Button////////////
     virtual void settingButtonClicked();

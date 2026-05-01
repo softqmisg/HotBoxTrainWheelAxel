@@ -47,7 +47,7 @@
         <Translation Language="FA">8888/88/88</Translation>
       </Text>
       <Text Id="__SingleUse_T6GX" Alignment="Center" TypographyId="HeaderFont">
-        <Translation Language="GB">+27</Translation>
+        <Translation Language="GB">+88</Translation>
         <Translation Language="FA">+27</Translation>
       </Text>
       <Text Id="__SingleUse_0TBK" Alignment="Center" TypographyId="HeaderFont">
@@ -104,13 +104,17 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Warning">
+      <Text Id="__SingleUse_092W" Alignment="Left" TypographyId="WarningFont1">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="FA">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_BCC0" Alignment="Left" TypographyId="WarningFont1">
+        <Translation Language="GB">SYSTEM:CAR#88:ID#8</Translation>
+        <Translation Language="FA">SYSTEM:CAR#88:ID#8</Translation>
+      </Text>
       <Text Id="WARNING_CLEAR" Alignment="Left" TypographyId="WarningFont">
         <Translation Language="GB"></Translation>
         <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="__SingleUse_9AAZ" Alignment="Left" TypographyId="WarningFont">
-        <Translation Language="GB">8</Translation>
-        <Translation Language="FA">5&#10;</Translation>
       </Text>
       <Text Id="__SingleUse_GQCE" Alignment="Center" TypographyId="WarningFont">
         <Translation Language="GB">88:88</Translation>
@@ -120,17 +124,9 @@
         <Translation Language="GB">8888/88/88</Translation>
         <Translation Language="FA">8888/88/88</Translation>
       </Text>
-      <Text Id="__SingleUse_QHCI" Alignment="Left" TypographyId="WarningFont">
-        <Translation Language="GB">10</Translation>
-        <Translation Language="FA">6</Translation>
-      </Text>
-      <Text Id="__SingleUse_L29H" Alignment="Left" TypographyId="WarningFont">
-        <Translation Language="GB">Error in Car &lt;value&gt; Axel &lt;value&gt;</Translation>
-        <Translation Language="FA" Alignment="Center">خطا در واگن&lt;value&gt; محور &lt;value&gt;</Translation>
-      </Text>
       <Text Id="__SingleUse_A9U8" Alignment="Left" TypographyId="WarningFont">
-        <Translation Language="GB">@&lt;value&gt;-&lt;value&gt;</Translation>
-        <Translation Language="FA">@&lt;value&gt;-&lt;value&gt;</Translation>
+        <Translation Language="GB">&lt;value&gt;-&lt;value&gt;</Translation>
+        <Translation Language="FA">&lt;value&gt;-&lt;value&gt;</Translation>
       </Text>
       <Text Id="BUTTON_ACCEPT" Alignment="Center" TypographyId="WarningFont">
         <Translation Language="GB">Navigate</Translation>
@@ -407,9 +403,10 @@
       <LanguageSetting Language="FA" Font="Nazanin.ttf" Size="25" Bpp="4" IsVector="no" IsCompressed="no" Direction="RTL" FallbackCharacter="?" WildcardCharacters="0600-06FF FB50-FDFF FE70-FEFF 200C-200D" />
     </Typography>
     <Typography Id="WarningFont" Font="SairaSemiCondensed-SemiBold.ttf" Size="21" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z">
-      <LanguageSetting Language="GB" Font="SairaSemiCondensed-SemiBold.ttf" Size="25" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z" />
+      <LanguageSetting Language="GB" Font="SairaSemiCondensed-SemiBold.ttf" Size="22" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z" />
       <LanguageSetting Language="FA" Font="Nazanin.ttf" Size="26" Bpp="4" IsVector="no" IsCompressed="no" Direction="RTL" FallbackCharacter="?" WildcardCharacters="060C 061F 0621-064A 0660-0669 067E-06CC 06F0-06F9 FB56-FBFF FE81-FEFC" />
     </Typography>
+    <Typography Id="WarningFont1" Font="SairaSemiCondensed-SemiBold.ttf" Size="25" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z" />
     <Typography Id="TempFont" Font="Saira-SemiBold.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="C!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt; 060C 061B 061F 0621-064A 0660-066D 0670-06ED 06F0-06F9 FB51-FBB1 FBD3-FBFF FE81-FEFC" WildcardCharacterRanges="0-9,A-Z,a-z">
       <LanguageSetting Language="GB" Font="Saira-SemiBold.ttf" Size="30" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" />
       <LanguageSetting Language="FA" Font="Nazanin.ttf" Size="30" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt; 060C 061F 0621-064A 0660-0669 067E-06CC 06F0-06F9 FB56-FBFF FE81-FEFC" WildcardCharacterRanges="A-Z" />

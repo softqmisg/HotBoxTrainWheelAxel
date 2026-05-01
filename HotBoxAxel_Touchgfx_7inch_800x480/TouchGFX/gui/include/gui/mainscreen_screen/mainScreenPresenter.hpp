@@ -3,7 +3,7 @@
 
 #include <gui/model/ModelListener.hpp>
 #include <mvp/Presenter.hpp>
-
+#include "EventLogger.h"
 using namespace touchgfx;
 
 class mainScreenView;
@@ -34,19 +34,19 @@ public:
     Model::CalenderType getCalenderType();
 
     //handle CarSelector
-    virtual void carNumberUpdated(uint8_t carNum);
+    virtual void carNumberUpdated(uint8_t carNum) override;
     void saveCarNumber(uint8_t carNum);// Method to update counter value from view
     int getSavedCarNumber();    // Method to get current saved counter value
     //handle AxelTemp & envTemp
     void requestCarTempUpdate(uint8_t carNum);
     virtual void carTempUpdated(Car car) override;
-//    //handle EnvTemperature
-//    void requestEnvTemperatureUpdate();
-//    virtual void envTempUpdated(int16_t temp) override;
     //handle Leds
     void requestLedColorUpdate();
-    virtual void ledColorUpdate(uint8_t ledId, LedParam::ColorState colorState);
-
+    virtual void ledColorUpdated(uint8_t ledId, LedParam::ColorState colorState) override;
+    ////Warning Handle/////////////////////
+    void requestWarningUpdate();
+    virtual void warnigTextUpdated(EventEntry *event) override;
+    virtual void navigateWarningUpdated() override;
 
 private:
     mainScreenView& view;

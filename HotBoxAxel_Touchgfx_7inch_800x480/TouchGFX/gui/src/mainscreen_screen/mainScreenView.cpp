@@ -1,5 +1,6 @@
 #include <gui/mainscreen_screen/mainScreenView.hpp>
 #include<texts/TextKeysAndLanguages.hpp>
+
 #include "Utility.h"
 mainScreenView::mainScreenView():
 carNumberChangedCallback(this, &mainScreenView::onCarNumberChanged),
@@ -31,7 +32,6 @@ void mainScreenView::setupScreen()
 //    updateAxelTemperatures(carData)
     //////////////warning///////////////////////
     warningBar.setAcceptButtonClickedCallback(warningAcceptClickedCallback);
-    updateWarning();
     /////////////password popup//////////////
 }
 
@@ -85,7 +85,7 @@ void mainScreenView::onCarNumberChanged(const CarSelector& selector){
 void mainScreenView::updateCarTemperatures(Car carData)
 {
 	tempAxelList.updateTempAllItems(carData);
-	topBar.setEnvTemperature(carData.getTemperature(MAX_SENSORNUM).temperature);
+	topBar.setEnvTemperature(carData.getTemperature(MAX_SENSORNUM-1).temperature);
 }
 //////////led////////////////////
 void mainScreenView::updateLedMainColor(LedParam::ColorState colorState)
@@ -154,20 +154,34 @@ void mainScreenView::settingButtonClicked()
 	passwordPopup.invalidate();
 }
 ///////////Warning bar///////////////
-void mainScreenView::updateWarning()
+void mainScreenView::updateSensorWarning(uint8_t carNum,uint8_t senID,SensorSubtype subtype,
+								   uint8_t hours, uint8_t minutes,
+								   uint16_t year,uint8_t month,uint8_t day){
+	warningBar.setWarning(carNum,senID,subtype, hours,minutes , year, month, day);
+	setVisibleWarning(true);
+}
+void mainScreenView::updateSystemWarning(uint16_t errorcode,SystemSubtype subtype,
+								   uint8_t hours, uint8_t minutes,
+								   uint16_t year,uint8_t month,uint8_t day){
+	warningBar.setWarning(errorcode,subtype, hours,minutes , year, month, day);
+	setVisibleWarning(true);
+}
+void mainScreenView::setVisibleWarning(bool state)
 {
-	test_car=3;
-	test_axel=6;
-	warningBar.setWarning(test_car,test_axel, 13, 42, 25, 4, 2026);
+	warningBar.setVisibleTextButton(state);
 }
 void mainScreenView::onWarningAcceptButtonClicked(const WarningBar& warning)
 {
-	if(Texts::getLanguage()==0)
-		Texts::setLanguage(1);
-	else
-		Texts::setLanguage(0);
-	test_car++;if(test_car>MAX_CARNUM) test_car=1;
-	test_axel++;if(test_axel>MAX_SENSORNUM) test_axel=1;
-//	warningBar.setWarning(test_car,test_axel, 13, 42, 25, 4, 2026);
+//	if(Texts::getLanguage()==0)
+//		Texts::setLanguage(1);
+//	else
+//		Texts::setLanguage(0);
+//	Application::getInstance()->invalidate();
+	if(presenter!=nullptr)
+	{
+		presenter->navigateWarningUpdated();
+	}
+
+
 }
 

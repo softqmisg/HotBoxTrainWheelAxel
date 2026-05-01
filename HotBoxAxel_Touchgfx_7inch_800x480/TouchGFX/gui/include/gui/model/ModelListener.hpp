@@ -20,8 +20,9 @@ public:
 	virtual void dateUpdated(uint8_t day, uint8_t month, uint16_t year) {}
     virtual void carNumberUpdated(uint8_t carNum) {}
     virtual void carTempUpdated(Car car) {}
-    virtual void ledColorUpdate(uint8_t ledId, LedParam::ColorState colorState) {}
-
+    virtual void ledColorUpdated(uint8_t ledId, LedParam::ColorState colorState) {}
+    virtual void warnigTextUpdated(EventEntry *event) {}
+    virtual void navigateWarningUpdated() {}
 protected:
     Model* model;
 };
