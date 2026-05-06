@@ -28,7 +28,7 @@ public:
     {
         // Override and implement this function in PasswordPopup
     }
-    virtual void exitButtonClicked()
+    virtual void cancelButtonClicked()
     {
         // Override and implement this function in PasswordPopup
     }
@@ -65,11 +65,12 @@ protected:
     touchgfx::Container container;
     touchgfx::Box box1;
     touchgfx::ButtonWithLabel okButton;
-    touchgfx::ButtonWithLabel exitButton;
+    touchgfx::ButtonWithLabel cancelButton;
     touchgfx::TextArea label1;
     touchgfx::TextArea label2;
     touchgfx::WildcardTextButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  >  passwordText;
     touchgfx::ToggleButton userToggleButton;
+    touchgfx::TextArea passWrong;
     Keyboard keyboard;
 
     /*

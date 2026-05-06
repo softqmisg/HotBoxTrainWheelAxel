@@ -62,10 +62,6 @@
         <Translation Language="GB">Exit</Translation>
         <Translation Language="FA">خروج</Translation>
       </Text>
-      <Text Id="BUTTON_SETTING" Alignment="Center" TypographyId="HeaderFont">
-        <Translation Language="GB">Setting</Translation>
-        <Translation Language="FA">تنظیمات</Translation>
-      </Text>
     </TextGroup>
     <TextGroup Id="PasswordPage">
       <Text Id="__SingleUse_B9LY" Alignment="Center" TypographyId="Keyboard">
@@ -172,6 +168,14 @@
       </Text>
     </TextGroup>
     <TextGroup Id="Unsorted">
+      <Text Id="BUTTON_SETTING" Alignment="Center" TypographyId="HeaderFont">
+        <Translation Language="GB">Setting</Translation>
+        <Translation Language="FA">تنظیمات</Translation>
+      </Text>
+      <Text Id="__SingleUse_DBGD" Alignment="Left" TypographyId="HeaderFont1">
+        <Translation Language="GB">Wrong Password</Translation>
+        <Translation Language="FA">پسورد اشتباه</Translation>
+      </Text>
       <Text Id="__SingleUse_80BA" Alignment="Left" TypographyId="Large">
         <Translation Language="GB"></Translation>
         <Translation Language="FA"></Translation>
@@ -420,6 +424,6 @@
       <LanguageSetting Language="FA" Font="Nazanin.ttf" Size="40" Bpp="4" IsVector="no" IsCompressed="no" Direction="RTL" FallbackCharacter="?" WildcardCharacters="0600-06FF FB50-FDFF FE70-FEFF 200C-200D" />
     </Typography>
     <Typography Id="Password" Font="Saira-Medium.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters=" @#%-+()[],.;:/&quot;" WildcardCharacterRanges="0-9,A-Z,a-z" />
-    <Typography Id="Keyboard" Font="DejaVuSansMono.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters=" @#%-+()[],.;:/&quot;" WildcardCharacterRanges="0-9,A-Z,a-z" />
+    <Typography Id="Keyboard" Font="DejaVuSansMono.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="*@#%-+()[],.;:/&quot;" WildcardCharacterRanges="0-9,A-Z,a-z" />
   </Typographies>
 </TextDatabase>

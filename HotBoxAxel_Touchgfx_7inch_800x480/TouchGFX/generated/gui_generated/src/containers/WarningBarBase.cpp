@@ -37,7 +37,8 @@ WarningBarBase::WarningBarBase() :
     warningText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_092W));
     listLayout1.add(warningText);
 
-    box1.setPosition(241, 0, 19, 35);
+    box1.setWidth(19);
+    box1.setHeight(35);
     box1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
     listLayout1.add(box1);
 

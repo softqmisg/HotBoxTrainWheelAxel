@@ -20,13 +20,13 @@ PasswordPopupBase::PasswordPopupBase() :
     box2.setAlpha(0);
     add(box2);
 
-    container.setPosition(100, 112, 600, 256);
-    box1.setPosition(0, 0, 600, 256);
+    container.setPosition(100, 68, 600, 300);
+    box1.setPosition(0, 0, 600, 300);
     box1.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
     box1.setAlpha(240);
     container.add(box1);
 
-    okButton.setXY(70, 184);
+    okButton.setXY(70, 225);
     okButton.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID));
     okButton.setLabelText(touchgfx::TypedText(T_BUTTON_OK));
     okButton.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
@@ -34,13 +34,13 @@ PasswordPopupBase::PasswordPopupBase() :
     okButton.setAction(buttonCallback);
     container.add(okButton);
 
-    exitButton.setXY(336, 184);
-    exitButton.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID));
-    exitButton.setLabelText(touchgfx::TypedText(T_BUTTON_CANCEL));
-    exitButton.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    exitButton.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    exitButton.setAction(buttonCallback);
-    container.add(exitButton);
+    cancelButton.setXY(339, 225);
+    cancelButton.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_NORMAL_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID));
+    cancelButton.setLabelText(touchgfx::TypedText(T_BUTTON_CANCEL));
+    cancelButton.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    cancelButton.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    cancelButton.setAction(buttonCallback);
+    container.add(cancelButton);
 
     label1.setXY(74, 107);
     label1.setColor(touchgfx::Color::getColorFromRGB(245, 235, 235));
@@ -67,9 +67,16 @@ PasswordPopupBase::PasswordPopupBase() :
     container.add(passwordText);
 
     userToggleButton.setXY(341, 25);
-    userToggleButton.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_LARGE_ROUND_TEXT_OFF_NORMAL_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_LARGE_ROUND_TEXT_ON_DARK_ID));
+    userToggleButton.setBitmaps(touchgfx::Bitmap(BITMAP_TOGGLE_USER_NORMAL_ID), touchgfx::Bitmap(BITMAP_TOGGLE_ADMIN_PRESSED_ID));
     userToggleButton.setAction(buttonCallback);
     container.add(userToggleButton);
+
+    passWrong.setXY(315, 172);
+    passWrong.setColor(touchgfx::Color::getColorFromRGB(245, 0, 0));
+    passWrong.setLinespacing(0);
+    passWrong.setTypedText(touchgfx::TypedText(T___SINGLEUSE_DBGD));
+    passWrong.setVisible(false);
+    container.add(passWrong);
 
     add(container);
 
@@ -99,16 +106,16 @@ void PasswordPopupBase::buttonCallbackHandler(const touchgfx::AbstractButton& sr
         //Call okButtonClicked
         okButtonClicked();
     }
-    if (&src == &exitButton)
+    if (&src == &cancelButton)
     {
-        //ExitButtonClick
-        //When exitButton clicked call virtual function
-        //Call exitButtonClicked
-        exitButtonClicked();
+        //cancelButtonClick
+        //When cancelButton clicked call virtual function
+        //Call cancelButtonClicked
+        cancelButtonClicked();
     }
     if (&src == &userToggleButton)
     {
-        //UserButtonClick
+        //UserToggleButtonClick
         //When userToggleButton clicked call virtual function
         //Call userToggleClicked
         userToggleClicked();

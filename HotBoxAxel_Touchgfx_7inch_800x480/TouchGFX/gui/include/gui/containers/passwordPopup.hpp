@@ -12,25 +12,44 @@ public:
     virtual ~PasswordPopup() {}
 
     virtual void initialize();
+    void handleTickEvent() override;
 //    void setParentView(mainScreenView* view) { parentView = view; }
     void cleanPassword();
-    void setPasswordEditCallback(	GenericCallback< const PasswordPopup&>&callback);
+    void setOKCallback(GenericCallback<bool,char *>&callback);
+
+    bool getIsTogglePressed(){return isTogglePressed;}
+    void setIsTogglePressed(bool isAdmin);
+
+    void showPopup(bool);
+    void showWrongPass(bool);
 
 protected:
-
-    void exitButtonClicked() override ;
+    void userToggleClicked() override;
+    void cancelButtonClicked() override ;
     void okButtonClicked() override ;
-    void userToggleClicked()override;
     void paswordEditClicked() override;
+
     void keyboardAppliedClicked() override;
     void keyboardCancelClicked() override;
     void keyboardCharTyped(Unicode::UnicodeChar value) override;
 
 private:
 //    mainScreenView* parentView;
-    GenericCallback< const PasswordPopup&> *passwordEditCallback{nullptr};
+    GenericCallback<bool,char*> *okCallback{nullptr};
+
     Editable passwordEditable;
     char keyboardText[PASSWORDTEXT_SIZE];
+
+    bool startTimer;
+    bool startTimerWrong;
+    int32_t counterTimout;
+    int32_t counterPasswrong;
+    void resetTimerTimeout();
+    void resetTimerPassWrong();
+    const int32_t TIMEOUT_MS=10000;
+    const int32_t PASSWRONGSHOW_MS=3000;
+
+    bool isTogglePressed;
 
 };
 

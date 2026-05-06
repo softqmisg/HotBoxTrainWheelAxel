@@ -1,5 +1,6 @@
 #include <gui/mainscreen_screen/mainScreenView.hpp>
 #include <gui/mainscreen_screen/mainScreenPresenter.hpp>
+#include <stdio.h>
 
 mainScreenPresenter::mainScreenPresenter(mainScreenView& v)
     : view(v)
@@ -134,4 +135,23 @@ void mainScreenPresenter::warnigTextUpdated(EventEntry *event){
 void mainScreenPresenter::navigateWarningUpdated()
 {
 	model->navigateWarning();
+}
+///popup handler///////////////////////
+bool mainScreenPresenter::getSavedIsAdmin(void)
+{
+	//for test
+	return false;
+}
+bool mainScreenPresenter::savedIsAdmin(bool isAdmin,char *pass)
+{
+	//for test
+	if(isAdmin)
+	{
+		return !(strcmp(pass,"admin"));
+	}
+	else
+	{
+		return !(strcmp(pass,"mehdi"));
+
+	}
 }

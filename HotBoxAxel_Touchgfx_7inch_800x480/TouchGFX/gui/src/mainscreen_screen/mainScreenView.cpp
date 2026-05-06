@@ -4,7 +4,8 @@
 #include "Utility.h"
 mainScreenView::mainScreenView():
 carNumberChangedCallback(this, &mainScreenView::onCarNumberChanged),
-warningAcceptClickedCallback(this,&mainScreenView::onWarningAcceptButtonClicked)
+warningAcceptClickedCallback(this,&mainScreenView::onWarningAcceptButtonClicked),
+popupOKClickedCallback(this,&mainScreenView::onPopupOKClicked)
 {
 
 }
@@ -33,6 +34,9 @@ void mainScreenView::setupScreen()
     //////////////warning///////////////////////
     warningBar.setAcceptButtonClickedCallback(warningAcceptClickedCallback);
     /////////////password popup//////////////
+    passwordPopup.setOKCallback(popupOKClickedCallback);
+    if(presenter!=nullptr)
+    	passwordPopup.setIsTogglePressed(presenter->getSavedIsAdmin());
 }
 
 void mainScreenView::tearDownScreen()
@@ -150,8 +154,7 @@ void mainScreenView:: updateLedCommColor(LedParam::ColorState colorState)
 void mainScreenView::settingButtonClicked()
 {
 	passwordPopup.cleanPassword();
-	passwordPopup.setVisible(true);
-	passwordPopup.invalidate();
+	passwordPopup.showPopup(true);
 }
 ///////////Warning bar///////////////
 void mainScreenView::updateSensorWarning(uint8_t carNum,uint8_t senID,SensorSubtype subtype,
@@ -181,7 +184,21 @@ void mainScreenView::onWarningAcceptButtonClicked(const WarningBar& warning)
 	{
 		presenter->navigateWarningUpdated();
 	}
-
-
+}
+///////////////Popup///////////////////////
+void mainScreenView::onPopupOKClicked(bool isAdmin,char *pass){
+	if(presenter!=nullptr)
+	{
+		if(presenter->savedIsAdmin(isAdmin, pass)) //mean pass is correct for isAdmin
+		{
+			passwordPopup.showWrongPass(false);
+			passwordPopup.showPopup(false);
+			application().gotosettingScreenScreenNoTransition();
+		}
+		else
+		{
+			passwordPopup.showWrongPass(true);
+		}
+	}
 }
 

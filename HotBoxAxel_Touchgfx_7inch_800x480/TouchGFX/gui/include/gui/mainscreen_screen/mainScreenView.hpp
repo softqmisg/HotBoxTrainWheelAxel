@@ -44,10 +44,13 @@ public:
     /////////Setting Button////////////
     virtual void settingButtonClicked();
     ////////////password popup////////////////
+    void onPopupOKClicked(bool isAdmin,char *pass);
 
 private:
     Callback<mainScreenView, const CarSelector&> carNumberChangedCallback;
     Callback<mainScreenView, const WarningBar&> warningAcceptClickedCallback;
+    Callback<mainScreenView, bool,char *> popupOKClickedCallback;
+    Callback<mainScreenView, bool > popupToggleClickedCallback;
 
 //    char keyboardPasswordText[PASSWORDTEXT_SIZE];
 

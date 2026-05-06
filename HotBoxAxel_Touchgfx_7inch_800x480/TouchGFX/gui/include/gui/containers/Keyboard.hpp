@@ -152,5 +152,5 @@ private:
     uint32_t keypressTimout;
     uint32_t counterTimout;
     bool startTimer;
-    void resetCounter();
+    void resetTimer();
 };

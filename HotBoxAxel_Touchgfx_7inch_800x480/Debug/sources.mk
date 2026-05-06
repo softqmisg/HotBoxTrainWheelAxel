@@ -54,6 +54,7 @@ TouchGFX/generated/gui_generated/src/settingscreen_screen \
 TouchGFX/generated/images/src \
 TouchGFX/generated/images/src/Gradient_bg \
 TouchGFX/generated/images/src/__generated \
+TouchGFX/generated/images/src/popup \
 TouchGFX/generated/texts/src \
 TouchGFX/gui/src/common \
 TouchGFX/gui/src/containers \

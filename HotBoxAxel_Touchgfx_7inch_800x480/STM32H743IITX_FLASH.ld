@@ -187,6 +187,7 @@ SECTIONS
   	*(.gnu.linkonce.r.*)
   	. = ALIGN(0x4);
   } >QUADSPI
+  
 /*
   TextFlashSection (NOLOAD):
   {
@@ -194,7 +195,7 @@ SECTIONS
   	*(.gnu.linkonce.r.*)
   	. = ALIGN(0x4);
   } >QUADSPI
-    */
+ */
 }
 
 

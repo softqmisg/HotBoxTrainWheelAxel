@@ -47,7 +47,9 @@ public:
     void requestWarningUpdate();
     virtual void warnigTextUpdated(EventEntry *event) override;
     virtual void navigateWarningUpdated() override;
-
+    ///popup handler///////////////////////
+    bool getSavedIsAdmin(void);
+    bool savedIsAdmin(bool isAdmin,char *pass);
 private:
     mainScreenView& view;
 

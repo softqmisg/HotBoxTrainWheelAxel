@@ -907,22 +907,22 @@
             "Type": "Container",
             "Name": "container",
             "X": 100,
-            "Y": 112,
+            "Y": 68,
             "Width": 600,
-            "Height": 256,
+            "Height": 300,
             "Components": [
               {
                 "Type": "Box",
                 "Name": "box1",
                 "Width": 600,
-                "Height": 256,
+                "Height": 300,
                 "Alpha": 240
               },
               {
                 "Type": "ButtonWithLabel",
                 "Name": "okButton",
                 "X": 70,
-                "Y": 184,
+                "Y": 225,
                 "Width": 175,
                 "Height": 50,
                 "Pressed": "__generated\\dark_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
@@ -943,9 +943,9 @@
               },
               {
                 "Type": "ButtonWithLabel",
-                "Name": "exitButton",
-                "X": 336,
-                "Y": 184,
+                "Name": "cancelButton",
+                "X": 339,
+                "Y": 225,
                 "Width": 175,
                 "Height": 50,
                 "Pressed": "__generated\\dark_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
@@ -1062,9 +1062,23 @@
                 "Y": 25,
                 "Width": 170,
                 "Height": 60,
-                "Pressed": "__generated\\dark_theme_images_widgets_togglebutton_large_round_text_on_dark.png",
-                "Released": "__generated\\dark_theme_images_widgets_togglebutton_large_round_text_off_normal.png",
-                "Preset": "dark_theme\\presets\\togglebutton\\large\\round_text.json"
+                "Pressed": "popup\\toggle_admin_pressed.png",
+                "Released": "popup\\toggle_user_normal.png"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "passWrong",
+                "X": 315,
+                "Y": 172,
+                "Width": 223,
+                "Height": 34,
+                "Visible": false,
+                "TextId": "__SingleUse_DBGD",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 245
+                },
+                "AutoSize": true
               }
             ]
           },
@@ -1091,14 +1105,14 @@
             }
           },
           {
-            "InteractionName": "ExitButtonClick",
+            "InteractionName": "cancelButtonClick",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "exitButton"
+              "TriggerComponent": "cancelButton"
             },
             "Action": {
               "Type": "ActionCustom",
-              "FunctionName": "exitButtonClicked"
+              "FunctionName": "cancelButtonClicked"
             }
           },
           {
@@ -1113,7 +1127,7 @@
             }
           },
           {
-            "InteractionName": "UserButtonClick",
+            "InteractionName": "UserToggleButtonClick",
             "Trigger": {
               "Type": "TriggerClicked",
               "TriggerComponent": "userToggleButton"

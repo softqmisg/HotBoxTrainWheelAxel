@@ -169,7 +169,7 @@ void Keyboard::initialize(uint16_t width,uint16_t height)
 
     setVisible(false);
 }
-void Keyboard::resetCounter()
+void Keyboard::resetTimer()
 {
 	counterTimout=(keypressTimout*60)/1000;
 	if (counterTimout < 1) counterTimout = 1;
@@ -178,7 +178,7 @@ void Keyboard::resetCounter()
 void Keyboard::setTimout(uint32_t timeout)
 {
 	keypressTimout=timeout;
-	resetCounter();
+	resetTimer();
 }
 
 void Keyboard::edit(Editable& target)
@@ -191,7 +191,7 @@ void Keyboard::edit(Editable& target)
     caretUpdatePosition();
     setVisible(true);
     invalidate();
-	resetCounter();
+	resetTimer();
 	startTimer=true;
 
 }
@@ -231,7 +231,7 @@ void Keyboard::handleTickEvent()
     {
     	counterTimout--;
     	if(counterTimout==0)
-    		this->cancel();
+    		this->handleEscape();
     }
 }
 
@@ -258,7 +258,7 @@ bool Keyboard::handleCancellation(uint8_t keyCode, EventType e)
 
 void Keyboard::handleMappedKey(const Key::Mapped& sender, const ClickEvent& event)
 {
-	resetCounter();
+	resetTimer();
     uint8_t keyCode = getKeyCode(sender);
     if (!keyCode) return;
     if (handleCancellation(keyCode, event.getType())) return;
@@ -270,7 +270,7 @@ void Keyboard::handleMappedKey(const Key::Mapped& sender, const ClickEvent& even
 
 void Keyboard::handleStaticKey(const Key::Static& sender, const ClickEvent& event)
 {
-	resetCounter();
+	resetTimer();
     uint8_t keyCode = getKeyCode(sender);
     switch (keyCode)
     {
@@ -292,7 +292,7 @@ void Keyboard::handleStaticKey(const Key::Static& sender, const ClickEvent& even
 
 void Keyboard::handleBlankKey(const Key::Blank& sender, const ClickEvent& event)
 {
-	resetCounter();
+	resetTimer();
     uint8_t keyCode = getKeyCode(sender);
     if (keyCode != 46) return;
     if (handleCancellation(keyCode, event.getType())) return;
@@ -301,7 +301,7 @@ void Keyboard::handleBlankKey(const Key::Blank& sender, const ClickEvent& event)
 
 void Keyboard::handleToggleKey(const Key::Toggle& sender, const ClickEvent& event)
 {
-	resetCounter();
+	resetTimer();
     if (m_keys[34].contains(sender)) handleShift(m_keys[34], m_keys[44], event.getType());
     else if (m_keys[44].contains(sender)) handleShift(m_keys[44], m_keys[34], event.getType());
 }
