@@ -69,19 +69,20 @@ void PasswordPopup::userToggleClicked(){
 	isTogglePressed=userToggleButton.getState();
 }
 void PasswordPopup::cancelButtonClicked(){
-	resetTimerTimeout();
 	startTimer=false;
+	resetTimerTimeout();
 	keyboardText[0]='\0';
 	showPopup(false);
 }
 void PasswordPopup::okButtonClicked(){
 	resetTimerTimeout();
-	startTimer=false;
 	if(okCallback) okCallback->execute(isTogglePressed,keyboardText);
 }
 void PasswordPopup::paswordEditClicked(){
 	showWrongPass(false);
 	cleanPassword();
+	startTimer=false;
+	resetTimerTimeout();
 	keyboard.edit(passwordEditable);
 }
 
