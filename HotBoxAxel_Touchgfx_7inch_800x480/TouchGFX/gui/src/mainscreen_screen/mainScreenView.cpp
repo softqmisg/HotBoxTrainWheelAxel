@@ -33,6 +33,7 @@ void mainScreenView::setupScreen()
 //    updateAxelTemperatures(carData)
     //////////////warning///////////////////////
     warningBar.setAcceptButtonClickedCallback(warningAcceptClickedCallback);
+
     /////////////password popup//////////////
     passwordPopup.setOKCallback(popupOKClickedCallback);
     if(presenter!=nullptr)

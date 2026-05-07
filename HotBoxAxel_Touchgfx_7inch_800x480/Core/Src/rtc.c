@@ -21,6 +21,47 @@
 #include "rtc.h"
 
 /* USER CODE BEGIN 0 */
+#include <stdio.h>
+#include <string.h>
+#pragma message("__DATE__ = " __DATE__)
+#ifndef __DATE__
+	#error "__DATE__ macro not defined"
+#endif
+
+#pragma message("__TIME__ = " __TIME__)
+
+#ifndef __TIME__
+	#error "__TIME__ macro not defined"
+#endif
+void getCompileDate(uint16_t *y, uint8_t *m, uint8_t *d)
+{
+	 int month, day, year;
+	    char month_str[4];
+
+	    sscanf(__DATE__, "%3s %d %d", month_str, &day, &year);
+
+	    // Convert month string to number
+	    const char* months[] = {"Jan", "Feb", "Mar", "Apr", "May", "Jun",
+	                            "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
+	    for (month = 0; month < 12; month++) {
+	        if (strcmp(month_str, months[month]) == 0) break;
+	    }
+	    month++;  // Make it 1-based
+	    *y=year;
+	    *m=month;
+	    *d=day;
+
+
+}
+
+ void getCompileTime(uint8_t *hour, uint8_t *minute, uint8_t *second)
+ {
+	 int h, m, s;
+	    sscanf(__TIME__, "%d:%d:%d", &h, &m, &s);
+	    *hour = (uint8_t)h;
+	    *minute = (uint8_t)m;
+	    *second = (uint8_t)s;
+ }
 
 /* USER CODE END 0 */
 
@@ -58,33 +99,60 @@ void MX_RTC_Init(void)
   }
 
   /* USER CODE BEGIN Check_RTC_BKUP */
-  if(HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR1)!=0xA5A55A5A)
-  {
+if(HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR1)!=0xA5A55A5A)
+{
   /* USER CODE END Check_RTC_BKUP */
 
   /** Initialize RTC and set the Time and Date
   */
-  sTime.Hours = 0x23;
-  sTime.Minutes = 0x58;
-  sTime.Seconds = 0x0;
+
+//  sTime.Hours = 22;
+//  sTime.Minutes = 3;
+//  sTime.Seconds = 0x0;
+//  sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
+//  sTime.StoreOperation = RTC_STOREOPERATION_RESET;
+//  if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN) != HAL_OK)
+//  {
+//    Error_Handler();
+//  }
+//  sDate.WeekDay = RTC_WEEKDAY_THURSDAY;
+//  sDate.Month = 5;
+//  sDate.Date = 7;
+//  sDate.Year = 26;
+//
+//  if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN) != HAL_OK)
+//  {
+//    Error_Handler();
+//  }
+  /* USER CODE BEGIN RTC_Init 2 */
+  uint8_t h,m,s;
+  getCompileTime(&h,&m,&s);
+
+  sTime.Hours = h;
+  sTime.Minutes = m;
+  sTime.Seconds = s;
   sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
   sTime.StoreOperation = RTC_STOREOPERATION_RESET;
-  if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BCD) != HAL_OK)
+  if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN) != HAL_OK)
   {
     Error_Handler();
   }
-  sDate.WeekDay = RTC_WEEKDAY_TUESDAY;
-  sDate.Month = RTC_MONTH_APRIL;
-  sDate.Date = 0x21;
-  sDate.Year = 0x26;
 
-  if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BCD) != HAL_OK)
+  uint8_t mo,d;
+  uint16_t y;
+  getCompileDate(&y,&mo,&d);
+  sDate.Month = mo;
+  sDate.Date = d;
+  sDate.Year = y-2000;
+
+  if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN) != HAL_OK)
   {
     Error_Handler();
   }
-  /* USER CODE BEGIN RTC_Init 2 */
+
+
   HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR1,0xA5A55A5A);
-  }
+}
   /* USER CODE END RTC_Init 2 */
 
 }

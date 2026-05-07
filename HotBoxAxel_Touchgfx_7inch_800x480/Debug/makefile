@@ -31,6 +31,7 @@ RM := rm -rf
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk
 -include Core/Inc/subdir.mk
+-include Core/CustomClasses/Src/subdir.mk
 -include Core/CPT_TOUCH/Src/subdir.mk
 -include objects.mk
 

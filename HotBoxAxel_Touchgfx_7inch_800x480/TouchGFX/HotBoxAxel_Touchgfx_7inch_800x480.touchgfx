@@ -435,7 +435,7 @@
             },
             "CenterX": 40.0,
             "CenterY": 40.0,
-            "Radius": 25.0,
+            "Radius": 19.0,
             "EndAngle": 360.0,
             "CapPrecision": "Butt"
           },

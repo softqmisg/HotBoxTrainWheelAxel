@@ -9,6 +9,9 @@
 #include <stdlib.h>
 #include  "main.h"
 #include <stdio.h>
+
+
+
 // Implementation
 int Utility::getDayOfWeek(uint16_t year, uint8_t month, uint8_t day) {
     if (!isValidDate(year, month, day)) {

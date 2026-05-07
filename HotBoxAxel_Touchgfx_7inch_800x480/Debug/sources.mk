@@ -41,6 +41,7 @@ CPP_DEPS :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 Core/CPT_TOUCH/Src \
+Core/CustomClasses/Src \
 Core/Inc \
 Core/Src \
 Core/Startup \

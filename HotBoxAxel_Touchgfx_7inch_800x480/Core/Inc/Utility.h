@@ -36,6 +36,7 @@ public:
 
     static int16_t generateRandomInt(int16_t max,int16_t min);
     static bool generateRandomBin();
+
 };
 
 #endif /* INC_UTILITY_H_ */

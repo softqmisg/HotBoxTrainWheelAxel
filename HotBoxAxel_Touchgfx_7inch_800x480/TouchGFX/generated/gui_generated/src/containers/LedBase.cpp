@@ -11,7 +11,7 @@ LedBase::LedBase()
     setHeight(102);
     stateCircle.setPosition(6, 28, 80, 80);
     stateCircle.setCenter(40, 40);
-    stateCircle.setRadius(25);
+    stateCircle.setRadius(19);
     stateCircle.setLineWidth(0);
     stateCircle.setArc(0, 360);
     stateCirclePainter.setColor(touchgfx::Color::getColorFromRGB(0, 250, 21));
