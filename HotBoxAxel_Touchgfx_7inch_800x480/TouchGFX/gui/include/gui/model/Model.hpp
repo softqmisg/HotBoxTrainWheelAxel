@@ -2,6 +2,7 @@
 #define MODEL_HPP
 #include <touchgfx/hal/Types.hpp>
 #include "rtc.h"
+#include "tim.h"
 #include "Utility.h"
 #include "Car.h"
 #include "LedParam.h"

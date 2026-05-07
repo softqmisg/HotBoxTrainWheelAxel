@@ -25,6 +25,7 @@
 #include "memorymap.h"
 #include "quadspi.h"
 #include "rtc.h"
+#include "tim.h"
 #include "usart.h"
 #include "gpio.h"
 #include "fmc.h"
@@ -124,6 +125,7 @@ int main(void)
   MX_USART1_UART_Init();
   MX_QUADSPI_Init();
   MX_RTC_Init();
+  MX_TIM3_Init();
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
 
@@ -138,7 +140,7 @@ int main(void)
 	  lcd_address++;
   }
   HAL_Delay(300);
-  HAL_GPIO_WritePin(LCD_BL_GPIO_Port, LCD_BL_Pin, GPIO_PIN_SET);//enable Backlight
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
   while (1)
   {
     /* USER CODE END WHILE */

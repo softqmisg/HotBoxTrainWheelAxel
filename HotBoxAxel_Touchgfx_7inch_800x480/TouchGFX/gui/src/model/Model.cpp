@@ -5,6 +5,8 @@
 #include "Utility.h"
 
 extern RTC_HandleTypeDef hrtc;
+extern TIM_HandleTypeDef htim3;
+
 Model::Model() :
 modelListener(0),
 tick1sCounter(0),
@@ -40,6 +42,10 @@ ledComm(2)
 	ledComm.setCallback([this](uint8_t ledId,LedParam::ColorState colorState){
 		this->colorLedChanged(ledId,colorState);
 	});
+
+	uint32_t period=__HAL_TIM_GET_AUTORELOAD(&htim3);
+	  __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_2,period*1);
+
 }
 
 void Model::tick()

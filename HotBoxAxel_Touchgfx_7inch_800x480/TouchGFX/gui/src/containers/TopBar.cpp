@@ -50,10 +50,10 @@ void TopBar::setDate(uint8_t day, uint8_t month, uint16_t year,uint8_t dayofweek
     	textID=T_DAY_THURSDAY;
     	break;
     case 5: //Friday
-    	textID=T_DAY_SUNDAY;
+    	textID=T_DAY_FRIDAY;
     	break;
     case 6: //Saturday
-    	textID=T_DAY_SUNDAY;
+    	textID=T_DAY_SATURDAY;
     	break;
 
     }

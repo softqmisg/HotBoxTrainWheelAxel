@@ -71,8 +71,6 @@ void Error_Handler(void);
 #define T_MISO_GPIO_Port GPIOG
 #define T_MOSI_SDA_Pin GPIO_PIN_3
 #define T_MOSI_SDA_GPIO_Port GPIOI
-#define LCD_BL_Pin GPIO_PIN_5
-#define LCD_BL_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

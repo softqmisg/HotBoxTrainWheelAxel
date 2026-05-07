@@ -75,9 +75,6 @@ void MX_RTC_Init(void)
 
   /* USER CODE END RTC_Init 0 */
 
-  RTC_TimeTypeDef sTime = {0};
-  RTC_DateTypeDef sDate = {0};
-
   /* USER CODE BEGIN RTC_Init 1 */
   // Disable backup domain write protection
   HAL_PWR_EnableBkUpAccess();
@@ -97,62 +94,40 @@ void MX_RTC_Init(void)
   {
     Error_Handler();
   }
-
-  /* USER CODE BEGIN Check_RTC_BKUP */
-if(HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR1)!=0xA5A55A5A)
-{
-  /* USER CODE END Check_RTC_BKUP */
-
-  /** Initialize RTC and set the Time and Date
-  */
-
-//  sTime.Hours = 22;
-//  sTime.Minutes = 3;
-//  sTime.Seconds = 0x0;
-//  sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
-//  sTime.StoreOperation = RTC_STOREOPERATION_RESET;
-//  if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN) != HAL_OK)
-//  {
-//    Error_Handler();
-//  }
-//  sDate.WeekDay = RTC_WEEKDAY_THURSDAY;
-//  sDate.Month = 5;
-//  sDate.Date = 7;
-//  sDate.Year = 26;
-//
-//  if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN) != HAL_OK)
-//  {
-//    Error_Handler();
-//  }
   /* USER CODE BEGIN RTC_Init 2 */
-  uint8_t h,m,s;
-  getCompileTime(&h,&m,&s);
+	if(HAL_RTCEx_BKUPRead(&hrtc, RTC_BKP_DR1)!=0xA5A55A5A)
+	{
 
-  sTime.Hours = h;
-  sTime.Minutes = m;
-  sTime.Seconds = s;
-  sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
-  sTime.StoreOperation = RTC_STOREOPERATION_RESET;
-  if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN) != HAL_OK)
-  {
-    Error_Handler();
-  }
+		  RTC_TimeTypeDef sTime;
+		  uint8_t h,m,s;
+		  getCompileTime(&h,&m,&s);
 
-  uint8_t mo,d;
-  uint16_t y;
-  getCompileDate(&y,&mo,&d);
-  sDate.Month = mo;
-  sDate.Date = d;
-  sDate.Year = y-2000;
+		  sTime.Hours = h;
+		  sTime.Minutes = m;
+		  sTime.Seconds = s;
+		  sTime.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
+		  sTime.StoreOperation = RTC_STOREOPERATION_RESET;
+		  if (HAL_RTC_SetTime(&hrtc, &sTime, RTC_FORMAT_BIN) != HAL_OK)
+		  {
+			Error_Handler();
+		  }
 
-  if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN) != HAL_OK)
-  {
-    Error_Handler();
-  }
+		  RTC_DateTypeDef sDate;
+		  uint8_t mo,d;
+		  uint16_t y;
+		  getCompileDate(&y,&mo,&d);
+		  sDate.Month = mo;
+		  sDate.Date = d;
+		  sDate.Year = y-2000;
+
+		  if (HAL_RTC_SetDate(&hrtc, &sDate, RTC_FORMAT_BIN) != HAL_OK)
+		  {
+			Error_Handler();
+		  }
 
 
-  HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR1,0xA5A55A5A);
-}
+		  HAL_RTCEx_BKUPWrite(&hrtc, RTC_BKP_DR1,0xA5A55A5A);
+	}
   /* USER CODE END RTC_Init 2 */
 
 }
