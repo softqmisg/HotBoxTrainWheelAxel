@@ -211,7 +211,7 @@
             "Name": "container1",
             "Y": 66,
             "Width": 800,
-            "Height": 414,
+            "Height": 317,
             "Components": [
               {
                 "Type": "TiledImage",
@@ -242,52 +242,6 @@
                     "Width": 800,
                     "Height": 414,
                     "Components": [
-                      {
-                        "Type": "ButtonWithLabel",
-                        "Name": "savePage1BttonWithLabel",
-                        "X": 42,
-                        "Y": 333,
-                        "Width": 228,
-                        "Height": 60,
-                        "Pressed": "__generated\\dark_theme_images_widgets_button_regular_height_60_small_round_pressed.png",
-                        "Released": "__generated\\dark_theme_images_widgets_button_regular_height_60_small_round_normal.png",
-                        "TextId": "__SingleUse_N9FM",
-                        "ReleasedColor": {
-                          "Red": 255,
-                          "Green": 255,
-                          "Blue": 255
-                        },
-                        "PressedColor": {
-                          "Red": 255,
-                          "Green": 255,
-                          "Blue": 255
-                        },
-                        "TextRotation": "0",
-                        "Preset": "dark_theme\\presets\\button\\regular\\height_60\\small_round_normal.json"
-                      },
-                      {
-                        "Type": "ButtonWithLabel",
-                        "Name": "defaultPage1ButtonWithLabel",
-                        "X": 539,
-                        "Y": 333,
-                        "Width": 228,
-                        "Height": 60,
-                        "Pressed": "__generated\\dark_theme_images_widgets_button_regular_height_60_small_round_pressed.png",
-                        "Released": "__generated\\dark_theme_images_widgets_button_regular_height_60_small_round_normal.png",
-                        "TextId": "__SingleUse_CEN5",
-                        "ReleasedColor": {
-                          "Red": 255,
-                          "Green": 255,
-                          "Blue": 255
-                        },
-                        "PressedColor": {
-                          "Red": 255,
-                          "Green": 255,
-                          "Blue": 255
-                        },
-                        "TextRotation": "0",
-                        "Preset": "dark_theme\\presets\\button\\regular\\height_60\\small_round_normal.json"
-                      },
                       {
                         "Type": "TextArea",
                         "Name": "textArea1",
@@ -477,8 +431,53 @@
                       {
                         "Type": "CustomContainerInstance",
                         "Name": "spinBox1",
-                        "X": 218,
-                        "Y": 29,
+                        "X": 223,
+                        "Y": 35,
+                        "Width": 147,
+                        "Height": 68,
+                        "CustomContainerDefinitionName": "SpinBox"
+                      },
+                      {
+                        "Type": "CustomContainerInstance",
+                        "Name": "spinBox1_2",
+                        "X": 42,
+                        "Y": 123,
+                        "Width": 147,
+                        "Height": 68,
+                        "CustomContainerDefinitionName": "SpinBox"
+                      },
+                      {
+                        "Type": "CustomContainerInstance",
+                        "Name": "spinBox1_2_1",
+                        "X": 240,
+                        "Y": 123,
+                        "Width": 147,
+                        "Height": 68,
+                        "CustomContainerDefinitionName": "SpinBox"
+                      },
+                      {
+                        "Type": "CustomContainerInstance",
+                        "Name": "spinBox1_2_1_1",
+                        "X": 223,
+                        "Y": 229,
+                        "Width": 147,
+                        "Height": 68,
+                        "CustomContainerDefinitionName": "SpinBox"
+                      },
+                      {
+                        "Type": "CustomContainerInstance",
+                        "Name": "spinBox1_2_1_1_1",
+                        "X": 444,
+                        "Y": 229,
+                        "Width": 147,
+                        "Height": 68,
+                        "CustomContainerDefinitionName": "SpinBox"
+                      },
+                      {
+                        "Type": "CustomContainerInstance",
+                        "Name": "spinBox1_2_2",
+                        "X": 440,
+                        "Y": 123,
                         "Width": 147,
                         "Height": 68,
                         "CustomContainerDefinitionName": "SpinBox"
@@ -486,11 +485,22 @@
                       {
                         "Type": "CustomContainerInstance",
                         "Name": "spinBox1_1",
-                        "X": 518,
-                        "Y": 38,
+                        "X": 413,
+                        "Y": 35,
                         "Width": 147,
                         "Height": 68,
                         "CustomContainerDefinitionName": "SpinBox"
+                      },
+                      {
+                        "Type": "ToggleButton",
+                        "Name": "toggleButton1",
+                        "X": 629,
+                        "Y": 133,
+                        "Width": 138,
+                        "Height": 50,
+                        "Pressed": "__generated\\dark_theme_images_widgets_togglebutton_medium_round_text_on_active.png",
+                        "Released": "__generated\\dark_theme_images_widgets_togglebutton_medium_round_text_off_normal.png",
+                        "Preset": "dark_theme\\presets\\togglebutton\\medium\\round_active_text.json"
                       }
                     ]
                   },
@@ -511,6 +521,14 @@
                 ]
               }
             ]
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "bottomBar",
+            "Y": 383,
+            "Width": 800,
+            "Height": 97,
+            "CustomContainerDefinitionName": "BottomBar"
           },
           {
             "Type": "CustomContainerInstance",
@@ -1300,8 +1318,8 @@
                 "Name": "label1",
                 "X": 74,
                 "Y": 107,
-                "Width": 114,
-                "Height": 49,
+                "Width": 160,
+                "Height": 42,
                 "TextId": "TEXT_PASS",
                 "TextRotation": "0",
                 "Color": {
@@ -1316,8 +1334,8 @@
                 "Name": "label2",
                 "X": 74,
                 "Y": 25,
-                "Width": 143,
-                "Height": 49,
+                "Width": 167,
+                "Height": 42,
                 "TextId": "TEXT_USERNAME",
                 "TextRotation": "0",
                 "Color": {
@@ -1401,8 +1419,8 @@
                 "Name": "passWrong",
                 "X": 315,
                 "Y": 172,
-                "Width": 132,
-                "Height": 40,
+                "Width": 223,
+                "Height": 34,
                 "Visible": false,
                 "TextId": "__SingleUse_DBGD",
                 "TextRotation": "0",
@@ -4793,6 +4811,92 @@
             "ValueType": "const uint8_t"
           }
         ]
+      },
+      {
+        "Name": "BottomBar",
+        "Width": 800,
+        "Height": 97,
+        "Components": [
+          {
+            "Type": "TiledImage",
+            "Name": "bgGradientTile",
+            "Width": 800,
+            "Height": 97,
+            "FileName": "Gradient bg\\night_large.png",
+            "OffsetY": 313
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "saveBttonWithLabel",
+            "X": 48,
+            "Y": 18,
+            "Width": 228,
+            "Height": 60,
+            "Pressed": "__generated\\dark_theme_images_widgets_button_regular_height_60_small_round_pressed.png",
+            "Released": "__generated\\dark_theme_images_widgets_button_regular_height_60_small_round_normal.png",
+            "TextId": "__SingleUse_DE2V",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "dark_theme\\presets\\button\\regular\\height_60\\small_round_normal.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "defaultButtonWithLabel",
+            "X": 545,
+            "Y": 18,
+            "Width": 228,
+            "Height": 60,
+            "Pressed": "__generated\\dark_theme_images_widgets_button_regular_height_60_small_round_pressed.png",
+            "Released": "__generated\\dark_theme_images_widgets_button_regular_height_60_small_round_normal.png",
+            "TextId": "__SingleUse_WFYE",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "dark_theme\\presets\\button\\regular\\height_60\\small_round_normal.json"
+          },
+          {
+            "Type": "ButtonWithLabel",
+            "Name": "downloadButtonWithLabel",
+            "X": 545,
+            "Y": 18,
+            "Width": 228,
+            "Height": 60,
+            "Visible": false,
+            "Pressed": "__generated\\dark_theme_images_widgets_button_regular_height_60_small_round_pressed.png",
+            "Released": "__generated\\dark_theme_images_widgets_button_regular_height_60_small_round_normal.png",
+            "TextId": "__SingleUse_6VBM",
+            "ReleasedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "PressedColor": {
+              "Red": 255,
+              "Green": 255,
+              "Blue": 255
+            },
+            "TextRotation": "0",
+            "Preset": "dark_theme\\presets\\button\\regular\\height_60\\small_round_normal.json"
+          }
+        ],
+        "Interactions": []
       }
     ],
     "Name": "HotBoxAxel_Touchgfx_7inch_800x480",
@@ -4801,7 +4905,7 @@
       "Height": 480
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "settingScreen",
+    "StartupScreenName": "mainScreen",
     "SelectedStartupLanguage": "GB",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",

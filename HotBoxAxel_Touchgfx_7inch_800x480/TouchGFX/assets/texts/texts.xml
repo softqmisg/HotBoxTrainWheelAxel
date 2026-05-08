@@ -245,7 +245,7 @@
         <Translation Language="FA">ارتباط</Translation>
       </Text>
     </TextGroup>
-    <TextGroup Id="Header">
+    <TextGroup Id="TopBar">
       <Text Id="__SingleUse_M1V6" Alignment="Center" TypographyId="FixedText">
         <Translation Language="GB"> ºC</Translation>
         <Translation Language="FA"> ºC</Translation>
@@ -341,6 +341,20 @@
         <Translation Language="FA">0</Translation>
       </Text>
     </TextGroup>
+    <TextGroup Id="BottomBar">
+      <Text Id="__SingleUse_WFYE" Alignment="Center" TypographyId="SpinBoxFont">
+        <Translation Language="GB">Default</Translation>
+        <Translation Language="FA">پیش فرض</Translation>
+      </Text>
+      <Text Id="__SingleUse_DE2V" Alignment="Center" TypographyId="SpinBoxFont">
+        <Translation Language="GB">Save</Translation>
+        <Translation Language="FA">ذخیره</Translation>
+      </Text>
+      <Text Id="__SingleUse_6VBM" Alignment="Center" TypographyId="SpinBoxFont">
+        <Translation Language="GB">Download</Translation>
+        <Translation Language="FA">پیش فرض</Translation>
+      </Text>
+    </TextGroup>
     <TextGroup Id="Warning">
       <Text Id="__SingleUse_092W" Alignment="Left" TypographyId="WarningFont1">
         <Translation Language="GB">&lt;value&gt;</Translation>
@@ -417,14 +431,6 @@
       <Text Id="__SingleUse_ZD8J" Alignment="Center" TypographyId="Keyboard">
         <Translation Language="GB">&lt;value&gt;</Translation>
         <Translation Language="FA">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_N9FM" Alignment="Center" TypographyId="SpinBoxFont">
-        <Translation Language="GB">Save</Translation>
-        <Translation Language="FA">ذخیره</Translation>
-      </Text>
-      <Text Id="__SingleUse_CEN5" Alignment="Center" TypographyId="SpinBoxFont">
-        <Translation Language="GB">Default</Translation>
-        <Translation Language="FA">پیش فرض</Translation>
       </Text>
     </TextGroup>
     <TextGroup Id="ManiScreen">

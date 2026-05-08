@@ -12,6 +12,7 @@ public:
     virtual ~settingScreenView() {}
     virtual void setupScreen();
     virtual void tearDownScreen();
+    virtual void handleTickEvent() override;
     ////////////////digitalClock////////////////////////////
     // Update methods called by Presenter
     void updateClock(uint8_t hours, uint8_t minutes, uint8_t seconds);
@@ -37,7 +38,8 @@ private:
 
     Editable locoEditable;
     char keyboardText[LOCOEDITTEXT_SIZE];
-
+    int previousPageIndex;
+    void onPageChanged(int newPage);
 
 };
 

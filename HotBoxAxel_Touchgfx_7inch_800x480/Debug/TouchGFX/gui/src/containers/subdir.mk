@@ -5,6 +5,7 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
+../TouchGFX/gui/src/containers/BottomBar.cpp \
 ../TouchGFX/gui/src/containers/CarSelector.cpp \
 ../TouchGFX/gui/src/containers/Keyboard.cpp \
 ../TouchGFX/gui/src/containers/Led.cpp \
@@ -17,6 +18,7 @@ CPP_SRCS += \
 ../TouchGFX/gui/src/containers/passwordPopup.cpp 
 
 OBJS += \
+./TouchGFX/gui/src/containers/BottomBar.o \
 ./TouchGFX/gui/src/containers/CarSelector.o \
 ./TouchGFX/gui/src/containers/Keyboard.o \
 ./TouchGFX/gui/src/containers/Led.o \
@@ -29,6 +31,7 @@ OBJS += \
 ./TouchGFX/gui/src/containers/passwordPopup.o 
 
 CPP_DEPS += \
+./TouchGFX/gui/src/containers/BottomBar.d \
 ./TouchGFX/gui/src/containers/CarSelector.d \
 ./TouchGFX/gui/src/containers/Keyboard.d \
 ./TouchGFX/gui/src/containers/Led.d \
@@ -48,7 +51,7 @@ TouchGFX/gui/src/containers/%.o TouchGFX/gui/src/containers/%.su TouchGFX/gui/sr
 clean: clean-TouchGFX-2f-gui-2f-src-2f-containers
 
 clean-TouchGFX-2f-gui-2f-src-2f-containers:
-	-$(RM) ./TouchGFX/gui/src/containers/CarSelector.cyclo ./TouchGFX/gui/src/containers/CarSelector.d ./TouchGFX/gui/src/containers/CarSelector.o ./TouchGFX/gui/src/containers/CarSelector.su ./TouchGFX/gui/src/containers/Keyboard.cyclo ./TouchGFX/gui/src/containers/Keyboard.d ./TouchGFX/gui/src/containers/Keyboard.o ./TouchGFX/gui/src/containers/Keyboard.su ./TouchGFX/gui/src/containers/Led.cyclo ./TouchGFX/gui/src/containers/Led.d ./TouchGFX/gui/src/containers/Led.o ./TouchGFX/gui/src/containers/Led.su ./TouchGFX/gui/src/containers/SliderWithLabel.cyclo ./TouchGFX/gui/src/containers/SliderWithLabel.d ./TouchGFX/gui/src/containers/SliderWithLabel.o ./TouchGFX/gui/src/containers/SliderWithLabel.su ./TouchGFX/gui/src/containers/SpinBox.cyclo ./TouchGFX/gui/src/containers/SpinBox.d ./TouchGFX/gui/src/containers/SpinBox.o ./TouchGFX/gui/src/containers/SpinBox.su ./TouchGFX/gui/src/containers/TempAxel.cyclo ./TouchGFX/gui/src/containers/TempAxel.d ./TouchGFX/gui/src/containers/TempAxel.o ./TouchGFX/gui/src/containers/TempAxel.su ./TouchGFX/gui/src/containers/TempAxelList.cyclo ./TouchGFX/gui/src/containers/TempAxelList.d ./TouchGFX/gui/src/containers/TempAxelList.o ./TouchGFX/gui/src/containers/TempAxelList.su ./TouchGFX/gui/src/containers/TopBar.cyclo ./TouchGFX/gui/src/containers/TopBar.d ./TouchGFX/gui/src/containers/TopBar.o ./TouchGFX/gui/src/containers/TopBar.su ./TouchGFX/gui/src/containers/WarningBar.cyclo ./TouchGFX/gui/src/containers/WarningBar.d ./TouchGFX/gui/src/containers/WarningBar.o ./TouchGFX/gui/src/containers/WarningBar.su ./TouchGFX/gui/src/containers/passwordPopup.cyclo ./TouchGFX/gui/src/containers/passwordPopup.d ./TouchGFX/gui/src/containers/passwordPopup.o ./TouchGFX/gui/src/containers/passwordPopup.su
+	-$(RM) ./TouchGFX/gui/src/containers/BottomBar.cyclo ./TouchGFX/gui/src/containers/BottomBar.d ./TouchGFX/gui/src/containers/BottomBar.o ./TouchGFX/gui/src/containers/BottomBar.su ./TouchGFX/gui/src/containers/CarSelector.cyclo ./TouchGFX/gui/src/containers/CarSelector.d ./TouchGFX/gui/src/containers/CarSelector.o ./TouchGFX/gui/src/containers/CarSelector.su ./TouchGFX/gui/src/containers/Keyboard.cyclo ./TouchGFX/gui/src/containers/Keyboard.d ./TouchGFX/gui/src/containers/Keyboard.o ./TouchGFX/gui/src/containers/Keyboard.su ./TouchGFX/gui/src/containers/Led.cyclo ./TouchGFX/gui/src/containers/Led.d ./TouchGFX/gui/src/containers/Led.o ./TouchGFX/gui/src/containers/Led.su ./TouchGFX/gui/src/containers/SliderWithLabel.cyclo ./TouchGFX/gui/src/containers/SliderWithLabel.d ./TouchGFX/gui/src/containers/SliderWithLabel.o ./TouchGFX/gui/src/containers/SliderWithLabel.su ./TouchGFX/gui/src/containers/SpinBox.cyclo ./TouchGFX/gui/src/containers/SpinBox.d ./TouchGFX/gui/src/containers/SpinBox.o ./TouchGFX/gui/src/containers/SpinBox.su ./TouchGFX/gui/src/containers/TempAxel.cyclo ./TouchGFX/gui/src/containers/TempAxel.d ./TouchGFX/gui/src/containers/TempAxel.o ./TouchGFX/gui/src/containers/TempAxel.su ./TouchGFX/gui/src/containers/TempAxelList.cyclo ./TouchGFX/gui/src/containers/TempAxelList.d ./TouchGFX/gui/src/containers/TempAxelList.o ./TouchGFX/gui/src/containers/TempAxelList.su ./TouchGFX/gui/src/containers/TopBar.cyclo ./TouchGFX/gui/src/containers/TopBar.d ./TouchGFX/gui/src/containers/TopBar.o ./TouchGFX/gui/src/containers/TopBar.su ./TouchGFX/gui/src/containers/WarningBar.cyclo ./TouchGFX/gui/src/containers/WarningBar.d ./TouchGFX/gui/src/containers/WarningBar.o ./TouchGFX/gui/src/containers/WarningBar.su ./TouchGFX/gui/src/containers/passwordPopup.cyclo ./TouchGFX/gui/src/containers/passwordPopup.d ./TouchGFX/gui/src/containers/passwordPopup.o ./TouchGFX/gui/src/containers/passwordPopup.su
 
 .PHONY: clean-TouchGFX-2f-gui-2f-src-2f-containers
 

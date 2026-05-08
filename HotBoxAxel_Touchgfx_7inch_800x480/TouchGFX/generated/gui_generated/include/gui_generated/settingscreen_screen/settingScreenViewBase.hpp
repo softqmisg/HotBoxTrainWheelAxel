@@ -12,13 +12,13 @@
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/TiledImage.hpp>
 #include <touchgfx/containers/SwipeContainer.hpp>
-#include <touchgfx/widgets/ButtonWithLabel.hpp>
 #include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/containers/ListLayout.hpp>
 #include <touchgfx/containers/buttons/Buttons.hpp>
 #include <gui/containers/SliderWithLabel.hpp>
 #include <touchgfx/widgets/ToggleButton.hpp>
 #include <gui/containers/SpinBox.hpp>
+#include <gui/containers/BottomBar.hpp>
 #include <gui/containers/Keyboard.hpp>
 
 class settingScreenViewBase : public touchgfx::View<settingScreenPresenter>
@@ -63,8 +63,6 @@ protected:
     touchgfx::TiledImage tiledImage1;
     touchgfx::SwipeContainer swipeContainer;
     touchgfx::Container swipeContainer1Page1;
-    touchgfx::ButtonWithLabel savePage1BttonWithLabel;
-    touchgfx::ButtonWithLabel defaultPage1ButtonWithLabel;
     touchgfx::TextArea textArea1;
     touchgfx::TextArea textArea1_1;
     touchgfx::TextArea textArea1_1_1;
@@ -78,9 +76,16 @@ protected:
     touchgfx::ToggleButton languageToggleButton;
     touchgfx::Container swipeContainer1Page2;
     SpinBox spinBox1;
+    SpinBox spinBox1_2;
+    SpinBox spinBox1_2_1;
+    SpinBox spinBox1_2_1_1;
+    SpinBox spinBox1_2_1_1_1;
+    SpinBox spinBox1_2_2;
     SpinBox spinBox1_1;
+    touchgfx::ToggleButton toggleButton1;
     touchgfx::Container swipeContainer1Page3;
     touchgfx::Container swipeContainer1Page4;
+    BottomBar bottomBar;
     Keyboard keyboard;
 
     /*

@@ -23,7 +23,7 @@ settingScreenViewBase::settingScreenViewBase() :
     topBar.setXY(0, 0);
     add(topBar);
 
-    container1.setPosition(0, 66, 800, 414);
+    container1.setPosition(0, 66, 800, 317);
     tiledImage1.setBitmap(touchgfx::Bitmap(BITMAP_NIGHT_LARGE_ID));
     tiledImage1.setPosition(0, 0, 800, 414);
     tiledImage1.setOffset(0, 0);
@@ -37,20 +37,6 @@ settingScreenViewBase::settingScreenViewBase() :
 
     swipeContainer1Page1.setWidth(800);
     swipeContainer1Page1.setHeight(414);
-    savePage1BttonWithLabel.setXY(42, 333);
-    savePage1BttonWithLabel.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_SMALL_ROUND_NORMAL_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_SMALL_ROUND_PRESSED_ID));
-    savePage1BttonWithLabel.setLabelText(touchgfx::TypedText(T___SINGLEUSE_N9FM));
-    savePage1BttonWithLabel.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    savePage1BttonWithLabel.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    swipeContainer1Page1.add(savePage1BttonWithLabel);
-
-    defaultPage1ButtonWithLabel.setXY(539, 333);
-    defaultPage1ButtonWithLabel.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_SMALL_ROUND_NORMAL_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_SMALL_ROUND_PRESSED_ID));
-    defaultPage1ButtonWithLabel.setLabelText(touchgfx::TypedText(T___SINGLEUSE_CEN5));
-    defaultPage1ButtonWithLabel.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    defaultPage1ButtonWithLabel.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    swipeContainer1Page1.add(defaultPage1ButtonWithLabel);
-
     textArea1.setXY(27, 69);
     textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 252, 252));
     textArea1.setLinespacing(0);
@@ -112,11 +98,30 @@ settingScreenViewBase::settingScreenViewBase() :
 
     swipeContainer1Page2.setWidth(800);
     swipeContainer1Page2.setHeight(414);
-    spinBox1.setXY(218, 29);
+    spinBox1.setXY(223, 35);
     swipeContainer1Page2.add(spinBox1);
 
-    spinBox1_1.setXY(518, 38);
+    spinBox1_2.setXY(42, 123);
+    swipeContainer1Page2.add(spinBox1_2);
+
+    spinBox1_2_1.setXY(240, 123);
+    swipeContainer1Page2.add(spinBox1_2_1);
+
+    spinBox1_2_1_1.setXY(223, 229);
+    swipeContainer1Page2.add(spinBox1_2_1_1);
+
+    spinBox1_2_1_1_1.setXY(444, 229);
+    swipeContainer1Page2.add(spinBox1_2_1_1_1);
+
+    spinBox1_2_2.setXY(440, 123);
+    swipeContainer1Page2.add(spinBox1_2_2);
+
+    spinBox1_1.setXY(413, 35);
     swipeContainer1Page2.add(spinBox1_1);
+
+    toggleButton1.setXY(629, 133);
+    toggleButton1.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUND_TEXT_OFF_NORMAL_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUND_TEXT_ON_ACTIVE_ID));
+    swipeContainer1Page2.add(toggleButton1);
 
     swipeContainer.add(swipeContainer1Page2);
 
@@ -132,6 +137,9 @@ settingScreenViewBase::settingScreenViewBase() :
     container1.add(swipeContainer);
 
     add(container1);
+
+    bottomBar.setXY(0, 383);
+    add(bottomBar);
 
     keyboard.setXY(-330, 280);
     keyboard.setAppliedCallback(keyboardAppliedCallback);
@@ -151,7 +159,13 @@ void settingScreenViewBase::setupScreen()
     volumeSliderWithLabel.initialize();
     brightnessSliderWithLabel.initialize();
     spinBox1.initialize();
+    spinBox1_2.initialize();
+    spinBox1_2_1.initialize();
+    spinBox1_2_1_1.initialize();
+    spinBox1_2_1_1_1.initialize();
+    spinBox1_2_2.initialize();
     spinBox1_1.initialize();
+    bottomBar.initialize();
     keyboard.initialize();
 }
 

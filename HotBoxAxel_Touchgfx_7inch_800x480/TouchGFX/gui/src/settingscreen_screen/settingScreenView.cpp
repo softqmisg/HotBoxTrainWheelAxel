@@ -6,7 +6,8 @@ settingScreenView::settingScreenView():
 exitButtonClickedCallback(this,&settingScreenView::onExitButtonClicked),
 volumeSliderConfirmedCallback(this,&settingScreenView::onVolumeSliderConfirmed),
 brightnessSliderChangedCallback(this,&settingScreenView::onBrightnessSliderChanged),
-locoEditable(Editable(locoEditText,locoEditTextBuffer))
+locoEditable(Editable(locoEditText,locoEditTextBuffer)),
+previousPageIndex(-1)
 {
 
 }
@@ -14,6 +15,10 @@ locoEditable(Editable(locoEditText,locoEditTextBuffer))
 void settingScreenView::setupScreen()
 {
     settingScreenViewBase::setupScreen();
+
+	bottomBar.setSaveButtomVisible(true);
+	bottomBar.setDefaultBottomVisible(true);
+
     const uint16_t h = HAL::DISPLAY_HEIGHT*3/5;     // Screen height.
     const uint16_t w = HAL::DISPLAY_WIDTH*3/4;      // Screen width.
     const uint16_t offsetX=(HAL::DISPLAY_WIDTH-w)/2;
@@ -43,6 +48,38 @@ void settingScreenView::tearDownScreen()
 {
     settingScreenViewBase::tearDownScreen();
 }
+void settingScreenView::handleTickEvent(){
+	  int currentPage = swipeContainer.getSelectedPage();
+	    if (currentPage != previousPageIndex)
+	    {
+	        previousPageIndex = currentPage;
+	        onPageChanged(currentPage);
+	    }
+}
+void settingScreenView::onPageChanged(int newPage){
+	bottomBar.setSaveButtomVisible(true);
+	bottomBar.setDefaultBottomVisible(true);
+	bottomBar.setDownloadButtomVisible(true);
+	switch(newPage){
+	case 0:
+			bottomBar.setDownloadButtomVisible(false);
+		break;
+	case 1:
+		bottomBar.setDownloadButtomVisible(false);
+
+		break;
+	case 2:
+		bottomBar.setDownloadButtomVisible(false);
+
+		break;
+	case 3:
+		bottomBar.setSaveButtomVisible(false);
+		bottomBar.setDefaultBottomVisible(false);
+
+		break;
+	}
+}
+//////////////TopBar/////////////////////////
 void settingScreenView::onExitButtonClicked(const TopBar& bar)
 {
 	if(presenter!=nullptr)

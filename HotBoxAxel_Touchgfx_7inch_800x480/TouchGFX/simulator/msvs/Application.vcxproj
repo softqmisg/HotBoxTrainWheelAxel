@@ -47,6 +47,8 @@
     <ClCompile Include="..\..\generated\gui_generated\src\containers\SpinBoxBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\SliderWithLabel.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\SliderWithLabelBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\BottomBar.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\BottomBarBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -227,6 +229,8 @@
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SpinBoxBase.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\containers\SliderWithLabel.hpp"/>
     <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SliderWithLabelBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\BottomBar.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\BottomBarBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>
