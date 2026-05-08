@@ -17,6 +17,7 @@ RM := rm -rf
 -include TouchGFX/gui/src/containers/subdir.mk
 -include TouchGFX/gui/src/common/subdir.mk
 -include TouchGFX/generated/texts/src/subdir.mk
+-include TouchGFX/generated/images/src/spinBox/subdir.mk
 -include TouchGFX/generated/images/src/popup/subdir.mk
 -include TouchGFX/generated/images/src/__generated/subdir.mk
 -include TouchGFX/generated/images/src/Gradient_bg/subdir.mk

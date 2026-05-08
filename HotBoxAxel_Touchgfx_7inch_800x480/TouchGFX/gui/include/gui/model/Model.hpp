@@ -2,13 +2,12 @@
 #define MODEL_HPP
 #include <touchgfx/hal/Types.hpp>
 #include "rtc.h"
-#include "tim.h"
 #include "Utility.h"
 #include "Car.h"
 #include "LedParam.h"
 #include "Logger.h"
 #include "EventLogger.h"
-
+#include "GeneralParam.h"
 class ModelListener;
 
 class Model
@@ -79,6 +78,8 @@ private:
     LedParam ledComm;
     //Reading hardware
     void readHardwareRTC();
+    //General param
+    GeneralParam generalParam;
 };
 
 #endif // MODEL_HPP

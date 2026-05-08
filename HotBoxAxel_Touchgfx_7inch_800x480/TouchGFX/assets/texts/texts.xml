@@ -5,6 +5,246 @@
     <Language Id="FA" />
   </Languages>
   <Texts>
+    <TextGroup Id="Keyboard">
+      <Text Id="KEY41" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">m</Translation>
+        <Translation Language="FA">m</Translation>
+      </Text>
+      <Text Id="KEY_VALUE" Alignment="Center" TypographyId="Keyboard">
+        <Translation Language="GB">&lt;k&gt;</Translation>
+        <Translation Language="FA">&lt;k&gt;</Translation>
+      </Text>
+      <Text Id="KEY01" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">1</Translation>
+        <Translation Language="FA">1</Translation>
+      </Text>
+      <Text Id="KEY02" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">2</Translation>
+        <Translation Language="FA">2</Translation>
+      </Text>
+      <Text Id="KEY03" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">3</Translation>
+        <Translation Language="FA">3</Translation>
+      </Text>
+      <Text Id="KEY04" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">4</Translation>
+        <Translation Language="FA">4</Translation>
+      </Text>
+      <Text Id="KEY05" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">5</Translation>
+        <Translation Language="FA">5</Translation>
+      </Text>
+      <Text Id="KEY06" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">6</Translation>
+        <Translation Language="FA">6</Translation>
+      </Text>
+      <Text Id="KEY07" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">7</Translation>
+        <Translation Language="FA">7</Translation>
+      </Text>
+      <Text Id="KEY08" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">8</Translation>
+        <Translation Language="FA">8</Translation>
+      </Text>
+      <Text Id="KEY09" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">9</Translation>
+        <Translation Language="FA">9</Translation>
+      </Text>
+      <Text Id="KEY10" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">0</Translation>
+        <Translation Language="FA">0</Translation>
+      </Text>
+      <Text Id="KEY11" Alignment="Center" TypographyId="Keyboard">
+        <Translation Language="GB">←</Translation>
+        <Translation Language="FA">←</Translation>
+      </Text>
+      <Text Id="KEY12" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">q</Translation>
+        <Translation Language="FA">q</Translation>
+      </Text>
+      <Text Id="KEY13" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">w</Translation>
+        <Translation Language="FA">w</Translation>
+      </Text>
+      <Text Id="KEY14" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">e</Translation>
+        <Translation Language="FA">e</Translation>
+      </Text>
+      <Text Id="KEY15" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">r</Translation>
+        <Translation Language="FA">r</Translation>
+      </Text>
+      <Text Id="KEY16" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">t</Translation>
+        <Translation Language="FA">t</Translation>
+      </Text>
+      <Text Id="KEY17" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">y</Translation>
+        <Translation Language="FA">y</Translation>
+      </Text>
+      <Text Id="KEY18" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">u</Translation>
+        <Translation Language="FA">u</Translation>
+      </Text>
+      <Text Id="KEY19" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">i</Translation>
+        <Translation Language="FA">i</Translation>
+      </Text>
+      <Text Id="KEY20" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">o</Translation>
+        <Translation Language="FA">o</Translation>
+      </Text>
+      <Text Id="KEY21" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">p</Translation>
+        <Translation Language="FA">p</Translation>
+      </Text>
+      <Text Id="KEY22" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">-</Translation>
+        <Translation Language="FA">-</Translation>
+      </Text>
+      <Text Id="KEY23" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">a</Translation>
+        <Translation Language="FA">a</Translation>
+      </Text>
+      <Text Id="KEY24" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">s</Translation>
+        <Translation Language="FA">s</Translation>
+      </Text>
+      <Text Id="KEY25" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">d</Translation>
+        <Translation Language="FA">d</Translation>
+      </Text>
+      <Text Id="KEY26" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">f</Translation>
+        <Translation Language="FA">f</Translation>
+      </Text>
+      <Text Id="KEY27" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">g</Translation>
+        <Translation Language="FA">g</Translation>
+      </Text>
+      <Text Id="KEY28" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">h</Translation>
+        <Translation Language="FA">h</Translation>
+      </Text>
+      <Text Id="KEY29" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">j</Translation>
+        <Translation Language="FA">j</Translation>
+      </Text>
+      <Text Id="KEY30" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">k</Translation>
+        <Translation Language="FA">k</Translation>
+      </Text>
+      <Text Id="KEY31" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">l</Translation>
+        <Translation Language="FA">l</Translation>
+      </Text>
+      <Text Id="KEY32" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">(</Translation>
+        <Translation Language="FA">(</Translation>
+      </Text>
+      <Text Id="KEY33" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">)</Translation>
+        <Translation Language="FA">)</Translation>
+      </Text>
+      <Text Id="KEY34" Alignment="Center" TypographyId="Keyboard">
+        <Translation Language="GB">⇧</Translation>
+        <Translation Language="FA">⇧</Translation>
+      </Text>
+      <Text Id="KEY35" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">z</Translation>
+        <Translation Language="FA">z</Translation>
+      </Text>
+      <Text Id="KEY36" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">x</Translation>
+        <Translation Language="FA">x</Translation>
+      </Text>
+      <Text Id="KEY37" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">c</Translation>
+        <Translation Language="FA">c</Translation>
+      </Text>
+      <Text Id="KEY38" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">v</Translation>
+        <Translation Language="FA">v</Translation>
+      </Text>
+      <Text Id="KEY39" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">b</Translation>
+        <Translation Language="FA">b</Translation>
+      </Text>
+      <Text Id="KEY40" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">n</Translation>
+        <Translation Language="FA">n</Translation>
+      </Text>
+      <Text Id="KEY42" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">,</Translation>
+        <Translation Language="FA">,</Translation>
+      </Text>
+      <Text Id="KEY43" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">.</Translation>
+        <Translation Language="FA">.</Translation>
+      </Text>
+      <Text Id="KEY44" Alignment="Center" TypographyId="Keyboard">
+        <Translation Language="GB">⇧</Translation>
+        <Translation Language="FA">⇧</Translation>
+      </Text>
+      <Text Id="KEY45" Alignment="Center" TypographyId="Keyboard">
+        <Translation Language="GB">Exit</Translation>
+        <Translation Language="FA">خروج</Translation>
+      </Text>
+      <Text Id="KEY47" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">@</Translation>
+        <Translation Language="FA">@</Translation>
+      </Text>
+      <Text Id="KEY48" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">#</Translation>
+        <Translation Language="FA">#</Translation>
+      </Text>
+      <Text Id="KEY49" Alignment="Center" TypographyId="Keyboard">
+        <Translation Language="GB">↵</Translation>
+        <Translation Language="FA">↵</Translation>
+      </Text>
+      <Text Id="KEYBOARD_TEXT_PLACEHOLDER" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">[New Text]</Translation>
+        <Translation Language="FA">[New Text]</Translation>
+      </Text>
+      <Text Id="KEYBOARD_WILDCARD" Alignment="Left" TypographyId="Keyboard">
+        <Translation Language="GB">&lt;v&gt;</Translation>
+        <Translation Language="FA">&lt;v&gt;</Translation>
+      </Text>
+    </TextGroup>
+    <TextGroup Id="SliderWithLabel">
+      <Text Id="SLIDER_TEXT" Alignment="Left" TypographyId="SpinBoxFont">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="FA">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="SLIDER_TEXT_INIT" Alignment="Left" TypographyId="SpinBoxFont">
+        <Translation Language="GB">08</Translation>
+        <Translation Language="FA">100</Translation>
+      </Text>
+    </TextGroup>
+    <TextGroup Id="SpinBox">
+      <Text Id="__SingleUse_7EOP" Alignment="Center" TypographyId="SpinBoxFont">
+        <Translation Language="GB" Alignment="Center">-000</Translation>
+        <Translation Language="FA" Alignment="Center">+000</Translation>
+      </Text>
+      <Text Id="__SingleUse_6TQY" Alignment="Center" TypographyId="SpinBoxFont">
+        <Translation Language="GB" Alignment="Center">&lt;value&gt;</Translation>
+        <Translation Language="FA" Alignment="Center">&lt;value&gt;</Translation>
+      </Text>
+    </TextGroup>
+    <TextGroup Id="Leds">
+      <Text Id="TEXT_ALARM" Alignment="Center" TypographyId="LedFont">
+        <Translation Language="GB">Alarm</Translation>
+        <Translation Language="FA">آلارم</Translation>
+      </Text>
+      <Text Id="TEXT_MAIN" Alignment="Center" TypographyId="LedFont">
+        <Translation Language="GB">Main</Translation>
+        <Translation Language="FA">اصلی</Translation>
+      </Text>
+      <Text Id="TEXT_COMM" Alignment="Center" TypographyId="LedFont">
+        <Translation Language="GB">Comm</Translation>
+        <Translation Language="FA">ارتباط</Translation>
+      </Text>
+    </TextGroup>
     <TextGroup Id="Header">
       <Text Id="__SingleUse_M1V6" Alignment="Center" TypographyId="FixedText">
         <Translation Language="GB"> ºC</Translation>
@@ -63,78 +303,12 @@
         <Translation Language="FA">خروج</Translation>
       </Text>
     </TextGroup>
-    <TextGroup Id="PasswordPage">
-      <Text Id="__SingleUse_B9LY" Alignment="Center" TypographyId="Keyboard">
-        <Translation Language="GB">&lt;value&gt;</Translation>
-        <Translation Language="FA">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="TEXT_PASS" Alignment="Left" TypographyId="HeaderFont">
-        <Translation Language="GB">Password</Translation>
-        <Translation Language="FA">رمزعبور</Translation>
-      </Text>
-      <Text Id="TEXT_USERNAME" Alignment="Left" TypographyId="HeaderFont">
-        <Translation Language="GB">Username</Translation>
-        <Translation Language="FA">نام کاربری</Translation>
-      </Text>
-      <Text Id="BUTTON_OK" Alignment="Center" TypographyId="HeaderFont">
-        <Translation Language="GB">OK</Translation>
-        <Translation Language="FA">قبول</Translation>
-      </Text>
-      <Text Id="BUTTON_CANCEL" Alignment="Center" TypographyId="HeaderFont">
-        <Translation Language="GB">Cancel</Translation>
-        <Translation Language="FA">انصراف</Translation>
-      </Text>
-    </TextGroup>
-    <TextGroup Id="Leds">
-      <Text Id="TEXT_ALARM" Alignment="Center" TypographyId="LedFont">
-        <Translation Language="GB">Alarm</Translation>
-        <Translation Language="FA">آلارم</Translation>
-      </Text>
-      <Text Id="TEXT_MAIN" Alignment="Center" TypographyId="LedFont">
-        <Translation Language="GB">Main</Translation>
-        <Translation Language="FA">اصلی</Translation>
-      </Text>
-      <Text Id="TEXT_COMM" Alignment="Center" TypographyId="LedFont">
-        <Translation Language="GB">Comm</Translation>
-        <Translation Language="FA">ارتباط</Translation>
-      </Text>
-    </TextGroup>
-    <TextGroup Id="Warning">
-      <Text Id="__SingleUse_092W" Alignment="Left" TypographyId="WarningFont1">
-        <Translation Language="GB">&lt;value&gt;</Translation>
-        <Translation Language="FA">&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="__SingleUse_BCC0" Alignment="Left" TypographyId="WarningFont1">
-        <Translation Language="GB">SYSTEM:CAR#88:ID#8</Translation>
-        <Translation Language="FA">SYSTEM:CAR#88:ID#8</Translation>
-      </Text>
-      <Text Id="WARNING_CLEAR" Alignment="Left" TypographyId="WarningFont">
-        <Translation Language="GB"></Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="__SingleUse_GQCE" Alignment="Center" TypographyId="WarningFont">
-        <Translation Language="GB">88:88</Translation>
-        <Translation Language="FA">88:88</Translation>
-      </Text>
-      <Text Id="__SingleUse_QCX0" Alignment="Left" TypographyId="WarningFont">
-        <Translation Language="GB">8888/88/88</Translation>
-        <Translation Language="FA">8888/88/88</Translation>
-      </Text>
-      <Text Id="__SingleUse_A9U8" Alignment="Left" TypographyId="WarningFont">
-        <Translation Language="GB">&lt;value&gt;-&lt;value&gt;</Translation>
-        <Translation Language="FA">&lt;value&gt;-&lt;value&gt;</Translation>
-      </Text>
-      <Text Id="BUTTON_ACCEPT" Alignment="Center" TypographyId="WarningFont">
-        <Translation Language="GB">Navigate</Translation>
-        <Translation Language="FA">پیمایش</Translation>
-      </Text>
-    </TextGroup>
     <TextGroup Id="TempCarSelector">
-      <Text Id="__SingleUse_SMQ1" Alignment="Left" TypographyId="CarFont">
+      <Text Id="__SingleUse_SMQ1" Alignment="Center" TypographyId="CarFont">
         <Translation Language="GB">00</Translation>
-        <Translation Language="FA">00&#10;</Translation>
+        <Translation Language="FA" Alignment="Left">00&#10;</Translation>
       </Text>
-      <Text Id="__SingleUse_I6GW" Alignment="Left" TypographyId="CarFont">
+      <Text Id="__SingleUse_I6GW" Alignment="Center" TypographyId="CarFont">
         <Translation Language="GB">&lt;value&gt;</Translation>
         <Translation Language="FA">&lt;value&gt;</Translation>
       </Text>
@@ -167,224 +341,106 @@
         <Translation Language="FA">0</Translation>
       </Text>
     </TextGroup>
-    <TextGroup Id="Unsorted">
-      <Text Id="BUTTON_SETTING" Alignment="Center" TypographyId="HeaderFont">
-        <Translation Language="GB">Setting</Translation>
-        <Translation Language="FA">تنظیمات</Translation>
+    <TextGroup Id="Warning">
+      <Text Id="__SingleUse_092W" Alignment="Left" TypographyId="WarningFont1">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="FA">&lt;value&gt;</Translation>
       </Text>
+      <Text Id="__SingleUse_BCC0" Alignment="Left" TypographyId="WarningFont1">
+        <Translation Language="GB">SYSTEM:CAR#88:ID#8</Translation>
+        <Translation Language="FA">SYSTEM:CAR#88:ID#8</Translation>
+      </Text>
+      <Text Id="WARNING_CLEAR" Alignment="Left" TypographyId="WarningFont">
+        <Translation Language="GB"></Translation>
+        <Translation Language="FA"></Translation>
+      </Text>
+      <Text Id="__SingleUse_GQCE" Alignment="Center" TypographyId="WarningFont">
+        <Translation Language="GB">88:88</Translation>
+        <Translation Language="FA">88:88</Translation>
+      </Text>
+      <Text Id="__SingleUse_QCX0" Alignment="Left" TypographyId="WarningFont">
+        <Translation Language="GB">8888/88/88</Translation>
+        <Translation Language="FA">8888/88/88</Translation>
+      </Text>
+      <Text Id="__SingleUse_A9U8" Alignment="Left" TypographyId="WarningFont">
+        <Translation Language="GB">&lt;value&gt;-&lt;value&gt;</Translation>
+        <Translation Language="FA">&lt;value&gt;-&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="BUTTON_ACCEPT" Alignment="Center" TypographyId="WarningFont">
+        <Translation Language="GB">Navigate</Translation>
+        <Translation Language="FA">پیمایش</Translation>
+      </Text>
+    </TextGroup>
+    <TextGroup Id="PasswordPage">
       <Text Id="__SingleUse_DBGD" Alignment="Left" TypographyId="HeaderFont1">
         <Translation Language="GB">Wrong Password</Translation>
         <Translation Language="FA">پسورد اشتباه</Translation>
       </Text>
-      <Text Id="__SingleUse_80BA" Alignment="Left" TypographyId="Large">
+      <Text Id="__SingleUse_B9LY" Alignment="Center" TypographyId="Keyboard">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="FA">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="TEXT_PASS" Alignment="Left" TypographyId="HeaderFont">
+        <Translation Language="GB">Password</Translation>
+        <Translation Language="FA">رمزعبور</Translation>
+      </Text>
+      <Text Id="TEXT_USERNAME" Alignment="Left" TypographyId="HeaderFont">
+        <Translation Language="GB">Username</Translation>
+        <Translation Language="FA">نام کاربری</Translation>
+      </Text>
+      <Text Id="BUTTON_OK" Alignment="Center" TypographyId="HeaderFont">
+        <Translation Language="GB">OK</Translation>
+        <Translation Language="FA">قبول</Translation>
+      </Text>
+      <Text Id="BUTTON_CANCEL" Alignment="Center" TypographyId="HeaderFont">
+        <Translation Language="GB">Cancel</Translation>
+        <Translation Language="FA">انصراف</Translation>
+      </Text>
+    </TextGroup>
+    <TextGroup Id="SettingScreenPage1">
+      <Text Id="__SingleUse_Z8WC" Alignment="Left" TypographyId="SpinBoxFont">
+        <Translation Language="GB">Language</Translation>
+        <Translation Language="FA">زبان</Translation>
+      </Text>
+      <Text Id="__SingleUse_NDDO" Alignment="Left" TypographyId="SpinBoxFont">
+        <Translation Language="GB">Volume</Translation>
+        <Translation Language="FA">بلندی صدا</Translation>
+      </Text>
+      <Text Id="__SingleUse_M4U5" Alignment="Left" TypographyId="SpinBoxFont">
+        <Translation Language="GB">Brightness</Translation>
+        <Translation Language="FA">نور زمینه</Translation>
+      </Text>
+      <Text Id="__SingleUse_DB2B" Alignment="Left" TypographyId="SpinBoxFont">
+        <Translation Language="GB">Locomotive Name</Translation>
+        <Translation Language="FA">شماره لوکوموتیو</Translation>
+      </Text>
+      <Text Id="__SingleUse_ZD8J" Alignment="Center" TypographyId="Keyboard">
+        <Translation Language="GB">&lt;value&gt;</Translation>
+        <Translation Language="FA">&lt;value&gt;</Translation>
+      </Text>
+      <Text Id="__SingleUse_N9FM" Alignment="Center" TypographyId="SpinBoxFont">
+        <Translation Language="GB">Save</Translation>
+        <Translation Language="FA">ذخیره</Translation>
+      </Text>
+      <Text Id="__SingleUse_CEN5" Alignment="Center" TypographyId="SpinBoxFont">
+        <Translation Language="GB">Default</Translation>
+        <Translation Language="FA">پیش فرض</Translation>
+      </Text>
+    </TextGroup>
+    <TextGroup Id="ManiScreen">
+      <Text Id="BUTTON_SETTING" Alignment="Center" TypographyId="HeaderFont">
+        <Translation Language="GB">Setting</Translation>
+        <Translation Language="FA">تنظیمات</Translation>
+      </Text>
+    </TextGroup>
+    <TextGroup Id="Unsorted">
+      <Text Id="__SingleUse_ZWE4" Alignment="Left" TypographyId="Large">
         <Translation Language="GB"></Translation>
         <Translation Language="FA"></Translation>
       </Text>
-    </TextGroup>
-    <TextGroup Id="Keyboard">
-      <Text Id="KEY41" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">m</Translation>
+      <Text Id="__SingleUse_80BA" Alignment="Left" TypographyId="Large">
+        <Translation Language="GB"></Translation>
         <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY_VALUE" Alignment="Center" TypographyId="Keyboard">
-        <Translation Language="GB">&lt;k&gt;</Translation>
-        <Translation Language="FA">&lt;k&gt;</Translation>
-      </Text>
-      <Text Id="KEY01" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">1</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY02" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">2</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY03" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">3</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY04" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">4</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY05" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">5</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY06" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">6</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY07" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">7</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY08" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">8</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY09" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">9</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY10" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">0</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY11" Alignment="Center" TypographyId="Keyboard">
-        <Translation Language="GB">←</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY12" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">q</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY13" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">w</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY14" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">e</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY15" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">r</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY16" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">t</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY17" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">y</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY18" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">u</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY19" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">i</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY20" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">o</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY21" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">p</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY22" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">-</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY23" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">a</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY24" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">s</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY25" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">d</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY26" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">f</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY27" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">g</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY28" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">h</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY29" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">j</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY30" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">k</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY31" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">l</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY32" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">(</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY33" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">)</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY34" Alignment="Center" TypographyId="Keyboard">
-        <Translation Language="GB">⇧</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY35" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">z</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY36" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">x</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY37" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">c</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY38" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">v</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY39" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">b</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY40" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">n</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY42" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">,</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY43" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">.</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY44" Alignment="Center" TypographyId="Keyboard">
-        <Translation Language="GB">⇧</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY45" Alignment="Center" TypographyId="Keyboard">
-        <Translation Language="GB">Esc</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY47" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">@</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY48" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">#</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEY49" Alignment="Center" TypographyId="Keyboard">
-        <Translation Language="GB">↵</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEYBOARD_TEXT_PLACEHOLDER" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">[New Text]</Translation>
-        <Translation Language="FA"></Translation>
-      </Text>
-      <Text Id="KEYBOARD_WILDCARD" Alignment="Left" TypographyId="Keyboard">
-        <Translation Language="GB">&lt;v&gt;</Translation>
-        <Translation Language="FA">&lt;v&gt;</Translation>
       </Text>
     </TextGroup>
   </Texts>
@@ -411,19 +467,26 @@
       <LanguageSetting Language="FA" Font="Nazanin.ttf" Size="26" Bpp="4" IsVector="no" IsCompressed="no" Direction="RTL" FallbackCharacter="?" WildcardCharacters="060C 061F 0621-064A 0660-0669 067E-06CC 06F0-06F9 FB56-FBFF FE81-FEFC" />
     </Typography>
     <Typography Id="WarningFont1" Font="SairaSemiCondensed-SemiBold.ttf" Size="25" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z" />
-    <Typography Id="TempFont" Font="Saira-SemiBold.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="C!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt; 060C 061B 061F 0621-064A 0660-066D 0670-06ED 06F0-06F9 FB51-FBB1 FBD3-FBFF FE81-FEFC" WildcardCharacterRanges="0-9,A-Z,a-z">
-      <LanguageSetting Language="GB" Font="Saira-SemiBold.ttf" Size="30" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" />
-      <LanguageSetting Language="FA" Font="Nazanin.ttf" Size="30" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt; 060C 061F 0621-064A 0660-0669 067E-06CC 06F0-06F9 FB56-FBFF FE81-FEFC" WildcardCharacterRanges="A-Z" />
+    <Typography Id="TempFont" Font="IRANSans.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="C!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt; 060C 061B 061F 0621-064A 0660-066D 0670-06ED 06F0-06F9 FB51-FBB1 FBD3-FBFF FE81-FEFC" WildcardCharacterRanges="0-9,A-Z,a-z">
+      <LanguageSetting Language="GB" Font="IRANSans.ttf" Size="30" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z" />
+      <LanguageSetting Language="FA" Font="IRANSans_PerNumber.ttf" Size="30" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt; 060C 061B 061F 0621-064A 0660-066D 0670-06ED 06F0-06F9 FB51-FBB1 FBD3-FBFF FE81-FEFC" WildcardCharacterRanges="A-Z" />
     </Typography>
-    <Typography Id="CarFont" Font="Saira-SemiBold.ttf" Size="100" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z">
-      <LanguageSetting Language="GB" Font="Saira-SemiBold.ttf" Size="100" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" />
-      <LanguageSetting Language="FA" Font="Nazanin.ttf" Size="80" Bpp="4" IsVector="no" IsCompressed="no" Direction="RTL" FallbackCharacter="?" WildcardCharacters="0600-06FF FB50-FDFF FE70-FEFF 200C-200D" />
+    <Typography Id="CarFont" Font="IRANSans.ttf" Size="100" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z">
+      <LanguageSetting Language="GB" Font="IRANSans.ttf" Size="100" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z" />
+      <LanguageSetting Language="FA" Font="IRANSans_PerNumber.ttf" Size="80" Bpp="4" IsVector="no" IsCompressed="no" Direction="RTL" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt; 060C 061B 061F 0621-064A 0660-066D 0670-06ED 06F0-06F9 FB51-FBB1 FBD3-FBFF FE81-FEFC" />
     </Typography>
-    <Typography Id="CarFont1" Font="Saira-Bold.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z">
-      <LanguageSetting Language="GB" Font="Saira-Bold.ttf" Size="40" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z" />
-      <LanguageSetting Language="FA" Font="Nazanin.ttf" Size="40" Bpp="4" IsVector="no" IsCompressed="no" Direction="RTL" FallbackCharacter="?" WildcardCharacters="0600-06FF FB50-FDFF FE70-FEFF 200C-200D" />
+    <Typography Id="CarFont1" Font="IRANSans.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z">
+      <LanguageSetting Language="GB" Font="IRANSans.ttf" Size="40" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,A-Z,a-z" />
+      <LanguageSetting Language="FA" Font="IRANSans_PerNumber.ttf" Size="40" Bpp="4" IsVector="no" IsCompressed="no" Direction="RTL" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt; 060C 061B 061F 0621-064A 0660-066D 0670-06ED 06F0-06F9 FB51-FBB1 FBD3-FBFF FE81-FEFC" />
     </Typography>
     <Typography Id="Password" Font="Saira-Medium.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters=" @#%-+()[],.;:/&quot;" WildcardCharacterRanges="0-9,A-Z,a-z" />
-    <Typography Id="Keyboard" Font="DejaVuSansMono.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="*@#%-+()[],.;:/&quot;" WildcardCharacterRanges="0-9,A-Z,a-z" />
+    <Typography Id="Keyboard" Font="DejaVuSans.ttf" Size="40" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,a-z,A-Z">
+      <LanguageSetting Language="GB" Font="DejaVuSans.ttf" Size="40" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,a-z,A-Z" />
+      <LanguageSetting Language="FA" Font="DejaVuSans.ttf" Size="40" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt; 060C 061B 061F 0621-064A 0660-066D 0670-06ED 06F0-06F9 FB51-FBB1 FBD3-FBFF FE81-FEFC" WildcardCharacterRanges="0-9,a-z,A-Z" />
+    </Typography>
+    <Typography Id="SpinBoxFont" Font="IRANSans.ttf" Size="30" Bpp="4" IsVector="no" Direction="LTR" FallbackCharacter="?">
+      <LanguageSetting Language="GB" Font="IRANSans.ttf" Size="30" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt;" WildcardCharacterRanges="0-9,a-z,A-Z" />
+      <LanguageSetting Language="FA" Font="IRANSans_PerNumber.ttf" Size="30" Bpp="4" IsVector="no" IsCompressed="no" Direction="LTR" FallbackCharacter="?" WildcardCharacters="!”&quot;#*%&amp;()'$+-@_, .:;?/~±×÷•º`´{}©£€^®¥_=[]¡¢|\¿&gt;&lt; 060C 061B 061F 0621-064A 0660-066D 0670-06ED 06F0-06F9 FB51-FBB1 FBD3-FBFF FE81-FEFC" WildcardCharacterRanges="0-9,a-z,A-Z" />
+    </Typography>
   </Typographies>
 </TextDatabase>

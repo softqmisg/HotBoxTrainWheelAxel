@@ -54,14 +54,14 @@ TopBarBase::TopBarBase() :
     centigradText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_M1V6));
     add(centigradText);
 
-    buttonWithLabel.setXY(605, 8);
-    buttonWithLabel.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUNDED_PRESSED_ID));
-    buttonWithLabel.setLabelText(touchgfx::TypedText(T_BUTTON_EXIT));
-    buttonWithLabel.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    buttonWithLabel.setVisible(false);
-    buttonWithLabel.setAction(buttonCallback);
-    add(buttonWithLabel);
+    exitButton.setXY(605, 8);
+    exitButton.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUNDED_NORMAL_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUNDED_PRESSED_ID));
+    exitButton.setLabelText(touchgfx::TypedText(T_BUTTON_EXIT));
+    exitButton.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    exitButton.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    exitButton.setVisible(false);
+    exitButton.setAction(buttonCallback);
+    add(exitButton);
 }
 
 TopBarBase::~TopBarBase()
@@ -76,10 +76,10 @@ void TopBarBase::initialize()
 
 void TopBarBase::buttonCallbackHandler(const touchgfx::AbstractButton& src)
 {
-    if (&src == &buttonWithLabel)
+    if (&src == &exitButton)
     {
         //Interaction1
-        //When buttonWithLabel clicked call virtual function
+        //When exitButton clicked call virtual function
         //Call exitButtonClicked
         exitButtonClicked();
     }

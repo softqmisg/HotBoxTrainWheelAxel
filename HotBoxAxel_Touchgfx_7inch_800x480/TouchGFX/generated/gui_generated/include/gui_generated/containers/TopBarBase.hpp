@@ -43,7 +43,7 @@ protected:
     touchgfx::DigitalClock digitalClock;
     touchgfx::TextAreaWithOneWildcard envTempText;
     touchgfx::TextArea centigradText;
-    touchgfx::ButtonWithLabel buttonWithLabel;
+    touchgfx::ButtonWithLabel exitButton;
 
     /*
      * Wildcard Buffers

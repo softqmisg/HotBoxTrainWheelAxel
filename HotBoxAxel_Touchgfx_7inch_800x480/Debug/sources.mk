@@ -56,6 +56,7 @@ TouchGFX/generated/images/src \
 TouchGFX/generated/images/src/Gradient_bg \
 TouchGFX/generated/images/src/__generated \
 TouchGFX/generated/images/src/popup \
+TouchGFX/generated/images/src/spinBox \
 TouchGFX/generated/texts/src \
 TouchGFX/gui/src/common \
 TouchGFX/gui/src/containers \

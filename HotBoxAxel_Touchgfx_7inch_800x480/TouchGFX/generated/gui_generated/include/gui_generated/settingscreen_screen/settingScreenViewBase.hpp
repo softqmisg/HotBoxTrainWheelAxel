@@ -12,6 +12,14 @@
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/TiledImage.hpp>
 #include <touchgfx/containers/SwipeContainer.hpp>
+#include <touchgfx/widgets/ButtonWithLabel.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
+#include <touchgfx/containers/ListLayout.hpp>
+#include <touchgfx/containers/buttons/Buttons.hpp>
+#include <gui/containers/SliderWithLabel.hpp>
+#include <touchgfx/widgets/ToggleButton.hpp>
+#include <gui/containers/SpinBox.hpp>
+#include <gui/containers/Keyboard.hpp>
 
 class settingScreenViewBase : public touchgfx::View<settingScreenPresenter>
 {
@@ -19,6 +27,26 @@ public:
     settingScreenViewBase();
     virtual ~settingScreenViewBase();
     virtual void setupScreen();
+
+    /*
+     * Virtual Action Handlers
+     */
+    virtual void locoEditClicked()
+    {
+        // Override and implement this function in settingScreen
+    }
+    virtual void keyboardAppliedClicked()
+    {
+        // Override and implement this function in settingScreen
+    }
+    virtual void keyboardCancelClicked()
+    {
+        // Override and implement this function in settingScreen
+    }
+    virtual void keyboardCharTyped(Unicode::UnicodeChar value)
+    {
+        // Override and implement this function in settingScreen
+    }
 
 protected:
     FrontendApplication& application() {
@@ -35,11 +63,49 @@ protected:
     touchgfx::TiledImage tiledImage1;
     touchgfx::SwipeContainer swipeContainer;
     touchgfx::Container swipeContainer1Page1;
+    touchgfx::ButtonWithLabel savePage1BttonWithLabel;
+    touchgfx::ButtonWithLabel defaultPage1ButtonWithLabel;
+    touchgfx::TextArea textArea1;
+    touchgfx::TextArea textArea1_1;
+    touchgfx::TextArea textArea1_1_1;
+    touchgfx::TextArea textArea1_1_1_1;
+    touchgfx::ListLayout listLayout3;
+    touchgfx::Container container4;
+    touchgfx::WildcardTextButtonStyle< touchgfx::BoxWithBorderButtonStyle< touchgfx::ClickButtonTrigger >  >  locoEditText;
+    SliderWithLabel volumeSliderWithLabel;
+    SliderWithLabel brightnessSliderWithLabel;
+    touchgfx::Container container5;
+    touchgfx::ToggleButton languageToggleButton;
     touchgfx::Container swipeContainer1Page2;
+    SpinBox spinBox1;
+    SpinBox spinBox1_1;
     touchgfx::Container swipeContainer1Page3;
     touchgfx::Container swipeContainer1Page4;
+    Keyboard keyboard;
+
+    /*
+     * Wildcard Buffers
+     */
+    static const uint16_t LOCOEDITTEXT_SIZE = 6;
+    touchgfx::Unicode::UnicodeChar locoEditTextBuffer[LOCOEDITTEXT_SIZE];
 
 private:
+
+    /*
+     * Callback Declarations
+     */
+    touchgfx::Callback<settingScreenViewBase, const touchgfx::AbstractButtonContainer&> flexButtonCallback;
+    touchgfx::Callback<settingScreenViewBase> keyboardAppliedCallback;
+    touchgfx::Callback<settingScreenViewBase> keyboardCanceledCallback;
+    touchgfx::Callback<settingScreenViewBase, Unicode::UnicodeChar> keyboardCharacterTypedCallback;
+
+    /*
+     * Callback Handler Declarations
+     */
+    void flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src);
+    void keyboardAppliedCallbackHandler();
+    void keyboardCanceledCallbackHandler();
+    void keyboardCharacterTypedCallbackHandler(Unicode::UnicodeChar value);
 
 };
 

@@ -22,28 +22,41 @@ CarSelectorBase::CarSelectorBase() :
     tiledImage1.setOffset(0, 0);
     add(tiledImage1);
 
-    carNumberText.setXY(30, 76);
+    listLayout1.setXY(0, 0);
+    listLayout1.setDirection(touchgfx::SOUTH);
+    container1.setWidth(192);
+    container1.setHeight(83);
+    textArea1.setPosition(40, 17, 108, 54);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    textArea1.setLinespacing(0);
+    textArea1.setTypedText(touchgfx::TypedText(T_TEXT_CAR));
+    container1.add(textArea1);
+
+    listLayout1.add(container1);
+
+    container3.setPosition(0, 83, 189, 124);
+    carNumberText.setPosition(40, 0, 112, 124);
     carNumberText.setColor(touchgfx::Color::getColorFromRGB(255, 250, 250));
     carNumberText.setLinespacing(0);
     Unicode::snprintf(carNumberTextBuffer, CARNUMBERTEXT_SIZE, "%s", touchgfx::TypedText(T___SINGLEUSE_SMQ1).getText());
     carNumberText.setWildcard(carNumberTextBuffer);
-    carNumberText.resizeToCurrentText();
     carNumberText.setTypedText(touchgfx::TypedText(T___SINGLEUSE_I6GW));
-    add(carNumberText);
+    container3.add(carNumberText);
 
-    nextButton.setXY(9, 227);
+    listLayout1.add(container3);
+
+    container2.setPosition(0, 207, 189, 76);
+    nextButton.setXY(7, 13);
     nextButton.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_ACTIVE_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_50_SMALL_ROUND_PRESSED_ID));
     nextButton.setLabelText(touchgfx::TypedText(T_BUTTON_NEXT));
     nextButton.setLabelColor(touchgfx::Color::getColorFromRGB(255, 250, 250));
     nextButton.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
     nextButton.setAction(buttonCallback);
-    add(nextButton);
+    container2.add(nextButton);
 
-    textArea1.setXY(65, 20);
-    textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
-    textArea1.setLinespacing(0);
-    textArea1.setTypedText(touchgfx::TypedText(T_TEXT_CAR));
-    add(textArea1);
+    listLayout1.add(container2);
+
+    add(listLayout1);
 }
 
 CarSelectorBase::~CarSelectorBase()

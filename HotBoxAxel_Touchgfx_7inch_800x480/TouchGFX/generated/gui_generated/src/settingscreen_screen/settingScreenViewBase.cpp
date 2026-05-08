@@ -4,8 +4,13 @@
 #include <gui_generated/settingscreen_screen/settingScreenViewBase.hpp>
 #include <touchgfx/Color.hpp>
 #include <images/BitmapDatabase.hpp>
+#include <texts/TextKeysAndLanguages.hpp>
 
-settingScreenViewBase::settingScreenViewBase()
+settingScreenViewBase::settingScreenViewBase() :
+    flexButtonCallback(this, &settingScreenViewBase::flexButtonCallbackHandler),
+    keyboardAppliedCallback(this, &settingScreenViewBase::keyboardAppliedCallbackHandler),
+    keyboardCanceledCallback(this, &settingScreenViewBase::keyboardCanceledCallbackHandler),
+    keyboardCharacterTypedCallback(this, &settingScreenViewBase::keyboardCharacterTypedCallbackHandler)
 {
     __background.setPosition(0, 0, 800, 480);
     __background.setColor(touchgfx::Color::getColorFromRGB(0, 0, 0));
@@ -25,17 +30,94 @@ settingScreenViewBase::settingScreenViewBase()
     container1.add(tiledImage1);
 
     swipeContainer.setXY(0, 0);
-    swipeContainer.setPageIndicatorBitmaps(touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_SWIPECONTAINER_MEDIUM_OFF_NORMAL_ID), touchgfx::Bitmap(BITMAP_ALTERNATE_THEME_IMAGES_WIDGETS_SWIPECONTAINER_MEDIUM_ON_ACTIVE_ID));
+    swipeContainer.setPageIndicatorBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_SWIPECONTAINER_MEDIUM_OFF_NORMAL_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_SWIPECONTAINER_MEDIUM_ON_ACTIVE_ID));
     swipeContainer.setPageIndicatorXY(360, 0);
     swipeContainer.setSwipeCutoff(50);
     swipeContainer.setEndSwipeElasticWidth(50);
 
     swipeContainer1Page1.setWidth(800);
     swipeContainer1Page1.setHeight(414);
+    savePage1BttonWithLabel.setXY(42, 333);
+    savePage1BttonWithLabel.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_SMALL_ROUND_NORMAL_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_SMALL_ROUND_PRESSED_ID));
+    savePage1BttonWithLabel.setLabelText(touchgfx::TypedText(T___SINGLEUSE_N9FM));
+    savePage1BttonWithLabel.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    savePage1BttonWithLabel.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    swipeContainer1Page1.add(savePage1BttonWithLabel);
+
+    defaultPage1ButtonWithLabel.setXY(539, 333);
+    defaultPage1ButtonWithLabel.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_SMALL_ROUND_NORMAL_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_BUTTON_REGULAR_HEIGHT_60_SMALL_ROUND_PRESSED_ID));
+    defaultPage1ButtonWithLabel.setLabelText(touchgfx::TypedText(T___SINGLEUSE_CEN5));
+    defaultPage1ButtonWithLabel.setLabelColor(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    defaultPage1ButtonWithLabel.setLabelColorPressed(touchgfx::Color::getColorFromRGB(255, 255, 255));
+    swipeContainer1Page1.add(defaultPage1ButtonWithLabel);
+
+    textArea1.setXY(27, 69);
+    textArea1.setColor(touchgfx::Color::getColorFromRGB(255, 252, 252));
+    textArea1.setLinespacing(0);
+    textArea1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_DB2B));
+    swipeContainer1Page1.add(textArea1);
+
+    textArea1_1.setXY(27, 135);
+    textArea1_1.setColor(touchgfx::Color::getColorFromRGB(255, 252, 252));
+    textArea1_1.setLinespacing(0);
+    textArea1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_NDDO));
+    swipeContainer1Page1.add(textArea1_1);
+
+    textArea1_1_1.setXY(27, 195);
+    textArea1_1_1.setColor(touchgfx::Color::getColorFromRGB(255, 252, 252));
+    textArea1_1_1.setLinespacing(0);
+    textArea1_1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_M4U5));
+    swipeContainer1Page1.add(textArea1_1_1);
+
+    textArea1_1_1_1.setXY(27, 260);
+    textArea1_1_1_1.setColor(touchgfx::Color::getColorFromRGB(255, 252, 252));
+    textArea1_1_1_1.setLinespacing(0);
+    textArea1_1_1_1.setTypedText(touchgfx::TypedText(T___SINGLEUSE_Z8WC));
+    swipeContainer1Page1.add(textArea1_1_1_1);
+
+    listLayout3.setXY(326, 54);
+    listLayout3.setDirection(touchgfx::SOUTH);
+    container4.setWidth(265);
+    container4.setHeight(69);
+    locoEditText.setBoxWithBorderPosition(0, 0, 238, 43);
+    locoEditText.setBorderSize(2);
+    locoEditText.setBoxWithBorderColors(touchgfx::Color::getColorFromRGB(250, 250, 250), touchgfx::Color::getColorFromRGB(255, 255, 255), touchgfx::Color::getColorFromRGB(51, 102, 153), touchgfx::Color::getColorFromRGB(51, 102, 153));
+    locoEditText.setWildcardText(TypedText(T___SINGLEUSE_ZD8J));
+    Unicode::snprintf(locoEditTextBuffer, LOCOEDITTEXT_SIZE, "%s", TypedText(T___SINGLEUSE_ZWE4).getText());
+    locoEditText.setWildcardTextBuffer(locoEditTextBuffer);
+    locoEditText.setWildcardTextPosition(0, 0, 238, 43);
+    locoEditText.setWildcardTextColors(touchgfx::Color::getColorFromRGB(10, 10, 10), touchgfx::Color::getColorFromRGB(0, 168, 65));
+    locoEditText.setAction(flexButtonCallback);
+    locoEditText.setPosition(13, 13, 238, 43);
+    container4.add(locoEditText);
+
+    listLayout3.add(container4);
+
+
+    listLayout3.add(volumeSliderWithLabel);
+
+    listLayout3.add(brightnessSliderWithLabel);
+
+    container5.setWidth(280);
+    container5.setHeight(70);
+    languageToggleButton.setXY(34, 10);
+    languageToggleButton.setBitmaps(touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUND_TEXT_OFF_NORMAL_ID), touchgfx::Bitmap(BITMAP_DARK_THEME_IMAGES_WIDGETS_TOGGLEBUTTON_MEDIUM_ROUND_TEXT_ON_ACTION_ID));
+    container5.add(languageToggleButton);
+
+    listLayout3.add(container5);
+
+    swipeContainer1Page1.add(listLayout3);
+
     swipeContainer.add(swipeContainer1Page1);
 
     swipeContainer1Page2.setWidth(800);
     swipeContainer1Page2.setHeight(414);
+    spinBox1.setXY(218, 29);
+    swipeContainer1Page2.add(spinBox1);
+
+    spinBox1_1.setXY(518, 38);
+    swipeContainer1Page2.add(spinBox1_1);
+
     swipeContainer.add(swipeContainer1Page2);
 
     swipeContainer1Page3.setWidth(800);
@@ -46,10 +128,16 @@ settingScreenViewBase::settingScreenViewBase()
     swipeContainer1Page4.setHeight(414);
     swipeContainer.add(swipeContainer1Page4);
 
-    swipeContainer.setSelectedPage(3);
+    swipeContainer.setSelectedPage(0);
     container1.add(swipeContainer);
 
     add(container1);
+
+    keyboard.setXY(-330, 280);
+    keyboard.setAppliedCallback(keyboardAppliedCallback);
+    keyboard.setCanceledCallback(keyboardCanceledCallback);
+    keyboard.setCharacterTypedCallback(keyboardCharacterTypedCallback);
+    add(keyboard);
 }
 
 settingScreenViewBase::~settingScreenViewBase()
@@ -60,4 +148,44 @@ settingScreenViewBase::~settingScreenViewBase()
 void settingScreenViewBase::setupScreen()
 {
     topBar.initialize();
+    volumeSliderWithLabel.initialize();
+    brightnessSliderWithLabel.initialize();
+    spinBox1.initialize();
+    spinBox1_1.initialize();
+    keyboard.initialize();
+}
+
+void settingScreenViewBase::flexButtonCallbackHandler(const touchgfx::AbstractButtonContainer& src)
+{
+    if (&src == &locoEditText)
+    {
+        //LocoEditClicked
+        //When locoEditText clicked call virtual function
+        //Call locoEditClicked
+        locoEditClicked();
+    }
+}
+
+void settingScreenViewBase::keyboardAppliedCallbackHandler()
+{
+    //KeyboardAppliedClicked
+    //When keyboard applied call virtual function
+    //Call keyboardAppliedClicked
+    keyboardAppliedClicked();
+}
+
+void settingScreenViewBase::keyboardCanceledCallbackHandler()
+{
+    //KeyboardCancelClicked
+    //When keyboard canceled call virtual function
+    //Call keyboardCancelClicked
+    keyboardCancelClicked();
+}
+
+void settingScreenViewBase::keyboardCharacterTypedCallbackHandler(Unicode::UnicodeChar value)
+{
+    //KeyboardCharTyped
+    //When keyboard characterTyped call virtual function
+    //Call keyboardCharTyped
+    keyboardCharTyped(value);
 }

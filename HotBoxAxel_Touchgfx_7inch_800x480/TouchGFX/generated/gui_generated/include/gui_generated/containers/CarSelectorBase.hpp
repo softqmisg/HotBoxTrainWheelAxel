@@ -8,9 +8,10 @@
 #include <touchgfx/containers/Container.hpp>
 #include <touchgfx/widgets/BoxWithBorder.hpp>
 #include <touchgfx/widgets/TiledImage.hpp>
+#include <touchgfx/containers/ListLayout.hpp>
+#include <touchgfx/widgets/TextArea.hpp>
 #include <touchgfx/widgets/TextAreaWithWildcard.hpp>
 #include <touchgfx/widgets/ButtonWithLabel.hpp>
-#include <touchgfx/widgets/TextArea.hpp>
 
 class CarSelectorBase : public touchgfx::Container
 {
@@ -37,9 +38,13 @@ protected:
      */
     touchgfx::BoxWithBorder boxWithBorder;
     touchgfx::TiledImage tiledImage1;
-    touchgfx::TextAreaWithOneWildcard carNumberText;
-    touchgfx::ButtonWithLabel nextButton;
+    touchgfx::ListLayout listLayout1;
+    touchgfx::Container container1;
     touchgfx::TextArea textArea1;
+    touchgfx::Container container3;
+    touchgfx::TextAreaWithOneWildcard carNumberText;
+    touchgfx::Container container2;
+    touchgfx::ButtonWithLabel nextButton;
 
     /*
      * Wildcard Buffers

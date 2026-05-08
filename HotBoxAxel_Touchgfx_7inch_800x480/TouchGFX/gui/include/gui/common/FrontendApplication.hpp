@@ -19,9 +19,13 @@ public:
         FrontendApplicationBase::handleTickEvent();
     }
     void gotosettingScreenScreenNoTransition();
+    void gotomainScreenScreenNoTransition();
+
 protected:
     touchgfx::Callback<FrontendApplication> transitionCallback;
     void gotosettingScreenScreenNoTransitionImpl();
+    void gotomainScreenScreenNoTransitionImpl();
+
 private:
 };
 

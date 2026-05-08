@@ -43,6 +43,10 @@
     <ClCompile Include="..\..\generated\gui_generated\src\settingscreen_screen\settingScreenViewBase.cpp"/>
     <ClCompile Include="..\..\gui\src\containers\Keyboard.cpp"/>
     <ClCompile Include="..\..\generated\gui_generated\src\containers\KeyboardBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\SpinBox.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\SpinBoxBase.cpp"/>
+    <ClCompile Include="..\..\gui\src\containers\SliderWithLabel.cpp"/>
+    <ClCompile Include="..\..\generated\gui_generated\src\containers\SliderWithLabelBase.cpp"/>
   </ItemGroup>
   <ItemGroup>
     <None Include="$(ApplicationRoot)\assets\texts\texts.xml"/>
@@ -219,6 +223,10 @@
     <ClInclude Include="..\..\gui\include\gui\common\KeyboardColors.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\KeyboardKey.hpp"/>
     <ClInclude Include="..\..\gui\include\gui\common\KeyboardLayout.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\SpinBox.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SpinBoxBase.hpp"/>
+    <ClInclude Include="..\..\gui\include\gui\containers\SliderWithLabel.hpp"/>
+    <ClInclude Include="..\..\generated\gui_generated\include\gui_generated\containers\SliderWithLabelBase.hpp"/>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="$(ApplicationRoot)\generated\simulator\touchgfx.rc"/>

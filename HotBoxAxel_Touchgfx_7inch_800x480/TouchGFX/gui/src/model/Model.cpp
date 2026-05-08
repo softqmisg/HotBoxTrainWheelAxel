@@ -5,7 +5,6 @@
 #include "Utility.h"
 
 extern RTC_HandleTypeDef hrtc;
-extern TIM_HandleTypeDef htim3;
 
 Model::Model() :
 modelListener(0),
@@ -43,8 +42,7 @@ ledComm(2)
 		this->colorLedChanged(ledId,colorState);
 	});
 
-	uint32_t period=__HAL_TIM_GET_AUTORELOAD(&htim3);
-	  __HAL_TIM_SET_COMPARE(&htim3,TIM_CHANNEL_2,period*1);
+	generalParam.setBrightness(8);
 
 }
 

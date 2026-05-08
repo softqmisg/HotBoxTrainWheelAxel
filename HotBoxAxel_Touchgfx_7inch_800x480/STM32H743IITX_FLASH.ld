@@ -188,14 +188,12 @@ SECTIONS
   	. = ALIGN(0x4);
   } >QUADSPI
   
-/*
   TextFlashSection (NOLOAD):
   {
   	*(TextFlashSection TextFlashSection.*)
   	*(.gnu.linkonce.r.*)
   	. = ALIGN(0x4);
   } >QUADSPI
- */
 }
 
 

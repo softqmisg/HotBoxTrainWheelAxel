@@ -230,25 +230,269 @@
                 "ShowPageIndicator": true,
                 "PageIndicatorX": 360,
                 "CenteredX": true,
-                "IndicatorImageNormal": "__generated\\alternate_theme_images_widgets_swipecontainer_medium_off_normal.png",
-                "IndicatorImageHighlight": "__generated\\alternate_theme_images_widgets_swipecontainer_medium_on_active.png",
+                "IndicatorImageNormal": "__generated\\dark_theme_images_widgets_swipecontainer_medium_off_normal.png",
+                "IndicatorImageHighlight": "__generated\\dark_theme_images_widgets_swipecontainer_medium_on_active.png",
                 "EndSwipeElasticWidth": 50,
-                "SelectedPage": "swipeContainer1Page4",
-                "Preset": "alternate_theme\\presets\\swipecontainer\\medium_active.json",
+                "SelectedPage": "swipeContainer1Page1",
+                "Preset": "dark_theme\\presets\\swipecontainer\\medium_active.json",
                 "Components": [
                   {
                     "Type": "Container",
                     "Name": "swipeContainer1Page1",
                     "Width": 800,
                     "Height": 414,
-                    "Components": []
+                    "Components": [
+                      {
+                        "Type": "ButtonWithLabel",
+                        "Name": "savePage1BttonWithLabel",
+                        "X": 42,
+                        "Y": 333,
+                        "Width": 228,
+                        "Height": 60,
+                        "Pressed": "__generated\\dark_theme_images_widgets_button_regular_height_60_small_round_pressed.png",
+                        "Released": "__generated\\dark_theme_images_widgets_button_regular_height_60_small_round_normal.png",
+                        "TextId": "__SingleUse_N9FM",
+                        "ReleasedColor": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "PressedColor": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "TextRotation": "0",
+                        "Preset": "dark_theme\\presets\\button\\regular\\height_60\\small_round_normal.json"
+                      },
+                      {
+                        "Type": "ButtonWithLabel",
+                        "Name": "defaultPage1ButtonWithLabel",
+                        "X": 539,
+                        "Y": 333,
+                        "Width": 228,
+                        "Height": 60,
+                        "Pressed": "__generated\\dark_theme_images_widgets_button_regular_height_60_small_round_pressed.png",
+                        "Released": "__generated\\dark_theme_images_widgets_button_regular_height_60_small_round_normal.png",
+                        "TextId": "__SingleUse_CEN5",
+                        "ReleasedColor": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "PressedColor": {
+                          "Red": 255,
+                          "Green": 255,
+                          "Blue": 255
+                        },
+                        "TextRotation": "0",
+                        "Preset": "dark_theme\\presets\\button\\regular\\height_60\\small_round_normal.json"
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea1",
+                        "X": 27,
+                        "Y": 69,
+                        "Width": 243,
+                        "Height": 37,
+                        "TextId": "__SingleUse_DB2B",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 252,
+                          "Blue": 252
+                        },
+                        "AutoSize": true
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea1_1",
+                        "X": 27,
+                        "Y": 135,
+                        "Width": 100,
+                        "Height": 37,
+                        "TextId": "__SingleUse_NDDO",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 252,
+                          "Blue": 252
+                        },
+                        "AutoSize": true
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea1_1_1",
+                        "X": 27,
+                        "Y": 195,
+                        "Width": 139,
+                        "Height": 37,
+                        "TextId": "__SingleUse_M4U5",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 252,
+                          "Blue": 252
+                        },
+                        "AutoSize": true
+                      },
+                      {
+                        "Type": "TextArea",
+                        "Name": "textArea1_1_1_1",
+                        "X": 27,
+                        "Y": 260,
+                        "Width": 130,
+                        "Height": 37,
+                        "TextId": "__SingleUse_Z8WC",
+                        "TextRotation": "0",
+                        "Color": {
+                          "Red": 255,
+                          "Green": 252,
+                          "Blue": 252
+                        },
+                        "AutoSize": true
+                      },
+                      {
+                        "Type": "ListLayout",
+                        "Name": "listLayout3",
+                        "X": 326,
+                        "Y": 54,
+                        "Width": 280,
+                        "Height": 259,
+                        "Direction": "South",
+                        "Components": [
+                          {
+                            "Type": "Container",
+                            "Name": "container4",
+                            "Width": 265,
+                            "Height": 69,
+                            "Components": [
+                              {
+                                "Type": "FlexButton",
+                                "Name": "locoEditText",
+                                "X": 13,
+                                "Y": 13,
+                                "Width": 238,
+                                "Height": 43,
+                                "ButtonTrigger": {
+                                  "Type": "ClickButtonTrigger"
+                                },
+                                "ButtonStyles": [
+                                  {
+                                    "Type": "TextButtonStyle",
+                                    "TextId": "__SingleUse_ZD8J",
+                                    "TextRotation": "0",
+                                    "Wildcard1": {
+                                      "TextId": "__SingleUse_ZWE4",
+                                      "UseBuffer": true,
+                                      "BufferSize": 6
+                                    },
+                                    "ColorReleased": {
+                                      "Red": 10,
+                                      "Green": 10,
+                                      "Blue": 10
+                                    },
+                                    "ColorPressed": {
+                                      "Green": 168,
+                                      "Blue": 65
+                                    }
+                                  },
+                                  {
+                                    "Type": "BoxWithBorderButtonStyle",
+                                    "Width": 238,
+                                    "Height": 43,
+                                    "LockToFlexButtonSize": true,
+                                    "BorderSize": 2,
+                                    "ColorReleased": {
+                                      "Red": 250,
+                                      "Green": 250,
+                                      "Blue": 250
+                                    },
+                                    "ColorPressed": {
+                                      "Red": 255,
+                                      "Green": 255,
+                                      "Blue": 255
+                                    },
+                                    "ColorBorderReleased": {
+                                      "Red": 51,
+                                      "Green": 102,
+                                      "Blue": 153
+                                    },
+                                    "ColorBorderPressed": {
+                                      "Red": 51,
+                                      "Green": 102,
+                                      "Blue": 153
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "Type": "CustomContainerInstance",
+                            "Name": "volumeSliderWithLabel",
+                            "Y": 69,
+                            "Width": 280,
+                            "Height": 60,
+                            "CustomContainerDefinitionName": "SliderWithLabel"
+                          },
+                          {
+                            "Type": "CustomContainerInstance",
+                            "Name": "brightnessSliderWithLabel",
+                            "Y": 129,
+                            "Width": 280,
+                            "Height": 60,
+                            "CustomContainerDefinitionName": "SliderWithLabel"
+                          },
+                          {
+                            "Type": "Container",
+                            "Name": "container5",
+                            "Y": 189,
+                            "Width": 280,
+                            "Height": 70,
+                            "Components": [
+                              {
+                                "Type": "ToggleButton",
+                                "Name": "languageToggleButton",
+                                "X": 34,
+                                "Y": 10,
+                                "Width": 138,
+                                "Height": 50,
+                                "Pressed": "__generated\\dark_theme_images_widgets_togglebutton_medium_round_text_on_action.png",
+                                "Released": "__generated\\dark_theme_images_widgets_togglebutton_medium_round_text_off_normal.png",
+                                "Preset": "dark_theme\\presets\\togglebutton\\medium\\round_action_text.json"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
                   },
                   {
                     "Type": "Container",
                     "Name": "swipeContainer1Page2",
                     "Width": 800,
                     "Height": 414,
-                    "Components": []
+                    "Components": [
+                      {
+                        "Type": "CustomContainerInstance",
+                        "Name": "spinBox1",
+                        "X": 218,
+                        "Y": 29,
+                        "Width": 147,
+                        "Height": 68,
+                        "CustomContainerDefinitionName": "SpinBox"
+                      },
+                      {
+                        "Type": "CustomContainerInstance",
+                        "Name": "spinBox1_1",
+                        "X": 518,
+                        "Y": 38,
+                        "Width": 147,
+                        "Height": 68,
+                        "CustomContainerDefinitionName": "SpinBox"
+                      }
+                    ]
                   },
                   {
                     "Type": "Container",
@@ -267,9 +511,66 @@
                 ]
               }
             ]
+          },
+          {
+            "Type": "CustomContainerInstance",
+            "Name": "keyboard",
+            "X": -330,
+            "Y": 280,
+            "Width": 320,
+            "Height": 200,
+            "CustomContainerDefinitionName": "Keyboard"
           }
         ],
-        "Interactions": []
+        "Interactions": [
+          {
+            "InteractionName": "LocoEditClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "locoEditText"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "locoEditClicked"
+            }
+          },
+          {
+            "InteractionName": "KeyboardAppliedClicked",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "Keyboard applied happens",
+              "TriggerComponent": "keyboard"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "keyboardAppliedClicked"
+            }
+          },
+          {
+            "InteractionName": "KeyboardCancelClicked",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "Keyboard canceled happens",
+              "TriggerComponent": "keyboard"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "keyboardCancelClicked"
+            }
+          },
+          {
+            "InteractionName": "KeyboardCharTyped",
+            "Trigger": {
+              "Type": "TriggerCustom",
+              "TriggerCustomTypeName": "Keyboard characterTyped happens",
+              "TriggerComponent": "keyboard"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "keyboardCharTyped"
+            }
+          }
+        ]
       }
     ],
     "CustomContainerDefinitions": [
@@ -380,7 +681,7 @@
           },
           {
             "Type": "ButtonWithLabel",
-            "Name": "buttonWithLabel",
+            "Name": "exitButton",
             "X": 605,
             "Y": 8,
             "Width": 175,
@@ -408,7 +709,7 @@
             "InteractionName": "Interaction1",
             "Trigger": {
               "Type": "TriggerClicked",
-              "TriggerComponent": "buttonWithLabel"
+              "TriggerComponent": "exitButton"
             },
             "Action": {
               "Type": "ActionCustom",
@@ -468,9 +769,8 @@
             "Name": "tempAreaBox",
             "X": 12,
             "Y": 76,
-            "Width": 101,
-            "Height": 41,
-            "LockPosition": true,
+            "Width": 100,
+            "Height": 44,
             "Color": {
               "Red": 92,
               "Green": 240
@@ -481,9 +781,8 @@
             "Name": "tempText",
             "X": 15,
             "Y": 78,
-            "Width": 95,
-            "Height": 36,
-            "LockPosition": true,
+            "Width": 97,
+            "Height": 42,
             "TextId": "ResourceId3",
             "TextRotation": "0",
             "Color": {
@@ -503,8 +802,8 @@
             "Name": "numAxelText",
             "X": 17,
             "Y": 25,
-            "Width": 90,
-            "Height": 36,
+            "Width": 75,
+            "Height": 42,
             "TextId": "TEXT_AXEL",
             "TextRotation": "0",
             "Color": {
@@ -679,64 +978,96 @@
             "FileName": "Gradient bg\\night_large.png"
           },
           {
-            "Type": "TextArea",
-            "Name": "carNumberText",
-            "X": 30,
-            "Y": 76,
-            "Width": 132,
-            "Height": 121,
-            "TextId": "__SingleUse_I6GW",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 250,
-              "Blue": 250
-            },
-            "AutoSize": true,
-            "Wildcard1": {
-              "TextId": "__SingleUse_SMQ1",
-              "UseBuffer": true,
-              "BufferSize": 4
-            }
-          },
-          {
-            "Type": "ButtonWithLabel",
-            "Name": "nextButton",
-            "X": 9,
-            "Y": 227,
-            "Width": 175,
-            "Height": 50,
-            "Pressed": "__generated\\dark_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
-            "Released": "__generated\\dark_theme_images_widgets_button_regular_height_50_small_round_active.png",
-            "TextId": "BUTTON_NEXT",
-            "ReleasedColor": {
-              "Red": 255,
-              "Green": 250,
-              "Blue": 250
-            },
-            "PressedColor": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "TextRotation": "0",
-            "Preset": "dark_theme\\presets\\button\\regular\\height_50\\small_round_active.json"
-          },
-          {
-            "Type": "TextArea",
-            "Name": "textArea1",
-            "X": 65,
-            "Y": 20,
-            "Width": 62,
-            "Height": 48,
-            "TextId": "TEXT_CAR",
-            "TextRotation": "0",
-            "Color": {
-              "Red": 255,
-              "Green": 255,
-              "Blue": 255
-            },
-            "AutoSize": true
+            "Type": "ListLayout",
+            "Name": "listLayout1",
+            "Width": 192,
+            "Height": 283,
+            "Direction": "South",
+            "Components": [
+              {
+                "Type": "Container",
+                "Name": "container1",
+                "Width": 192,
+                "Height": 83,
+                "Components": [
+                  {
+                    "Type": "TextArea",
+                    "Name": "textArea1",
+                    "X": 40,
+                    "Y": 17,
+                    "Width": 108,
+                    "Height": 54,
+                    "TextId": "TEXT_CAR",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container3",
+                "Y": 83,
+                "Width": 189,
+                "Height": 124,
+                "Components": [
+                  {
+                    "Type": "TextArea",
+                    "Name": "carNumberText",
+                    "X": 40,
+                    "Width": 112,
+                    "Height": 124,
+                    "TextId": "__SingleUse_I6GW",
+                    "TextRotation": "0",
+                    "Color": {
+                      "Red": 255,
+                      "Green": 250,
+                      "Blue": 250
+                    },
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_SMQ1",
+                      "UseBuffer": true,
+                      "BufferSize": 4
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "Container",
+                "Name": "container2",
+                "Y": 207,
+                "Width": 189,
+                "Height": 76,
+                "Components": [
+                  {
+                    "Type": "ButtonWithLabel",
+                    "Name": "nextButton",
+                    "X": 7,
+                    "Y": 13,
+                    "Width": 175,
+                    "Height": 50,
+                    "Pressed": "__generated\\dark_theme_images_widgets_button_regular_height_50_small_round_pressed.png",
+                    "Released": "__generated\\dark_theme_images_widgets_button_regular_height_50_small_round_active.png",
+                    "TextId": "BUTTON_NEXT",
+                    "ReleasedColor": {
+                      "Red": 255,
+                      "Green": 250,
+                      "Blue": 250
+                    },
+                    "PressedColor": {
+                      "Red": 255,
+                      "Green": 255,
+                      "Blue": 255
+                    },
+                    "TextRotation": "0",
+                    "Preset": "dark_theme\\presets\\button\\regular\\height_50\\small_round_active.json"
+                  }
+                ]
+              }
+            ]
           }
         ],
         "Interactions": [
@@ -969,8 +1300,8 @@
                 "Name": "label1",
                 "X": 74,
                 "Y": 107,
-                "Width": 160,
-                "Height": 42,
+                "Width": 114,
+                "Height": 49,
                 "TextId": "TEXT_PASS",
                 "TextRotation": "0",
                 "Color": {
@@ -985,8 +1316,8 @@
                 "Name": "label2",
                 "X": 74,
                 "Y": 25,
-                "Width": 167,
-                "Height": 42,
+                "Width": 143,
+                "Height": 49,
                 "TextId": "TEXT_USERNAME",
                 "TextRotation": "0",
                 "Color": {
@@ -1070,8 +1401,8 @@
                 "Name": "passWrong",
                 "X": 315,
                 "Y": 172,
-                "Width": 223,
-                "Height": 34,
+                "Width": 132,
+                "Height": 40,
                 "Visible": false,
                 "TextId": "__SingleUse_DBGD",
                 "TextRotation": "0",
@@ -4233,6 +4564,235 @@
             "ValueType": "Unicode::UnicodeChar"
           }
         ]
+      },
+      {
+        "Name": "SpinBox",
+        "Width": 147,
+        "Height": 68,
+        "Components": [
+          {
+            "Type": "Box",
+            "Name": "box1",
+            "Width": 147,
+            "Height": 68,
+            "Color": {
+              "Red": 214,
+              "Green": 214,
+              "Blue": 214
+            }
+          },
+          {
+            "Type": "ListLayout",
+            "Name": "listLayout2",
+            "Width": 146,
+            "Height": 67,
+            "Direction": "South",
+            "Components": [
+              {
+                "Type": "Container",
+                "Name": "container3",
+                "Width": 146,
+                "Height": 40,
+                "Components": [
+                  {
+                    "Type": "TextArea",
+                    "Name": "valueTextArea",
+                    "X": 35,
+                    "Y": 2,
+                    "Width": 66,
+                    "Height": 37,
+                    "TextId": "__SingleUse_6TQY",
+                    "TextRotation": "0",
+                    "AutoSize": true,
+                    "Wildcard1": {
+                      "TextId": "__SingleUse_7EOP",
+                      "UseBuffer": true,
+                      "BufferSize": 6
+                    }
+                  }
+                ]
+              },
+              {
+                "Type": "ListLayout",
+                "Name": "listLayout1",
+                "Y": 40,
+                "Width": 146,
+                "Height": 27,
+                "Direction": "East",
+                "Components": [
+                  {
+                    "Type": "Container",
+                    "Name": "container2",
+                    "Width": 73,
+                    "Height": 27,
+                    "Components": [
+                      {
+                        "Type": "RepeatButton",
+                        "Name": "upButton",
+                        "X": 2,
+                        "Y": 1,
+                        "Width": 69,
+                        "Height": 25,
+                        "Pressed": "spinBox\\up_height_25_tiny_rounded_pressed.png",
+                        "Released": "spinBox\\up_height_25_tiny_rounded_normal.png",
+                        "Delay": 100,
+                        "Interval": 300
+                      }
+                    ]
+                  },
+                  {
+                    "Type": "Container",
+                    "Name": "container2_1",
+                    "X": 73,
+                    "Width": 73,
+                    "Height": 27,
+                    "Components": [
+                      {
+                        "Type": "RepeatButton",
+                        "Name": "downButton",
+                        "X": 2,
+                        "Y": 1,
+                        "Width": 69,
+                        "Height": 25,
+                        "Pressed": "spinBox\\down_height_25_tiny_rounded_pressed.png",
+                        "Released": "spinBox\\down_height_25_tiny_rounded_normal.png",
+                        "Delay": 200,
+                        "Interval": 300
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "UpButtonClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "upButton"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "upButtonClicked"
+            }
+          },
+          {
+            "InteractionName": "DownButtonClicked",
+            "Trigger": {
+              "Type": "TriggerClicked",
+              "TriggerComponent": "downButton"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "downButtonClicked"
+            }
+          }
+        ]
+      },
+      {
+        "Name": "SliderWithLabel",
+        "Width": 280,
+        "Height": 60,
+        "Components": [
+          {
+            "Type": "ListLayout",
+            "Name": "listLayout1",
+            "X": 7,
+            "Y": 11,
+            "Width": 266,
+            "Height": 37,
+            "Direction": "East",
+            "Components": [
+              {
+                "Type": "Slider",
+                "Name": "valueSlider",
+                "Width": 232,
+                "Height": 32,
+                "IsHorizontalSlider": true,
+                "BackgroundUnselected": "__generated\\dark_theme_images_widgets_slider_horizontal_thick_track_small.png",
+                "BackgroundSelected": "__generated\\dark_theme_images_widgets_slider_horizontal_thick_filler_small.png",
+                "Indicator": "__generated\\dark_theme_images_widgets_slider_horizontal_thick_round_active.png",
+                "BackgroundX": 16,
+                "BackgroundY": 11,
+                "IndicatorMax": 200,
+                "ValueMax": 10,
+                "Preset": "dark_theme\\presets\\slider\\horizontal\\thick\\small_round_active.json"
+              },
+              {
+                "Type": "TextArea",
+                "Name": "valueText",
+                "X": 232,
+                "Width": 34,
+                "Height": 37,
+                "TextId": "SLIDER_TEXT",
+                "TextRotation": "0",
+                "Color": {
+                  "Red": 255,
+                  "Green": 252,
+                  "Blue": 252
+                },
+                "AutoSize": true,
+                "Wildcard1": {
+                  "TextId": "SLIDER_TEXT_INIT",
+                  "UseBuffer": true,
+                  "BufferSize": 5
+                }
+              }
+            ]
+          }
+        ],
+        "Interactions": [
+          {
+            "InteractionName": "UpdateValueText",
+            "Trigger": {
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "valueSlider"
+            },
+            "Action": {
+              "Type": "ActionCustom",
+              "FunctionName": "updateValueText"
+            }
+          },
+          {
+            "InteractionName": "EmitvalueConfirmd",
+            "Trigger": {
+              "Type": "TriggerSliderValueConfirmed",
+              "TriggerComponent": "valueSlider"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "SliderWithLabel valueConfirmed happens",
+              "ParameterValue": "(uint8_t)value"
+            }
+          },
+          {
+            "InteractionName": "EmitvalueChanged",
+            "Trigger": {
+              "Type": "TriggerSliderValueChanged",
+              "TriggerComponent": "valueSlider"
+            },
+            "Action": {
+              "Type": "ActionEmit",
+              "TriggerCustomTypeName": "SliderWithLabel valueChange happens"
+            }
+          }
+        ],
+        "CustomTriggers": [
+          {
+            "Name": "valueConfirmed",
+            "Description": "emit when slider value Confirmed",
+            "HasValue": true,
+            "ValueType": "const uint8_t"
+          },
+          {
+            "Name": "valueChange",
+            "Description": "emit when slider value changed",
+            "HasValue": true,
+            "ValueType": "const uint8_t"
+          }
+        ]
       }
     ],
     "Name": "HotBoxAxel_Touchgfx_7inch_800x480",
@@ -4241,7 +4801,7 @@
       "Height": 480
     },
     "SelectedColorDepth": 16,
-    "StartupScreenName": "mainScreen",
+    "StartupScreenName": "settingScreen",
     "SelectedStartupLanguage": "GB",
     "TouchGfxPath": "../Middlewares/ST/touchgfx",
     "UIPath": ".",
