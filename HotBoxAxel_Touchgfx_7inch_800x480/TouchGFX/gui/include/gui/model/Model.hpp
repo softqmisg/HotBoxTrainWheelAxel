@@ -8,6 +8,7 @@
 #include "Logger.h"
 #include "EventLogger.h"
 #include "GeneralParam.h"
+#include "UARTListener.hpp"
 class ModelListener;
 
 class Model
@@ -55,7 +56,7 @@ public:
 protected:
 
 private:
-    ModelListener* modelListener;
+	ModelListener *modelListener;
     uint16_t tick1sCounter;
     uint16_t tickCounter;
     bool refreshingMainEnabled;

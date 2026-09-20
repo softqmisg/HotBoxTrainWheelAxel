@@ -24,6 +24,8 @@ ledMain(0),
 ledAlarm(1),
 ledComm(2)
 {
+    UARTListener::getInstance().start();
+
 	for(int i=0;i<MAX_CARNUM;i++)
 	{
 		cars[i].setCarID(i);
@@ -48,6 +50,13 @@ ledComm(2)
 
 void Model::tick()
 {
+    UARTListener& uart = UARTListener::getInstance();
+	 uart.poll();
+	 if (uart.hasNewReading()) {
+//	        uart.clearNewReading();
+//	        temperature    = uart.getTemperature();
+//	        newTemperature = true;       // Screen checks this
+	    }
     // Called periodically by the framework
 		ledMain.tick();
 		ledAlarm.tick();

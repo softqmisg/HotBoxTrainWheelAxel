@@ -126,9 +126,12 @@ int main(void)
   MX_QUADSPI_Init();
   MX_RTC_Init();
   MX_TIM3_Init();
+  MX_USART2_UART_Init();
   MX_TouchGFX_Init();
   /* USER CODE BEGIN 2 */
-
+  HAL_GPIO_WritePin(FSK_WD_GPIO_Port, FSK_WD_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(FSK_RT_GPIO_Port, FSK_RT_Pin, GPIO_PIN_SET); //Read Mode
+  HAL_GPIO_WritePin(FSK_CD_GPIO_Port, FSK_CD_Pin, GPIO_PIN_SET);
   /* USER CODE END 2 */
 
   /* Infinite loop */

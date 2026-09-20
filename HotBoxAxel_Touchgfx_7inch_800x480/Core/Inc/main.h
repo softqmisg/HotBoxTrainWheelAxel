@@ -59,18 +59,30 @@ void Error_Handler(void);
 /* Private defines -----------------------------------------------------------*/
 #define T_CS_RST_Pin GPIO_PIN_8
 #define T_CS_RST_GPIO_Port GPIOI
+#define FSK_RST_Pin GPIO_PIN_11
+#define FSK_RST_GPIO_Port GPIOI
+#define LCD_HV_Pin GPIO_PIN_2
+#define LCD_HV_GPIO_Port GPIOH
+#define FSK_WD_Pin GPIO_PIN_4
+#define FSK_WD_GPIO_Port GPIOA
 #define LED1_Pin GPIO_PIN_0
 #define LED1_GPIO_Port GPIOB
 #define LED2_Pin GPIO_PIN_1
 #define LED2_GPIO_Port GPIOB
+#define FSK_RT_Pin GPIO_PIN_11
+#define FSK_RT_GPIO_Port GPIOB
 #define T_SCK_SCL_Pin GPIO_PIN_6
 #define T_SCK_SCL_GPIO_Port GPIOH
 #define T_PEN_INT_Pin GPIO_PIN_7
 #define T_PEN_INT_GPIO_Port GPIOH
+#define FSK_CD_Pin GPIO_PIN_8
+#define FSK_CD_GPIO_Port GPIOH
 #define T_MISO_Pin GPIO_PIN_3
 #define T_MISO_GPIO_Port GPIOG
 #define T_MOSI_SDA_Pin GPIO_PIN_3
 #define T_MOSI_SDA_GPIO_Port GPIOI
+#define FSK_MCLK_Pin GPIO_PIN_10
+#define FSK_MCLK_GPIO_Port GPIOG
 
 /* USER CODE BEGIN Private defines */
 

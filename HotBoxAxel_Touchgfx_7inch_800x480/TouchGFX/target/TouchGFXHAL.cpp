@@ -23,10 +23,11 @@
 #include <TouchGFXHAL.hpp>
 
 /* USER CODE BEGIN TouchGFXHAL.cpp */
+#include <gui/model/ModelListener.hpp>
 #include "MyButtonController.hpp"
+#include "UARTListener.hpp"
 MyButtonController bc;
 using namespace touchgfx;
-
 void TouchGFXHAL::initialize()
 {
     // Calling parent implementation of initialize().
@@ -40,6 +41,7 @@ void TouchGFXHAL::initialize()
 //    lockDMAToFrontPorch(true);
 
     setButtonController(&bc);
+
 }
 
 /**

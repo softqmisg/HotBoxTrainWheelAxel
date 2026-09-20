@@ -6,6 +6,8 @@
 "./Core/CustomClasses/Src/LedParam.o"
 "./Core/CustomClasses/Src/Logger.o"
 "./Core/CustomClasses/Src/MyButtonController.o"
+"./Core/CustomClasses/Src/UARTBuffer.o"
+"./Core/CustomClasses/Src/UARTListener.o"
 "./Core/Src/Utility.o"
 "./Core/Src/W25Q64_QSPI.o"
 "./Core/Src/crc.o"
