@@ -137,6 +137,7 @@ uint8_t settingScreenView::getBrightness(){
     uint32_t cmp=__HAL_TIM_GET_COMPARE(&htim3,TIM_CHANNEL_2)+1;
     uint32_t brightness=cmp*10/period;
     if(brightness<1) brightness=1;
+    return brightness;
 }
 void settingScreenView::setBrightness(uint8_t brightness){
     if(brightness<1) brightness=1;
