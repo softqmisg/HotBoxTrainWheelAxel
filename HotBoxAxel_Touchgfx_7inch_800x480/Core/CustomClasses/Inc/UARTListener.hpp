@@ -11,11 +11,12 @@
 #include <rtc.h>
 #include <stdbool.h>
 #include <cstdint>
-
+#include "Utility.h"
 class Model;
 class UARTListener {
 public:
-	enum PacketType {TIMEDATE=0};
+	enum MessageType {TIMEDATE=0xF8,TEMPERATURE=0x44};
+	enum SeedValue {SEED_TIMEDATE=0x23,SEED_TEMPERATURE=0x3A};
     static UARTListener& getInstance();      // ◀── the clean access point
     static void handleRxInterrupt(UART_HandleTypeDef* huart);
     // Call once at startup — starts the first interrupt reception
@@ -24,37 +25,40 @@ public:
     void poll();
 
     // Optional: send a packet back to the sensor
-    float getTemperature() const { return temperature; }
+    volatile int8_t* getTemperature(uint8_t &car)  { car=carNumber; return temperature; }
    bool  hasNewReading()  const { return newReading; }
    void  clearNewReading()      { newReading = false; }
+   void sendTimeDateRequest(RTC_TimeTypeDef sTime,RTC_DateTypeDef sDate);
+   void sendTimeDateRequest(uint8_t s,uint8_t m,uint8_t h,uint8_t d,uint8_t mo,uint8_t y);
+   uint8_t isrByte = 0;
 
-    void sendTimeDateRequest(RTC_TimeTypeDef sTime,RTC_DateTypeDef sDate);
 private:
+
+    uint8_t packet[200];
+	uint8_t counter_bytes=0;
+
     UARTListener() {}
 	UARTListener(const UARTListener&)            = delete;
 	UARTListener& operator=(const UARTListener&) = delete;
 
     void onByteReceived(uint8_t b) { rx.push(b); }
-    uint8_t isrByte = 0;
 
     UARTBuffer rx;
 
-//    enum State { WAIT_AA, WAIT_55, READ_H, READ_L, READ_CRC };
-//    State   state    = WAIT_AA;
-//    uint8_t highByte = 0;
-//    uint8_t lowByte = 0;
-//
-//    uint8_t crc      = 0;
+    enum State { WAIT_FF0, WAIT_FF1, WAIT_FD, WAIT_FE,READ_ADDR,READ_TYPE,
+    	READ_FIXED_TEMP,READ_BYTES_TEMP,READ_ENDFIXED_TEMP,
+		READ_TRAIL_FF,READ_TRAIL_CRC };
+    State   state    = WAIT_FF0;
 
-    // ISR ⇄ class glue
 
-    bool parseByte(uint8_t b, float& out);
+    bool parseByte(uint8_t b,int8_t *tmp,uint8_t *car);
 
-    volatile float temperature = 0.0f;
+    volatile int8_t temperature[MAX_SENSORNUM];
+    volatile uint8_t carNumber;
     volatile bool  newReading  = false;
 
     uint8_t crc8_maxim(const uint8_t *buf, size_t len, uint8_t seed);
-    void sendUartData(uint8_t *data,int len,PacketType packetType);
+    void sendUartData(uint8_t *data,int len,MessageType msgType);
 
 };
 

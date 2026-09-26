@@ -61,8 +61,6 @@ void Error_Handler(void);
 #define T_CS_RST_GPIO_Port GPIOI
 #define FSK_RST_Pin GPIO_PIN_11
 #define FSK_RST_GPIO_Port GPIOI
-#define LCD_HV_Pin GPIO_PIN_2
-#define LCD_HV_GPIO_Port GPIOH
 #define FSK_WD_Pin GPIO_PIN_4
 #define FSK_WD_GPIO_Port GPIOA
 #define LED1_Pin GPIO_PIN_0

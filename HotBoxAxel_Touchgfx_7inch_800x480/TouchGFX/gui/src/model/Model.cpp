@@ -53,10 +53,18 @@ void Model::tick()
     UARTListener& uart = UARTListener::getInstance();
 	 uart.poll();
 	 if (uart.hasNewReading()) {
-//	        uart.clearNewReading();
-//	        temperature    = uart.getTemperature();
-//	        newTemperature = true;       // Screen checks this
+	        uart.clearNewReading();
+	        uint8_t car;
+	        volatile int8_t * temps=uart.getTemperature(car);
+	        for(uint8_t t=0;t<MAX_SENSORNUM;t++)
+	        {
+	        	if(temps[t]==(int8_t)0xB5)
+	        		cars[car].setTemperature(t,temps[t], Car::TempState::ERROR);
+	        	else
+	        		cars[car].setTemperature(t,temps[t], Car::TempState::NORMAL);
+	        }
 	    }
+
     // Called periodically by the framework
 		ledMain.tick();
 		ledAlarm.tick();
@@ -78,6 +86,8 @@ void Model::tick()
 	    {
 	        tick1sCounter = 0;
  		   updateRTC();  // Read from hardware RTC
+ 		 	uart.sendTimeDateRequest(seconds,minutes,hours,day,month,year-2000);
+
 	 	   if (refreshingMainEnabled)
 	 	   {
 	 		   updateLedMain();
@@ -196,18 +206,25 @@ void Model::updateCarTemperatures(uint8_t carNum)
 
 	for(int i=0;i<MAX_SENSORNUM;i++)
 	{
+		Car::Sensor_t sensorTemp;
 		int16_t temp;
-		if(i==(MAX_SENSORNUM-1))
-			temp = Utility::generateRandomInt(99, -40);
-		else
-			temp=(int16_t)(carNum+1)*10+Utility::generateRandomInt(9, 0);
 		Car::TempState state;
-		if(minutes%2==0 && seconds==0)
-			state=Car::TempState::ERROR;
-		else
-			state=Car::TempState::NORMAL;
 
-		cars[carNum].setTemperature(i,temp, state);
+//		if(i==(MAX_SENSORNUM-1))
+//			temp = Utility::generateRandomInt(99, -40);
+//		else
+//			temp=(int16_t)(carNum+1)*10+Utility::generateRandomInt(9, 0);
+//		if(minutes%2==0 && seconds==0)
+//			state=Car::TempState::ERROR;
+//		else
+//			state=Car::TempState::NORMAL;
+//
+//		cars[carNum].setTemperature(i,temp, state);
+
+
+		sensorTemp=cars[carNum].getTemperature(i);
+		temp=cars[carNum].getTemperature(i).temperature;
+		state=cars[carNum].getTemperature(i).state;
 		if(state==Car::TempState::NORMAL)
 		{
 			LogData sensor;

@@ -17,7 +17,6 @@
 "./Core/Src/gpio.o"
 "./Core/Src/ltdc.o"
 "./Core/Src/main.o"
-"./Core/Src/memorymap.o"
 "./Core/Src/quadspi.o"
 "./Core/Src/rtc.o"
 "./Core/Src/stm32h7xx_hal_msp.o"
